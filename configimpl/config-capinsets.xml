@@ -1,0 +1,64 @@
+<Widgets>
+    <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/CapInsets" template="AttributableTemplate.java" name="CapInsetsView" classname="CapInsetsViewImpl" os="android" prefix="" nativeclassname="android.view.View" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|" group="CapInsets" packageName="com.ashera.plugin" generateXmlTestCase="true"
+        baseDirectory="../../core-android-widget/AndroidCapInsetsPlugin" viewplugin="true" viewPluginFor="View">
+        <CustomAttribute name="backgroundCapInsets" type="dimensiondppx" code="code: applyCapInsets(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsTop" type="dimensiondppx" code="code: applyCapInsetsTop(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsBottom" type="dimensiondppx" code="code: applyCapInsetsBottom(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsLeft" type="dimensiondppx" code="code: applyCapInsetsLeft(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsRight" type="dimensiondppx" code="code: applyCapInsetsRight(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10"/>
+        
+        <CustomAttribute name="foregroundCapInsets" type="dimensiondppx" code="code: applyForegroundCapInsets(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsTop" type="dimensiondppx" code="code: applyForegroundCapInsetsTop(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsBottom" type="dimensiondppx" code="code: applyForegroundCapInsetsBottom(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsLeft" type="dimensiondppx" code="code: applyForegroundCapInsetsLeft(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsRight" type="dimensiondppx" code="code: applyForegroundCapInsetsRight(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+	</Widget>
+	
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/CapInsets" template="AttributableTemplate.java" name="CapInsetsView" classname="CapInsetsViewImpl" os="swt" prefix="" nativeclassname="org.eclipse.swt.widgets.Control" jstemplate="widgettemplate.js" createDefault="" group="CapInsets" packageName="com.ashera.plugin" generateXmlTestCase="true"
+        baseDirectory="../../core-javafx-widget/SWTCapInsetsPlugin" viewplugin="true" viewPluginFor="View">
+  	    <CustomAttribute name="backgroundCapInsets" type="dimensiondppx" code="code: applyCapInsets(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsTop" type="dimensiondppx" code="code: applyCapInsetsTop(w, objValue);" javaType="int"  order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsBottom" type="dimensiondppx" code="code: applyCapInsetsBottom(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsLeft" type="dimensiondppx" code="code: applyCapInsetsLeft(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsRight" type="dimensiondppx" code="code: applyCapInsetsRight(w, objValue);" javaType="int" order="-10"/>
+        
+      	<Code url="../../core-android-widget/AndroidCapInsetsPlugin/src/com/ashera/capinsets/CapInsetsViewImpl.java">
+            <Copy from="capinsets" to="capinsets">
+            </Copy>
+        </Code>
+  	</Widget>
+  	
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/CapInsets" template="AttributableTemplate.java" name="CapInsetsView" classname="CapInsetsViewImpl" os="web" prefix="" nativeclassname="org.teavm.jso.dom.html.HTMLElement" jstemplate="widgettemplate.js" createDefault="" group="CapInsets" packageName="com.ashera.plugin" generateXmlTestCase="true"
+        baseDirectory="../../core-web-widget/WebCapInsetsPlugin" viewplugin="true" viewPluginFor="View">
+  	    <CustomAttribute name="backgroundCapInsets" type="dimensiondppx" code="code: applyCapInsets(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsTop" type="dimensiondppx" code="code: applyCapInsetsTop(w, objValue);" javaType="int"  order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsBottom" type="dimensiondppx" code="code: applyCapInsetsBottom(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsLeft" type="dimensiondppx" code="code: applyCapInsetsLeft(w, objValue);" javaType="int" order="-10"/>
+        <CustomAttribute name="backgroundCapInsetsRight" type="dimensiondppx" code="code: applyCapInsetsRight(w, objValue);" javaType="int" order="-10"/>
+        
+      	<Code url="../../core-android-widget/AndroidCapInsetsPlugin/src/com/ashera/capinsets/CapInsetsViewImpl.java">
+            <Copy from="capinsets" to="capinsets">
+            </Copy>
+        </Code>
+  	</Widget>
+	
+   <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/CapInsets" template="AttributableTemplate.java" name="CapInsetsView" classname="CapInsetsViewImpl" os="ios" prefix="" nativeclassname="UIView" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|" group="CapInsets" packageName="com.ashera.plugin" generateXmlTestCase="true"
+       baseDirectory="../../core-ios-widgets/IOSCapInsetsPlugin" viewplugin="true" viewPluginFor="View">
+               	<CustomAttribute name="backgroundCapInsets" type="dimensiondppx" code="code: applyCapInsets(w, objValue);" javaType="int" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="backgroundCapInsetsTop" type="dimensiondppx" code="code: applyCapInsetsTop(w, objValue);" javaType="int"  order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="backgroundCapInsetsBottom" type="dimensiondppx" code="code: applyCapInsetsBottom(w, objValue);" javaType="int" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="backgroundCapInsetsLeft" type="dimensiondppx" code="code: applyCapInsetsLeft(w, objValue);" javaType="int" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="backgroundCapInsetsRight" type="dimensiondppx" code="code: applyCapInsetsRight(w, objValue);" javaType="int" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+      	<CustomAttribute name="foregroundCapInsets" type="dimensiondppx" code="code: applyForegroundCapInsets(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsTop" type="dimensiondppx" code="code: applyForegroundCapInsetsTop(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsBottom" type="dimensiondppx" code="code: applyForegroundCapInsetsBottom(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsLeft" type="dimensiondppx" code="code: applyForegroundCapInsetsLeft(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="foregroundCapInsetsRight" type="dimensiondppx" code="code: applyForegroundCapInsetsRight(w, objValue);" javaType="int" generatorUrl="https://developer.apple.com/documentation/uikit/uiimage/1624097-capinsets" order="-10" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        
+        <Code url="../../core-android-widget/AndroidCapInsetsPlugin/src/com/ashera/capinsets/CapInsetsViewImpl.java">
+            <Copy from="capinsets" to="capinsets">
+            </Copy>
+        </Code>
+	</Widget>
+</Widgets>

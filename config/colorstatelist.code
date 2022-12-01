@@ -1,0 +1,7 @@
+package r.android.content.res;
+
+public class ColorStateList   {
+  public void setDefaultColor(int mDefaultColor) {
+	this.mDefaultColor = mDefaultColor;
+	}
+}

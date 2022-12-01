@@ -1,0 +1,70 @@
+class AbsListView {
+	/*private void useDefaultSelector() {
+        
+    }
+    protected void removeDetachedView(View child, boolean animate) {
+    }
+    
+    public void notifyViewAccessibilityStateChangedIfNeeded(int test) {
+    }
+    
+    class ListItemAccessibilityDelegate{ 
+    }
+    
+    public int getVerticalFadingEdgeLength() {
+    	return 0;
+    }
+    
+    void invokeOnItemScrollListener() {
+    }
+    
+    class SavedState {
+    }
+
+    
+    boolean isInTouchMode() {
+    	return false;
+    }
+    
+
+    
+
+    
+    int findSyncPosition() {
+    	return 0;
+    }
+    
+    int lookForSelectablePosition(int pos, boolean flag) {
+    	return 0;
+    }
+
+	void checkSelectionChanged() {
+	}
+	
+	boolean awakenScrollBars() {
+		return false;
+	}
+	
+	private void positionSelector(int mSelectedPosition, View childAt) {
+	
+	}*/
+	    class ActionMode {
+    	void invalidate() {
+    	}
+    		public void finish() {
+		
+	}
+    }
+    
+        class MultiChoiceModeWrapper {
+    	public void onItemCheckedStateChanged(ActionMode mode,
+                int position, long id, boolean checked) {
+        }
+    }
+	 private void updateOnScreenCheckedViews() {
+	 }
+	 
+		public interface OnScrollListener {
+			public void onScroll (AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount);
+		}
+}

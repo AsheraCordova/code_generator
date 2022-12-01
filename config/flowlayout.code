@@ -1,0 +1,5 @@
+class FlowLayout {
+	public FlowLayout() {
+		this.config = new ConfigDefinition();
+	}
+}

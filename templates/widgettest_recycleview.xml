@@ -1,0 +1,51 @@
+<#macro getAdditinalAttrs_Recycleview attrs name value id localname widgetname>
+<#compress>
+	<#if widgetname=='androidx.recyclerview.widget.RecyclerView'>
+	modelFor="let item in looptest.textlayout from testObj->view into loopvar as pathmap"
+	modelIdPath="id"
+	tools:listitem="@layout/listview_testitem"
+	<#if attrs.trimmedAttribute != 'layoutManager'>
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+	</#if>
+	<#if attrs.trimmedAttribute != 'viewHolderIds'>
+		viewHolderIds="@+id/name"
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'footerDisabled'>
+		layout="@xml/recyclerview_simple"
+	</#if>
+	<#if attrs.trimmedAttribute == 'headerDisabled'>
+		layout="@xml/recyclerview_simple"
+	</#if>
+	</#if>
+</#compress>	
+</#macro>         
+
+<#function getTestCases_Recycleview attrs>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'layoutManager'>
+		<#assign myarray = myarray + ["androidx.recyclerview.widget.LinearLayoutManager"]>
+	<#elseif attrs.trimmedAttribute == 'viewHolderIds'>
+		<#assign myarray = myarray + ["@+id/name"]>
+	<#elseif attrs.trimmedAttribute == 'layout'>
+		<#assign myarray = myarray + ["@xml/recyclerview_simple"]>
+	<#elseif attrs.trimmedAttribute == 'itemId' || attrs.trimmedAttribute == 'sectionId' || attrs.trimmedAttribute == 'itemConfigId'>
+		<#assign myarray = myarray + [""]>
+	</#if>
+	<#return myarray>
+</#function>
+
+<#function getTestCases_attrs_Recycleview attrs>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'layoutManager'>
+		<#assign myarray = myarray + ["'androidx.recyclerview.widget.LinearLayoutManager'"]>
+	<#elseif attrs.trimmedAttribute == 'viewHolderIds'>
+		<#assign myarray = myarray + ["'@+id/name'"]>
+	<#elseif attrs.trimmedAttribute == 'layout'>
+		<#assign myarray = myarray + ["'@xml/recyclerview_simple'"]>
+	<#elseif attrs.trimmedAttribute == 'itemId' || attrs.trimmedAttribute == 'sectionId' || attrs.trimmedAttribute == 'itemConfigId'>
+		<#assign myarray = myarray + ["''"]>
+	</#if>		
+	
+	<#return myarray>
+</#function>	

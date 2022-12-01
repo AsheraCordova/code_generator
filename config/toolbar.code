@@ -1,0 +1,67 @@
+class Toolbar {
+	private com.ashera.view.BaseMeasurableImageView mNavButtonView;
+	private View mCollapseButtonView;
+	private View mMenuView;
+	private View mExpandedActionView;
+	private View mLogoView;
+	private View mTitleTextView;
+	private View mSubtitleTextView;
+	public Toolbar() {
+		final float density = getResources().getDisplayMetrics().density;
+		mMaxButtonHeight=(int) ((density * 48) + 0.5f);
+	  	mButtonGravity = Gravity.TOP;
+  	}
+
+	public void setTitleTextView(View mTitleTextView) {
+		this.mTitleTextView = mTitleTextView;
+		this.addSystemView(mTitleTextView, mCollapsible);
+	}
+	
+	public void setSubtitleTextView(View mSubtitleTextView) {
+		this.mSubtitleTextView = mSubtitleTextView;
+		this.addSystemView(mSubtitleTextView, mCollapsible);
+	}
+	
+	public void setLogoView(View mLogoView) {
+		this.mLogoView = mLogoView;
+		this.addSystemView(mLogoView, mCollapsible);
+	}
+	public void setNavigationIcon(com.ashera.view.BaseMeasurableImageView mNavButtonView) {
+		this.mNavButtonView = mNavButtonView;
+		this.addSystemView(mNavButtonView, mCollapsible);
+	}
+	
+	public void setMenuView(View mMenuView) {
+		this.mMenuView = mMenuView;
+		this.addSystemView(mMenuView, mCollapsible);
+	}
+	public static class ActionBar { 
+		public static class LayoutParams extends ViewGroup.MarginLayoutParams {
+			public int gravity;
+			public LayoutParams(int width,int height){
+				super(width,height);
+				this.gravity=Gravity.CENTER_VERTICAL | GravityCompat.START;
+			}
+			public LayoutParams(int width,int height,int gravity){
+				super(width,height);
+				this.gravity=gravity;
+			}
+			public LayoutParams(LayoutParams source){
+				super(source);
+	
+			}
+			public LayoutParams(ViewGroup.LayoutParams source){
+				super(source);
+			}
+		}
+	}
+	
+	public void setGravity(int gravity) {
+		mGravity = gravity;
+	}
+	
+	public void setMaxButtonHeight(int height) {
+		mMaxButtonHeight = height;
+	}
+		
+}

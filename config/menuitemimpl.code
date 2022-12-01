@@ -1,0 +1,15 @@
+class MenuItemImpl {
+	private r.android.view.View mActionView;
+	private ActionProvider mActionProvider;
+	  public String getTitle(){
+    	return (String)mTitle;
+  	}
+	  public Drawable getIcon(){
+	    return mIconDrawable;
+	  }
+	interface ActionProvider {
+		boolean overridesItemVisibility();
+		View onCreateActionView(MenuItemImpl menuItemImpl);
+		boolean isVisible();
+	}
+}

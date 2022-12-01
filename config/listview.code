@@ -1,0 +1,127 @@
+class ListView {
+	ViewRootImpl getViewRootImpl() {
+		return null;
+	}
+
+
+
+	class ViewRootImpl {
+		View getAccessibilityFocusedHost() {
+			return null;
+		}
+			public AccessibilityNodeInfo getAccessibilityFocusedVirtualView() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	}
+private View getAccessibilityFocusedChild(View focusHost) {
+	// TODO Auto-generated method stub
+	return null;
+}
+private View getFocusedChild() {
+	// TODO Auto-generated method stub
+	return null;
+}
+  private void setVisibleRangeHint(int mFirstPosition, int i) {
+	// TODO Auto-generated method stub
+	
+}
+private void positionSelector(int invalidPosition, View sel) {
+	// TODO Auto-generated method stub
+	
+}
+private void updateScrollIndicators() {
+	// TODO Auto-generated method stub
+	
+}
+private void post(Runnable mPositionScrollAfterLayout) {
+	// TODO Auto-generated method stub
+	
+}
+private boolean shouldShowSelector() {
+	// TODO Auto-generated method stub
+	return false;
+}
+interface Checkable {
+	void setChecked(boolean test);
+}
+class HeaderViewListAdapter implements ListAdapter {
+
+	public HeaderViewListAdapter(ArrayList<FixedViewInfo> mHeaderViewInfos, ArrayList<FixedViewInfo> mFooterViewInfos,
+			ListAdapter adapter) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void registerDataSetObserver(r.android.database.DataSetObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unregisterDataSetObserver(r.android.database.DataSetObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Object getItem(int position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean hasStableIds() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getItemViewType(int position) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getViewTypeCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean areAllItemsEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled(int position) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
+}

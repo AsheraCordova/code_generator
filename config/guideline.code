@@ -1,0 +1,9 @@
+class Guideline {
+	public Guideline(android.content.Context context) {
+		super.setVisibility(View.GONE);
+	}
+	
+	public Guideline() {
+		super.setVisibility(View.GONE);
+	}
+}

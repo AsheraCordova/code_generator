@@ -1,0 +1,176 @@
+<Widgets>
+   <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/RecycleView" template="BaseHasWidgetsTemplate.java" name="androidx.recyclerview.widget.RecyclerView" classname="RecyclerViewImpl" os="android" prefix="" nativeclassname="androidx.recyclerview.widget.RecyclerView" jstemplate="widgettemplate.js" listView="true" createDefault="asnativewidget|excludeclear|skipRemoveMethods|ExcludeDefStyleRes|" group="androidx.recyclerview.widget.RecyclerView" packageName="androidx.recyclerview.widget"
+        generateXmlTestCase="true">
+        <CustomAttribute name="layoutManager" type="string" code="code: setLayoutManager(objValue);" javaType="int" generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView" namespace="app"/>
+        <CustomAttribute name="viewHolderIds" type="array" arrayType="string" code="code: setViewHolderIds(objValue);" javaType="int"  />
+        <CustomAttribute name="spanCount" type="int" code="code: setSpanCount(objValue);" javaType="int"  order="-1" namespace="app" generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView"/>
+        <CustomAttribute name="layout" type="string" code="code: setLayout(objValue);" javaType="int" order="100"  />
+        <CustomAttribute code="code:setOrientation(objValue);" getterCode="code:getOrientation()" javaType="int" name="orientation" namespace="android" type="orientation" copyDef="jsoncache/androidLinearLayout.json"  order="-1"  generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView"/>
+        
+		<CustomAttribute generatorUrl="https://github.com/lisawray/groupie" name="addSectionItem" type="object" javaType="String" useMethodName="true" code="code: addSectionItem((String) sectionId, (String) itemConfigId, item);" namespace="default">
+             <Param name="sectionId" type="string" javaType="String"></Param>
+             <Param name="itemConfigId" type="string" javaType="String"></Param>  
+             <Param name="item" type="object" javaType="String"></Param>
+         </CustomAttribute>
+         <CustomAttribute generatorUrl="https://github.com/lisawray/groupie" name="removeSectionItem" type="object" javaType="String" useMethodName="true" code="code: removeSectionItem((String) sectionId, (String) itemConfigId, (String) itemId);" namespace="default">
+             <Param name="sectionId" type="string" javaType="String"></Param>
+             <Param name="itemConfigId" type="string" javaType="String"></Param>
+             <Param name="itemId" type="string" javaType="String"></Param>  
+         </CustomAttribute>   
+          <CustomAttribute generatorUrl="https://github.com/lisawray/groupie" name="removeAllItems" type="object" javaType="String" useMethodName="true" code="code: removeAllItems((String) sectionId);" namespace="default">
+             <Param name="sectionId" type="string" javaType="String"></Param>
+         </CustomAttribute>
+         
+          <CustomAttribute generatorUrl="https://github.com/lisawray/groupie" name="updateSectionItem" type="object" javaType="String" useMethodName="true" code="code: updateSectionItem((String) sectionId, (String) itemConfigId, (String) itemId, item);" namespace="default">
+             <Param name="sectionId" type="string" javaType="String"></Param>
+             <Param name="itemConfigId" type="string" javaType="String"></Param>
+             <Param name="itemId" type="string" javaType="String"></Param>  
+             <Param name="item" type="object" javaType="String"></Param>
+         </CustomAttribute>
+         
+          <CustomAttribute name="stackFromEnd" type="boolean" code="code: setStackFromBottom(objValue);" javaType="int" namespace="app" generatorUrl="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/LinearLayoutManager" order="101"/>
+          <CustomAttribute name="reverseLayout" type="boolean" code="code: setReverseLayout(objValue);" javaType="int" namespace="app" generatorUrl="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/LinearLayoutManager" order="101" getterCode="code: isReverseLayout()"/>
+          <CustomAttribute name="scrollToEnd" type="boolean" code="code: scrollToEnd(objValue);" javaType="int" useMethodName="true" generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView" namespace="default"/>
+          <CustomAttribute name="scrollToTop" type="boolean" code="code: scrollToTop(objValue);" javaType="int" useMethodName="true" generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView" namespace="default"/>
+          <CustomAttribute name="scrollToPosition" type="int" code="code: scrollToPosition(objValue);" javaType="int" useMethodName="true" generatorUrl="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView" namespace="default"/>
+		 <CustomAttribute name="headerDisabled" type="boolean" code="code: setHeaderDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>          
+		 <CustomAttribute name="footerDisabled" type="boolean" code="code: setFooterDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>
+        <Generator type="docurl" url="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView" propertyfile="recycleview.properties">
+        </Generator>
+        
+        <ReplaceString name='implements RecyclerView.OnScrollListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnScrollListener implements com.ashera.widget.IListener' target="java"/>
+        <ReplaceString name='implements RecyclerView.OnFlingListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnFlingListener implements com.ashera.widget.IListener' target="java"/>
+        <ReplaceString name='new androidx\.recyclerview\.widget\.RecyclerView\.LayoutParams\(-2, -2\);'  replace='recyclerView.getLayoutManager().generateDefaultLayoutParams();' target="java"/>
+         
+       	<Code
+			url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/ListViewImpl.java">
+			<Copy from="model" to="model">
+			</Copy>
+		</Code>
+   </Widget>
+   
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/RecycleView" template="BaseHasWidgetsTemplate.java" name="androidx.recyclerview.widget.RecyclerView" classname="RecyclerViewImpl" os="swt" prefix="" nativeclassname="androidx.recyclerview.widget.RecyclerView" jstemplate="widgettemplate.js" listView="true" createDefault="asnativewidget|excludeclear|skipRemoveMethods|nativeMakeFrameForChildWidget|" group="androidx.recyclerview.widget.RecyclerView" packageName="androidx.recyclerview.widget"
+        generateXmlTestCase="true" baseDirectory="../../core-javafx-widget/SWTRecycleViewPlugin">
+        <CopyAttribute widget="RecyclerViewImpl" attribute="layoutManager|viewHolderIds|layout|spanCount|addSectionItem|removeSectionItem|removeAllItems|updateSectionItem|stackFromEnd|reverseLayout|scrollToEnd|scrollToTop|scrollToPosition|" onlyForTestCase="false" os="android"/>
+        <CustomAttribute code="code:setOrientation(objValue);" javaType="int" name="orientation" namespace="android" type="orientation" copyDef="jsoncache/androidLinearLayout.json"  constructor="true" />
+        <CustomAttribute name="swtIncrement" type="int" code="code:setScrollBarIncrement(objValue);" javaType="int" generatorUrl="https://help.eclipse.org/photon/topic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/ScrollBar.html" />
+        
+        <CustomAttribute name="onScrollStateChange" type="string" code="code: setOnScrollStateChange(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        <CustomAttribute name="onScrolled" type="string" code="code: setOnScroll(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        		 <CustomAttribute name="headerDisabled" type="boolean" code="code: setHeaderDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>          
+		 <CustomAttribute name="footerDisabled" type="boolean" code="code: setFooterDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>
+        
+        <Code
+			url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/ListViewImpl.java">
+			<Copy from="model" to="model">
+			</Copy>
+		</Code>
+		<Code
+			url="../../core-android-widget/AndroidRecycleViewPlugin/src/com/ashera/recycleview/RecyclerViewImpl.java">
+			<Copy from="recyclerview" to="recyclerview">
+			</Copy>
+		</Code>
+		<ReplaceString name='new androidx\.recyclerview\.widget\.RecyclerView\.LayoutParams\(-2, -2\);'  replace='recyclerView.getLayoutManager().generateDefaultLayoutParams();' target="java"/>
+		 <ReplaceString name='void nativeCreate\('  replace='void nativeCreateRecycleView(' target="java"/>
+		 <ReplaceString name='ViewGroupImpl.nativeAddView'  replace='//ViewGroupImpl.nativeAddView' target="java"/>
+		 
+		 <ReplaceString name='loadLazyWidgets\(\(com.ashera.model.LoopParam\) null\)'  replace='loadLazyWidgets(RecyclerViewImpl.this)' target="java"/>
+		 <ReplaceString name='loadLazyWidgets\(item\.getLoopParam\(\)\)'  replace='loadLazyWidgets(RecyclerViewImpl.this, -1, null, item.getLoopParam())' target="java"/>
+		 
+		 <ReplaceString name='implements RecyclerView.OnScrollListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnScrollListener implements com.ashera.widget.IListener' target="java"/>
+        <ReplaceString name='implements RecyclerView.OnFlingListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnFlingListener implements com.ashera.widget.IListener' target="java"/>
+		 <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/tsc/src/RecyclerViewAndroidActivity.ts" target="tstest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/res/layout/recyclerviewandroid_test.xml" target="xmltest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+	</Widget>
+	
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/RecycleView" template="BaseHasWidgetsTemplate.java" name="androidx.recyclerview.widget.RecyclerView" classname="RecyclerViewImpl" os="web" prefix="" nativeclassname="androidx.recyclerview.widget.RecyclerView" jstemplate="widgettemplate.js" listView="true" createDefault="asnativewidget|excludeclear|skipRemoveMethods|nativeMakeFrameForChildWidget|postSetAttribute|" group="androidx.recyclerview.widget.RecyclerView" packageName="androidx.recyclerview.widget"
+        generateXmlTestCase="true" baseDirectory="../../core-web-widget/WebRecycleViewPlugin">
+        <CopyAttribute widget="RecyclerViewImpl" attribute="layoutManager|viewHolderIds|layout|spanCount|addSectionItem|removeSectionItem|removeAllItems|updateSectionItem|stackFromEnd|reverseLayout|scrollToEnd|scrollToTop|scrollToPosition|" onlyForTestCase="false" os="android"/>
+        <CustomAttribute code="code:setOrientation(objValue);" javaType="int" name="orientation" namespace="android" type="orientation" copyDef="jsoncache/androidLinearLayout.json"  order="-1" />
+        <CustomAttribute name="onScrollStateChange" type="string" code="code: setOnScrollStateChange(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        <CustomAttribute name="onScrolled" type="string" code="code: setOnScroll(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        		 <CustomAttribute name="headerDisabled" type="boolean" code="code: setHeaderDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>          
+		 <CustomAttribute name="footerDisabled" type="boolean" code="code: setFooterDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>
+        
+        <Code
+			url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/ListViewImpl.java">
+			<Copy from="model" to="model">
+			</Copy>
+		</Code>
+		<Code
+			url="../../core-javafx-widget/SWTRecycleViewPlugin/src/main/java/com/ashera/recycleview/RecyclerViewImpl.java">
+			<Copy from="recyclerview,adjustPaddingIfNecessary">
+			    <ReplaceString name="pane"  replace="htmlElement"/>
+			</Copy>
+		</Code>
+		
+		<Code
+			url="../../core-android-widget/AndroidRecycleViewPlugin/src/com/ashera/recycleview/RecyclerViewImpl.java">
+			<Copy from="recyclerview" to="recyclerview">
+			</Copy>
+		</Code>
+		<ReplaceString name='implements RecyclerView.OnScrollListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnScrollListener implements com.ashera.widget.IListener' target="java"/>
+		<ReplaceString name='new androidx\.recyclerview\.widget\.RecyclerView\.LayoutParams\(-2, -2\);'  replace='recyclerView.getLayoutManager().generateDefaultLayoutParams();' target="java"/>
+		 <ReplaceString name='void nativeCreate\('  replace='void nativeCreateRecycleView(' target="java"/>
+		 <ReplaceString name='loadLazyWidgets\(\(com.ashera.model.LoopParam\) null\)'  replace='loadLazyWidgets(RecyclerViewImpl.this)' target="java"/>
+		 <ReplaceString name='loadLazyWidgets\(item\.getLoopParam\(\)\)'  replace='loadLazyWidgets(RecyclerViewImpl.this, -1, null, item.getLoopParam())' target="java"/>
+		 
+		 <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/tsc/src/RecyclerViewAndroidActivity.ts" target="tstest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/res/layout/recyclerviewandroid_test.xml" target="xmltest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+	</Widget>
+
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/RecycleView" template="BaseHasWidgetsTemplate.java" name="androidx.recyclerview.widget.RecyclerView" classname="RecyclerViewImpl" os="ios" prefix="" nativeclassname="androidx.recyclerview.widget.RecyclerView" jstemplate="widgettemplate.js" listView="true" createDefault="asnativewidget|excludeclear|skipRemoveMethods|nativeMakeFrameForChildWidget|postSetAttribute|" group="androidx.recyclerview.widget.RecyclerView" packageName="androidx.recyclerview.widget"
+        generateXmlTestCase="true" baseDirectory="../../core-ios-widgets/IOSRecycleViewPlugin">
+        <CopyAttribute widget="RecyclerViewImpl" attribute="layoutManager|viewHolderIds|layout|spanCount|addSectionItem|removeSectionItem|removeAllItems|updateSectionItem|stackFromEnd|reverseLayout|scrollToEnd|scrollToTop|scrollToPosition|" onlyForTestCase="false" os="android"/>
+        <CustomAttribute code="code:setOrientation(objValue);" javaType="int" name="orientation" namespace="android" type="orientation" copyDef="jsoncache/androidLinearLayout.json"  order="-1" />
+		<CustomAttribute name="onScrollStateChange" type="string" code="code: setOnScrollStateChange(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        <CustomAttribute name="onScrolled" type="string" code="code: setOnScroll(key, strValue, objValue, decorator);" javaType="int" copyDef="jsoncache/androidandroidx.recyclerview.widget.RecyclerView.json"/>
+        		 <CustomAttribute name="headerDisabled" type="boolean" code="code: setHeaderDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>          
+		 <CustomAttribute name="footerDisabled" type="boolean" code="code: setFooterDisabled(objValue);" javaType="int" namespace="default"  order="-1"/>
+        
+        <Code
+			url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/ListViewImpl.java">
+			<Copy from="model" to="model">
+			</Copy>
+		</Code>
+		<Code
+			url="../../core-javafx-widget/SWTRecycleViewPlugin/src/main/java/com/ashera/recycleview/RecyclerViewImpl.java">
+			<Copy from="recyclerview" to="recyclerview">
+			    <ReplaceString name="pane"  replace="uiView"/>
+			</Copy>
+		</Code>
+		<Code
+			url="../../core-android-widget/AndroidRecycleViewPlugin/src/com/ashera/recycleview/RecyclerViewImpl.java">
+			<Copy from="recyclerview" to="recyclerview">
+			</Copy>
+		</Code>
+		<ReplaceString name='implements RecyclerView.OnScrollListener, com\.ashera\.widget\.IListener'  replace='extends RecyclerView.OnScrollListener implements com.ashera.widget.IListener' target="java"/>
+		<ReplaceString name='new androidx\.recyclerview\.widget\.RecyclerView\.LayoutParams\(-2, -2\);'  replace='recyclerView.getLayoutManager().generateDefaultLayoutParams();' target="java"/>
+		 <ReplaceString name='void nativeCreate\('  replace='void nativeCreateRecycleView(' target="java"/>
+		 <ReplaceString name='loadLazyWidgets\(\(com.ashera.model.LoopParam\) null\)'  replace='loadLazyWidgets(RecyclerViewImpl.this)' target="java"/>
+		<ReplaceString name='loadLazyWidgets\(item\.getLoopParam\(\)\)'  replace='loadLazyWidgets(RecyclerViewImpl.this, -1, null, item.getLoopParam())' target="java"/>
+		 
+		 <ReplaceString name='ViewGroupImpl\.nativeAddView\(asNativeWidget\(\), w\.asNativeWidget\(\)\);'  replace='ViewGroupImpl.nativeAddView(recyclerWrapperView, w.asNativeWidget());' target="java"/>
+		 <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/tsc/src/RecyclerViewAndroidActivity.ts" target="tstest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/res/layout/recyclerviewandroid_test.xml" target="xmltest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+	</Widget>
+	
+</Widgets>

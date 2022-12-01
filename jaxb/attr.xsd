@@ -1,0 +1,74 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+           jxb:version="2.1">
+    <xs:element name="resources">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="attr" maxOccurs="unbounded" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Use a constraintSet XML.  The space from the beginning edge of the parent to this guideline.  The space from the ending edge of the parent to this  guideline.  The percent of total space from the beginning of the parent to this guideline. (e.g. 0.50 = middle) Constrains the left edge of this view to the left edge of the given view ID.  Indicate the type of barrier  Let a chain helper be rtl or not  the ides used in helpers  Constrains the left edge of this view to the right edge of the given view ID.  Constrains the right edge of this view to the left edge of the given view ID.  Constrains the right edge of this view to the right edge of the given view ID.  Constrains the top edge of this view to the top edge of the given view ID.  Constrains the top edge of this view to the bottom edge of the given view ID.  Constrains the bottom edge of this view to the top edge of the given view ID.  Constrains the bottom edge of this view to the bottom edge of the given view ID.  Constrains the baseline of this view to the baseline of the given view ID.  Constrains the start edge of this view to the end edge of the given view ID.  Constrains the start edge of this view to the start edge of the given view ID.  Constrains the end edge of this view to the start edge of the given view ID.  Constrains the end edge of this view to the end edge of the given view ID.  the left margin value to be used when connected to an object that is GONE  the top margin value to be used when connected to an object that is GONE  the right margin value to be used when connected to an object that is GONE  the bottom margin value to be used when connected to an object that is GONE  the start margin value to be used when connected to an object that is GONE  the end margin value to be used when connected to an object that is GONE  Fraction of excess space to distribute on the left when constrained on left &amp; right edges (e.g. .5 = middle) Fraction of excess space to distribute on the top when constrained on top &amp; bottom edges (e.g. .5 = middle) Used at design time to define who created the constraint  Used at design time to define who created the constraint  Used at design time to define who created the constraint  Used at design time to define who created the constraint  Used at design time to define who created the constraint  The ratio between the width and height of the view.
+                            Note it only works if one of the dimensions is set to 0dp. In a Chain, the amount of weight used to spread available horizontal space if the widget is set to MATCH_CONSTRAINT  In a Chain, the amount of weight used to spread available vertical space if the widget is set to MATCH_CONSTRAINT  Set a chain to be packed or not. If true and the widget is the first element of a chain, the chain will not spread,
+                            and the bias will affect the position of the chain elements. It will only work if all elements have a set size (i.e. not MATCH_CONSTRAINT)  Set a chain to be packed or not. If true and the widget is the first element of a chain, the chain will not spread,
+                            and the bias will affect the position of the chain elements. It will only work if all elements have a set size (i.e. not MATCH_CONSTRAINT)  Used at design time to define to position the view  Used at design time to define to position the view  Used to set the type of optimization we apply. This is a mask.  Specify the style of match constraint  handles circular constraints  explicitely enforces constraints in case of WRAP  Specify the visibility of a placeholder  Specify the style of match constraint</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="enum" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                                            <xs:attribute type="xs:byte" name="value" use="optional">
+                                            <xs:annotation>
+                                                <xs:appinfo>
+                                                    <jxb:property name="valueAttribute"/>
+                                                </xs:appinfo>
+                                            </xs:annotation>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="flag" maxOccurs="unbounded" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>for now only direct &amp; barriers</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                                            <xs:attribute type="xs:byte" name="value" use="optional">
+                                                <xs:annotation>
+                                                    <xs:appinfo>
+                                                        <jxb:property name="valueAttribute"/>
+                                                    </xs:appinfo>
+                                                </xs:annotation>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="name" use="optional"/>
+                        <xs:attribute type="xs:string" name="format" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="declare-styleable" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="attr" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="name" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,23 @@
+
+***** Found reference cycle *****
+Parameter -> (field executable with type Executable)
+Executable -> (field parameters with type Parameter)
+----- Full Types -----
+Ljava/lang/reflect/Parameter;
+Ljava/lang/reflect/Executable;
+
+***** Found reference cycle *****
+Method -> (superclass Executable has (field parameters with type Parameter))
+Parameter -> (Method subtype of (field executable with type Executable))
+----- Full Types -----
+Ljava/lang/reflect/Method;
+Ljava/lang/reflect/Parameter;
+
+***** Found reference cycle *****
+CacheKey -> (field loaderRef with type LoaderReference)
+LoaderReference -> (field cacheKey with type CacheKey)
+----- Full Types -----
+Ljava/util/ResourceBundle$CacheKey;
+Ljava/util/ResourceBundle$LoaderReference;
+
+3 CYCLES FOUND.

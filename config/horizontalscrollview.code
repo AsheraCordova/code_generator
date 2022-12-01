@@ -1,0 +1,33 @@
+class ScrollView {
+	private int originalBottomPadding = 0;
+    public void adjustPaddingIfScrollBarPresent(int widthMeasureSpec, int heightMeasureSpec, int thumbHeight) {
+		if (getChildCount() > 0) {
+			final View child = getChildAt(0);
+			final int widthPadding;
+			final int heightPadding;
+			final int targetSdkVersion = getContext().getApplicationInfo().targetSdkVersion;
+			final FrameLayout.LayoutParams lp = (LayoutParams) child.getLayoutParams();
+			if (targetSdkVersion >= VERSION_CODES.M) {
+				widthPadding = mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin;
+				heightPadding = mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin;
+			} else {
+				widthPadding = mPaddingLeft + mPaddingRight;
+				heightPadding = mPaddingTop + mPaddingBottom;
+			}
+			final int desiredWidth = getMeasuredWidth() - widthPadding;
+
+			if (desiredWidth >= child.getMeasuredWidth()) {
+				if (mPaddingBottom == thumbHeight && originalBottomPadding != thumbHeight) {
+					mPaddingBottom = originalBottomPadding;
+					measureChild(child, widthMeasureSpec, heightMeasureSpec);
+				}
+			} else {
+				if (mPaddingBottom < thumbHeight) {
+					originalBottomPadding = mPaddingBottom;
+					mPaddingBottom = thumbHeight;
+					measureChild(child, widthMeasureSpec, heightMeasureSpec);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+<#macro getAdditinalAttrs_ListView attrs name value id localname widgetname>
+<#compress>
+		<#if widgetname=='ListView'>
+		<#if name != 'listitem'>
+			modelFor="let item in looptest.textlayout from testObj->view into loopvar as pathmap"
+            modelIdPath="id"
+            <#if name == 'listSelector' && process='swt'>
+            tools:listitem="@layout/listview_testitemwith_bg"
+            <#else>
+            tools:listitem="@layout/listview_testitem"
+            </#if>
+         </#if>
+         
+         <#if (name == 'iosCellSelectionStyle' || name == 'listSelector') && process == 'ios'>
+			iosAllowsSelection="true"
+         </#if>
+         
+         <#if name == 'divider' && process == 'ios'>
+         	android:dividerHeight="5dp"
+        </#if>
+        
+        <#if name == 'dividerHeight' && process == 'ios'>
+         	android:divider="@drawable/cross3"
+        </#if>
+        
+        <#if (name == 'headerDividersEnabled' || name == 'footerDividersEnabled') && process == 'ios'>
+        	android:dividerHeight="1dp"
+        	android:divider="@drawable/shape_line_drawable"
+        </#if>
+        <#if (name == 'choiceMode')>
+			onItemClick="onItemClick"
+         </#if> 
+         
+         <#if (name = 'footerDividersEnabled' || name=='headerDividersEnabled')>
+            tools:listfooter="@layout/listview_simplefooter"
+            tools:listheader="@layout/listview_simplefooter"
+         </#if>
+         </#if>
+</#compress>	
+</#macro>         

@@ -1,0 +1,31 @@
+android.widget.TextView;capinsets-stretch-top;no;;;code://nothing to implement;;string;int;;;;
+android.widget.TextView;capinsets-stretch-bottom;no;;;code://nothing to implement;;string;int;;;;
+android.widget.TextView;capinsets-stretch-right;no;;;code://nothing to implement;;string;int;;;;
+android.widget.TextView;capinsets-stretch-left;no;;;code://nothing to implement;;string;int;;;;
+android.widget.TextView;background-image;no;;;"code:os-android:nativeImpl.setBgImage(this, strValue, objValue);###os-ios:setBgImg(nativeWidget, objValue);";;imageasset;int;;;;
+;;;;;;;;;;;;
+android.view.View;padding;no;;;"code:int value = $value;nativeImpl.setPadding(this,value);";;dimension;int;;;;
+android.view.View;padding-bottom;no;;;"code:int value = $value;nativeImpl.setPaddingBottom(this,value);";;dimension;int;;;;
+android.view.View;padding-left;no;;;"code:int value = $value; nativeImpl.setPaddingStart(this,value);";;dimension;int;;;;
+android.view.View;padding-right;no;;;"code:int value = $value; nativeImpl.setPaddingEnd(this,value);";;dimension;int;;;;
+android.view.View;padding-top;no;;;"code:int value = $value; nativeImpl.setPaddingTop(this,value);";;dimension;int;;;;
+;;;;;;;;;;;;
+android.widget.TextView;font-family;no;;;"code:updateTypeface(nativeWidget, objValue);";;string;int;;;;
+android.widget.TextView;font-style;no;;;"code:updateFontStyle(nativeWidget, objValue);";;fontstyle;int;;;;
+android.widget.TextView;font-weight;no;;;"code:updateFontWeight(nativeWidget, objValue);";;fontweight;int;;;;
+android.widget.TextView;font-size;no;;;"code:updateFontSize(nativeWidget, objValue);";;dimensionfloat;int;;;;
+;;;;;;;;;;;;
+android.widget.TextView;color;no;;;"code:setTextColor(nativeWidget, objValue);";;color;int;;;;ios
+android.widget.TextView;android:textColor;no;;;"code:setTextColor(nativeWidget, objValue);";;color;int;;;;android
+;;;;;;;;;;;;
+android.widget.TextView;ds-global-key;no;;;"code:setValueFromDS(nativeWidget, objValue);";;string;string;;;;
+android.widget.TextView;ds-local-key-data;no;;;"code:this.localDataKey = strValue;";;string;string;;;;
+android.widget.TextView;bring-to-top;no;;;"code:setBringToTop(nativeWidget, objValue);";;boolean;boolean;;;;
+
+android.view.View;wrap-text;no;-10;;"code:setWrapText(nativeWidget,objValue);";;string;string;;;;ios,android
+android.widget.TextView;max-lines;no;;;"code:setMaxLines(nativeWidget,objValue);";;int;int;;;;
+android.widget.TextView;text-overflow;no;;;"code:setOverFlow(nativeWidget,objValue);";;string;string;;;;
+android.widget.TextView;text-transform;no;;;"code:setTextTransform(nativeWidget,objValue);";;string;string;;;;
+;;;;;;;;;;;;
+android.view.View;max-height;no;;;"code:setMaxHeight(nativeWidget,objValue);";;dimension;int;;;;ios
+android.view.View;max-width;no;;;"code:setMaxWidth(nativeWidget,objValue);";;dimension;int;;;;ios

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						  	<li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li   class="active"><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+							<li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Core Components and Native Components</h1>
+                                <p>
+									Ashera Native is an open source framework for building Android, iOS applications, swt and browser using Apache Cordova and the app platform’s native capabilities. With Ashera, you use Android Studio (Android XML files) to describe the appearance and TypeScript to describe the behavior of your UI like event handlers. You can learn more about Ashera in the next section. But first, let’s cover how components work in Ashera Native.
+                                </p>
+                        
+                            <section id="viewsmobiledev" class="doc-section" >
+
+                                <h2 class="section-title">Views and mobile development</h2>
+                                <div class="section-block">
+                                    <div class="answer">In Android and iOS development, a view is the basic building block of UI: a small rectangular element on the screen which can be used to display text, images, or respond to user input. Even the smallest visual elements of an app, like a line of text or a button, are kinds of views. Some kinds of views can contain other views. It’s views all the way down!
+                                    <div class="d-flex align-items-center justify-content-center" style="flex-direction: column; margin-top: 10px">
+                                    <div><img loading="lazy" src="https://reactnative.dev/docs/assets/diagram_ios-android-views.svg" height="400" alt="Diagram of Android and iOS app showing them both built on top of atomic elements called views." class="img_SS3x"></div>
+                                    <div><label>Just a sampling of the many views used in Android and iOS apps.</label></div>
+                                    </div>
+                                    </div>
+                                </div><!--//section-block-->                                
+                            </section><!--//doc-section-->
+                            
+                            <section id="nativecomponents" class="doc-section">
+                                <h2 class="section-title">Native Components (Android first)</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                        <p>In Android, you write views using xml files backed by java / kotlin files for event and lifecycle handling; in iOS development, you use Swift or Objective-C ; 
+                                        	In swt, you use java ; In browser, you use html.   
+                                        With Ashera Native, you write views using xml files backed by typescript files for event and lifecycle handling. 
+                                        Because Native components are backed by the same views as Android, iOS, swt and browser, Ashera Native apps look, feel, and perform like any other apps. We call these platform-backed components Native Components.
+                                        </p>
+                                        <p>
+	                                        Ashera Native comes with a set of essential, ready-to-use Native Components you can use to start building your app today. These are Ashera Native's Core Components.
+										</p>
+										<p>
+											Ashera Native also lets you build your own Native Components to suit your app’s unique needs.
+											Components built with Ashera are android first. This means that you first find the android widget and then create alaises to these widgets in other platforms.											 
+										</p>
+										<p>
+										Fragment which is basic building block of android has been simulated in other platforms. 
+										Version 1.0.0 of Ashera does not support nested fragments and future releases will support nested fragments.										  
+										</p>
+                                    </div><!--//anwser-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+                            <section id="corecomponents" class="doc-section">
+                                <h2 class="section-title">Core Components</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                        <p>Ashera Native has many Core Components for everything from controls to activity indicators. You can find them all <a class="link" href="https://asheracordova.github.io/doc/" target="_blank">documented in the API section</a>. You will mostly work with the following Core Components:
+                                        </p>
+    
+    									<div class="table-responsive">
+	                                        <table class="table table-striped">
+	                                            <thead>
+	                                                <tr>
+	                                                    <th>ANDROID VIEW</th>
+	                                                    <th>IOS VIEW</th>
+	                                                    <th>WEB ANALOG</th>
+	                                                    <th>SWT ANALOG</th>
+	                                                    <th>DESCRIPTION</th>
+	                                                </tr>
+	                                            </thead>
+	                                            <tbody>
+	                                            	<tr>
+	                                                    <td>View, FrameLayout, LinearLayout etc</td>
+	                                                    <td>&lt;ASUIView&gt;</td>
+	                                                    <td>A non-scrolling &lt;div&gt;</td>
+	                                                    <td>&lt;Composite&gt;</td>
+	                                                    <td>Containers that supports layout.</td>
+	                                                </tr>
+	                                                
+	                                                <tr>
+	                                                    <td>TextView</td>
+	                                                    <td>&lt;ASUILabel&gt;, &lt;ASUITextView&gt;</td>
+	                                                    <td>&lt;label&gt;</td>
+	                                                    <td>&lt;Label&gt;&lt;StyledText&gt;</td>
+	                                                    <td>Displays text and rich text support based on widget.</td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td>ImageView</td>
+	                                                    <td>&lt;ASUIImageView&gt;</td>
+	                                                    <td>&lt;label&gt;</td>
+	                                                    <td>&lt;Label&gt;&lt;StyledText&gt;</td>
+	                                                    <td>Displays png, jpg images.</td>
+	                                                </tr>
+	                                                
+	                                                <tr>
+	                                                    <td>ScrollView</td>
+	                                                    <td>&lt;ASUIScrollView&gt;</td>
+	                                                    <td>&lt;div&gt;</td>
+	                                                    <td>&lt;ScrolledComposite&gt</td>
+	                                                    <td>A generic scrolling container that can contain multiple components and views.</td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td>EditText</td>
+	                                                    <td>&lt;ASUITextField&gt;</td>
+	                                                    <td>&lt;input type="text"&gt;</td>
+	                                                    <td>&lt;Text&gt;&lt;StyledText&gt;</td>
+	                                                    <td>Allows the user to enter text.</td>
+	                                                </tr>
+	                                            </tbody>
+	                                        </table>
+	                                        
+	                                        <p>
+	                                        In the next section, you will start combining these Core Components to learn about how Ashera works. Have a play with them here now!
+											</p>
+	                            
+	                            			<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fcore_component.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>            
+                                    	</div><!--//table-responsive-->
+                                    </div><!--//anwser-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                        
+                       <div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="gettingstarted.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Introduction</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="gettingstarted-fundamentals.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Ashera Fundamentals</div></a>
+							</div>
+						</div>
+                        
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#viewsmobiledev">Views and mobile development</a>
+		                            </li>
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#nativecomponents">Native Components (Android first)</a>
+		                            </li>
+		                            <li class="nav-item">
+	                                     <a class="nav-link scrollto" href="#corecomponents">Core Components</a>
+		                            </li>
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

@@ -1,0 +1,42 @@
+class Linkify{
+  	private static void gatherMapLinks(ArrayList<LinkSpec> links, Spannable text) {
+	}
+	private static void gatherTelLinks(ArrayList<LinkSpec> links, Spannable text, Context context) {
+	}
+	
+	private static void applyLink(  String url,  int start,  int end,  Spannable text,  Function<String,URLSpan> urlSpanFactory){
+	  	URLSpan urlSpan = urlSpanFactory.apply(url);
+	  	urlSpan.url = url;
+	  	urlSpan.start = start;
+	  	urlSpan.end = end;
+  	}
+	
+	interface Spannable extends CharSequence {
+    	URLSpan[] getSpans(    int i,    int length,    Class<URLSpan> class1);
+    	void removeSpan(    URLSpan urlSpan);
+  	}
+	
+	static class URLSpan {
+	  String url;
+	  int start;
+	  int end;
+  	}
+  	
+	public static String linkify(String url, int mask, boolean clickable) {
+		ArrayList<URLSpan> urlspans = new ArrayList<>();
+		Linkify.addLinks(new SpannableImpl(url), mask, new Function<String, Linkify.URLSpan>() {
+			@Override
+			public URLSpan apply(String t) {
+				URLSpan urlspan = new URLSpan();
+				urlspans.add(urlspan);
+				return urlspan;
+			}
+		});
+		for (int i = urlspans.size() - 1; i >= 0; i--) {
+			URLSpan urlSpan = urlspans.get(i);
+			String href = String.format("<a href='%s'>%s</a>", clickable ? "#" : urlSpan.url, urlSpan.url);
+			url = url.substring(0, urlSpan.start) + href + url.substring(urlSpan.end);
+		}
+		return url;
+	}
+}

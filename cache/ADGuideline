@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head> 
+  <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"> 
+  <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award"> 
+  <meta property="og:site_name" content="Android Developers"> 
+  <meta property="og:type" content="website">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#3ddc84">
+  <meta charset="utf-8"> 
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="manifest" href="/_pwa/android/manifest.json" crossorigin="use-credentials"> 
+  <link rel="preconnect" href="//www.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin> 
+  <link rel="preconnect" href="//apis.google.com" crossorigin> 
+  <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons&amp;display=block">
+  <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/css/app.css"> 
+  <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/favicon.png"> 
+  <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/touchicon-180.png">
+  <link rel="canonical" href="https://developer.android.com/reference/android/support/constraint/Guideline">
+  <link rel="search" type="application/opensearchdescription+xml" title="Android Developers" href="https://developer.android.com/s/opensearch.xml"> 
+  <title>Guideline &nbsp;|&nbsp; Android Developers</title> 
+  <meta property="og:title" content="Guideline &nbsp;|&nbsp; Android Developers">
+  <meta property="og:url" content="https://developer.android.com/reference/android/support/constraint/Guideline">
+  <meta property="og:image" content="https://developer.android.com/images/social/android-developers.png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image"> 
+ </head> 
+ <body class="" template="page" theme="android-theme" type="reference" layout="docs" pending> 
+  <devsite-progress type="indeterminate" id="app-progress"></devsite-progress> 
+  <section class="devsite-wrapper">
+   <devsite-header> 
+    <div class="devsite-header--inner nocontent"> 
+     <div class="devsite-top-logo-row-wrapper-wrapper"> 
+      <div class="devsite-top-logo-row-wrapper"> 
+       <div class="devsite-top-logo-row"> 
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" visually-hidden aria-label="Open menu"> </button> 
+        <div class="devsite-product-name-wrapper"> 
+         <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androidDevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers"> </a> 
+         <span class="devsite-product-name"> 
+          <ul class="devsite-breadcrumb-list"> 
+           <li class="devsite-breadcrumb-item
+             "> </li> 
+          </ul> </span> 
+        </div> 
+        <div class="devsite-top-logo-row-middle"> 
+         <div class="devsite-header-upper-tabs"> 
+          <devsite-tabs class="upper-tabs"> 
+           <nav class="devsite-tabs-wrapper" aria-label="Upper tabs"> 
+            <tab> 
+             <a href="https://developer.android.com/about" class="gc-analytics-event " track-type="nav" track-name="platform" track-metadata-eventdetail="https://developer.android.com/about" track-metadata-position="nav - platform" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Platform"> Platform </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/studio" class="gc-analytics-event " track-type="nav" track-name="android studio" track-metadata-eventdetail="https://developer.android.com/studio" track-metadata-position="nav - android studio" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio"> Android Studio </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/distribute" class="gc-analytics-event " track-type="nav" track-name="google play" track-metadata-eventdetail="https://developer.android.com/distribute" track-metadata-position="nav - google play" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Google Play"> Google Play </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/jetpack" class="gc-analytics-event " track-type="nav" track-name="jetpack" track-metadata-eventdetail="https://developer.android.com/jetpack" track-metadata-position="nav - jetpack" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Jetpack"> Jetpack </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/kotlin" class="gc-analytics-event " track-type="nav" track-name="kotlin" track-metadata-eventdetail="https://developer.android.com/kotlin" track-metadata-position="nav - kotlin" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Kotlin"> Kotlin </a> 
+            </tab> 
+            <tab active> 
+             <a href="https://developer.android.com/docs" class="gc-analytics-event " track-type="nav" track-name="docs" track-metadata-eventdetail="https://developer.android.com/docs" track-metadata-position="nav - docs" track-metadata-module="primary nav" aria-label="Docs, selected" data-category="Site-Wide Custom Events" data-label="Tab: Docs"> Docs </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/games" class="gc-analytics-event " track-type="nav" track-name="games" track-metadata-eventdetail="https://developer.android.com/games" track-metadata-position="nav - games" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Games"> Games </a> 
+            </tab> 
+           </nav> 
+          </devsite-tabs> 
+         </div> 
+         <devsite-search aria-expanded="false" aria-haspopup="listbox" enable-signin enable-search enable-suggestions enable-query-completion project-name="Android Developers" tenant-name="Android Developers" role="combobox"> 
+          <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET"> 
+           <div class="devsite-search-container"> 
+            <div class="devsite-searchbox"> 
+             <input aria-activedescendant="" aria-autocomplete="list" aria-label="Search box" aria-haspopup="false" aria-multiline="false" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" role="searchbox" type="text" value=""> 
+             <div class="devsite-search-image material-icons" aria-hidden="true"></div> 
+            </div> 
+            <button type="button" search-open class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search"></button> 
+           </div> 
+          </form> 
+          <button type="button" search-close class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search"></button> 
+         </devsite-search> 
+        </div> 
+        <devsite-language-selector> 
+         <devsite-select class="devsite-language-selector-menu"> 
+          <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"> English </option> <option value="id" lang="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"> Bahasa Indonesia </option> <option value="es_419" lang="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector"> Español – América Latina </option> <option value="pt_br" lang="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector"> 中文 – 简体 </option> <option value="ja" lang="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"> 日本語 </option> <option value="ko" lang="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"> 한국어 </option> </select> 
+         </devsite-select> 
+        </devsite-language-selector> 
+        <devsite-user enable-profiles id="devsite-user"></devsite-user> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="devsite-collapsible-section
+    "> 
+      <div class="devsite-header-background"> 
+       <div class="devsite-product-id-row"> 
+        <div class="devsite-product-description-row"> 
+         <ul class="devsite-breadcrumb-list"> 
+          <li class="devsite-breadcrumb-item
+             "> <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail=""> Documentation </a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="devsite-doc-set-nav-row"> 
+        <devsite-tabs class="lower-tabs"> 
+         <nav class="devsite-tabs-wrapper" aria-label="Lower tabs"> 
+          <tab> 
+           <a href="https://developer.android.com/docs" class="gc-analytics-event " track-type="nav" track-name="overview" track-metadata-eventdetail="https://developer.android.com/docs" track-metadata-position="nav - overview" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Overview"> Overview </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/guide" class="gc-analytics-event " track-type="nav" track-name="guides" track-metadata-eventdetail="https://developer.android.com/guide" track-metadata-position="nav - guides" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Guides"> Guides </a> 
+          </tab> 
+          <tab active> 
+           <a href="https://developer.android.com/reference" class="gc-analytics-event " track-type="nav" track-name="reference" track-metadata-eventdetail="https://developer.android.com/reference" track-metadata-position="nav - reference" track-metadata-module="primary nav" aria-label="Reference, selected" data-category="Site-Wide Custom Events" data-label="Tab: Reference"> Reference </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/samples" class="gc-analytics-event " track-type="nav" track-name="samples" track-metadata-eventdetail="https://developer.android.com/samples" track-metadata-position="nav - samples" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Samples"> Samples </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/design" class="gc-analytics-event " track-type="nav" track-name="design &amp; quality" track-metadata-eventdetail="https://developer.android.com/design" track-metadata-position="nav - design &amp; quality" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Design &amp; Quality"> Design &amp; Quality </a> 
+          </tab> 
+         </nav> 
+        </devsite-tabs> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </devsite-header> 
+   <devsite-book-nav scrollbars> 
+    <nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu"> 
+     <div class="devsite-mobile-header"> 
+      <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation"> </button> 
+      <div class="devsite-product-name-wrapper"> 
+       <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androidDevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers"> </a> 
+       <span class="devsite-product-name"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             "> </li> 
+        </ul> </span> 
+      </div> 
+     </div> 
+     <div class="devsite-book-nav-wrapper"> 
+      <div class="devsite-mobile-nav-top"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item"> <a href="/about" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="platform"> <span class="devsite-nav-text" tooltip> Platform </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/studio" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="androidStudio"> <span class="devsite-nav-text" tooltip> Android Studio </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/distribute" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="googlePlay"> <span class="devsite-nav-text" tooltip> Google Play </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/jetpack" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Jetpack" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="jetpack"> <span class="devsite-nav-text" tooltip> Jetpack </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/kotlin" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Kotlin" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="kotlin"> <span class="devsite-nav-text" tooltip> Kotlin </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/docs" class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="docs"> <span class="devsite-nav-text" tooltip> Docs </span> </a> 
+         <ul class="devsite-nav-responsive-tabs"> 
+          <li class="devsite-nav-item"> <a href="/docs" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="overview"> <span class="devsite-nav-text" tooltip> Overview </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/guide" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="guides"> <span class="devsite-nav-text" tooltip> Guides </span> <span class="devsite-nav-icon material-icons" data-icon="forward"> </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/reference" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="reference"> <span class="devsite-nav-text" tooltip menu="_book"> Reference </span> <span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"> </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/samples" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="samples"> <span class="devsite-nav-text" tooltip> Samples </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/design" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Design &amp; Quality" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="design&amp;Quality"> <span class="devsite-nav-text" tooltip> Design &amp; Quality </span> <span class="devsite-nav-icon material-icons" data-icon="forward"> </span> </a> </li> 
+         </ul> </li> 
+        <li class="devsite-nav-item"> <a href="/games" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Games" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="games"> <span class="devsite-nav-text" tooltip> Games </span> </a> </li> 
+       </ul> 
+      </div> 
+      <div class="devsite-mobile-nav-bottom" role="navigation"> 
+       <ul class="devsite-nav-list" menu="_book"> 
+        <li class="devsite-nav-item
+           devsite-nav-heading">
+         <div class="devsite-nav-title devsite-nav-title-no-path">
+          <span class="devsite-nav-text" tooltip>Android API Reference</span>
+         </div></li> 
+        <li class="devsite-nav-item"><a href="/reference" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li> 
+        <li class="devsite-nav-item
+           devsite-nav-heading">
+         <div class="devsite-nav-title devsite-nav-title-no-path">
+          <span class="devsite-nav-text" tooltip>Constraint Layout Library</span>
+         </div></li> 
+        <li class="devsite-nav-item"><a href="/reference/android/support/constraint/classes" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Class Index</span></a></li> 
+        <li class="devsite-nav-item"><a href="/reference/android/support/constraint/packages" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Package Index</span></a></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>android.support.constraint</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/android/support/constraint/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/Barrier" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Barrier</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/ConstraintLayout" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintLayout</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/ConstraintLayout.LayoutParams" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintLayout.LayoutParams</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/ConstraintProperties" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintProperties</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/ConstraintsChangedListener" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintsChangedListener</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/ConstraintSet" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintSet</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/Group" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Group</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/Guideline" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Guideline</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/Placeholder" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Placeholder</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>android.support.constraint.helper</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/android/support/constraint/helper/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/helper/Flow" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Flow</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/helper/Layer" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Layer</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>android.support.constraint.motion</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/android/support/constraint/motion/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Interfaces</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/motion/Animatable" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Animatable</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/motion/MotionLayout.TransitionListener" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLayout.TransitionListener</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/motion/MotionLayout" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLayout</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/motion/TransitionAdapter" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>TransitionAdapter</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>android.support.constraint.utils</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/android/support/constraint/utils/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/utils/ImageFilterButton" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ImageFilterButton</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/utils/ImageFilterView" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ImageFilterView</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/android/support/constraint/utils/MockView" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MockView</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </devsite-book-nav> 
+   <section id="gc-wrapper"> 
+    <main role="main" class="devsite-main-content" has-book-nav has-toc> 
+     <devsite-toc class="devsite-nav" role="navigation" aria-label="Table of contents"></devsite-toc> 
+     <devsite-content> 
+      <article class="devsite-article">
+       <style>
+      /* Styles inlined from /assets/css/reference-docs.css */
+/* class signature at the top of the page  */
+
+.api-signature,
+devsite-code[dark-code] .api-signature {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-weight: normal;
+  margin: 1em 0;
+  padding: 0 0 8px;
+}
+
+devsite-code[dark-code] .api-signature::-webkit-scrollbar-thumb {
+  background: rgba(128, 134, 139, .26);
+}
+
+.api-signature ~ .devsite-code-buttons-container {
+  display: none;
+}
+
+/* the "added in" info on all APIs */
+.api-level {
+  float: right;
+  font-size: smaller;
+  margin-top: -40px;
+}
+
+/* the "added in" block at the top of the page */
+#api-info-block .api-level {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .api-level {
+    float: none;
+    margin-top: 0;
+  }
+  #api-info-block .api-level {
+    margin-bottom: 20px;
+  }
+}
+
+.api-level a,
+.api-level a:active,
+.api-level a:visited {
+  color: #222;
+}
+
+.api-level a:hover {
+  color: #888;
+}
+
+/* This element is obsolete now that devsite provides TOC */
+#api-info-block .sum-details-links {
+  display: none;
+}
+
+
+/* The table that shows this class's inheritance tree */
+
+.jd-inheritance-table tr,
+.jd-inheritance-table tr td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jd-inheritance-table .jd-inheritance-space {
+  width: 2em;
+}
+
+/* The devsite expandable widget */
+
+.expand-control:not(button):not(.button) {
+  color: inherit;
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+}
+
+.expand-control::before {
+  background: url(/images/styles/disclosure_down.png) no-repeat center center;
+  background-size: 34px 34px;
+  color: transparent;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+
+.expand-control.exw-expanded::before {
+  background: url(/images/styles/disclosure_up.png) no-repeat center center;
+}
+
+/* Known subclasses list */
+
+.jd-sumtable-subclasses #subclasses-direct,
+.jd-sumtable-subclasses #subclasses-indirect {
+  /* left margin matches width of the toggle image,
+     so this section aligns with the text above */
+  margin: 0 0 0 24px;
+}
+
+.jd-sumtable-subclasses .expand-control.exw-expanded + .showalways {
+  /* Hide the comma list when expanded to show the table */
+  display: none;
+}
+
+.jd-sumtable-subclasses tr,
+.jd-sumtable-subclasses td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#subclasses-direct-summary,
+#subclasses-indirect-summary {
+  padding-left: 24px;
+}
+
+.jd-sumtable-expando td {
+  border: solid 1px #ddd;
+  padding: 4px;
+}
+
+.jd-inherited-apis .exw-expanded-content {
+  /* Force override for some lengthy devsite style selectors */
+  padding-left: 24px !important;
+  margin-top: 12px !important;
+}
+
+
+/* Styles for legacy doclava HTML that uses custom expando.
+ * The list of direct/indirect subclasses does not expand at all,
+ * and the list of inherited members/methods is expanded by default. */
+
+.jd-sumtable-subclasses #subclasses-direct-list,
+.jd-sumtable-subclasses #subclasses-indirect-list {
+  /* Force line-wraps for CSVs with no spaces */
+  word-break: break-word;
+}
+
+:not(devsite-expandable) > #subclasses-direct-summary,
+:not(devsite-expandable) > #subclasses-indirect-summary {
+  display: none !important;
+}
+
+.jd-sumtable #subclasses-direct.jd-expando-trigger,
+.jd-sumtable #subclasses-indirect.jd-expando-trigger{
+  margin: 0;
+}
+
+
+/* Force the broken legacy expandos into something that looks WAI */
+
+.jd-expando-trigger {
+  display: inline-block;
+  height: 0;
+  margin: 0;
+  padding-top: 10px;
+  width: 24px;
+}
+
+.jd-expando-trigger img {
+  /* display: none; */
+  height: inherit;
+}
+
+.jd-expando-trigger ~ div > div {
+  display: block !important; /* Force all inline-hidden divs to appear */
+}
+
+table.responsive td td:first-child,
+table.responsive td tr:last-child td,
+table.responsive td tr:first-child td{
+  padding: 7px 8px 8px;
+}
+
+.data-reference-resources-wrapper {
+  display: none;
+}
+
+#lattrs td:first-child,
+.inhtable td:first-child {
+  white-space: nowrap;
+}
+
+#lattrs td+td,
+.inhtable td+td {
+  white-space: normal;
+}
+
+
+/* Styles to highlight the preview APIs */
+
+
+/* Must be updated with each letter-appropriate preview */
+body.apilevel .api-title,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) h3,
+
+[data-version-added="S"] .api-title,
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) h3 {
+  color: #f5ba15;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) .api-level a,
+body.apilevel-P #api-info-block .api-level a,
+
+#jd-content[data-version-added="S"]:not(.devsite-future-version) .api-level a,
+#api-info-block .api-level a[data-version-added="S"] {
+  color: #f5ba15 !important;
+  font-size: 14px;
+  font-weight:900;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr.apilevel-P:not(.devsite-future-version),
+body.apilevel-P #jd-content table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="S"]:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr[data-version-added="S"]:not(.devsite-future-version),
+#jd-content[data-version-added="S"] table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr {
+  background: none;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) th {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) .apilevel-P:not(.devsite-future-version) td,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="S"]:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) [data-version-added="S"]:not(.devsite-future-version) td {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) th {
+  background: #f5ba15;
+}
+
+
+
+/* Misc styles used in the reference */
+
+h1.api-title {
+  margin-bottom: 0;
+}
+
+h2.api-section:not(#summary) {
+  margin-top: 60px;
+  margin-bottom: -20px;
+}
+
+h3.api-name {
+  margin-top: 60px;
+}
+
+.nolist, .nolist ul, .nolist ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td {
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td div:first-of-type {
+  padding-left: 12px;
+}
+
+      </style> 
+       <div class="devsite-article-meta nocontent" role="navigation"> 
+        <ul class="devsite-breadcrumb-list" aria-label="Breadcrumb"> 
+         <li class="devsite-breadcrumb-item
+             "> <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Android Developers"> Android Developers </a> </li> 
+         <li class="devsite-breadcrumb-item
+             "> 
+          <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div> <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" track-type="globalNav" track-name="breadcrumb" track-metadata-position="2" track-metadata-eventdetail=""> Docs </a> </li> 
+         <li class="devsite-breadcrumb-item
+             "> 
+          <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div> <a href="https://developer.android.com/reference" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" track-type="globalNav" track-name="breadcrumb" track-metadata-position="3" track-metadata-eventdetail=""> Reference </a> </li> 
+        </ul> 
+        <devsite-thumb-rating position="header"> 
+         <template class="thumb-down-categories">
+           [{ "type": "thumb-down", "id": "missingTheInformationINeed", "label":"Missing the information I need" },{ "type": "thumb-down", "id": "tooComplicatedTooManySteps", "label":"Too complicated / too many steps" },{ "type": "thumb-down", "id": "outOfDate", "label":"Out of date" },{ "type": "thumb-down", "id": "samplesCodeIssue", "label":"Samples/Code issue" },{ "type": "thumb-down", "id": "otherDown", "label":"Other" }] 
+         </template> 
+         <template class="thumb-up-categories">
+           [{ "type": "thumb-up", "id": "easyToUnderstand", "label":"Easy to understand" },{ "type": "thumb-up", "id": "solvedMyProblem", "label":"Solved my problem" },{ "type": "thumb-up", "id": "otherUp", "label":"Other" }] 
+         </template> 
+        </devsite-thumb-rating> 
+       </div> 
+       <devsite-toc class="devsite-nav" devsite-toc-embedded> 
+       </devsite-toc> 
+       <devsite-recommendations-dropdown class="nocontent"></devsite-recommendations-dropdown> 
+       <div class="devsite-article-body clearfix
+    devsite-no-page-title"> 
+        <div itemscope itemtype="http://developers.google.com/ReferenceObject"> 
+         <!-- This DIV closes at the end of the BODY --> 
+         <meta itemprop="name" content="android.support.constraint.Guideline"> 
+         <div id="naMessage"></div> 
+         <div id="api-info-block"> 
+          <div class="api-level"> 
+          </div> 
+          <div class="sum-details-links">
+            Summary: 
+           <a href="#pubctors">Ctors</a> | 
+           <a href="#pubmethods">Methods</a> | 
+           <a href="#inhmethods">Inherited Methods</a> 
+          </div>
+          <!-- end sum-details-links --> 
+         </div>
+         <!-- end api-info-block --> 
+         <div style="background-image: url(/reference/android/arch/watermark/deprecated.png)" id="jd-content"> 
+          <!-- ======== START OF CLASS DATA ======== --> 
+          <h1 class="api-title" id="guideline" data-text="Guideline">Guideline</h1> 
+          <div style="font-size:medium; margin-bottom:40px; margin-top:15px; border-top:1px solid black;" class="nocontent"> 
+           <aside class="dac-jetpack">
+            This package is part of the Android 
+            <a href="/topic/libraries/support-library">support library</a> which is no longer maintained. The Constraint Layout support library has been superseded by the 
+            <a href="/reference/androidx/constraintlayout/classes">AndroidX Constraint Layout library</a>, which is part of 
+            <a href="/jetpack">Jetpack</a>. The 
+            <code translate="no" dir="ltr">Guideline</code> class has been superseded by 
+            <a href="/reference/androidx/constraintlayout/widget/Guideline"><code translate="no" dir="ltr">androidx.constraintlayout.widget/Guideline</code></a>. We recommend using the AndroidX libraries in all new projects. You should also consider 
+            <a href="/jetpack/androidx/migrate">migrating</a> existing projects to AndroidX.
+           </aside> 
+          </div> 
+          <p> <code class="api-signature" translate="no" dir="ltr"> public class Guideline </code> <br> <code class="api-signature" translate="no" dir="ltr"> </code> <code class="api-signature" translate="no" dir="ltr"> extends View </code> <code class="api-signature" translate="no" dir="ltr"> </code> </p>
+          <table class="jd-inheritance-table"> 
+           <tbody>
+            <tr> 
+             <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="2" class="jd-inheritance-class-cell">View </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="1" class="jd-inheritance-class-cell">android.support.constraint.Guideline </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <br>
+          <hr> 
+          <p>Utility class representing a Guideline helper object for <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintLayout">ConstraintLayout</a></code>. Helper objects are not displayed on device (they are marked as <code translate="no" dir="ltr">View.GONE</code>) and are only used for layout purposes. They only work within a <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintLayout">ConstraintLayout</a></code>. </p>
+          <p> A Guideline can be either horizontal or vertical: </p>
+          <ul> 
+           <li>Vertical Guidelines have a width of zero and the height of their <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintLayout">ConstraintLayout</a></code> parent</li> 
+           <li>Horizontal Guidelines have a height of zero and the width of their <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintLayout">ConstraintLayout</a></code> parent</li> 
+          </ul> 
+          <p> Positioning a Guideline is possible in three different ways: </p>
+          <ul> 
+           <li>specifying a fixed distance from the left or the top of a layout (<code translate="no" dir="ltr">layout_constraintGuide_begin</code>)</li> 
+           <li>specifying a fixed distance from the right or the bottom of a layout (<code translate="no" dir="ltr">layout_constraintGuide_end</code>)</li> 
+           <li>specifying a percentage of the width or the height of a layout (<code translate="no" dir="ltr">layout_constraintGuide_percent</code>)</li> 
+          </ul> 
+          <p> Widgets can then be constrained to a Guideline, allowing multiple widgets to be positioned easily from one Guideline, or allowing reactive layout behavior by using percent positioning. </p>
+          <p> See the list of attributes in <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintLayout.LayoutParams">ConstraintLayout.LayoutParams</a></code> to set a Guideline in XML, as well as the corresponding <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintSet#setGuidelineBegin(int,%20int)">ConstraintSet.setGuidelineBegin(int, int)</a></code>, <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintSet#setGuidelineEnd(int,%20int)">ConstraintSet.setGuidelineEnd(int, int)</a></code> and <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintSet#setGuidelinePercent(int,%20float)">ConstraintSet.setGuidelinePercent(int, float)</a></code> functions in <code translate="no" dir="ltr"><a href="/reference/android/support/constraint/ConstraintSet">ConstraintSet</a></code>. </p>
+          <p> Example of a <code translate="no" dir="ltr">Button</code> constrained to a vertical <code translate="no" dir="ltr">Guideline</code>:<br> </p>
+          <pre translate="no" dir="ltr">&lt;android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"&gt;
+
+    &lt;android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            app:layout_constraintGuide_begin="100dp"
+            android:orientation="vertical"/&gt;
+
+    &lt;Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" /&gt;
+
+&lt;/android.support.constraint.ConstraintLayout&gt;</pre> 
+          <p></p> 
+          <h2 class="api-section" id="summary" data-text="Summary">Summary</h2> 
+          <!-- ======== CONSTRUCTOR SUMMARY ======== --> 
+          <table id="pubctors" class="responsive constructors"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="public-constructors" data-text="Public constructors">Public constructors</h3></th>
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#Guideline(Context)">Guideline</a>(Context context) </code> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#Guideline(Context,%20AttributeSet)">Guideline</a>(Context context, AttributeSet attrs) </code> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#Guideline(Context,%20AttributeSet,%20int)">Guideline</a>(Context context, AttributeSet attrs, int defStyleAttr) </code> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#Guideline(Context,%20AttributeSet,%20int,%20int)">Guideline</a>(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) </code> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="pubmethods" class="responsive methods"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="public-methods" data-text="Public methods">Public methods</h3></th>
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#setGuidelineBegin(int)">setGuidelineBegin</a>(int margin) </code> <p>Set the guideline's distance from the top or left edge. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#setGuidelineEnd(int)">setGuidelineEnd</a>(int margin) </code> <p>Set a guideline's distance to end. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/android/support/constraint/Guideline#setGuidelinePercent(float)">setGuidelinePercent</a>(float ratio) </code> <p>Set a Guideline's percent. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="inhmethods" class="responsive methods inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3 id="inherited-methods" data-text="Inherited methods">Inherited methods</h3></th>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr"> java.lang.Object </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> Object</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> clone() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> boolean</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> equals(Object arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> finalize() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final Class&lt;?&gt;</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> getClass() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> int</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> hashCode() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> notify() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> notifyAll() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> String</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> toString() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait(long arg0, int arg1) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait(long arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait() </code> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- XML Attributes --> 
+          <!-- Enum Values --> 
+          <!-- Constants --> 
+          <!-- Fields --> 
+          <!-- Public ctors --> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <h2 class="api-section" id="public-constructors_1" data-text="Public constructors">Public constructors</h2> 
+          <div> 
+           <h3 class="api-name" id="Guideline(Context)" data-text="Guideline">Guideline</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public Guideline (Context context)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">context</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="Guideline(Context,%20AttributeSet)" data-text="Guideline">Guideline</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public Guideline (Context context, 
+                AttributeSet attrs)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">context</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">attrs</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">AttributeSet</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="Guideline(Context,%20AttributeSet,%20int)" data-text="Guideline">Guideline</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public Guideline (Context context, 
+                AttributeSet attrs, 
+                int defStyleAttr)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">context</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">attrs</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">AttributeSet</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">defStyleAttr</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="Guideline(Context,%20AttributeSet,%20int,%20int)" data-text="Guideline">Guideline</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public Guideline (Context context, 
+                AttributeSet attrs, 
+                int defStyleAttr, 
+                int defStyleRes)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">context</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">attrs</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">AttributeSet</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">defStyleAttr</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">defStyleRes</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <!-- Protected ctors --> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- Public methdos --> 
+          <h2 class="api-section" id="public-methods_1" data-text="Public methods">Public methods</h2> 
+          <div> 
+           <h3 class="api-name" id="setGuidelineBegin(int)" data-text="setGuidelineBegin">setGuidelineBegin</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void setGuidelineBegin (int margin)</pre> 
+           <p>Set the guideline's distance from the top or left edge.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">margin</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code>: the distance to the top or left edge <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="setGuidelineEnd(int)" data-text="setGuidelineEnd">setGuidelineEnd</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void setGuidelineEnd (int margin)</pre> 
+           <p>Set a guideline's distance to end.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">margin</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code>: the margin to the right or bottom side of container <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="setGuidelinePercent(float)" data-text="setGuidelinePercent">setGuidelinePercent</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void setGuidelinePercent (float ratio)</pre> 
+           <p>Set a Guideline's percent.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">ratio</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">float</code>: the ratio between the gap on the left and right 0.0 is top/left 0.5 is middle <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- ========= END OF CLASS DATA ========= --> 
+         </div>
+         <!-- end jd-content --> 
+        </div>
+        <!-- end devsite ReferenceObject --> 
+        <devsite-hats-survey class="nocontent" hats-id="onAFgYxTD0kxBYCLVTd0Z41p75CM" listnr-id="5207477"></devsite-hats-survey> 
+       </div> 
+       <devsite-recommendations yield display="in-page" hidden></devsite-recommendations> 
+       <devsite-thumb-rating position="footer"> 
+        <template class="thumb-down-categories">
+          [{ "type": "thumb-down", "id": "missingTheInformationINeed", "label":"Missing the information I need" },{ "type": "thumb-down", "id": "tooComplicatedTooManySteps", "label":"Too complicated / too many steps" },{ "type": "thumb-down", "id": "outOfDate", "label":"Out of date" },{ "type": "thumb-down", "id": "samplesCodeIssue", "label":"Samples/Code issue" },{ "type": "thumb-down", "id": "otherDown", "label":"Other" }] 
+        </template> 
+        <template class="thumb-up-categories">
+          [{ "type": "thumb-up", "id": "easyToUnderstand", "label":"Easy to understand" },{ "type": "thumb-up", "id": "solvedMyProblem", "label":"Solved my problem" },{ "type": "thumb-up", "id": "otherUp", "label":"Other" }] 
+        </template> 
+       </devsite-thumb-rating> 
+       <devsite-recommendations yield></devsite-recommendations> 
+      </article> 
+      <devsite-content-footer class="nocontent"> 
+       <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p> 
+       <p>Last updated 2020-05-01 UTC.</p> 
+      </devsite-content-footer> 
+     </devsite-content> 
+    </main> 
+    <devsite-footer-promos class="devsite-footer"> 
+     <nav class="devsite-footer-promos nocontent" aria-label="Promotions"> 
+      <ul class="devsite-footer-promos-list"> 
+       <li class="devsite-footer-promo"> <a href="//twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo"> <img class="devsite-footer-promo-icon" src="/_static/android/images/logo-twitter.svg" loading="lazy" alt="Twitter"> Twitter </a> 
+        <div class="devsite-footer-promo-description">
+         Follow @AndroidDev on Twitter
+        </div> </li> 
+       <li class="devsite-footer-promo"> <a href="//www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo"> <img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png" loading="lazy" alt="YouTube"> YouTube </a> 
+        <div class="devsite-footer-promo-description">
+         Check out Android Developers on YouTube
+        </div> </li> 
+      </ul> 
+     </nav> 
+    </devsite-footer-promos> 
+    <devsite-footer-linkboxes class="devsite-footer"> 
+     <nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links"> 
+      <ul class="devsite-footer-linkboxes-list"> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Android </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com/enterprise/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Enterprise </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com/security-center/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> Security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//source.android.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Source </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Support</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Report platform bug </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//issuetracker.google.com/issues/new?component=192697" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Report documentation bug </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//support.google.com/googleplay/android-developer" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> Google Play support </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://google.qualtrics.com/jfe/form/SV_ewWXIoEVLBcyp7f??reserved=1&amp;utm_source=FooterLink&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=developer.android.com&amp;utm_term=0&amp;utm_content=0&amp;productTag=reg&amp;campaignDate=may19&amp;pType=devel&amp;referral_code=gV420370" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Join research studies </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Documentation</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/guide" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Developer guides </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/design" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Design guides </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/reference" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> API reference </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/samples" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Samples </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/studio/intro" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)"> Android Studio </a> </li> 
+        </ul> </li> 
+      </ul> 
+     </nav> 
+    </devsite-footer-linkboxes> 
+    <devsite-footer-utility class="devsite-footer"> 
+     <div class="devsite-footer-utility nocontent"> 
+      <nav class="devsite-footer-sites" aria-label="Other Google Developers websites"> 
+       <a href="https://developers.google.com/" class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link"> <img class="devsite-footer-sites-logo" src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup-developers.svg" loading="lazy" alt="Google Developers"> </a> 
+       <ul class="devsite-footer-sites-list"> 
+        <li class="devsite-footer-sites-item"> <a href="//developer.android.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//developer.chrome.com/home" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link"> Chrome </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//firebase.google.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link"> Firebase </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//cloud.google.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link"> Google Cloud Platform </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//developers.google.com/products/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link"> All products </a> </li> 
+       </ul> 
+      </nav> 
+      <nav class="devsite-footer-utility-links" aria-label="Utility links"> 
+       <ul class="devsite-footer-utility-list"> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link"> Privacy </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="/license" data-category="Site-Wide Custom Events" data-label="Footer License link"> License </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer Brand guidelines link"> Brand guidelines </a> </li> 
+        <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button"> <span class="devsite-footer-utility-description">Get news and tips by email</span> <a class="devsite-footer-utility-link gc-analytics-event" href="/updates" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link"> Subscribe </a> </li> 
+       </ul> 
+       <devsite-language-selector> 
+        <devsite-select class="devsite-language-selector-menu"> 
+         <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"> English </option> <option value="id" lang="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"> Bahasa Indonesia </option> <option value="es_419" lang="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector"> Español – América Latina </option> <option value="pt_br" lang="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector"> 中文 – 简体 </option> <option value="ja" lang="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"> 日本語 </option> <option value="ko" lang="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"> 한국어 </option> </select> 
+        </devsite-select> 
+       </devsite-language-selector> 
+      </nav> 
+     </div> 
+    </devsite-footer-utility> 
+    <devsite-panel></devsite-panel> 
+   </section>
+  </section> 
+  <devsite-sitemask></devsite-sitemask> 
+  <devsite-snackbar></devsite-snackbar> 
+  <devsite-tooltip></devsite-tooltip> 
+  <devsite-heading-link></devsite-heading-link> 
+  <devsite-analytics enable-analytics-iframe> 
+   <script type="application/json" analytics>[{"gaid": "UA-5831155-1", "dimensions": {"dimension5": "en", "dimension11": false, "dimension6": "en", "dimension4": "Android Developers", "dimension3": false, "dimension1": "Signed out"}, "metrics": {"ratings_count": "metric2", "ratings_value": "metric1"}}]</script> 
+   <script type="application/json" gtm>{"parameters": {"freeTrialEligibleUser": "False", "internalUser": "False", "language": {"machineTranslated": "False", "requested": "en", "served": "en"}, "pageType": "reference", "projectName": "Android Developers", "signedIn": "False", "tenant": "android", "recommendations": {"sourcePage": "", "sourceType": 0, "sourceRank": 0, "sourceIdenticalDescriptions": 0, "sourceTitleWords": 0, "sourceDescriptionWords": 0, "experiment": ""}}, "tags": ["GTM-KMSWPCJ"]}</script> 
+  </devsite-analytics> 
+  <devsite-badger></devsite-badger> 
+  <android-fully-clickable target=".fully-clickable" watch="devsite-content"></android-fully-clickable> 
+  <script nonce="BJezkGkjUiOp+FAN4o+K3WbUq0yjsE">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg","https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,40,50,63,70,75,76,80,87,88,91,92,93,97,98,100,101,102,103,104,105,107,108,111,112,113,115,116,117,118,120,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,138,147,148,149],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg"]')
+  
+</script> 
+  <devsite-a11y-announce></devsite-a11y-announce>  
+ </body>
+</html>

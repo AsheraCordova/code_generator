@@ -1,0 +1,48 @@
+class ActionMenuPresenter {
+  public ActionMenuPresenter(){
+    mReserveOverflow=true;
+    mWidthLimit = com.ashera.widget.PluginInvoker.getScreenWidth()/2;
+    mActionItemWidthLimit=mWidthLimit;
+    mMinCellSize=(int)(ActionMenuView.MIN_CELL_SIZE);
+    mMaxItems=getMaxActionButtons();
+  }
+  public int getMaxActionButtons(){
+    int widthDp=com.ashera.widget.PluginInvoker.getScreenWidthDp();
+    int heightDp=com.ashera.widget.PluginInvoker.getScreenHeightDp();
+    int smallest=widthDp > heightDp ? widthDp : heightDp;
+    if (smallest > 600 || widthDp > 600 || widthDp > 960 && heightDp > 720 || widthDp > 720 && heightDp > 960) {
+      return 5;
+    }
+ else     if (widthDp >= 500 || widthDp > 640 && heightDp > 480 || widthDp > 480 && heightDp > 640) {
+      return 4;
+    }
+ else {
+      return widthDp >= 360 ? 3 : 2;
+    }
+  }
+  
+  private void subtractOverFlow() {
+		int width = mWidthLimit;
+	  if (mReserveOverflow) {
+	      if (mOverflowButton == null) {
+	          mOverflowButton = mMenuView.getOverFlowButton();
+	          final int spec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
+	          mOverflowButton.measure(spec, spec);
+	      }
+	      width -= mOverflowButton.getMeasuredWidth();
+	  } else {
+	      mOverflowButton = null;
+	  }
+	  mWidthLimit = width;
+	  mActionItemWidthLimit=mWidthLimit;
+}
+   public void setOverFlowButton(View overflowButton) {
+   	mOverflowButton = overflowButton;
+   }
+   class ActionProvider {
+   	public void setSubUiVisibilityListener(ActionMenuPresenter actionMenuPresenter) {
+		
+	}
+   }
+   private View mOverflowButton;
+}

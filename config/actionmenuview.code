@@ -1,0 +1,73 @@
+class ActionMenuView {
+	public ActionMenuView() {
+		setBaselineAligned(false);
+		final float density = getResources().getDisplayMetrics().density;
+        mMinCellSize = (int) (MIN_CELL_SIZE * density);
+        mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
+	}
+public int getDividerWidth() {
+	return 0;
+}
+	protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+		return new LayoutParams(p);
+	}
+
+	ActionMenuPresenter mPresenter;
+	public MenuBuilder getMenu() {
+	    if (mMenu == null) {
+	    	mMenu = new MenuBuilder();
+	        mPresenter = new ActionMenuPresenter();
+	        mPresenter.setReserveOverflow(true);
+	        mPresenter.setMenu(mMenu);
+	        mMenu.setActionMenuPresenter(mPresenter);
+	        mPresenter.setMenuView(this);
+	    }
+	
+	    return mMenu;
+	}
+
+  	public void updateMenuView() {
+	  	mPresenter.updateMenuView(true);
+  	}
+  	
+  	public View getItemView(r.android.view.MenuItem item) {
+		return null;
+	}
+	public View getOverFlowButton() {
+		return null;
+	}
+	public static boolean isActionMenuItemView(View child) {
+		return child != null && child.getTag() != null && child.getTag().equals(1);
+  	}
+  	
+  	private static boolean hasTextStatic(View itemView) {
+		return ((ActionMenuView) itemView.getParent()).hasText(itemView);
+  	}
+  	public boolean hasText(View child) {
+		return false;
+	}
+	/*@Override
+	public void addView(r.android.view.View child) {
+		super.addView(child);
+		if (child.getId() == 1) {
+			mPresenter.setOverFlowButton(child);
+		}
+	}
+	@Override
+		public void addView(r.android.view.View child,
+				r.android.view.ViewGroup.LayoutParams params) {
+		if (child.getId() == 1) {
+			((com.ashera.android.factory.ui.ButtonImpl)child.getTag()).setVisible(true);
+		}
+			super.addView(child, params);
+	}*/
+	
+	class ActionMenuChildView extends View{
+		boolean needsDividerAfter() {
+		return false;
+		}
+		boolean needsDividerBefore() {
+		return false;
+		}
+	}
+}

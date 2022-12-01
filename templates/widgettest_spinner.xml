@@ -1,0 +1,59 @@
+<#macro getAdditinalAttrs_Spinner attrs name value id localname widgetname>
+<#compress>
+	<#if widgetname=='Spinner' || widgetname=='com.ashera.layout.MultiSelectionSpinner' || widgetname=='CCombo'>
+	<#if attrs.trimmedAttribute == 'modelOptionTextPath'>
+		modelFor="let item in looptest.textlayout from testObj->view into loopvar as pathmap"
+		modelIdPath="id"
+		selectedValue="1"
+		selectedValues="1,2"
+	</#if>
+	<#if attrs.trimmedAttribute != 'entries' && attrs.trimmedAttribute != 'modelOptionTextPath'>
+		android:entries="@array/autosize_text_sizes"
+	</#if>
+	<#if attrs.trimmedAttribute != 'values' && attrs.trimmedAttribute != 'modelOptionTextPath'>
+		values="@array/values_autosize_text_sizes"
+	</#if>
+	<#if attrs.trimmedAttribute == 'prompt' ||  attrs.trimmedAttribute == 'onNothingSelected'>
+		android:spinnerMode="dialog"
+	</#if>
+	</#if>
+</#compress>	
+</#macro>         
+
+<#function getTestCases_Spinner attrs widgetname>
+	
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'selection' && widgetname == 'com.ashera.layout.MultiSelectionSpinner'>
+		<#assign myarray = myarray + ["0,1"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'modelOptionTextPath'>
+		<#assign myarray = myarray + ["a from item->loopvar"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'selectedValue'>
+		<#assign myarray = myarray + ["20"]>
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'selectedValues'>
+		<#assign myarray = myarray + ["20,40"]>
+	</#if>
+	
+	<#return myarray>
+</#function>
+
+<#function getTestCases_attrs_Spinner attrs widgetname>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'selection' && widgetname == 'com.ashera.layout.MultiSelectionSpinner'>
+		<#assign myarray = myarray + ["'1,2,3'"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'modelOptionTextPath'>
+		<#assign myarray = myarray + ["'a from item->loopvar'"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'selectedValue'>
+		<#assign myarray = myarray + ["'40'"]>
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'selectedValues'>
+		<#assign myarray = myarray + ["'40,60'"]>
+	</#if>
+	<#return myarray>
+</#function>	

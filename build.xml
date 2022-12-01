@@ -1,0 +1,1227 @@
+<project default="buildProjects">
+	<property file="build.properties"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="ant-contrib-0.6.jar" />
+		</classpath>
+	</taskdef>
+	
+    <target name="buildProjects">
+        <antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/widget_library"/>
+  		</antcall>
+  		<antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/Plugin_Navigator"/>
+  		</antcall>
+  		<antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/Plugin_HtmlParser"/>
+  		</antcall>
+  		<antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/Plugin_Converter"/>
+  		</antcall>
+  		<antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/html_parser"/>
+  		</antcall>
+  		<antcall target="runmaven">
+    		<param name="dir" value="../../core-widget_library/css_parser"/>
+  		</antcall>
+    </target>
+	
+    <property name="overwrite" value="true"/>
+    <property name="overwriteres" value="false"/>
+    <target name="syncFiles">
+        <!-- start copy -->
+		<if>
+		<available file="${demoDir}/java/com/ashera/cssborder/BorderCordovaPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/cssborder/BorderCordovaPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCSSBorderPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/cssborder/BorderCordovaPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/BorderViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/BorderViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCSSBorderPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/BorderViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/capinsets/CapInsetsCommandConverter.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/capinsets/CapInsetsCommandConverter.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCapInsetsPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/capinsets/CapInsetsCommandConverter.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/CapInsetsViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/CapInsetsViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCapInsetsPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/CapInsetsViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/converter/ColorConverter.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/converter/ColorConverter.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidConverterPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/converter/ColorConverter.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/core/ApplicationUtils.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/core/ApplicationUtils.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCorePlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/core/ApplicationUtils.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/res/color/border_material_color.xml" type="file" />
+		<then>
+    		<echo>Copied res/color/border_material_color.xml</echo>
+			<copy todir="${demoDir}/res" overwrite="${overwriteres}">  
+  				<fileset dir="../../core-android-widget/AndroidCorePlugin/res" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored res/color/border_material_color.xml</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/package.json" type="file" />
+		<then>
+    		<echo>Copied tsc/package.json</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCorePlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/package.json</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/customwidgetextension/CordovaCustomWidgetExtension.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/customwidgetextension/CordovaCustomWidgetExtension.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCustomWidgetExtension/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/customwidgetextension/CordovaCustomWidgetExtension.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/CustomWidgetExtensionViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/CustomWidgetExtensionViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidCustomWidgetExtension/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/CustomWidgetExtensionViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/datetime/CordovaDateTimePlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/datetime/CordovaDateTimePlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidDateTimePlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/datetime/CordovaDateTimePlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/res/drawable-xxxhdpi/icon_calendar.png" type="file" />
+		<then>
+    		<echo>Copied res/drawable-xxxhdpi/icon_calendar.png</echo>
+			<copy todir="${demoDir}/res" overwrite="${overwriteres}">  
+  				<fileset dir="../../core-android-widget/AndroidDateTimePlugin/res" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored res/drawable-xxxhdpi/icon_calendar.png</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/DatePickerImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/DatePickerImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidDateTimePlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/DatePickerImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/glide/CordovaGlidePlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/glide/CordovaGlidePlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidGlidePlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/glide/CordovaGlidePlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/jsonadapter/JSONAdapter.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/jsonadapter/JSONAdapter.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidJsonAdapter/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/jsonadapter/JSONAdapter.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/layout/AndroidLayoutsCordovaPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/layout/AndroidLayoutsCordovaPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidLayouts/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/layout/AndroidLayoutsCordovaPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/res/values/model_attrs.xml" type="file" />
+		<then>
+    		<echo>Copied res/values/model_attrs.xml</echo>
+			<copy todir="${demoDir}/res" overwrite="${overwriteres}">  
+  				<fileset dir="../../core-android-widget/AndroidLayouts/res" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored res/values/model_attrs.xml</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/ButtonImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/ButtonImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidLayouts/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/ButtonImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/drawerlayout/CordovaNavigationDrawerPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/drawerlayout/CordovaNavigationDrawerPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidNavigationDrawerPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/drawerlayout/CordovaNavigationDrawerPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/DrawerLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/DrawerLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidNavigationDrawerPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/DrawerLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/picasso/CordovaPicassoPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/picasso/CordovaPicassoPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidPicassoPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/picasso/CordovaPicassoPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/recycleview/CordovaRecycleViewPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/recycleview/CordovaRecycleViewPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidRecycleViewPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/recycleview/CordovaRecycleViewPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/RecyclerViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/RecyclerViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidRecycleViewPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/RecyclerViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/shutterbug/CordovaShutterBugPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/shutterbug/CordovaShutterBugPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidShutterBugPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/shutterbug/CordovaShutterBugPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/toolbar/CordovaToolbarPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/toolbar/CordovaToolbarPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidToolbarPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/toolbar/CordovaToolbarPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/ToolbarImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/ToolbarImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidToolbarPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/ToolbarImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/gentool/androidbackup.js" type="file" />
+		<then>
+    		<echo>Copied gentool/androidbackup.js</echo>
+			<copy todir="${demoDir}/gentool" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidToolsPlugin/gentool" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored gentool/androidbackup.js</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/constraintlayout/AndroidXConstraintLayout.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/constraintlayout/AndroidXConstraintLayout.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidXConstraintLayout/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/constraintlayout/AndroidXConstraintLayout.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/BarrierImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/BarrierImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidXConstraintLayout/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/BarrierImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/java/com/ashera/gridlayout/AndroidXGridLayoutPlugin.java" type="file" />
+		<then>
+    		<echo>Copied java/com/ashera/gridlayout/AndroidXGridLayoutPlugin.java</echo>
+			<copy todir="${demoDir}/java" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidXGridLayoutPlugin/src" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored java/com/ashera/gridlayout/AndroidXGridLayoutPlugin.java</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/android/widget/GridLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/android/widget/GridLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-android-widget/AndroidXGridLayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/android/widget/GridLayoutImpl.ts</echo>
+		</else>
+		</if>
+
+     <!-- copy end -->
+     	 <!-- start javafx -->
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/BarrierImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/BarrierImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXConstraintLayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/BarrierImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/GridLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/GridLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXGridlayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/GridLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/BorderViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/BorderViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCSSBorderPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/BorderViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/CapInsetsViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/CapInsetsViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCapInsetsPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/CapInsetsViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCustomWidgetExtension/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/DatePickerImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/DatePickerImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSDateTimePlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/DatePickerImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/IQkeyboardManagerImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/IQkeyboardManagerImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSIQkeyboardManagerPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/IQkeyboardManagerImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/DrawerLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/DrawerLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSNavigationDrawerPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/DrawerLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/RecyclerViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/RecyclerViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSRecycleViewPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/RecyclerViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/ActionMenuViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/ActionMenuViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSToolbarPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/ActionMenuViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/BarrierImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/BarrierImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTAndroidXConstraintLayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/BarrierImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/DrawerLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/DrawerLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTAndroidXDrawerLayout/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/DrawerLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/GridLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/GridLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTAndroidXGridlayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/GridLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/BorderViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/BorderViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTCSSBorderPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/BorderViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/CapInsetsViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/CapInsetsViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTCapInsetsPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/CapInsetsViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/CustomWidgetExtensionViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/CustomWidgetExtensionViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTCustomWidgetExtension/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/CustomWidgetExtensionViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/DatePickerImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/DatePickerImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTDateTimePlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/DatePickerImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/DrawerLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/DrawerLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTNavigationDrawerPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/DrawerLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/RecyclerViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/RecyclerViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTRecycleViewPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/RecyclerViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/ActionMenuViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/ActionMenuViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/SWTToolbarPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/ActionMenuViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/BarrierImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/BarrierImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebAndroidXConstraintLayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/BarrierImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/GridLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/GridLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebAndroidXGridlayoutPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/GridLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/BorderViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/BorderViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebCSSBorderPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/BorderViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/CapInsetsViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/CapInsetsViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebCapInsetsPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/CapInsetsViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebCustomWidgetExtension/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/CustomWidgetExtensionViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/DatePickerImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/DatePickerImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebDateTimePlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/DatePickerImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/DrawerLayoutImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/DrawerLayoutImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebNavigationDrawerPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/DrawerLayoutImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/RecyclerViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/RecyclerViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebRecycleViewPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/RecyclerViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/ActionMenuViewImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/ActionMenuViewImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/WebToolbarPlugin/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/ActionMenuViewImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/ios/widget/ButtonImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/ios/widget/ButtonImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/ios_widget_library/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/ios/widget/ButtonImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/swt/widget/ButtonImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/swt/widget/ButtonImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-javafx-widget/javafx_widget_library/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/swt/widget/ButtonImpl.ts</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/tsc/src/web/widget/ButtonImpl.ts" type="file" />
+		<then>
+    		<echo>Copied tsc/src/web/widget/ButtonImpl.ts</echo>
+			<copy todir="${demoDir}/tsc" overwrite="${overwrite}">  
+  				<fileset dir="../../core-web-widget/web-widget-library/tsc" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored tsc/src/web/widget/ButtonImpl.ts</echo>
+		</else>
+		</if>
+
+     <!-- javafx end -->
+    <!-- start ios -->
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/ios/src/BarrierImpl.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/ios/src/BarrierImpl.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXConstraintLayoutPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/ios/src/BarrierImpl.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/AndroidXConstraintLayout/src/AlignHorizontallyReference.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/AndroidXConstraintLayout/src/AlignHorizontallyReference.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXConstraintLayoutPlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.constraintlayout.ios/ConstraintLayoutPlugin/AndroidXConstraintLayout/src/AlignHorizontallyReference.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/ios/src/GridLayoutCordovaPlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/ios/src/GridLayoutCordovaPlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXGridlayoutPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/ios/src/GridLayoutCordovaPlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/AndroidX-Gridlayout/src/GridLayout.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/AndroidX-Gridlayout/src/GridLayout.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSAndroidXGridlayoutPlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.gridlayout.ios/GridLayoutPlugin/AndroidX-Gridlayout/src/GridLayout.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.cssborder.ios/CSSBorderPlugin/ios/src/Border.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.cssborder.ios/CSSBorderPlugin/ios/src/Border.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.cssborder.ios/CSSBorderPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCSSBorderPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.cssborder.ios/CSSBorderPlugin/ios/src/Border.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.capinsets.ios/CapInsetsPlugin/ios/src/CapInsetsCommandConverter.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.capinsets.ios/CapInsetsPlugin/ios/src/CapInsetsCommandConverter.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.capinsets.ios/CapInsetsPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCapInsetsPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.capinsets.ios/CapInsetsPlugin/ios/src/CapInsetsCommandConverter.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/ios/src/CGTintColorCommandConverter.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/ios/src/CGTintColorCommandConverter.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSConverter/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/ios/src/CGTintColorCommandConverter.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/Plugin_Converter/src/AbstractBitFlagConverter.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/Plugin_Converter/src/AbstractBitFlagConverter.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSConverter/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.converter.ios/ConverterPlugin/Plugin_Converter/src/AbstractBitFlagConverter.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/ios/src/ASAppDelegate.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/ios/src/ASAppDelegate.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCorePlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/ios/src/ASAppDelegate.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/AndroidCore/src/AbsListView.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/AndroidCore/src/AbsListView.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCorePlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.core.ios/CorePlugin/AndroidCore/src/AbsListView.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.customwidgetextension.ios/CustomWidgetExtension/ios/src/CordovaCustomWidgetExtension.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.customwidgetextension.ios/CustomWidgetExtension/ios/src/CordovaCustomWidgetExtension.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.customwidgetextension.ios/CustomWidgetExtension/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSCustomWidgetExtension/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.customwidgetextension.ios/CustomWidgetExtension/ios/src/CordovaCustomWidgetExtension.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.datetime.ios/DateTimePlugin/ios/src/CordovaDateTimePlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.datetime.ios/DateTimePlugin/ios/src/CordovaDateTimePlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.datetime.ios/DateTimePlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSDateTimePlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.datetime.ios/DateTimePlugin/ios/src/CordovaDateTimePlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.iqkeyboardmanager.ios/IQkeyboardManagerPlugin/ios/src/ASIQPreviousNextView.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.iqkeyboardmanager.ios/IQkeyboardManagerPlugin/ios/src/ASIQPreviousNextView.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.iqkeyboardmanager.ios/IQkeyboardManagerPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSIQkeyboardManagerPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.iqkeyboardmanager.ios/IQkeyboardManagerPlugin/ios/src/ASIQPreviousNextView.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.json.ios/JSONCore/ios/src/ASDictionaryMap.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.json.ios/JSONCore/ios/src/ASDictionaryMap.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.json.ios/JSONCore/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSJSONAdapter/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.json.ios/JSONCore/ios/src/ASDictionaryMap.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/NavigationDrawerPlugin/ios/src/CordovaNavigationDrawerPlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/NavigationDrawerPlugin/ios/src/CordovaNavigationDrawerPlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/NavigationDrawerPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSNavigationDrawerPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/NavigationDrawerPlugin/ios/src/CordovaNavigationDrawerPlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/AndroidXDrawerLayout/AndroidXDrawerLayout/.AndroidXDrawerLayout-classpath" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/AndroidXDrawerLayout/AndroidXDrawerLayout/.AndroidXDrawerLayout-classpath</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/AndroidXDrawerLayout" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSNavigationDrawerPlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.drawerlayout.ios/AndroidXDrawerLayout/AndroidXDrawerLayout/.AndroidXDrawerLayout-classpath</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/RecycleViewPlugin/ios/src/CordovaRecycleViewPlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/RecycleViewPlugin/ios/src/CordovaRecycleViewPlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/RecycleViewPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSRecycleViewPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/RecycleViewPlugin/ios/src/CordovaRecycleViewPlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/AndroidXRecyclerView/AndroidXRecyclerView/src/AdapterHelper.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/AndroidXRecyclerView/AndroidXRecyclerView/src/AdapterHelper.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/AndroidXRecyclerView" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSRecycleViewPlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.recycleview.ios/AndroidXRecyclerView/AndroidXRecyclerView/src/AdapterHelper.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.sdwebimage.ios/IOSSDWebImagePlugin/ios/src/CordovaSDWebImagePlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.sdwebimage.ios/IOSSDWebImagePlugin/ios/src/CordovaSDWebImagePlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.sdwebimage.ios/IOSSDWebImagePlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSSDWebImagePlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.sdwebimage.ios/IOSSDWebImagePlugin/ios/src/CordovaSDWebImagePlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.shutterbug.ios/IOSShutterBugPlugin/ios/src/BitmapFactoryScale.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.shutterbug.ios/IOSShutterBugPlugin/ios/src/BitmapFactoryScale.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.shutterbug.ios/IOSShutterBugPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSShutterBugPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.shutterbug.ios/IOSShutterBugPlugin/ios/src/BitmapFactoryScale.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/ToolbarPlugin/ios/src/ActionMenuViewImpl.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/ToolbarPlugin/ios/src/ActionMenuViewImpl.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/ToolbarPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSToolbarPlugin/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/ToolbarPlugin/ios/src/ActionMenuViewImpl.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/AndroidToolbarPlugin/AndroidToolbarPlugin/src/ActionMenuPresenter.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/AndroidToolbarPlugin/AndroidToolbarPlugin/src/ActionMenuPresenter.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/AndroidToolbarPlugin" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/IOSToolbarPlugin/library" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.toolbar.ios/AndroidToolbarPlugin/AndroidToolbarPlugin/src/ActionMenuPresenter.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios/src/AndroidLayoutsCordovaPlugin.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios/src/AndroidLayoutsCordovaPlugin.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/ios_widget_library/ios" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios/src/AndroidLayoutsCordovaPlugin.h</echo>
+		</else>
+		</if>
+		<if>
+		<available file="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios_ext/src/ASUIActivityIndicatorView.h" type="file" />
+		<then>
+    		<echo>Copied ../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios_ext/src/ASUIActivityIndicatorView.h</echo>
+			<copy todir="${demoDir}/../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios_ext" overwrite="${overwrite}">  
+  				<fileset dir="../../core-ios-widgets/ios_widget_library/ios_ext" includes="**"/>  
+			</copy>
+		</then>
+		<else>
+    		<echo>Ignored ../../../../ios/${iosProjectName}/Plugins/com.ashera.layout.ios/LayoutPlugin/ios_ext/src/ASUIActivityIndicatorView.h</echo>
+		</else>
+		</if>
+
+     <!-- ios end -->
+        
+    </target>
+    <target name="copyFilesToDemo">
+
+        
+        <antcall target="syncFiles">
+    		<param name="demoDir" value="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/"/>
+    		<param name="iosProjectName" value="HelloCordova"/>
+  		</antcall>
+
+        <antcall target="syncFiles">
+    		<param name="demoDir" value="../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/platforms/android/app/src/main/"/>
+    		<param name="iosProjectName" value="DemoApp"/>
+  		</antcall>
+  		
+		
+        <antcall target="syncswtiosweb">
+    		<param name="projectName" value="demoapp1"/>
+  		</antcall>
+  		
+        <antcall target="syncFiles">
+    		<param name="demoDir" value="../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp2/platforms/android/app/src/main/"/>
+    		<param name="iosProjectName" value="DemoApp2"/>
+  		</antcall>
+  		
+        <antcall target="syncswtiosweb">
+    		<param name="projectName" value="demoapp2"/>
+  		</antcall>
+  		
+        <antcall target="syncFiles">
+    		<param name="demoDir" value="../../ashera-demo-projects/ashera-phonegap-demo-project/playground/platforms/android/app/src/main/"/>
+    		<param name="iosProjectName" value="playground"/>
+  		</antcall>
+  		
+        <antcall target="syncswtiosweb">
+    		<param name="projectName" value="playground"/>
+  		</antcall>
+        
+         <antcall target="syncFilesStarterProject">
+    		<param name="demoDir" value="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/"/>
+  		</antcall>
+    </target>
+    
+    <target name="syncswtiosweb">
+        <exec dir="../../ashera-demo-projects/ashera-phonegap-demo-project/${projectName}/platforms/android/app/src/main/gentool" executable="cmd.exe">
+         	<arg line="/c node autoGenerateFiles.js skip_watch"/>
+        </exec>
+    </target>
+
+    <target name="syncFilesStarterProject">
+    	<copy todir="${demoDir}/assets/www/layout" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res/layout" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		
+		<copy todir="${demoDir}/../../../../../www" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../platforms/ios/www" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../ios/resources" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/resources" />  
+		</copy>
+		
+		<copy tofile="${demoDir}/../../../com.ashera.tools/demo-core.gradle" overwrite="${overwrite}">  
+  			<fileset dir="../../core-android-widget/AndroidToolsPlugin" includes="tools.gradle"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/www/layout" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www/layout" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/resources" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/res/font" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res/font" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/res-swt" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res-swt" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/res/xml" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res/xml" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/www/css" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www/css" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-javafx-widget/SWTStarter/src/main/resources/www/" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www" includes="language.properties,index.html,cordova.js,js/*,plugins/**,cordova_plugins.js" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/resources" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/resources" includes="**" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/resources/www/layout" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www/layout" includes="**" excludes="cordova-js-src/**,cordova.js,cordova_plugins.js,plugins/**"/>  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/resources/res/xml" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res/xml" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/resources/www/css" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www/css" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/resources/www/" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www" includes="language.properties" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/webapp" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www" includes="cordova.js,js/*,plugins/**,cordova_plugins.js" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/webapp/res/font" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res/font" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/webapp/res-swt" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/res-swt" />  
+		</copy>
+		
+		<copy todir="${demoDir}/../../../../../../../../core-web-widget/WebStarter/src/main/webapp/css" overwrite="${overwrite}">  
+  			<fileset dir="${demoDir}/assets/www/css" includes="font.css" />  
+		</copy>
+   </target>
+	<target name="runmaven">
+        <exec dir="${dir}" executable="sh">
+            <arg line="-c '/usr/local/apache-maven-3.3.3/bin/mvn clean install'" /> 
+            <!-- <arg line="-c 'D:/Java-Installations/apache-maven-3.5.3/bin/mvn.cmd clean install'" />-->
+        </exec>
+    </target>
+</project>

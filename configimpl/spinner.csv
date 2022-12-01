@@ -1,0 +1,10 @@
+android.view.View;padding;no;;;"code:int value = $value;nativeImpl.setPadding(this,value);";;dimension;int;;;;
+android.view.View;padding-bottom;no;;;"code:int value = $value;nativeImpl.setPaddingBottom(this,value);";;dimension;int;;;;
+android.view.View;padding-left;no;;;"code:int value = $value; nativeImpl.setPaddingStart(this,value);";;dimension;int;;;;
+android.view.View;padding-right;no;;;"code:int value = $value; nativeImpl.setPaddingEnd(this,value);";;dimension;int;;;;
+android.view.View;padding-top;no;;;"code:int value = $value; nativeImpl.setPaddingTop(this,value);";;dimension;int;;;;
+android.widget.TextView;validator;no;;;"code://nothing to implement;";;validator;validator;;;;;
+android.widget.TextView;ds-local-key-options;no;;;"code:setOptionsFromIntent(nativeWidget, objValue);";;string;string;;;;
+android.widget.TextView;placeholder;no;;;"code:setPlaceHolder(nativeWidget, objValue);";;string;string;;;;ios
+android.widget.TextView;exclude-first-option;no;;;"code:setExcludeFirstOption(nativeWidget, objValue);";;boolean;boolean;;;;ios
+android.widget.TextView;ds-local-key-data;no;;;"code:setLocalKeyData(nativeWidget, objValue);";;string;string;;;;

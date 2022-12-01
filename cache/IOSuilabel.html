@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>UILabel - UIKit | Apple Developer Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta data-pid="59417">
+  <link href="https://www.apple.com/wss/fonts?family=Myriad+Set+Pro&amp;v=2" type="text/css" rel="stylesheet" media="all">
+  <link href="https://www.apple.com/wss/fonts?family=Apple+Icons&amp;v=1" type="text/css" rel="stylesheet" media="all">
+  <link href="/reference/__assets/application-ac3989a3.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="mask-icon" href="/reference/__assets/apple-logo.svg" color="#000">
+  <link rel="shortcut icon" href="/reference/__assets/favicon.ico">
+  <script src="/reference/__assets/shared-40c821bf.js"></script>
+ </head>
+ <body>
+  <div id="_omniture_top"> 
+   <script type="text/javascript">
+        var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+      </script> 
+   <script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script> 
+   <script type="text/javascript">
+        s.pageName=AC.Tracking.pageName();
+        s.channel="www.us.developer"
+
+        var s_code=s.t();if(s_code)document.write(s_code)
+      </script> 
+  </div>
+  <div id="app">
+   <div>
+    <a href="#main" id="skip-localnav" class="showonfocus hidden">Skip Navigation</a>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
+    <nav id="ac-globalnav" class="no-js" role="navigation" aria-label="Global" data-hires="false" data-analytics-region="global nav" lang="en-US">
+     <div class="ac-gn-content"> 
+      <ul class="ac-gn-header"> 
+       <li class="ac-gn-item ac-gn-menuicon"> <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true"> <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top"> <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span> </span> <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom"> <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span> </span> </label> <a href="#ac-gn-menustate" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open"> <span class="ac-gn-menuanchor-label">Open Menu</span> </a> <a href="#" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close"> <span class="ac-gn-menuanchor-label">Close Menu</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-apple"> <a class="ac-gn-link ac-gn-link-apple" href="/" id="ac-gn-firstfocus-small"> <span class="ac-gn-link-text">Apple Developer</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small"> <a class="ac-gn-link ac-gn-link-bag" href="/account/"> <span class="ac-gn-link-text">Account</span> <span class="ac-gn-bag-badge"></span> </a> <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span> </li> 
+      </ul> 
+      <ul class="ac-gn-list"> 
+       <li class="ac-gn-item ac-gn-apple"> <a class="ac-gn-link ac-gn-link-apple" href="/" id="ac-gn-firstfocus"> <span class="ac-gn-link-text">Apple Developer</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-discover"> <a class="ac-gn-link" href="/discover/"> <span>Discover</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-design"> <a class="ac-gn-link" href="/design/"> <span>Design</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-develop"> <a class="ac-gn-link" href="/develop/"> <span>Develop</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-distribute"> <a class="ac-gn-link" href="/distribute/"> <span>Distribute</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-support"> <a class="ac-gn-link" href="/support/"> <span>Support</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-account"> <a class="ac-gn-link" href="/account/"> <span>Account</span> </a> </li> 
+       <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search"> <a id="ac-gn-search-button" class="ac-gn-link ac-gn-link-search" href="/search/" aria-label="Search developer.apple.com"> <span class="ac-gn-search-placeholder" aria-hidden="true">Search</span> </a> </li> 
+      </ul> 
+      <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search" data-analytics-region="search"> 
+       <div class="ac-gn-searchview-content"> 
+        <form id="ac-gn-searchform" class="ac-gn-searchform" action="/search/" method="get"> 
+         <div class="ac-gn-searchform-wrapper"> 
+          <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" name="q" placeholder="Search" data-placeholder-long="Search for documentation, videos, and more" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false"> 
+          <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled aria-label="Submit"></button> 
+          <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled aria-label="Clear Search"></button> 
+         </div> 
+        </form> 
+        <aside id="ac-gn-searchresults" class="ac-gn-searchresults" data-string-quicklinks="Quick Links" data-string-suggestions="Suggested Searches" data-string-noresults="Hit enter to search."> 
+        </aside> 
+       </div> 
+       <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Close Search"> <span class="ac-gn-searchview-close-wrapper"> <span class="ac-gn-searchview-close-left"></span> <span class="ac-gn-searchview-close-right"></span> </span> </button> 
+      </aside> 
+     </div>
+    </nav>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
+    <input type="checkbox" id="localnav-menustate" class="localnav-menustate" aria-hidden="true">
+    <nav id="localnav" class="localnav localnav-dark theme-dark localnav-scrim localnav-noborder" role="navigation" aria-label="API Reference" data-sticky="true">
+     <div class="localnav-wrapper">
+      <div class="localnav-background"></div>
+      <div class="localnav-content">
+       <a href="/reference" class="localnav-title">API Reference</a>
+       <div class="breadcrumb localnav-menu">
+        <a href="#localnav-menustate" id="localnav-menustate-open" class="localnav-menucta-anchor localnav-menucta-anchor-open"><span class="localnav-menucta-anchor-label" aria-hidden="true">Open Menu</span></a>
+        <a href="#" id="localnav-menustate-close" class="localnav-menucta-anchor localnav-menucta-anchor-close"><span class="localnav-menucta-anchor-label" aria-hidden="true">Close Menu</span></a>
+        <div class="localnav-menu-tray">
+         <ul class="localnav-menu-items" aria-label="Breadcrumb">
+          <li class="localnav-menu-item more"><a href="/reference/uikit" class="localnav-menu-link">UIKit</a></li>
+          <li class="localnav-menu-item"><span class="localnav-menu-link current" aria-current="page">UILabel</span></li>
+         </ul>
+        </div>
+        <div class="localnav-actions">
+         <div class="localnav-action localnav-action-menucta" aria-hidden="true">
+          <label for="localnav-menustate" class="localnav-menucta"><span class="localnav-menucta-chevron"></span></label>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <label for="localnav-menustate" id="localnav-curtain" aria-hidden="true"></label>
+    <main role="main" id="main" class="main" tabindex="0">
+     <div class="topic-title">
+      <span class="eyebrow">Class</span>
+      <h1 class="topic-heading">UILabel</h1>
+     </div>
+     <div class="topic-container section-content row">
+      <div class="topic-description column large-9 medium-9 small-12">
+       <div class="topic-abstract abstract formatted-content">
+        <div>
+         <p>The <code class="code-voice">UILabel</code> class implements a read-only text view. You can use this class to draw one or multiple lines of static text, such as those you might use to identify other parts of your user interface. The base <code class="code-voice">UILabel</code> class provides support for both simple and complex styling of the label text. You can also control over aspects of appearance, such as whether the label uses a shadow or draws with a highlight. If needed, you can customize the appearance of your text further by subclassing. </p>
+        </div>
+       </div>
+      </div>
+      <div class="topic-summary column large-3 medium-3 small-12">
+       <div class="topic-summary-section languages" role="complementary" aria-label="Language">
+        <p class="topic-summary-section-label  subsection-label">Language</p>
+        <ul class="topic-summary-section-list">
+         <li class="topic-summary-section-item languages-list-item current-language"><span data-language="swift" aria-current="page">Swift</span></li>
+         <li class="topic-summary-section-item languages-list-item"><a href="/reference/uikit/uilabel?language=objc">Objective-C</a></li>
+        </ul>
+       </div>
+       <div class="topic-summary-section sdks" role="complementary" aria-label="SDKs">
+        <p class="topic-summary-section-label subsection-label">SDKs</p>
+        <ul class="topic-summary-section-list">
+         <li class="topic-summary-section-item"><span title="Available on iOS 2.0 and later" aria-label="iOS 2.0+, Available on iOS 2.0 and later" role="text">iOS 2.0+</span></li>
+         <li class="topic-summary-section-item"><span title="Available on tvOS 2.0 and later" aria-label="tvOS 2.0+, Available on tvOS 2.0 and later" role="text">tvOS 2.0+</span></li>
+        </ul>
+       </div>
+       <div class="topic-summary-section onthispage">
+        <nav class="onthispage-nav" aria-labelledby="onthispage-title">
+         <p id="onthispage-title" class="topic-summary-section-label  subsection-label">On This Page</p>
+         <ul class="topic-summary-section-list">
+          <li class="topic-summary-section-item"><a href="#overview" class="icon icon-after icon-chevrondowncircle">Overview</a></li>
+          <li class="topic-summary-section-item"><a href="#symbols" class="icon icon-after icon-chevrondowncircle">Symbols</a></li>
+          <li class="topic-summary-section-item"><a href="#relationships" class="icon icon-after icon-chevrondowncircle">Relationships</a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+      <div class="topic-content column large-9 medium-9 small-12">
+       <section id="overview" class="section">
+        <h2>Overview</h2>
+        <div class="formatted-content">
+         <div>
+          <p>The default content mode of the <code class="code-voice">UILabel</code> class is <a class="symbol-name" href="/reference/uikit/uiviewcontentmode/1622652-redraw"><code>redraw</code></a>. This mode causes the view to redraw its contents every time its bounding rectangle changes. You can change this mode by modifying the inherited <a class="symbol-name" href="/reference/uikit/uiview/1622619-contentmode"><code>contentMode</code></a> property of the class.</p>
+          <p>New label objects are configured to disregard user events and clip subviews by default. If you want to handle events in a custom subclass of <code class="code-voice">UILabel</code>, you must explicitly change the value of the <a class="symbol-name" href="/reference/uikit/uilabel/1620543-isuserinteractionenabled"><code>isUserInteractionEnabled</code></a> property to <a class="symbol-name" href="/reference/swift/true"><code>true</code></a> after initializing the object. If you want to allow subviews to extend beyond the bounds of a label, you must explicitly change the value of the label’s <a class="symbol-name" href="/reference/uikit/uilabel/1807321-clipstobounds?language=objc"><code>clipsToBounds</code></a> property to <a class="symbol-name" href="/reference/swift/false"><code>false</code></a>. </p>
+          <p>For information about basic view behaviors, see <a href="https://developer.apple.com/library/prerelease/content/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009503">View Programming Guide for iOS</a>. </p>
+          <p>For more information about appearance and behavior configuration, see <a href="https://developer.apple.com/library/prerelease/content/documentation/UserExperience/Conceptual/UIKitUICatalog/UILabel.html#//apple_ref/doc/uid/TP40012857-UILabel">Labels</a> in <a href="https://developer.apple.com/library/prerelease/content/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html#//apple_ref/doc/uid/TP40012857">UIKit User Interface Catalog</a>.</p>
+         </div>
+        </div>
+       </section>
+      </div>
+     </div>
+     <section id="symbols" class="contenttable section alt-light row">
+      <div class="section-content">
+       <h2 class="contenttable-title">Symbols</h2>
+       <section id="1658303" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Accessing the Text Attributes</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620538-text"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">text</span><span class="decorator">: String?</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The text displayed by the label. </p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620542-attributedtext"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">attributedText</span><span class="decorator">: NSAttributedString?</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The styled text displayed by the label. </p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620532-font"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">font</span><span class="decorator">: UIFont!</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The font of the text. </p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620531-textcolor"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">textColor</span><span class="decorator">: UIColor!</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The color of the text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620541-textalignment"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">textAlignment</span><span class="decorator">: NSTextAlignment</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The technique to use for aligning the text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620525-linebreakmode"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">lineBreakMode</span><span class="decorator">: NSLineBreakMode</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The technique to use for wrapping and truncating the label’s text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620530-isenabled"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">isEnabled</span><span class="decorator">: Bool</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The enabled state to use when drawing the label’s text.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658359" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Sizing the Label’s Text</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620546-adjustsfontsizetofitwidth"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">adjustsFontSizeToFitWidth</span><span class="decorator">: Bool</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620533-allowsdefaulttighteningfortrunca"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">allowsDefaultTighteningForTruncation</span><span class="decorator">: Bool</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>A Boolean value indicating whether the label tightens text before truncating.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620524-baselineadjustment"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">baselineAdjustment</span><span class="decorator">: UIBaselineAdjustment</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>Controls how text baselines are adjusted when text needs to shrink to fit in the label.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620544-minimumscalefactor"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">minimumScaleFactor</span><span class="decorator">: CGFloat</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The minimum scale factor supported for the label’s text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620539-numberoflines"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">numberOfLines</span><span class="decorator">: Int</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The maximum number of lines to use for rendering text.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658412" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Managing Highlight Values</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620540-highlightedtextcolor"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">highlightedTextColor</span><span class="decorator">: UIColor?</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The highlight color applied to the label’s text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620526-ishighlighted"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">isHighlighted</span><span class="decorator">: Bool</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>A Boolean value indicating whether the receiver should be drawn with a highlight.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658435" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Drawing a Shadow</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620536-shadowcolor"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">shadowColor</span><span class="decorator">: UIColor?</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The shadow color of the text.</p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620528-shadowoffset"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">shadowOffset</span><span class="decorator">: CGSize</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The shadow offset (measured in points) for the text. </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658465" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Drawing and Positioning Overrides</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instm">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620545-textrect"><code><span class="display-name"><span class="decorator">func </span><span class="identifier">textRect</span><span class="decorator">(</span><span class="identifier">forBounds</span><span class="decorator">: CGRect, </span><span class="identifier">limitedToNumberOfLines</span><span class="decorator">: Int)</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>Returns the drawing rectangle for the label’s text. </p>
+             </div>
+            </div>
+           </div>
+           <div class="symbol instm">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620527-drawtext"><code><span class="display-name"><span class="decorator">func </span><span class="identifier">drawText</span><span class="decorator">(</span><span class="identifier">in</span><span class="decorator">: CGRect)</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>Draws the receiver’s text (or its shadow) in the specified rectangle.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658487" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Getting the Layout Constraints</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620534-preferredmaxlayoutwidth"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">preferredMaxLayoutWidth</span><span class="decorator">: CGFloat</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>The preferred maximum width (in points) for a multiline label.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section id="1658507" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Setting and Getting Attributes</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <div class="task-symbols">
+           <div class="symbol instp">
+            <a class="symbol-name symbol-name-decorated" href="/reference/uikit/uilabel/1620543-isuserinteractionenabled"><code><span class="display-name"><span class="decorator">var </span><span class="identifier">isUserInteractionEnabled</span><span class="decorator">: Bool</span></span></code></a>
+            <div class="symbol-abstract symbol-data abstract formatted-content">
+             <div>
+              <p>A Boolean value that determines whether user events are ignored and removed from the event queue.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+     </section>
+     <section id="relationships" class="contenttable section alt-light row">
+      <div class="section-content">
+       <h2 class="contenttable-title">Relationships</h2>
+       <section id="inherits-from" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Inherits From</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <a class="symbol-name" href="/reference/uikit/uiview"><code>UIView</code></a>
+         </div>
+        </div>
+       </section>
+       <section id="conforms-to" class="contenttable-section">
+        <div class="contenttable-container row">
+         <div class="column large-3 medium-3 small-12">
+          <h3 class="contenttable-section-title">Conforms To</h3>
+         </div>
+         <div class="contenttable-section-content column large-9 medium-9 small-12">
+          <ul class="relationships-section-content-columns">
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/swift/cvararg"><code>CVarArg</code></a></li>
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/swift/equatable"><code>Equatable</code></a></li>
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/swift/hashable"><code>Hashable</code></a></li>
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/foundation/nscoding"><code>NSCoding</code></a></li>
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/uikit/uiaccessibilityidentification"><code>UIAccessibilityIdentification</code></a></li>
+           <li class="relationships-section-content-columns-list-item"><a class="symbol-name" href="/reference/uikit/uicontentsizecategoryadjusting"><code>UIContentSizeCategoryAdjusting</code></a></li>
+          </ul>
+         </div>
+        </div>
+       </section>
+      </div>
+     </section>
+    </main>
+    <section class="bg-light">
+     <section class="footer-wrapper"> 
+      <footer id="globalfooter" role="contentinfo"> 
+       <nav class="footer-breadory" aria-label="Site"> 
+        <a href="/" class="home breadcrumbs-home"><span aria-hidden="true"></span><span class="breadcrumbs-home-label">Developer</span></a> 
+        <section class="breadcrumbs"> 
+         <ol class="breadcrumbs-list"> 
+          <li><a href="/">API Reference</a></li> 
+         </ol> 
+        </section> 
+        <div id="directorynav" class="directorynav"> 
+         <div id="dn-cola" class="column"> 
+          <h3><a href="/discover/">Discover</a></h3> 
+          <ul> 
+           <li><a href="/macos/">macOS</a></li> 
+           <li><a href="/ios/">iOS</a></li> 
+           <li><a href="/watchos/">watchOS</a></li> 
+           <li><a href="/tvos/">tvOS</a></li> 
+           <li><a href="/programs/">Developer Program</a></li> 
+           <li><a href="/enterprise/">Enterprise</a></li> 
+           <li><a href="/education/">Education</a></li> 
+          </ul> 
+         </div> 
+         <div id="dn-colb" class="column"> 
+          <h3><a href="/design/">Design</a></h3> 
+          <ul> 
+           <li><a href="/accessibility/">Accessibility</a></li> 
+           <li><a href="/cases/">Accessories</a></li> 
+           <li><a href="/design/adaptivity/">Adaptivity</a></li> 
+           <li><a href="/design/awards/">Apple Design Awards</a></li> 
+           <li><a href="/fonts/">Fonts</a></li> 
+           <li><a href="/videos/design/">Design Videos</a></li> 
+           <li><a href="/app-store/marketing/guidelines/">Marketing Guidelines</a></li> 
+          </ul> 
+         </div> 
+         <div id="dn-colc" class="column"> 
+          <h3><a href="/develop/">Develop</a></h3> 
+          <ul> 
+           <li><a href="/xcode/">Xcode</a></li> 
+           <li><a href="/swift/">Swift</a></li> 
+           <li><a href="/download/">Downloads</a></li> 
+           <li><a href="/reference/">API Reference</a></li> 
+           <li><a href="/library/prerelease/content/navigation/">Guides</a></li> 
+           <li><a href="/library/prerelease/content/navigation/#section=Resource%20Types&amp;topic=Sample%20Code">Sample Code</a></li> 
+           <li><a href="/videos/">Videos</a></li> 
+          </ul> 
+         </div> 
+         <div id="dn-cold" class="column"> 
+          <h3><a href="/distribute/">Distribute</a></h3> 
+          <ul> 
+           <li><a href="/app-store/">App Store</a></li> 
+           <li><a href="/app-store/review/">App Review</a></li> 
+           <li><a href="https://itunesconnect.apple.com/">iTunes Connect</a></li> 
+           <li><a href="/testflight/">TestFlight</a></li> 
+           <li><a href="/enterprise/">Enterprise</a></li> 
+           <li><a href="/safari/extensions/">Safari Extensions</a></li> 
+          </ul> 
+         </div> 
+         <div id="dn-cole" class="column"> 
+          <h3><a href="/support/">Support</a></h3> 
+          <ul> 
+           <li><a href="https://forums.developer.apple.com">Developer Forums</a></li> 
+           <li><a href="/contact/">Contact Us</a></li> 
+           <li><a href="/bug-reporting/">Bug Reporting</a></li> 
+           <li><a href="/terms/">License Agreements</a></li> 
+           <li><a href="/system-status/">System Status</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </nav> 
+       <div class="ac-gf-footer-legal"> 
+        <div class="ac-gf-footer-news">
+          To receive the latest developer news, visit and subscribe to our 
+         <a href="/news/">News and Updates</a>.
+        </div> 
+        <div class="ac-gf-footer-legal-copyright">
+         Copyright © 2016 Apple Inc. All rights reserved.
+        </div> 
+        <div class="ac-gf-footer-legal-links"> 
+         <a href="https://www.apple.com/legal/internet-services/terms/site.html" class="first">Terms of Use</a> 
+         <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a> 
+         <a href="/bug-reporting/">Report Bugs</a> 
+         <a href="/contact/submit/">Feedback</a> 
+        </div> 
+       </div> 
+      </footer>
+     </section>
+    </section>
+   </div>
+  </div>
+  <div id="bootstrap">
+   <script id="bootstrap-data" type="application/json">{"id":1620537,"abstract":"<div><p>The <code class=\"code-voice\">UILabel<\/code> class implements a read-only text view. You can use this class to draw one or multiple lines of static text, such as those you might use to identify other parts of your user interface. The base <code class=\"code-voice\">UILabel<\/code> class provides support for both simple and complex styling of the label text. You can also control over aspects of appearance, such as whether the label uses a shadow or draws with a highlight. If needed, you can customize the appearance of your text further by subclassing. <\/p><\/div>","title":{"content":"UILabel"},"discussion":"<div><p>The default content mode of the <code class=\"code-voice\">UILabel<\/code> class is <a class=\"symbol-name\" href=\"\/reference\/uikit\/uiviewcontentmode\/1622652-redraw\"><code>redraw<\/code><\/a>. This mode causes the view to redraw its contents every time its bounding rectangle changes. You can change this mode by modifying the inherited <a class=\"symbol-name\" href=\"\/reference\/uikit\/uiview\/1622619-contentmode\"><code>contentMode<\/code><\/a> property of the class.<\/p><p>New label objects are configured to disregard user events and clip subviews by default. If you want to handle events in a custom subclass of <code class=\"code-voice\">UILabel<\/code>, you must explicitly change the value of the <a class=\"symbol-name\" href=\"\/reference\/uikit\/uilabel\/1620543-isuserinteractionenabled\"><code>isUserInteractionEnabled<\/code><\/a> property to <a class=\"symbol-name\" href=\"\/reference\/swift\/true\"><code>true<\/code><\/a> after initializing the object. If you want to allow subviews to extend beyond the bounds of a label, you must explicitly change the value of the label’s <a class=\"symbol-name\" href=\"\/reference\/uikit\/uilabel\/1807321-clipstobounds?language=objc\"><code>clipsToBounds<\/code><\/a> property to <a class=\"symbol-name\" href=\"\/reference\/swift\/false\"><code>false<\/code><\/a>. <\/p><p>For information about basic view behaviors, see <a href=\"https:\/\/developer.apple.com\/library\/prerelease\/content\/documentation\/WindowsViews\/Conceptual\/ViewPG_iPhoneOS\/Introduction\/Introduction.html#\/\/apple_ref\/doc\/uid\/TP40009503\">View Programming Guide for iOS<\/a>. <\/p><p>For more information about appearance and behavior configuration, see <a href=\"https:\/\/developer.apple.com\/library\/prerelease\/content\/documentation\/UserExperience\/Conceptual\/UIKitUICatalog\/UILabel.html#\/\/apple_ref\/doc\/uid\/TP40012857-UILabel\">Labels<\/a> in <a href=\"https:\/\/developer.apple.com\/library\/prerelease\/content\/documentation\/UserExperience\/Conceptual\/UIKitUICatalog\/index.html#\/\/apple_ref\/doc\/uid\/TP40012857\">UIKit User Interface Catalog<\/a>.<\/p><\/div>","availability":[{"platform":"ios","introduced":"2.0","current":"10.2"},{"platform":"tvos","introduced":"2.0","current":"10.1"}],"usr":"c:objc(cs)UILabel","kind":"cl","conformance":[{"id":1623131,"usr":"c:objc(pl)UIAccessibilityIdentification","name":"UIAccessibilityIdentification","kind":"intf","paths":["reference\/uikit\/uiaccessibilityidentification"],"title":{"content":"UIAccessibilityIdentification"},"platforms":["ios","tvos"]},{"id":1540942,"usr":"s:Ps8Hashable","name":"Hashable","kind":"intf","paths":["reference\/swift\/hashable"],"title":{"content":"Hashable"},"platforms":["ios","tvos"]},{"id":1541213,"usr":"s:Ps9Equatable","name":"Equatable","kind":"intf","paths":["reference\/swift\/equatable"],"title":{"content":"Equatable"},"platforms":["ios","tvos"]},{"id":1641507,"usr":"s:Ps7CVarArg","name":"CVarArg","kind":"intf","paths":["reference\/swift\/cvararg"],"title":{"content":"CVarArg"},"platforms":["ios","tvos"]},{"id":1685723,"usr":"c:objc(pl)UIContentSizeCategoryAdjusting","name":"UIContentSizeCategoryAdjusting","kind":"intf","paths":["reference\/uikit\/uicontentsizecategoryadjusting"],"title":{"content":"UIContentSizeCategoryAdjusting"},"platforms":["ios","tvos"]},{"id":1411471,"usr":"c:objc(pl)NSCoding","name":"NSCoding","kind":"intf","paths":["reference\/foundation\/nscoding"],"title":{"content":"NSCoding"},"platforms":["ios","tvos"]}],"inheritance":[{"id":1622655,"usr":"c:objc(cs)UIView","name":"UIView","kind":"cl","paths":["reference\/uikit\/uiview"],"title":{"content":"UIView"},"platforms":["ios","tvos"]}],"module":[{"id":1627115,"title":{"content":"UIKit"},"importStatement":"<div><span class=\"syntax-identifier\">import<\/span> UIKit<\/div>","paths":["reference\/uikit"],"platforms":["ios","tvos"]}],"declaration":[{"content":"<div><span class=\"syntax-keyword\">class<\/span> <span class=\"syntax-identifier\">UILabel<\/span> : <span class=\"syntax-type\">UIView<\/span>, <span class=\"syntax-type\">NSCoding<\/span>, <span class=\"syntax-type\">UIContentSizeCategoryAdjusting<\/span>\n<\/div>","platforms":["ios","tvos"]}],"languages":["occ","swift"],"variants":{"occ":{"paths":["reference\/uikit\/uilabel"],"usr":"c:objc(cs)UILabel"},"swift":{"paths":["reference\/uikit\/uilabel"],"usr":"c:objc(cs)UILabel"}},"pid":59417,"role":"symbol","language":"swift","paths":["reference\/uikit\/uilabel"],"tasks":[{"id":1658303,"role":"task","symbols":[{"id":1620538,"role":"symbol","usr":"c:objc(cs)UILabel(py)text","kind":"instp","name":"text","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">text<\/span><span class=\"decorator\">: String?<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620538-text"],"title":{"content":"text"},"abstract":"<div><p>The text displayed by the label. <\/p><\/div>"},{"id":1620542,"role":"symbol","usr":"c:objc(cs)UILabel(py)attributedText","kind":"instp","name":"attributedText","availability":[{"platform":"ios","introduced":"6.0"},{"platform":"tvos","introduced":"6.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">attributedText<\/span><span class=\"decorator\">: NSAttributedString?<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620542-attributedtext"],"title":{"content":"attributedText"},"abstract":"<div><p>The styled text displayed by the label. <\/p><\/div>"},{"id":1620532,"role":"symbol","usr":"c:objc(cs)UILabel(py)font","kind":"instp","name":"font","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">font<\/span><span class=\"decorator\">: UIFont!<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620532-font"],"title":{"content":"font"},"abstract":"<div><p>The font of the text. <\/p><\/div>"},{"id":1620531,"role":"symbol","usr":"c:objc(cs)UILabel(py)textColor","kind":"instp","name":"textColor","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">textColor<\/span><span class=\"decorator\">: UIColor!<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620531-textcolor"],"title":{"content":"textColor"},"abstract":"<div><p>The color of the text.<\/p><\/div>"},{"id":1620541,"role":"symbol","usr":"c:objc(cs)UILabel(py)textAlignment","kind":"instp","name":"textAlignment","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">textAlignment<\/span><span class=\"decorator\">: NSTextAlignment<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620541-textalignment"],"title":{"content":"textAlignment"},"abstract":"<div><p>The technique to use for aligning the text.<\/p><\/div>"},{"id":1620525,"role":"symbol","usr":"c:objc(cs)UILabel(py)lineBreakMode","kind":"instp","name":"lineBreakMode","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">lineBreakMode<\/span><span class=\"decorator\">: NSLineBreakMode<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620525-linebreakmode"],"title":{"content":"lineBreakMode"},"abstract":"<div><p>The technique to use for wrapping and truncating the label’s text.<\/p><\/div>"},{"id":1620530,"role":"symbol","usr":"c:objc(cs)UILabel(py)enabled","kind":"instp","name":"enabled","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">isEnabled<\/span><span class=\"decorator\">: Bool<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620530-isenabled"],"title":{"content":"isEnabled"},"abstract":"<div><p>The enabled state to use when drawing the label’s text.<\/p><\/div>"}],"title":{"content":"Accessing the Text Attributes"}},{"id":1658359,"role":"task","symbols":[{"id":1620546,"role":"symbol","usr":"c:objc(cs)UILabel(py)adjustsFontSizeToFitWidth","kind":"instp","name":"adjustsFontSizeToFitWidth","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">adjustsFontSizeToFitWidth<\/span><span class=\"decorator\">: Bool<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620546-adjustsfontsizetofitwidth"],"title":{"content":"adjustsFontSizeToFitWidth"},"abstract":"<div><p>A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label’s bounding rectangle.<\/p><\/div>"},{"id":1620533,"role":"symbol","usr":"c:objc(cs)UILabel(py)allowsDefaultTighteningForTruncation","kind":"instp","name":"allowsDefaultTighteningForTruncation","availability":[{"platform":"ios","introduced":"9.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">allowsDefaultTighteningForTruncation<\/span><span class=\"decorator\">: Bool<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620533-allowsdefaulttighteningfortrunca"],"title":{"content":"allowsDefaultTighteningForTruncation"},"abstract":"<div><p>A Boolean value indicating whether the label tightens text before truncating.<\/p><\/div>"},{"id":1620524,"role":"symbol","usr":"c:objc(cs)UILabel(py)baselineAdjustment","kind":"instp","name":"baselineAdjustment","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">baselineAdjustment<\/span><span class=\"decorator\">: UIBaselineAdjustment<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620524-baselineadjustment"],"title":{"content":"baselineAdjustment"},"abstract":"<div><p>Controls how text baselines are adjusted when text needs to shrink to fit in the label.<\/p><\/div>"},{"id":1620544,"role":"symbol","usr":"c:objc(cs)UILabel(py)minimumScaleFactor","kind":"instp","name":"minimumScaleFactor","availability":[{"platform":"ios","introduced":"6.0"},{"platform":"tvos","introduced":"6.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">minimumScaleFactor<\/span><span class=\"decorator\">: CGFloat<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620544-minimumscalefactor"],"title":{"content":"minimumScaleFactor"},"abstract":"<div><p>The minimum scale factor supported for the label’s text.<\/p><\/div>"},{"id":1620539,"role":"symbol","usr":"c:objc(cs)UILabel(py)numberOfLines","kind":"instp","name":"numberOfLines","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">numberOfLines<\/span><span class=\"decorator\">: Int<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620539-numberoflines"],"title":{"content":"numberOfLines"},"abstract":"<div><p>The maximum number of lines to use for rendering text.<\/p><\/div>"}],"title":{"content":"Sizing the Label’s Text"}},{"id":1658412,"role":"task","symbols":[{"id":1620540,"role":"symbol","usr":"c:objc(cs)UILabel(py)highlightedTextColor","kind":"instp","name":"highlightedTextColor","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">highlightedTextColor<\/span><span class=\"decorator\">: UIColor?<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620540-highlightedtextcolor"],"title":{"content":"highlightedTextColor"},"abstract":"<div><p>The highlight color applied to the label’s text.<\/p><\/div>"},{"id":1620526,"role":"symbol","usr":"c:objc(cs)UILabel(py)highlighted","kind":"instp","name":"highlighted","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">isHighlighted<\/span><span class=\"decorator\">: Bool<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620526-ishighlighted"],"title":{"content":"isHighlighted"},"abstract":"<div><p>A Boolean value indicating whether the receiver should be drawn with a highlight.<\/p><\/div>"}],"title":{"content":"Managing Highlight Values"}},{"id":1658435,"role":"task","symbols":[{"id":1620536,"role":"symbol","usr":"c:objc(cs)UILabel(py)shadowColor","kind":"instp","name":"shadowColor","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">shadowColor<\/span><span class=\"decorator\">: UIColor?<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620536-shadowcolor"],"title":{"content":"shadowColor"},"abstract":"<div><p>The shadow color of the text.<\/p><\/div>"},{"id":1620528,"role":"symbol","usr":"c:objc(cs)UILabel(py)shadowOffset","kind":"instp","name":"shadowOffset","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">shadowOffset<\/span><span class=\"decorator\">: CGSize<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620528-shadowoffset"],"title":{"content":"shadowOffset"},"abstract":"<div><p>The shadow offset (measured in points) for the text. <\/p><\/div>"}],"title":{"content":"Drawing a Shadow"}},{"id":1658465,"role":"task","symbols":[{"id":1620545,"role":"symbol","usr":"c:objc(cs)UILabel(im)textRectForBounds:limitedToNumberOfLines:","kind":"instm","name":"textRectForBounds(_:limitedToNumberOfLines:)","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">func <\/span><span class=\"identifier\">textRect<\/span><span class=\"decorator\">(<\/span><span class=\"identifier\">forBounds<\/span><span class=\"decorator\">: CGRect, <\/span><span class=\"identifier\">limitedToNumberOfLines<\/span><span class=\"decorator\">: Int)<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620545-textrect"],"title":{"content":"textRect(forBounds:limitedToNumberOfLines:)"},"abstract":"<div><p>Returns the drawing rectangle for the label’s text. <\/p><\/div>"},{"id":1620527,"role":"symbol","usr":"c:objc(cs)UILabel(im)drawTextInRect:","kind":"instm","name":"drawTextInRect(_:)","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">func <\/span><span class=\"identifier\">drawText<\/span><span class=\"decorator\">(<\/span><span class=\"identifier\">in<\/span><span class=\"decorator\">: CGRect)<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620527-drawtext"],"title":{"content":"drawText(in:)"},"abstract":"<div><p>Draws the receiver’s text (or its shadow) in the specified rectangle.<\/p><\/div>"}],"title":{"content":"Drawing and Positioning Overrides"}},{"id":1658487,"role":"task","symbols":[{"id":1620534,"role":"symbol","usr":"c:objc(cs)UILabel(py)preferredMaxLayoutWidth","kind":"instp","name":"preferredMaxLayoutWidth","availability":[{"platform":"ios","introduced":"6.0"},{"platform":"tvos","introduced":"6.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">preferredMaxLayoutWidth<\/span><span class=\"decorator\">: CGFloat<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620534-preferredmaxlayoutwidth"],"title":{"content":"preferredMaxLayoutWidth"},"abstract":"<div><p>The preferred maximum width (in points) for a multiline label.<\/p><\/div>"}],"title":{"content":"Getting the Layout Constraints"}},{"id":1658507,"role":"task","symbols":[{"id":1620543,"role":"symbol","usr":"c:objc(cs)UILabel(py)userInteractionEnabled","kind":"instp","name":"userInteractionEnabled","availability":[{"platform":"ios","introduced":"8.0"},{"platform":"tvos","introduced":"9.0"}],"displayName":"<span class=\"display-name\"><span class=\"decorator\">var <\/span><span class=\"identifier\">isUserInteractionEnabled<\/span><span class=\"decorator\">: Bool<\/span><\/span>","paths":["reference\/uikit\/uilabel\/1620543-isuserinteractionenabled"],"title":{"content":"isUserInteractionEnabled"},"abstract":"<div><p>A Boolean value that determines whether user events are ignored and removed from the event queue.<\/p><\/div>"}],"title":{"content":"Setting and Getting Attributes"}}]}</script>
+   <script src="/reference/__assets/type-detail-4836992c.js"></script>
+  </div>
+ </body>
+</html>

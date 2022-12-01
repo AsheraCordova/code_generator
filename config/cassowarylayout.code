@@ -1,0 +1,6 @@
+class CassowaryLayout {
+	public CassowaryLayout() {
+		this.viewIdResolver = new DefaultViewIdResolver(getContext());
+        cassowaryModel = new CassowaryModel(getContext());
+	}
+}

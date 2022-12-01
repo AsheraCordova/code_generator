@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						     <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li class="active"><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Creating your ui and backing fragment</h1>
+							<p>
+							To develop Ashera ui, you use android studio and android widgets in Android studio. There are already lot of video tutorials 
+							on how to use android studio to create user interface. Click <a href="https://www.google.com/search?q=android+design+tutorial" target="_blank">here</a>  
+							to know how to use android studio to design a user interface. You can follow only how the xmls are created and 
+							ignore any topic related to java code reference as Ashera provides Generic implementation of the same. 
+							</p>
+							
+							<p>
+							Lets us first understand the basic structure of android xml. 
+							</p>
+								
+								<section id="Generalstructureofxml" class="doc-section" >
+									<h2 class="section-title">General structure of xml</h2>
+									<div class="section-block">
+									<p>
+										The following code shows the general structure of the root xml:  
+									</p> 
+									<p>
+									<pre><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"&gt;
+
+    &lt;data&gt;&lt;/data&gt;
+     &lt;!-- Root view. can be ConstraintLayout, LinearLayout etc   --&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5db54"
+    tools:ignore="MissingPrefix"&gt;
+    ...
+    &lt;!-- Inline java script + resource  --&gt;
+     &lt;View
+        name="@layout/cat_hello_textview"
+        type="javascript"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText"&gt;
+         &lt;![CDATA[
+                window.inlineFunction = function() {
+                    alert("Meow meow !!!!");
+                }
+            ]]&gt;
+     &lt;/View&gt;
+    
+    
+    &lt;!-- Include other files  --&gt;
+    &lt;include layout="@layout/test"/&gt;
+    
+    &lt;!-- Include ui elements  --&gt;
+    &lt;Button
+        android:id="@+id/loginButton"
+        onClick="validateMyForm"
+        android:layout_width="0dp"
+        android:textColor="#000"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.082"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".87" /&gt;
+    ...
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+&lt;/layout&gt;</code></pre>
+									</p>
+									
+									<p>
+									<p>
+										The following code shows the general structure of child xml:  
+									</p> 
+									<p>
+									<pre><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!-- Can be ConstraintLayout, LinearLayout etc   --&gt;
+&lt;LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="#e5db54"
+   tools:ignore="MissingPrefix"&gt;
+   ...
+
+	&lt;!-- Include other files  --&gt;
+    &lt;include layout="@layout/test"/&gt;
+    
+   <TextView 
+   android:id="@+id/cat"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:text="Hello, I am your cat!"
+   tools:ignore="MissingPrefix"></TextView>
+
+   ...
+&lt;/LinearLayout&gt;</code></pre>
+									</p>
+									<div class="callout-block callout-info">
+                                   		<div class="icon-holder">
+                                       		<svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+                                   		</div><!--//icon-holder-->
+                                   		<div class="content">
+                                       		<h4 class="callout-title">Root xml vs Child xml</h4>
+                                       		<p>
+                                       			It is important to note that child xml does not contain the layout and data tag. It can contain other child xml through the include tag.
+                                       			Interactive samples provided use child xml and hence layout and data tags are missing.
+                                       		</p>
+                                   		</div><!--//content-->
+                               	  	</div>
+                               	  	
+                               	  	<div class="callout-block callout-info">
+                                   		<div class="icon-holder">
+                                       		<svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+                                   		</div><!--//icon-holder-->
+                                   		<div class="content">
+                                       		<h4 class="callout-title">Inline javascript vs Typescript in backed fragment</h4>
+                                       		<p>
+                                       			Use Inline javascript to a minimum. Always create handlers in Typescript using VS Code as you get advanced refactoring capabilities.
+                                       			Inline javascript/resources can be used for downloadable xml cases. i.e. you download a xml using http and the file should have all the 
+                                       			functionalities i.e. javascript, child xml. For xml downloaded via http, you bundle all the javascript and dependent resources in single xml file.
+                                       		</p>
+                                   		</div><!--//content-->
+                               	  	</div>
+	                          	</section>
+	                          	
+	                          	<section id="Loginexample" class="doc-section" >
+									<h2 class="section-title">Login example</h2>
+									
+									<div class="section-block">
+										<p>
+											Lets us start building the classic login page. We will enhance the example as we go along in the future sections.
+										</p> 
+										<p>
+										<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Flogin_host.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>
+										</p>
+										<p>
+										The steps below describe how to create an ui in Ashera:
+										<ul>
+											<li>Step 1 - Design the xml e.g. login.xml</li>
+											<li>Step 2 - Create your backing Fragment by adding fragment attribute in the ui xml. This will automatically map the login.xml to the Login.ts component</li>
+											<li>Step 3 - Add an entry to navigation/nav_graph.xml. This will generate an actionId in "./R/NavGraph.ts"</li>
+											<li>Step 4 - Use the actionId generated in NavGraph.ts to navigate to the login.xml using NavController</li>
+											<li>Step 5 - Update Login.ts to add click handlers for login button</li>
+										</ul>
+										</p>
+									</div>
+								</section>
+						</div>
+						
+						<div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="01gettingstarted-theming.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Theming</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="01gettingstarted-validation.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Adding Validation</div></a>
+							</div>
+						</div>
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            
+		                             <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#Generalstructureofxml">General structure of xml</a>
+		                            </li>
+		                            <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#Loginexample">Login example</a>
+		                             </li>
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

@@ -1,0 +1,118 @@
+
+class RecyclerView {
+	SavedState mPendingSavedState;
+	public static final int TYPE_TOUCH = 0;	
+		
+	public @interface Orientation {
+    }
+	public static class SavedState {
+        Parcelable mLayoutState;
+    }
+	ItemAnimator mItemAnimator;
+  	public RecyclerView() {
+		mMaxFlingVelocity = 0;
+		mMinFlingVelocity = 0;
+		initAdapterManager();
+        initChildrenHelper();
+	}
+
+	void dispatchPendingImportantForAccessibilityChanges() {
+	}
+	private void dispatchContentChangedIfNecessary(){
+	}
+	private boolean predictiveItemAnimationsEnabled() {
+		return false;
+	}
+	
+	private void saveFocusInfo() {
+	}
+	void postAnimationRunner(){
+	}
+	private void recoverFocusFromState() {
+	}
+	private void resetFocusInfo() {
+	}
+	
+	
+	  private int getScrollY() {
+	return 0;
+}
+private int getScrollX() {
+	return 0;
+}
+  private void onScrollChanged(int scrollX, int scrollY, int i, int j) {
+	
+}
+
+  private void onScrolled(int hresult, int vresult) {
+	
+	}
+	final void fillRemainingScrollValues(  State state){
+	}
+	 boolean isAccessibilityEnabled() {
+        return false;
+    }
+    public void post(Runnable runnable) {
+	}
+	public long getDrawingTime() {
+		return 0;
+	}
+	public void stopScroll(){
+	}
+
+	static class Observable<T> {
+		protected final ArrayList<T> mObservers = new ArrayList<T>();
+		public void unregisterObserver(T observer){
+			mObservers.remove(observer);
+		}
+		public void registerObserver(T observer){
+			mObservers.add(observer);
+		}
+		}
+			
+		}
+		public void registerObserver(AdapterDataObserver observer) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
+
+	protected boolean awakenScrollBars() {
+		return false;
+	}
+	void considerReleasingGlowsOnScroll(int dx, int dy) {
+	}
+	private void pullGlows(float x, float overscrollX, float y, float overscrollY) {
+	}
+	int getOverScrollMode() {
+	 return View.OVER_SCROLL_NEVER;
+	}
+	
+	static class MotionEventCompat {
+		public static boolean isFromSource(MotionEvent ev, int source) {
+			return false;
+		}
+	}
+	static class InputDevice{
+		public static final int SOURCE_MOUSE = 0;
+	}
+	
+	static class NestedScrollingChildHelper {
+		public NestedScrollingChildHelper(View view) {
+		}
+		public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
+				int[] offsetInWindow) {
+			return false;
+		}
+	
+		public void dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
+				int[] offsetInWindow, int type, int[] consumed) {
+		}
+	
+		public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
+				int[] offsetInWindow, int type) {
+			return false;
+		}
+		
+	}
+}

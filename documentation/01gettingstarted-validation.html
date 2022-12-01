@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						     <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li class="active"><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Adding Validations</h1>
+							<p>
+							Ashera provides support for validations by extending the view to add (v_*) attributes. 
+							</p>
+
+							</p>
+								
+								<section id="ValidationSupport" class="doc-section" >
+									<h2 class="section-title">Validation Support</h2>
+									<div class="section-block">
+										<p>An example of adding validation to an edit text is shown below:</p>
+										<ul class="nav nav-tabs">
+										  	<li class="nav-item">
+										    	<a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#tab1default">Example xml</a>
+										  	</li>
+										  	<li class="nav-item">
+										    	<a class="nav-link" data-bs-toggle="tab" href="#tab2default">Example ts</a>
+										  	</li>
+										</ul>
+										
+										<div class="panel-body">
+						                    <div class="tab-content">
+						                        <div class="tab-pane fade in active show" id="tab1default">
+						                        <p>
+<pre><code class="language-markup">&lt;?EditText android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	formGroupId="loginForm"
+	v_required=""
+	android:id="@+id/test1"
+  	validationErrorDisplayType="label|style"
+	customErrorMessageKeys="required"
+	customErrorMessageValues="@string/sample_text"	
+	style="@style/normalStyle"
+	errorStyle="@style/errorStyle" /&gt;
+&lt;?TextView android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:id="@+id/test1Error"/&gt;
+&lt;?Button
+    android:id="@+id/submit"
+    onClick="validateForm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/register_now" /&gt;</code></pre>
+												</p>
+											</div>
+						           			<div class="tab-pane fade in" id="tab2default">
+<pre><code class="language-markup">export default class Login extends Fragment {
+    @Inject({ id: "@+id/submit" })
+    private validateButton!: Button;
+    constructor() {
+        super();
+    }
+
+    async validateForm(obj: any) {
+        if (await this.validateForm("loginForm", this.validateButton)) {
+		// go to next screen
+        }
+    }
+}</code></pre>
+						               		</div>		
+						 				</div>	
+						 			</div>		
+									<p>
+									The above snippet adds editText with id <b>test1</b> to a form group <b>loginForm</b> with mandatory validation added. It display the error message on a label with id <b>test1Error</b> and changes style to errorStyle when validation fails. It displays an custom error message <b>Sample text</b> when validation fails. 
+									</p>
+									<p>
+										The validation is trigerred in javascript by invoking method <b>validateForm</b>.
+									</p>
+								</div>
+								</section>
+								<section id="Validators" class="doc-section" >
+									<h2 class="section-title">Validators & Custom attributes</h2>
+									<div class="section-block">
+										<p>This sections provides details of the attributes/methods to be used for validation.</p>
+									
+									<p>validationErrorDisplayType can be of 3 types:
+									<ul>
+									<li>popup - Only supported on android. Uses android setError on EditText.</li>
+									<li>label - Display error text in label with id + Error.</li>
+									<li>style - Changes the style property when validation fails. Uses style and errorStyle on the widget.</li>
+									</ul>
+									</p>
+									
+
+									<p>The following table lists the custom attribute on View to support validation:</p>
+									
+									 <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>customErrorMessageKeys</td>
+                                                    <td>Comma separated value of the validation for which custom message will be specified.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>customErrorMessageValues</td>
+                                                    <td>Comma separated custom messages for the message keys specified. This has to be used with customErrorMessageKeys attribute. For e.g. customErrorMessageKeys="required,min" customErrorMessageValues="Test, Test1"</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>formGroupId</td>
+                                                    <td>When a form is validated using validateForm method in javascript, groupId is passed as one of the parameters. This id is used to group widgets to form a form. This is a comma separated string. Hence a widget can belong to multiple forms.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>validateForm</td>
+                                                    <td>Method used to validate a group of widgets.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>validationErrorDisplayType</td>
+                                                    <td>See above section.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>validation</td>
+                                                    <td>Validation on the configured on widget using (v_*) attributed or using the validation attribute. This is comma separated string. e.g. validation="required,date(dd/mm/YYYY)"</td>
+                                                </tr>
+                                         	</tbody>
+                                 	</table>
+                                 	
+									<p>
+									The following table lists the validators available:
+									</p>
+                                 	<table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>alphabet</td>
+                                                    <td>Text matching regex [a-zA-Z]*</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>alphanumeric</td>
+                                                    <td>Text matching regex [0-9a-zA-Z]*</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>date</td>
+                                                    <td>Text matching format passed in as argument. See https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html. e.g. date(dd/mm/yyyy).</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>inrange</td>
+                                                    <td>Validates whether the text is with the range passed in as arguments. e.g. inrange(0,10)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>email</td>
+                                                    <td>Validates whether the text is a valid email.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>mobilenumber</td>
+                                                    <td>Validates whether the text is a valid 10 digit mobile number.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>number</td>
+                                                    <td>Text matching regex [0-9]*</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>pin</td>
+                                                    <td>Text matching regex \d{6}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>length</td>
+                                                    <td>Validates whether the text is within the length passed in as argument. e.g. length(10)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>required</td>
+                                                    <td>Validates whether the text is not empty.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>time</td>
+                                                    <td>Validates whether time in 24 hours format</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>pattern</td>
+                                                    <td>Validates whether text is as per the regex passed in as argument e.g. pattern(a-z)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>minlength</td>
+                                                    <td>Validates whether the text is having minimum length passed in as argumnet. e.g. minlength(10)</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>maxlength</td>
+                                                    <td>Validates whether the text is having maximum length passed in as argumnet. e.g. maxlength(10)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>minvalue</td>
+                                                    <td>Validates whether the text is having minimum value passed in as argumnet. e.g. minvalue(10)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>maxvalue</td>
+                                                    <td>Validates whether the text is having maximum value passed in as argumnet. e.g. maxvalue(10)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>url</td>
+                                                    <td>Validates whether the text is a valid url.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>strongpassword</td>
+                                                    <td>Password should be atleast 8 characters with uppercase letter, numbers and having atleast on special character as specified <code>(.*[,~,!,@,#,$,%,^,&,\*,(,),-,_,=,+,[,{,],},\|,;,:,<,>,/,?].*$)</code></td>
+                                                </tr>
+                                           </tbody>
+                                  </table>
+									</div>
+	                          	</section>
+	                          	
+	                          	<section id="LoginExample" class="doc-section" >
+									<h2 class="section-title">Login Example</h2>
+									
+									<div class="section-block">
+									<p>
+										We have already created login.xml with backing fragment in the previous section. Let us add validation to it.
+									</p> 
+									<p>
+										<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Flogin_component_with_validation.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>								
+									</p>
+								</div>
+								</section>
+                        </div><!--//content-inner-->
+                        
+                        <div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="01gettingstarted-uifragment.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Creating your ui and backing fragment</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="01gettingstarted-databinding.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Data Binding</div></a>
+							</div>
+						</div>
+                        
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            
+		                             <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#ValidationSupport">Validation Support</a>
+		                            </li>
+		                            <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#Validators">Validators & Custom attributes</a>
+		                             </li>
+		                             
+		                              <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#LoginExample">Login Example</a>
+		                             </li>
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

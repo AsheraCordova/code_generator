@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						     <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li class="active"><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Setting up the development environment</h1>
+							<div id="html" class="section-block">
+								<p>
+								It is important to understand the development environment setup to start developing a Ashera application. 
+								Ashera Native has various scripts which aids in cross platform development.   
+								</p>
+								<p>
+								Some of these scripts have to be executed when a particular action has been performed and few others scripts have to be running
+								continuously in the background.
+								</p>
+								<p>
+								Lets us understand the complete dev setup required.
+								</p>
+								
+								<section id="IDE" class="doc-section" >
+									<h2 class="section-title">IDE Setup</h2>
+									<p>
+										It is recommended to Android Studio as the ide for ui development. 
+									</p> 
+									<p>
+									Use android studio to open the android folder of cordova as shown below:
+									</p>
+									<p>
+									<img src="assets/images/android_studio.png" style="max-width: 100%">
+									</p>
+									<div class="callout-block callout-info">
+	                                   <div class="icon-holder">
+	                                       <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+	                                   </div><!--//icon-holder-->
+	                                   <div class="content">
+	                                       <h4 class="callout-title">Development Tips</h4>
+	                                       <p>Open two terminals in Android Studio and run the following commands:</p>
+	                                       <p>
+	                                       <code>npm run generate-platform-js</code> <br>
+	                                       <code>npm run generate-platform-res</code><br>
+	                                       </p>
+	                                       This will ensure that resources and index js file are continuously updated.
+	                                       <br> 
+	                                       <p>If you add image in drawable-xxxhdpi folder,
+	                                       </p>
+	                                       <p>
+	                                       <code>npm run generate-platform-drawable</code> or restart <code>npm run generate-platform-res</code><br>
+	                                       </p>
+	                                       <p>
+	                                       If you are removing android platform, ensure that you back up and restore android files in res and tsc folder.
+	                                       </p>
+	                                       <p> 
+	                                       <code>npm run backup-android</code> <br>
+	                                       <code>npm run restore-android</code><br>  
+	                                       </p>
+	                                   </div><!--//content-->
+	                               </div>
+	                               
+	                               
+	                               <p>
+										It is recommended to Visual Studio Code as the ide for js development. 
+									</p> 
+									<p>
+									Use Visual Studio Code to open the tsc folder in android platform as shown below:
+									</p>
+									<p>
+									<img src="assets/images/visualstudiocode.png" style="max-width: 100%">
+									</p>
+									<div class="callout-block callout-info">
+	                                   <div class="icon-holder">
+	                                       <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+	                                   </div><!--//icon-holder-->
+	                                   <div class="content">
+	                                       <h4 class="callout-title">Development Tips</h4>
+	                                       <p>The webview fragment has to be created for every top level ui xml created in android studio.
+	                                       Also backing command for every widget has to be written using the @Inject.
+	                                         
+	                                       </p>
+	                                       <p>
+	                                       To automate this, ashera provides useful tags when declared will auto generate this:
+	                                       </p>
+        									<p>
+	                                       	<code>fragment="CatHello"</code>
+	                                       </p>
+	                                       <p>
+	                                       By using this tag in top level ui xml, you create a file named CatHello.ts automatically.
+	                                       </p>
+        									<p>
+	                                       <code>autoInject="true"</code>
+	                                       </p>
+	                                       <p>
+	                                       By using this tag in top level ui xml, you create a @Inject tag in the CatHello.ts automatically.
+	                                       </p>
+	                                       
+	                                   </div><!--//content-->
+	                                   
+	                               </div>
+	                               
+	                               <div class="callout-block callout-danger">
+	                                   <div class="icon-holder">
+	                                       <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+	                                   </div><!--//icon-holder-->
+	                                   <div class="content">
+	                                       <h4 class="callout-title">Development Tips</h4>
+	                                       <p>
+	                                       Do not modify code written between //start and //end.
+	                                       This will be overwritten by the scripts which generate ts code.
+	                                       </p>
+	                                    </div>
+	                            	</div>
+	                               
+	                          	</section>
+	                          	
+	                          	<section id="Runningapp" class="doc-section" >
+									<h2 class="section-title">Running app</h2>
+									<p>
+										To run the app on the platform  use the following:
+									</p>
+									<h4>Android</h4> 
+									<p>
+									To run app on Android, use Android Studio run button by creating a emulator or on your device.
+									This is the recommended approach for Android :)
+									</p>
+									<p>
+									Alternately use <code>cordova run android</code>
+									</p>
+									
+									<h4>Ios</h4> 
+									<p>
+									To run app on Ios, open &lt;project&gt;.xcworkspace in XCode. Run the app on emulator or on your device.
+									This is the recommended approach for ios :)
+									</p>
+									<p>
+									Alternately use <code>cordova run ios</code>
+									</p>
+									
+									<h4>Swt</h4> 
+									<p>
+									To run app as desktop application, use <code>npm run swt-run</code> 
+									</p>
+									
+									<h4>Browser</h4> 
+									<p>
+									To run app on browser, use <code>npm run browser-run</code>
+									
+									Type <code>http://localhost:8080</code> in browser, to access the application.  
+									</p>
+	                          	</section>
+	                          	</div>
+                        </div><!--//content-inner-->
+                        
+                        <div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="01gettingstarted-essentials.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Creating your first project</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="01gettingstarted-theming.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Theming</div></a>
+							</div>
+						</div>
+                        
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            
+		                             <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#IDE">IDE Setup</a>
+	                                   
+		                            </li>
+		                           <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#Runningapp">Running app</a>
+		                             </li>
+		                            
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

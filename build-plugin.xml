@@ -1,0 +1,229 @@
+<project default="default">
+	<filterset begintoken="@" endtoken="@" id="myFilterSet">
+		<filter token="packagename" value="${packagename}" />
+		<filter token="ospackagename" value="${ospackagename}" />
+		<filter token="osplugin" value="${osplugin}" />
+		<filter token="description" value="${name} Plugin" />
+		<filter token="uniqueid" value="${uniqueid}" />
+		<filter token="featurename" value="${featurename}" />
+		<filter token="pluginDir" value="${pluginDir}" />
+		<filter token="name" value="${name}" />
+		<filter token="iospackageprefix" value="${iospackageprefix}" />
+	</filterset>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="ant-contrib-0.6.jar" />
+		</classpath>
+	</taskdef>
+	
+	<property file="${projectBaseDir}/codepoacher/config.properties" />
+	<property name="baseDir" value="${projectBaseDir}/.."/>
+
+	<property file="build.properties" />
+	<target name="default">
+		<antcall target="createPluginProject">
+			<param name="pluginDir" value="${androidPluginDir}" />
+			<param name="featurename" value="${featurename}" />
+			<param name="packagename" value="${packagename}" />
+			<param name="ospackagename" value="${androidpackagename}" />
+			<param name="dest" value="${androiddest}" />
+			<param name="name" value="${name}" />
+			<param name="uniqueid" value="${uniqueid}" />
+			<param name="filedest" value="${androidPluginfiledest}" />
+			<param name="iospackageprefix" value="${iospackageprefix}" />
+			<param name="os" value="android" />
+			<param name="osplugin" value="android" />
+		</antcall>
+		<antcall target="createPluginProject">
+			<param name="pluginDir" value="${iosPluginDir}" />
+			<param name="featurename" value="${featurename}" />
+			<param name="packagename" value="${packagename}" />
+			<param name="ospackagename" value="${iospackagename}" />
+			<param name="dest" value="${iosdest}" />
+			<param name="name" value="${name}" />
+			<param name="filedest" value="${iosPluginfiledest}" />
+			<param name="iospackageprefix" value="${iospackageprefix}" />
+			<param name="os" value="ios" />
+			<param name="uniqueid" value="${uniqueid}" />
+			<param name="osplugin" value="android" />
+		</antcall>
+		<antcall target="createPluginProject">
+			<param name="pluginDir" value="${swtPluginDir}" />
+			<param name="featurename" value="${featurename}" />
+			<param name="packagename" value="${packagename}" />
+			<param name="ospackagename" value="${swtpackagename}" />
+			<param name="dest" value="${swtdest}" />
+			<param name="name" value="${name}" />
+			<param name="filedest" value="${swtPluginfiledest}" />
+			<param name="iospackageprefix" value="${iospackageprefix}" />
+			<param name="os" value="swt" />
+			<param name="uniqueid" value="${uniqueid}" />
+			<param name="osplugin" value="swt" />
+		</antcall>
+		
+		<copy tofile="${iosdest}/.${uniqueid}-ios-prefixes"
+			file="plugintemplate-codegen/ios-prefixes" overwrite="${overwrite}"
+			failonerror="false">
+			<filterset refid="myFilterSet"></filterset>
+		</copy>
+		<antcall target="createPluginProject">
+			<param name="pluginDir" value="${webPluginDir}" />
+			<param name="featurename" value="${featurename}" />
+			<param name="packagename" value="${packagename}" />
+			<param name="ospackagename" value="${webpackagename}" />
+			<param name="dest" value="${webdest}" />
+			<param name="name" value="${name}" />
+			<param name="filedest" value="${webPluginfiledest}" />
+			<param name="iospackageprefix" value="${iospackageprefix}" />
+			<param name="os" value="web" />
+			<param name="uniqueid" value="${uniqueid}" />
+			<param name="osplugin" value="browser" />
+		</antcall>
+	</target>
+	<target name="replaceStrsInXml">
+		<echo message="${os} -  ${dest}/${myparam}" />
+		<replaceregexp file="${dest}/${myparam}"
+			match="${os} start" replace="${os} start --&gt;" flags="gis" />
+		<replaceregexp file="${dest}/${myparam}"
+			match="end ${os}" replace="&lt;!-- end ${os}" flags="gis" />
+	</target>
+	<target name="createPluginProject">
+		<mkdir dir="${dest}" />
+		<copy todir="${dest}" overwrite="${overwrite}"
+			failonerror="false">
+			<fileset dir="plugintemplate">
+				<include name="**/**" />
+				<include name=".*" />
+			</fileset>
+			<filterset refid="myFilterSet">
+			</filterset>
+		</copy>
+
+		<copy tofile="${dest}/pom.xml"
+			file="plugintemplate-codegen/pom-${os}.xml" overwrite="${overwrite}"
+			failonerror="false">
+			<filterset refid="myFilterSet"></filterset>
+		</copy>
+		
+		<copy tofile="${dest}/plugin.xml"
+			file="plugintemplate-codegen/plugin-${os}.xml" overwrite="${overwrite}"
+			failonerror="false">
+			<filterset refid="myFilterSet"></filterset>
+		</copy>
+		
+		<copy tofile="${dest}/.classpath"
+			file="plugintemplate-codegen/classpath-${os}" overwrite="${overwrite}"
+			failonerror="false">
+			<filterset refid="myFilterSet"></filterset>
+		</copy>
+		
+		<copy tofile="${dest}/.project"
+			file="plugintemplate-codegen/project-${os}" overwrite="${overwrite}"
+			failonerror="false">
+			<filterset refid="myFilterSet"></filterset>
+		</copy>
+
+		<move file="${dest}/src/main/java/MyPlugin.java"
+			tofile="${filedest}/${name}Plugin.java" />
+
+		<if>
+			<equals arg1="${os}" arg2="swt" />
+			<then>
+				<copy
+					file="./plugintemplate-codegen/pomsynccopyfile.properties"
+					tofile="./plugininfo/pomsync/${pluginDir}-copyfiles.properties"
+					overwrite="${overwrite}">
+					<filterset refid="myFilterSet">
+					</filterset>
+				</copy>
+
+				<copy file="./plugintemplate-codegen/codegenhtml.properties"
+					tofile="./plugininfo/codegenhtml/${uniqueid}.properties"
+					overwrite="${overwrite}">
+					<filterset refid="myFilterSet">
+					</filterset>
+				</copy>
+			</then>
+			<elseif>
+				<equals arg1="${os}" arg2="web" />
+				<then>
+					<copy
+						file="./plugintemplate-codegen/pomsynccopyfile.properties"
+						tofile="./plugininfo/pomsync/${pluginDir}-copyfiles.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+
+					<copy file="./plugintemplate-codegen/codegenhtml.properties"
+						tofile="./plugininfo/codegenhtml/${uniqueid}.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${os}" arg2="android" />
+				<then>
+					<copy
+						file="./plugintemplate-codegen/androidpomsynccopyfile.properties"
+						tofile="./plugininfo/pomsync/${pluginDir}-copyfiles.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+
+					<copy
+						file="./plugintemplate-codegen/pluginpathgen_android.properties"
+						tofile="./plugininfo/pluginpathgen/${pluginDir}-pluginpathgen.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${os}" arg2="ios" />
+				<then>
+					<copy
+						file="./plugintemplate-codegen/pluginpathgen_ios.properties"
+						tofile="./plugininfo/pluginpathgen/${pluginDir}-pluginpathgen.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+
+					<copy file="./plugintemplate-codegen/j2objc_ios.properties"
+						tofile="./plugininfo/j2objc/${pluginDir}-j2objc.properties"
+						overwrite="${overwrite}">
+						<filterset refid="myFilterSet">
+						</filterset>
+					</copy>
+				</then>
+			</elseif>
+		</if>
+		<if>
+			<equals arg1="${os}" arg2="ios" />
+			<then>
+				<move file="${dest}/ios/src/MyCordovaPlugin.h"
+					tofile="${dest}/ios/src/Cordova${name}Plugin.h" />
+				<move file="${dest}/ios/src/MyCordovaPlugin.m"
+					tofile="${dest}/ios/src/Cordova${name}Plugin.m" />
+				<delete file="${dest}/src/main/java/MyCordovaPlugin.java" />
+				<delete file="${dest}/AndroidManifest.xml" />
+				<delete file="${dest}/proguard-project.txt" />
+
+			</then>
+			<else>
+				<delete file="${dest}/ios/src/MyCordovaPlugin.h" />
+				<delete file="${dest}/ios/src/MyCordovaPlugin.m" />
+				<delete includeEmptyDirs="true">
+					<fileset dir="${dest}/ios" />
+				</delete>
+				<move file="${dest}/src/main/java/MyCordovaPlugin.java"
+					tofile="${filedest}/Cordova${name}Plugin.java" />
+			</else>
+		</if>
+	</target>
+</project>

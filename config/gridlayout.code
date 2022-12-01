@@ -1,0 +1,19 @@
+class GridLayout {
+	Printer LOG_PRINTER = new Printer();
+	class Printer{
+		void println(String str) {
+		}
+	}
+	Printer mPrinter=LOG_PRINTER;
+	
+	public GridLayout() {
+		mDefaultGap = 8*2;
+		setRowCount(DEFAULT_COUNT);
+	    setColumnCount(DEFAULT_COUNT);
+	    setOrientation(DEFAULT_ORIENTATION);
+	    setUseDefaultMargins(DEFAULT_USE_DEFAULT_MARGINS);
+	    setAlignmentMode(DEFAULT_ALIGNMENT_MODE);
+	    setRowOrderPreserved(DEFAULT_ORDER_PRESERVED);
+	    setColumnOrderPreserved(DEFAULT_ORDER_PRESERVED);
+   	}
+}

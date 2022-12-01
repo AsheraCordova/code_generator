@@ -1,0 +1,144 @@
+<Widgets>
+    <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/Border" template="AttributableTemplate.java" name="BorderView" classname="BorderViewImpl" os="android" prefix="" nativeclassname="android.view.View" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|" group="Border" packageName="com.ashera.plugin" generateXmlTestCase="true"
+        baseDirectory="../../core-android-widget/AndroidCSSBorderPlugin" viewplugin="true" viewPluginFor="View">
+       	<CustomAttribute name="borderWidth" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderColor" type="colorstate" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderStyle" type="string" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderTopWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderBottomWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderLeftWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderRightWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+	</Widget>
+	
+	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/Border" template="AttributableTemplate.java" name="BorderView" classname="BorderViewImpl" os="swt" prefix="" nativeclassname="org.eclipse.swt.widgets.Control" jstemplate="widgettemplate.js" createDefault="" group="Border" packageName="com.ashera.plugin" generateXmlTestCase="true"
+        baseDirectory="../../core-javafx-widget/SWTCSSBorderPlugin" viewplugin="true" viewPluginFor="View">
+       	<CustomAttribute name="borderWidth" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderColor" type="colorstate" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderStyle" type="string" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderTopWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderTopRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderBottomWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+		<CustomAttribute name="borderBottomDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>        
+        <CustomAttribute name="borderBottomDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderBottomRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderLeftWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderLeftDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+
+        <CustomAttribute name="borderRightWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+        <CustomAttribute name="borderRightDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>
+	</Widget>
+	
+   <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/Border" template="AttributableTemplate.java" name="BorderView" classname="BorderViewImpl" os="ios" prefix="" nativeclassname="UIView" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|" group="Border" packageName="com.ashera.plugin" generateXmlTestCase="true"
+       baseDirectory="../../core-ios-widgets/IOSCSSBorderPlugin" viewplugin="true" viewPluginFor="View">
+        <CustomAttribute name="borderWidth" type="dimension" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderColor" type="colorstate" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderStyle" type="string" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderTopWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null"/>
+		<CustomAttribute name="borderTopDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>        
+        <CustomAttribute name="borderTopDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderBottomWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+		<CustomAttribute name="borderBottomDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" generatorUrl="https://developer.mozilla.org/en-US/docs/Web/CSS/border"/>        
+        <CustomAttribute name="borderBottomDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderLeftWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderRightWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightDashWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightDashSpacing" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+	</Widget>
+
+   <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/Border" template="AttributableTemplate.java" name="BorderView" classname="BorderViewImpl" os="web" prefix="" nativeclassname="org.teavm.jso.dom.html.HTMLElement" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|" group="Border" packageName="com.ashera.plugin" generateXmlTestCase="true"
+       baseDirectory="../../core-web-widget/WebCSSBorderPlugin" viewplugin="true" viewPluginFor="View">
+        <CustomAttribute name="borderWidth" type="dimension" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderColor" type="colorstate" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderStyle" type="string" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderTopWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null"/>
+        <CustomAttribute name="borderTopLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderTopRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderBottomWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomLeftRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderBottomRightRadius" type="dimensionfloat" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderLeftWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderLeftStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+
+        <CustomAttribute name="borderRightWidth" type="dimension" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightColor" type="colorstate" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute name="borderRightStyle" type="string" code="code: //" javaType="int" decorator="border" getterCode="code: null" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+       
+   </Widget>
+</Widgets>

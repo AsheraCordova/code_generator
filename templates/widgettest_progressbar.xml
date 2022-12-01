@@ -1,0 +1,27 @@
+<#macro getAdditinalAttrs_ProgressBar attrs name value id localname widgetname>
+	<#if localname == 'ProgressBar'>
+		<#if !attrs.trimmedAttribute?starts_with('indeterminate') && !attrs.trimmedAttribute?starts_with('padding')>
+			android:indeterminate="false"
+			systemAndroidAttrStyle="progressBarStyleHorizontal"
+		</#if>
+		<#if process=='ios' && attrs.trimmedAttribute?starts_with('padding')>
+			enableFeatures="decorator"
+		</#if> 
+	</#if>
+</#macro>         
+
+<#function getTestCases_ProgressBar attrs localName>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'progressBarStyle'>
+		<#assign myarray = myarray + ["progressBarStyleHorizontal", "progressBarStyleSmall"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'iosStyle' && localName == 'ProgressBar'>
+		<#assign myarray = myarray + ["large", "medium"]>
+	</#if>
+	<#return myarray>
+</#function>
+
+<#function getTestCases_ProgressBar_attrs attrs localName>
+	<#assign myarray=[]> 
+	<#return myarray>
+</#function>	

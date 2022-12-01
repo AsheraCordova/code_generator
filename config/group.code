@@ -1,0 +1,5 @@
+class Group {
+	public Group() {
+		 mUseViewMeasure = false;
+	}
+}

@@ -1,0 +1,21 @@
+class BaseMenuPresenter {
+	protected androidx.appcompat.widget.ActionMenuView mMenuView;
+	public View getItemView(  final MenuItemImpl item,  View convertView,  ViewGroup parent){
+	  View itemView = null;
+	  if (convertView != null && androidx.appcompat.widget.ActionMenuView.isActionMenuItemView(convertView)) {
+		  itemView = convertView;
+	  }
+	  final androidx.appcompat.widget.ActionMenuView menuParent=(androidx.appcompat.widget.ActionMenuView)parent;
+	  itemView = menuParent.getItemView(item);
+    return itemView;
+  }
+  
+  public void setMenu(MenuBuilder mMenu) {
+	this.mMenu = mMenu;
+  }
+	interface MenuView {
+		interface ItemView {
+			MenuItemImpl getItemData();
+		}
+	}
+}

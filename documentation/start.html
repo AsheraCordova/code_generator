@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->
+                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Quick Start</li>
+                </ol>
+                
+                
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: October 05th, 2022</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">1 - Install Cordova</h3>
+                                    <p>
+                                    Cordova command-line runs on Node.js and is available on NPM. Open a command prompt or Terminal, and type 
+                                    </p>
+                                    <div class="code-block">
+                                        <p><code>npm install -g cordova</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">2 - Create Cordova project</h3>
+                                    <p>
+                                    Type in the command prompt or Terminal 
+                                    </p>
+                                    <div class="code-block">
+                                        <p><code> cordova create HelloWorld com.ashera.hello</code></p>
+                                    </div><!--//code-block-->
+                                    
+                                    <h6>Add the following to config.xml:</h6>
+                                        <pre><code class="language-markup">&lt;preference name="AndroidXEnabled" value="true" /&gt;
+&lt;preference name="SplashMaintainAspectRatio" value="true" /&gt;
+&lt;preference name="webScaleFactor" value="1.4" /&gt;
+&lt;preference name="iosHidetoolbar" value="true" /&gt;</code></pre>
+
+                                    <h6>Add the following (if needed) to config.xml:</h6>
+                                        <pre><code class="language-markup">&lt;preference name="webHistoryUrlPrefix" value="&lt;base url&gt;/" /&gt;</code></pre>
+                                    
+                                </div><!--//section-block-->
+                                
+                                <div id="step3"  class="section-block">
+    
+								<div id="step3"  class="section-block">
+                                    <h3 class="block-title">3 - Update package.json with scripts</h3>
+                                   
+                                    <div class="code-block">
+	                                     	<p><pre><code class="language-markup">{
+	...,
+	"scripts": {
+		"swt-run": "cd platforms/swt/app && gradle run",
+		"browser-run": "cd platforms/browser/app && gradle execute && cd src/main/assets/www && http-server",
+		"generate-platform-res": "cd platforms/android/app/src/main/gentool && npm install && npm run resize && npm run start",
+		"generate-platform-js": "cd platforms/android/app/src/main/tsc && npm install && npm run build",
+		"generate-platform-drawable": "cd platforms/android/app/src/main/gentool && npm run resize",
+		"fix-ios-symLinks": "cd platforms/android/app/src/main/gentool && npm run fixIosSymLinks",
+		"update-ios-plist": "cd platforms/android/app/src/main/gentool && npm run plist",
+		"backup-android": "cd platforms/android/app/src/main/gentool && npm run backup",
+		"restore-android": "cd platforms/android/app/src/main/gentool && npm run restore",
+		...
+  	},
+}
+                                     </code></pre></p>
+                                       
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step4"  class="section-block">
+                                    <h3 class="block-title">4 - Add platforms</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <h6>Platform supported</h6>
+                                            <ul class="list">
+        										<li>Android (android)</li>
+        										<li>IOS (ios)</li>
+        										<li>Browser (browser)</li>
+        										<li>SWT (swt)</li>
+        									</ul>
+                                        </div>
+                                    </div><!--//row-->
+                                    <div class="code-block">
+                                     	<p><code> cd HelloWorld</code></p>
+                                        <p><code> cordova platform add android</code></p>
+                                        <p><code> cordova platform add ios</code></p>
+                                        <p><code> cordova platform add https://github.com/AsheraCordova/cordova-swt.git</code></p>
+                                        <p><code> cordova platform add https://github.com/AsheraCordova/cordova-web.git</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step5"  class="section-block">
+                                    <h3 class="block-title">5 - Install Ashera core</h3>
+                                    <p>
+                                    Type in the command prompt or Terminal 
+                                    </p>
+                                    <div class="code-block">
+                                        <p><code> cordova plugin add https://github.com/AsheraCordova/Core</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step6"  class="section-block">
+                                    <h3 class="block-title">6 - Generate cross platform resources</h3>
+                                    <p>
+                                    Type in the command prompt or Terminal 
+                                    </p>
+                                    <div class="code-block">
+                                    	<p><code> npm run generate-platform-res</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step7"  class="section-block">
+                                    <h3 class="block-title">7 - Generate cross platform JS</h3>
+                                    <p>
+                                    Type in the command prompt or Terminal 
+                                    </p>
+                                    <div class="code-block">
+                                    	<p><code> npm run generate-platform-js</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step8"  class="section-block">
+                                    <h3 class="block-title">8 - Run on platform</h3>
+                                    <p>
+                                    Android
+                                    </p>                                            
+                                    <div class="code-block">
+                                        <p><code> cordova run android</code></p>
+                                    </div><!--//code-block-->
+                                    
+                                    <p>
+                                    IOS
+                                    </p>
+
+                   <h6>Download j2objc2.7 from the below location:</h6>
+                   <a href="https://github.com/google/j2objc/releases" class="btn btn-primary btn-cta"><svg class="svg-inline--fa fa-download" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M480 352h-133.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456zM233.4 374.6C239.6 380.9 247.8 384 256 384s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25c-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32C238.3 0 224 14.33 224 32v242.8L150.6 201.4c-12.49-12.5-32.75-12.5-45.25 0c-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"></path></svg><!-- <i class="fas fa-download"></i> Font Awesome fontawesome.com --> Download</a>
+                                    </p>
+                                     <h6>Create symlink:</h6>
+                                    <p><code>ln -s &lt;Location of j2objc2.7 folder&gt; /Library/j2objc</code></p>
+                                    
+
+                                    <div class="code-block">
+                                        <p><code> cordova run ios</code></p>
+                                    </div><!--//code-block-->
+                                    
+                                    <p>
+                                    Browser
+                                    </p>
+                                    <div class="code-block">
+                                    	<p><code>npm -g install http-server</code></p>
+                                    	<p><code>npm run browser-run</code></p>
+                                    </div><!--//code-block-->
+                                    
+                                    <p>
+                                    Swt
+                                    </p>
+                                    <div class="code-block">
+                                    	<p><code>npm run swt-run</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                                <div id="step9"  class="section-block">
+                                    <h3 class="block-title">9 - Patch cordova library files</h3>
+                                    <p>
+                                    Ashera requires minor patches to the existing cordova installation to fix plugin add and rm plugin operations on swt and browser platforms.  
+                                    </p>
+                                    <p>
+                                    The following changes have to be done manually:
+                                    </p>
+                                    
+                                    <p>
+                                    Search platformsConfig.json under cordova node_modules. Example file location can be found below: 
+                                    </p>
+                                    <p>
+                                    <code>&lt;&lt;node installation&gt;&gt;/node_modules/cordova/node_modules/cordova-lib/src/platforms/platformsConfig.json</code> 
+                                    </p>
+                                    <p>
+                                    Add <code>"swt" : {}</code> as one of the platforms.
+                                    </p>
+                                    <p>
+                                    Search ConfigFile.js in the project under node_modules. Example file location can be found below: 
+                                     
+                                    </p>
+                                    <p>
+                                    <code>&lt;&lt;project dir&gt;&gt;/node_modules/cordova-common/src/ConfigChanges/ConfigFile.js</code> 
+                                    </p>
+                                    Search for function resolveConfigFilePath in this file. Add the code snippet as the first line of the method:
+                                    <p>
+<pre><code class="language-markup"> if (file === 'config.xml' && platform === 'browser') {
+	return path.join(project_dir, 'config.xml');
+}</code></pre>
+                                    </p>	
+                                </div>
+                                
+                                <div id="step10"  class="section-block">
+                                    <h3 class="block-title">10 - Install additional Ashera plugins (optional)</h3>
+                                    
+                                    <div class="code-block">
+                                        <p><code> cordova plugin add https://github.com/AsheraCordova/CapInsets</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/ConstraintLayout</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/CSSBorder</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/Custom</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/DateTime</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/Drawer</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/GridLayout</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/RecycleView</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/Toolbar</code></p>
+
+<p><code> cordova plugin add https://github.com/AsheraCordova/IQkeyboardManager</code></p>
+
+<p><code> cordova plugin add https://github.com/AsheraCordova/ShutterBug</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/Glide</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/SDWebImagePlugin</code></p>
+
+<p><code> cordova plugin add https://github.com/AsheraCordova/Splash</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/Dialog</code></p>
+
+<p><code> cordova plugin add https://github.com/AsheraCordova/cordova-plugin-camera</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/cordova-plugin-camera-swt</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/cordova-plugin-qrscanner</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/cordova-plugin-qrscanner-swt</code></p>
+
+<p><code> cordova plugin add https://github.com/AsheraCordova/cordova-plugin-sqlite-2-swt.git</code></p>
+<p><code> cordova plugin add https://github.com/AsheraCordova/IndexedDB.git</code></p>
+
+
+                                    </div><!--//code-block-->
+                              	</div>
+                              	
+                              	<!-- div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Useful Tip:</h4>
+                                            <p>"cd" when used should always be executed at the root of the project</p>
+                                        </div>
+                                    </div-->
+                            </section><!--//doc-section-->
+                            
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">IDE</h2>
+                                <div id="html" class="section-block">
+                                    <p>It is recommended to use Android Studio for ui development as it gives a preview of the xml with advanced refactoring capability. 
+                                    For JS development, it is recommended to Visual Studio code as it is free and has advanced refactoring capability.</p>
+                                    <div class="code-block">
+                                        <h6><a href="https://developer.android.com/studio" target="_blank">Android Studio</a></h6>
+                                        <pre><code class="language-markup">1. Download and install Android studio.<br>
+2. Open existing project by browsing "project installation root"\HelloWorld\platforms\android</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="css" class="section-block">
+                                    <div class="code-block">
+                                        <h6><a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a></h6>
+                                        <pre><code class="language-markup">1. Download and install Visual Studio Code.<br>
+2. Open the following folder "project installation root"\HelloWorld\platforms\android\src\main\tsc</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+                            </section><!--//doc-section-->
+                            
+                            <section id="callouts-section" class="doc-section">
+                                <h2 class="section-title">Scripts</h2>
+                                <div class="section-block">
+                                    <p>After Installation, package.json contains scripts which help to auto generate files from android xml and ts file which will aid in cross platform development.
+                                    The following table lists the scripts available:    
+                                    </p>
+                                </div>
+
+                                <div class="section-block">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>npm run generate-platform-js</td>
+                                                    <td>Script used to generate index.js from tsc folder.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>npm run generate-platform-res</td>
+                                                    <td>Script used to generate files in resources folder and drawable folder</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>npm run generate-platform-drawable</td>
+                                                    <td>Script used to generate resized png files in drawable folders from drawable-xxxhdpi folder.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>npm run fix-ios-symLinks</td>
+                                                    <td>Script used to fix the symlinks to resources of android. IOS has bug where running cordova prepare in existing projects, symlinks in resources folders are lost. Run this script to fix the same.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>npm run update-ios-plist</td>
+                                                    <td>Script used to update plist with custom fonts. Run if you add an custom font in the font folder.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td>npm run  backup-android</td>
+                                                    <td>Script used to backup tsc and res folder.</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <th scope="row">7</th>
+                                                    <td>npm run  restore-android</td>
+                                                    <td>Script used to restore tsc and res folder.</td>
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                              </div>
+                              
+                              <div class="callout-block callout-info">
+                                   <div class="icon-holder">
+                                       <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> Font Awesome fontawesome.com -->
+                                   </div><!--//icon-holder-->
+                                   <div class="content">
+                                       <h4 class="callout-title">Development Tips</h4>
+                                       <p>Development of ashera application is done in res folder and tsc folder of android. Run the following in 2 terminal windows during development:<br>
+                                       <code>npm run generate-platform-js</code> <br>
+                                       <code>npm run generate-platform-res</code><br>
+                                       
+                                       This will ensure that resources and index js file are continuously updated.
+                                       <br> If you add image in drawable-xxxhdpi folder, run <br><code>npm run generate-platform-drawable</code><br>
+                                       
+                                       If you are removing android platform, ensure that you back up and restore android files in res and tsc folder. 
+                                       <code>npm run backup-android</code> <br>
+                                       <code>npm run restore-android</code><br>  </p>
+                                   </div><!--//content-->
+                               </div>
+                           </section>
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#installation-section">Installation</a>
+		                            </li>
+                                    <nav class="nav doc-sub-menu nav flex-column">
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step1">1 - Install Cordova</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step2">2 - Create Cordova project</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step3">3 - Update package.json with scripts</a>
+	                                    </li>
+	                                    
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step4">4 - Add platforms</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step5">5 - Install Ashera core</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step6">6 - Generate cross platform resources</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step7">7 - Generate cross platform JS</a>
+	                                    </li>
+	                                     <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step8">8 - Run on platform</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step9">9 - Patch cordova library files</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#step10">10 - Install additional Ashera plugins (optional)</a>
+	                                    </li>
+                                    </nav><!--//nav-->
+                                    <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#code-section">IDE</a>
+                                    </li>
+                                    
+                                    
+                                    
+                                    <nav class="nav doc-sub-menu nav flex-column">
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#html">Android Studio</a>
+	                                    </li>
+	                                    <li class="nav-item">
+                                            <a class="nav-link scrollto" href="#css">Visual Studio Code</a>
+	                                    </li>	                                    
+                                    </nav><!--//nav-->
+                                    
+                                    <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#callouts-section">Scripts</a>
+                                    </li>     
+                                                            
+	                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+                
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

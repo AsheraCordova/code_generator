@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Widgets>
+    <Widget classname="WebViewImpl" createDefault="asnativewidget|" generateXmlTestCase="true" group="WebView" jstemplate="widgettemplate.js" name="WebView" nativeclassname="android.webkit.WebView" os="android" packageName="android.webkit" prefix="" template="BaseWidgetTemplate.java" widgetclassname="android.webkit.WebView">
+        <CustomAttribute ignore="true" code="setHorizontalScrollbarOverlay" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="horizontalScrollbarOverlay" namespace="default" type="boolean" />
+        <CustomAttribute ignore="true" code="setVerticalScrollbarOverlay" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="verticalScrollbarOverlay" namespace="default" type="boolean" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="visibleTitleHeight" namespace="default" type="dimension" />
+        <CustomAttribute ignore="true" code="setCertificate" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="SslCertificate" name="certificate" namespace="default" />
+        <CustomAttribute ignore="true" code="setNetworkAvailable" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="networkAvailable" namespace="default" type="boolean" />
+        <CustomAttribute code="loadUrl" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="loadUrl" namespace="default" useMethodName="true" type="resourcestring" />
+        <CustomAttribute ignore="true" code="saveWebArchive" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="saveWebArchive" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" code="goBackOrForward" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="goBackOrForward" namespace="default" type="int" useMethodName="true" />
+        <CustomAttribute ignore="true" code="isPrivateBrowsingEnabled" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="privateBrowsingEnabled" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="float" name="scale" namespace="default" />
+        <CustomAttribute code="setInitialScale" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="initialScale" namespace="default" type="int" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="HitTestResult" name="hitTestResult" namespace="default" />
+        <CustomAttribute ignore="true"  code="requestFocusNodeHref" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Message" name="requestFocusNodeHref" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true"  code="requestImageRef" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Message" name="requestImageRef" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true"  generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="url" namespace="default" />
+        <CustomAttribute ignore="true"  generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="originalUrl" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="title" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Bitmap" name="favicon" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="touchIconUrl" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="progress" namespace="default" type="int" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="contentHeight" namespace="default" type="dimension" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="contentWidth" namespace="default" type="dimension" />
+        <CustomAttribute ignore="true" code="isPaused" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="paused" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute code="clearCache" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="clearCache" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" code="setFindListener" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="FindListener" listenerClassName="WebView.FindListener" name="find" namespace="default" type="string" >
+            <ListenerMethod>public void onFindResultReceived(int activeMatchOrdinal,int numberOfMatches,boolean isDoneCounting)</ListenerMethod>
+        </CustomAttribute>
+        <CustomAttribute ignore="true" code="findNext" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="findNext" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" code="findAllAsync" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="findAllAsync" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" code="documentHasImages" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Message" name="documentHasImages" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" code="setWebViewClient" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebViewClient" name="webViewClient" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebViewRenderProcess" name="webViewRenderProcess" namespace="default" />
+        <CustomAttribute ignore="true" code="setWebViewRenderProcessClient" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebViewRenderProcessClient" name="webViewRenderProcessClient" namespace="default" />
+        <CustomAttribute ignore="true" code="setDownloadListener" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="DownloadListener" name="download" namespace="default" type="string" />
+        <CustomAttribute ignore="true" code="setWebChromeClient" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebChromeClient" name="webChromeClient" namespace="default" />
+        <CustomAttribute ignore="true" code="setPictureListener" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="PictureListener" listenerClassName="WebView.PictureListener" name="picture" namespace="default" type="string" >
+            <ListenerMethod>void onNewPicture(WebView view,Picture picture)</ListenerMethod>
+        </CustomAttribute>
+        <CustomAttribute ignore="true" code="removeJavascriptInterface" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="String" name="removeJavascriptInterface" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebSettings" name="settings" namespace="default" />
+        <CustomAttribute ignore="true" code="refreshPlugins" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="refreshPlugins" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" code="setMapTrackballToArrowKeys" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="mapTrackballToArrowKeys" namespace="default" type="boolean" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="View" name="zoomControls" namespace="default" />
+        <CustomAttribute code="zoomBy" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="float" name="zoomBy" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="rendererRequestedPriority" namespace="default" type="int" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="rendererPriorityWaivedWhenNotVisible" namespace="default" type="boolean" />
+        <CustomAttribute ignore="true" code="setTextClassifier" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="TextClassifier" name="textClassifier" namespace="default" type="resourcestring" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Looper" name="webViewLooper" namespace="default" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="WebViewProvider" name="webViewProvider" namespace="default" type="id" />
+        <CustomAttribute ignore="true" code="setLayoutParams" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="ViewGroup.LayoutParams" name="layoutParams" namespace="default" />
+        <CustomAttribute ignore="true" code="setOverScrollMode" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="overScrollMode" namespace="default" type="int" />
+        <CustomAttribute ignore="true" code="setScrollBarStyle" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="scrollBarStyle" namespace="default" type="int" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="AccessibilityNodeProvider" name="accessibilityNodeProvider" namespace="default" type="id" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="CharSequence" name="accessibilityClassName" namespace="default" type="string" />
+        <CustomAttribute ignore="true" code="onProvideVirtualStructure" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="ViewStructure" name="onProvideVirtualStructure" namespace="default" type="id" useMethodName="true" />
+        <CustomAttribute ignore="true" code="autofill" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="SparseArray&lt;AutofillValue&gt;" name="autofill" namespace="default" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onVirtualViewTranslationResponses" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="LongSparseArray&lt;ViewTranslationResponse&gt;" name="onVirtualViewTranslationResponses" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onInitializeAccessibilityNodeInfoInternal" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="AccessibilityNodeInfo" name="onInitializeAccessibilityNodeInfoInternal" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onInitializeAccessibilityEventInternal" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="AccessibilityEvent" name="onInitializeAccessibilityEventInternal" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onWindowFocusChanged" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="boolean" name="onWindowFocusChange" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" code="setBackgroundColor" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="int" name="backgroundColor" namespace="default" type="color" />
+        <CustomAttribute ignore="true" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="Handler" name="handler" namespace="default" />
+        <CustomAttribute ignore="true" code="code:$var.setPictureListener(new PictureListener(this, strValue, &quot;onNewPicture&quot;));" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="PictureListener" listenerClassName="WebView.PictureListener" name="onNewPicture" namespace="default" type="string" >
+            <ListenerMethod>void onNewPicture(WebView view,Picture picture)</ListenerMethod>
+        </CustomAttribute>
+        <CustomAttribute ignore="true"  code="code:$var.setFindListener(new FindListener(this, strValue, &quot;onFindResultReceived&quot;));" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/webkit/WebView.java?format=TEXT" inherited="true" javaType="FindListener" listenerClassName="WebView.FindListener" name="onFindResultReceived" namespace="default" type="string" >
+            <ListenerMethod>public void onFindResultReceived(int activeMatchOrdinal,int numberOfMatches,boolean isDoneCounting)</ListenerMethod>
+        </CustomAttribute>
+        
+        <CustomAttribute code="code:setWebViewLoadingListener(new WebViewLoadingListener(this, strValue, &quot;onPageStarted&quot;));" javaType="WebViewLoadingListener" listenerClassName="Loader.WebViewLoadingListener" name="onPageStarted" namespace="default" type="string" >
+            <ListenerMethod>void onPageStarted(View view)</ListenerMethod>
+        </CustomAttribute>
+        <CustomAttribute code="code:setWebViewLoadedListener(new WebViewLoadedListener(this, strValue, &quot;onPageFinished&quot;));" javaType="WebViewLoadedListener" listenerClassName="Loader.WebViewLoadedListener" name="onPageFinished" namespace="default" type="string" >
+            <ListenerMethod>void onPageFinished(View view)</ListenerMethod>
+        </CustomAttribute>
+        
+        <CustomAttribute code="code:setWebViewErrorListener(new WebViewErrorListener(this, strValue, &quot;onReceivedError&quot;));" javaType="WebViewErrorListener" listenerClassName="Loader.WebViewErrorListener" name="onReceivedError" namespace="default" type="string" >
+            <ListenerMethod>void onReceivedError(View view, String error)</ListenerMethod>
+        </CustomAttribute>
+    </Widget>
+    
+    <Widget classname="WebViewImpl" createDefault="asnativewidget|" generateXmlTestCase="true" group="WebView" jstemplate="widgettemplate.js" name="WebView" nativeclassname="org.eclipse.swt.browser.Browser" os="swt" packageName="android.webkit" prefix="" template="BaseWidgetTemplate.java" widgetclassname="MeasurableViewGroup">
+        <CustomAttribute code="code:loadUrl(objValue);" javaType="String" name="loadUrl" namespace="default" useMethodName="true" type="resourcestring" />
+        <CopyAttribute widget="WebViewImpl" attribute="onPageStarted|onPageFinished|onReceivedError|" onlyForTestCase="false" os="android"/>
+        <CustomAttribute code="code:setExpectedResponseText(objValue);" javaType="String" name="swtExpectedResponseText" namespace="default" type="resourcestring" order="-2"/>
+        <Code url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/WebViewImpl.java">
+            <Copy from="loader">
+            </Copy>
+        </Code>
+	</Widget>
+	
+    
+    <Widget classname="WebViewImpl" createDefault="asnativewidget|" generateXmlTestCase="true" group="WebView" jstemplate="widgettemplate.js" name="WebView" nativeclassname="ASWKWebView" os="ios" packageName="android.webkit" prefix="" template="BaseWidgetTemplate.java" widgetclassname="MeasurableViewGroup" generateIosClass="ASWKWebView:WKWebView" iosBaseDirectory="../../core-ios-widgets/ios_widget_library/ios_ext/src/">
+        <CustomAttribute code="code:loadUrl(objValue);" javaType="String" name="loadUrl" namespace="default" useMethodName="true" type="resourcestring" />
+        
+         <CopyAttribute widget="WebViewImpl" attribute="onPageStarted|onPageFinished|onReceivedError|" onlyForTestCase="false" os="android" />
+        
+        <Code url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/WebViewImpl.java">
+            <Copy from="loader">
+            </Copy>
+        </Code>
+	</Widget>
+	
+    <Widget classname="WebViewImpl" createDefault="asnativewidget|" generateXmlTestCase="true" group="WebView" jstemplate="widgettemplate.js" name="WebView" nativeclassname="org.teavm.jso.dom.html.HTMLElement" os="web" packageName="android.webkit" prefix="" template="BaseWidgetTemplate.java" widgetclassname="MeasurableViewGroup">
+        <CustomAttribute code="code:loadUrl(objValue);" javaType="String" name="loadUrl" namespace="default" useMethodName="true" type="resourcestring" order="10"/>
+        <CopyAttribute widget="WebViewImpl" attribute="onPageStarted|onPageFinished|onReceivedError|" onlyForTestCase="false" os="android" />
+        
+        <Code url="../../core-android-widget/AndroidLayouts/src/com/ashera/layout/WebViewImpl.java">
+            <Copy from="loader">
+            </Copy>
+        </Code>
+	</Widget>
+</Widgets>

@@ -1,0 +1,2 @@
+android.widget.TextView;validator;no;;;"code://nothing to implement;";;validator;validator;;;;
+android.widget.TextView;onCheckedChanged;no;;;"code:this.setCheckedChanged(strValue);";;string;string;;;;

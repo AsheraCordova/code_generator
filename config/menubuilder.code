@@ -1,0 +1,36 @@
+class MenuBuilder {
+ 	final static int USER_MASK = 65535;
+    final static int USER_SHIFT = 0;
+    final static int CATEGORY_MASK = -65536;
+    final static int CATEGORY_SHIFT = 16;
+    final static int SUPPORTED_MODIFIERS_MASK = 69647;
+    final static int FLAG_KEEP_OPEN_ON_SUBMENU_OPENED = 4;
+    public MenuBuilder() {
+	    mResources=null;
+	    mItems=new ArrayList<MenuItemImpl>();
+	    mVisibleItems=new ArrayList<MenuItemImpl>();
+	    mActionItems=new ArrayList<MenuItemImpl>();
+	    mNonActionItems=new ArrayList<MenuItemImpl>();
+	    this.mIsVisibleItemsStale = true;
+	}
+	private void collapseItemActionView(MenuItem mExpandedItem) {
+	
+	}
+	public void setActionMenuPresenter(MenuPresenter mPresenter) {	
+		mPresenters.add(new WeakReference<MenuPresenter>(mPresenter));	
+	}
+	public void onItemActionRequestChanged(MenuItem menuItem) {
+	}
+	public void onItemsChanged(boolean changed) {
+	}
+	interface SupportMenuItem extends MenuItem {
+	}
+	class ContextMenu {
+	}
+	
+	 class CopyOnWriteArrayList<T> extends ArrayList<T> {
+	 }
+	 
+	 
+
+}

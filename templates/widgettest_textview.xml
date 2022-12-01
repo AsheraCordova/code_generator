@@ -1,0 +1,63 @@
+<#macro getAdditinalAttrs_TextView attrs name value id localname widgetname>
+	<#if attrs.trimmedAttribute == 'html'>
+		android:text="@string/attributed_text_sample"
+	</#if>
+	<#if attrs.trimmedAttribute == 'textFormat'>
+	</#if>
+	<#if attrs.trimmedAttribute == 'hintTextFormat'>
+		 android:hint="test"
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'webEnableTintFilter'>
+		 android:drawableLeft="@drawable/calatrava_cross"
+		 android:drawableTint="#f00"
+	</#if>
+	<#if widgetname == 'StyledLabel' && (attrs.trimmedAttribute == 'autoLink' || attrs.trimmedAttribute == 'linksClickable' || attrs.trimmedAttribute == 'textColorLink')>
+		 html="true"
+	</#if>
+	
+	<#if process == 'web' && (attrs.trimmedAttribute == 'textColorLink')>
+		 html="true"
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'stopWhenReached'>
+		startStop ="true"
+		onChronometerTick=""
+	</#if>
+	
+</#macro>         
+
+<#function getTestCases_TextView attrs>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'textFormat'>
+		<#assign myarray = myarray + ["%s **", "** %s", "** %s **"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'hintTextFormat'>
+		<#assign myarray = myarray + ["%s **", "** %s", "** %s **"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'swtTextStyle' || attrs.trimmedAttribute == 'swtStyle'>
+		<#assign myarray = myarray + ["none"]>
+	</#if>
+	
+	<#if attrs.trimmedAttribute == 'stopWhenReached'>
+		<#assign myarray = myarray + ["00:10"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'baseElapsedTimeInMillis'>
+		<#assign myarray = myarray + ["-20000"]>
+	</#if>
+	<#return myarray>
+</#function>
+
+<#function getTestCases_attrs_TextView attrs>
+	<#assign myarray=[]> 
+	<#if attrs.trimmedAttribute == 'textFormat'>
+		<#assign myarray = myarray + ["'** %s **'", "'%s **'", "'** %s'"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'hintTextFormat'>
+		<#assign myarray = myarray + ["'** %s **'", "'%s **'", "'** %s'"]>
+	</#if>
+	<#if attrs.trimmedAttribute == 'swtTextStyle' || attrs.trimmedAttribute == 'swtStyle'>
+		<#assign myarray = myarray + ["'none'"]>
+	</#if>	
+	<#return myarray>
+</#function>	

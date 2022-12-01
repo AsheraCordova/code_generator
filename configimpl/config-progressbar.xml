@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Widgets>
+    <Widget template="BaseWidgetTemplate.java" widgetclassname="android.widget.ProgressBar" name="ProgressBar" classname="ProgressBarImpl" os="android" prefix="" nativeclassname="android.widget.ProgressBar" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|"  group="ProgressBar" packageName="android.widget" generateXmlTestCase="true">
+        <CustomAttribute ignore="true" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" name="animationResolution" namespace="android" />
+        <CustomAttribute code="setIndeterminate" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="boolean" name="indeterminate" namespace="android" type="boolean" />
+        <CustomAttribute generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" name="indeterminateBehavior" namespace="android" />
+        <CustomAttribute code="setIndeterminateDrawable" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="Drawable" name="indeterminateDrawable" namespace="android" type="drawable" />
+        <CustomAttribute generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" name="indeterminateDuration" namespace="android" />
+        <CustomAttribute generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" name="indeterminateOnly" namespace="android" />
+        <CustomAttribute code="setIndeterminateTintList" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getIndeterminateTintList" inherited="true" javaType="ColorStateList" name="indeterminateTint" namespace="android"  type="colorstate" />
+        <CustomAttribute code="setIndeterminateTintMode" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getIndeterminateTintMode" inherited="true" javaType="PorterDuff.Mode" name="indeterminateTintMode" namespace="android"  type="indeterminateTintMode" converterInfo1="add,multiply,screen,src_atop,src_in,src_over" converterInfo2="android.graphics.PorterDuff.Mode.ADD,android.graphics.PorterDuff.Mode.MULTIPLY,android.graphics.PorterDuff.Mode.SCREEN,android.graphics.PorterDuff.Mode.SRC_ATOP,android.graphics.PorterDuff.Mode.SRC_IN,android.graphics.PorterDuff.Mode.SRC_OVER"/>
+        <CustomAttribute code="setInterpolator" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getInterpolator" inherited="true" javaType="Interpolator" name="interpolator" namespace="android" />
+        <CustomAttribute code="setMax" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="max" namespace="android" type="int" />
+        <CustomAttribute ignore="true" code="setMaxHeight" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="maxHeight" namespace="android" type="dimension" />
+        <CustomAttribute ignore="true" code="setMaxWidth" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="maxWidth" namespace="android" type="dimension" />
+        <CustomAttribute code="setMin" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="min" namespace="android" type="int" />
+        <CustomAttribute ignore="true" code="setMinHeight" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="minHeight" namespace="android" type="dimension" />
+        <CustomAttribute ignore="true" code="setMinWidth" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="minWidth" namespace="android" type="dimension" />
+        <CustomAttribute generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="boolean" name="mirrorForRtl" namespace="android" type="boolean" />
+        <CustomAttribute code="setProgress" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="progress" namespace="android" type="int" />
+        <CustomAttribute code="setProgressBackgroundTintList" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getProgressBackgroundTintList" inherited="true" javaType="ColorStateList" name="progressBackgroundTint" namespace="android" type="colorstate" />
+        <CustomAttribute code="setProgressBackgroundTintMode" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getProgressBackgroundTintMode" inherited="true" javaType="PorterDuff.Mode" name="progressBackgroundTintMode" namespace="android" type="backgroundTintMode" converterInfo1="add,multiply,screen,src_atop,src_in,src_over" converterInfo2="android.graphics.PorterDuff.Mode.ADD,android.graphics.PorterDuff.Mode.MULTIPLY,android.graphics.PorterDuff.Mode.SCREEN,android.graphics.PorterDuff.Mode.SRC_ATOP,android.graphics.PorterDuff.Mode.SRC_IN,android.graphics.PorterDuff.Mode.SRC_OVER"/>
+        <CustomAttribute code="setProgressDrawable" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="Drawable" name="progressDrawable" namespace="android" type="drawable" />
+        <CustomAttribute code="setProgressTintList" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getProgressTintList" inherited="true" javaType="ColorStateList" name="progressTint" namespace="android" type="colorstate"/>
+        <CustomAttribute code="setProgressTintMode" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getProgressTintMode" inherited="true" javaType="PorterDuff.Mode" name="progressTintMode" namespace="android" type="progressTintMode" converterInfo1="add,multiply,screen,src_atop,src_in,src_over" converterInfo2="android.graphics.PorterDuff.Mode.ADD,android.graphics.PorterDuff.Mode.MULTIPLY,android.graphics.PorterDuff.Mode.SCREEN,android.graphics.PorterDuff.Mode.SRC_ATOP,android.graphics.PorterDuff.Mode.SRC_IN,android.graphics.PorterDuff.Mode.SRC_OVER"/>
+        <CustomAttribute code="setSecondaryProgress" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" inherited="true" javaType="int" name="secondaryProgress" namespace="android" type="int" />
+        <CustomAttribute code="setSecondaryProgressTintList" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getSecondaryProgressTintList" inherited="true" javaType="ColorStateList" name="secondaryProgressTint" namespace="android" type="colorstate"/>
+        <CustomAttribute code="setSecondaryProgressTintMode" generatorUrl="https://developer.android.com/reference/android/widget/ProgressBar" getterCode="getSecondaryProgressTintMode" inherited="true" javaType="PorterDuff.Mode" name="secondaryProgressTintMode" namespace="android" type="secondaryProgressTintMode" converterInfo1="add,multiply,screen,src_atop,src_in,src_over" converterInfo2="android.graphics.PorterDuff.Mode.ADD,android.graphics.PorterDuff.Mode.MULTIPLY,android.graphics.PorterDuff.Mode.SCREEN,android.graphics.PorterDuff.Mode.SRC_ATOP,android.graphics.PorterDuff.Mode.SRC_IN,android.graphics.PorterDuff.Mode.SRC_OVER"/>
+        <CustomAttribute ignore="true" code="setIndeterminateTintList" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="ColorStateList" name="indeterminateTintList" namespace="default" type="colorstate" />
+        <CustomAttribute code="setIndeterminateTintBlendMode" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="BlendMode" name="indeterminateTintBlendMode" namespace="default" />
+        <CustomAttribute ignore="true" code="setIndeterminateDrawableTiled" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="Drawable" name="indeterminateDrawableTiled" namespace="default" type="drawable" />
+        <CustomAttribute ignore="true" code="setProgressTintList" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="ColorStateList" name="progressTintList" namespace="default" type="colorstate" />
+        <CustomAttribute code="setProgressTintBlendMode" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="BlendMode" name="progressTintBlendMode" namespace="default" />
+        <CustomAttribute ignore="true" code="setProgressBackgroundTintList" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="ColorStateList" name="progressBackgroundTintList" namespace="default" type="drawable" />
+        <CustomAttribute ignore="true" code="setProgressBackgroundTintBlendMode" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="BlendMode" name="progressBackgroundTintBlendMode" namespace="default" type="drawable" />
+        <CustomAttribute ignore="true" code="setSecondaryProgressTintList" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="ColorStateList" name="secondaryProgressTintList" namespace="default" type="colorstate" />
+        <CustomAttribute code="setSecondaryProgressTintBlendMode" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="BlendMode" name="secondaryProgressTintBlendMode" namespace="default" />
+        <CustomAttribute ignore="true" code="setProgressDrawableTiled" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="Drawable" name="progressDrawableTiled" namespace="default" type="drawable" />
+        <CustomAttribute generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="Drawable" name="currentDrawable" namespace="default" type="drawable" />
+        <CustomAttribute ignore="true" code="onResolveDrawables" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="int" name="onResolveDrawables" namespace="default" type="int" useMethodName="true" />
+        <CustomAttribute ignore="true" code="setStateDescription" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="CharSequence" name="stateDescription" namespace="default" type="string" />
+        <CustomAttribute code="incrementProgressBy" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="int" name="incrementProgressBy" namespace="default" type="int" useMethodName="true" />
+        <CustomAttribute code="incrementSecondaryProgressBy" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="int" name="incrementSecondaryProgressBy" namespace="default" type="int" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onVisibilityAggregated" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="boolean" name="onVisibilityAggregated" namespace="default" type="boolean" useMethodName="true" />
+        <CustomAttribute ignore="true" code="invalidateDrawable" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="Drawable" name="invalidateDrawable" namespace="default" type="id" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onRestoreInstanceState" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="Parcelable" name="onRestoreInstanceState" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="CharSequence" name="accessibilityClassName" namespace="default" type="string" />
+        <CustomAttribute ignore="true" code="onInitializeAccessibilityEventInternal" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="AccessibilityEvent" name="onInitializeAccessibilityEventInternal" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute ignore="true" code="onInitializeAccessibilityNodeInfoInternal" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="AccessibilityNodeInfo" name="onInitializeAccessibilityNodeInfoInternal" namespace="default" type="string" useMethodName="true" />
+        <CustomAttribute ignore="true" code="isAnimating" generatorUrl="https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget/ProgressBar.java?format=TEXT" inherited="true" javaType="boolean" name="animating" namespace="default" type="boolean" useMethodName="true" />
+       
+        <CopyAttribute widget="ViewImpl" attribute="padding(.*)" onlyForTestCase="true" os="android" />
+        
+    </Widget>
+    <Widget template="BaseWidgetTemplate.java" widgetclassname="MeasurableView" name="ProgressBar" classname="ProgressBarImpl" os="swt" prefix="" nativeclassname="org.eclipse.swt.widgets.Composite" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativeMakeFrameForChildWidget|"  group="ProgressBar" packageName="android.widget" generateXmlTestCase="true">
+        <CustomAttribute  javaType="boolean" name="indeterminate" namespace="android" type="boolean" constructor="true"/>
+		<CustomAttribute code="code:setMax(objValue);" javaType="int" name="max" namespace="android" type="int" />	
+        <CustomAttribute code="code:setMin(objValue);" javaType="int" name="min" namespace="android" type="int" />
+        <CustomAttribute code="code:setProgress(objValue);" javaType="int" name="progress" namespace="android" type="int" />    
+        <CustomAttribute code="code:incrementProgressBy(objValue);" javaType="int" name="incrementProgressBy" namespace="default" type="int" useMethodName="true" />
+        
+        <CopyAttribute widget="ButtonImpl" attribute="padding(.*)" onlyForTestCase="false" os="swt" />
+        
+        <Code url="../../core-javafx-widget/javafx_widget_library/src/main/java/com/ashera/layout/ButtonImpl.java">
+        	<Copy from="paddingcopy" to="paddingcopy">
+			</Copy>
+		</Code>
+	</Widget>
+	
+     <Widget template="BaseWidgetTemplate.java" widgetclassname="MeasurableView" name="ProgressBar" classname="ProgressBarImpl" os="web" prefix="" nativeclassname="org.teavm.jso.dom.html.HTMLElement" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativeMeasureDimension|"  group="ProgressBar" packageName="android.widget" generateXmlTestCase="true">
+        <CustomAttribute  javaType="boolean" name="indeterminate" namespace="android" type="boolean" constructor="true"/>
+        <CustomAttribute code="code:setMin(objValue);" javaType="int" name="min" namespace="android" type="int" />
+		<CustomAttribute code="code:setMax(objValue);" javaType="int" name="max" namespace="android" type="int" />	
+        <CustomAttribute code="code:setProgress(objValue);" javaType="int" name="progress" namespace="android" type="int" />    
+        <CustomAttribute code="code:incrementProgressBy(objValue);" javaType="int" name="incrementProgressBy" namespace="default" type="int" useMethodName="true" />
+		<CustomAttribute code="code:setProgressTint(objValue);" getterCode="code:getProgressTint()" javaType="ColorStateList" name="progressTint" type="colorstate"/>
+		<CustomAttribute code="code:setProgressBackgroundTint(objValue);" getterCode="code:getProgressBackgroundTint()" javaType="ColorStateList" name="progressBackgroundTint" type="colorstate"/>
+		        
+        <CopyAttribute widget="TextViewImpl" attribute="padding(.*)" onlyForTestCase="false" os="web" />
+        		<Code
+			url="../../core-web-widget/web-widget-library/src/main/java/com/ashera/layout/TextViewImpl.java">
+			<Copy from="nativeMeasure" to="nativeMeasure">
+			   <ReplaceString name="label"  replace="hTMLElement" /> 
+			   <ReplaceString name="nativeMeasureWidth\(element\)"  replace="nativeMeasureWidth(element, true)" />
+			   <ReplaceString name="nativeMeasureHeight\(element, width\)"  replace="nativeMeasureHeight(element, width, true)" />
+			</Copy>
+		</Code>
+		
+      <Code url="../../core-web-widget/web-widget-library/src/main/java/com/ashera/layout/TextViewImpl.java">
+        	<Copy from="paddingcopy" to="paddingcopy">
+        	<ReplaceString name="measurableTextView"  replace="measurableView"/>
+			</Copy>
+		</Code>
+        
+	</Widget>
+	
+     <Widget template="BaseWidgetTemplate.java" widgetclassname="MeasurableView" name="ProgressBar" classname="ProgressBarImpl" os="ios" prefix="" nativeclassname="ASUIActivityIndicatorView" jstemplate="widgettemplate.js" createDefault="nativeMakeFrameForChildWidget|simpleWrapableView|"  group="ProgressBar" packageName="android.widget" generateXmlTestCase="true"
+         generateIosClass="ASUIActivityIndicatorView:UIActivityIndicatorView"
+         iosBaseDirectory="../../core-ios-widgets/ios_widget_library/ios_ext/src/" >
+      	<Generator type="docurl" url="https://developer.apple.com/documentation/uikit/uiactivityindicatorview" propertyfile="progressbar.properties" />
+        <CustomAttribute  javaType="String" name="iosStyle" type="string" constructor="true" generatorUrl="https://developer.apple.com/documentation/uikit/uiprogressview"/>
+        <CustomAttribute code="code:setProgressTint(objValue);" getterCode="code:getProgressTint()" javaType="ColorStateList" name="progressTint" type="colorstate"/>
+        
+        <CopyAttribute widget="TextViewImpl" attribute="padding(.*)" onlyForTestCase="false" os="swt" />
+        <Code url="../../core-javafx-widget/javafx_widget_library/src/main/java/com/ashera/layout/TextViewImpl.java">
+        	<Copy from="paddingcopy" to="paddingcopy">
+        	<ReplaceString name="measurableTextView"  replace="measurableView"/>
+			</Copy>
+		</Code>
+	</Widget>
+	<Widget template="BaseWidgetTemplate.java" widgetclassname="MeasurableView" name="UIProgressView" classname="UIProgressViewImpl" os="ios" prefix="" nativeclassname="ASUIProgressView" jstemplate="widgettemplate.js" createDefault="nativeMakeFrameForChildWidget|simpleWrapableView|"  group="ProgressBar" packageName="android.widget" generateXmlTestCase="true"
+         generateIosClass="ASUIProgressView:UIProgressView"
+         iosBaseDirectory="../../core-ios-widgets/ios_widget_library/ios_ext/src/" >
+        <Generator type="docurl" url="https://developer.apple.com/documentation/uikit/uiprogressview" propertyfile="progressbar.properties" />
+        <CustomAttribute  javaType="boolean" name="indeterminate" namespace="android" type="boolean" constructor="true"/>
+		<CustomAttribute code="code:setMax(objValue);" javaType="int" name="max" namespace="android" type="int" />	
+        <CustomAttribute code="code:setMin(objValue);" javaType="int" name="min" namespace="android" type="int" />
+        <CustomAttribute code="code:setProgress(objValue);" javaType="int" name="progress" namespace="android" type="int" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE"/>    
+        <CustomAttribute code="code:incrementProgressBy(objValue);" javaType="int" name="incrementProgressBy" namespace="default" type="int" useMethodName="true" updateUiFlag="UPDATE_UI_REQUEST_LAYOUT_N_INVALIDATE" />
+        <CustomAttribute code="code:setProgressTint(objValue);" getterCode="code:getProgressTint()" javaType="ColorStateList" name="progressTint" type="colorstate"/>
+        <CustomAttribute code="code:setProgressBackgroundTint(objValue);" getterCode="code:getProgressBackgroundTint()" javaType="ColorStateList" name="progressBackgroundTint" type="colorstate"/>
+        
+        
+        <CopyAttribute widget="TextViewImpl" attribute="padding(.*)" onlyForTestCase="false" os="swt" />
+        <Code url="../../core-javafx-widget/javafx_widget_library/src/main/java/com/ashera/layout/TextViewImpl.java">
+        	<Copy from="paddingcopy" to="paddingcopy">
+        	<ReplaceString name="measurableTextView"  replace="measurableView"/>
+			</Copy>
+		</Code>
+		
+        <Code url="../../core-ios-widgets/ios_widget_library/src/main/java/com/ashera/layout/ProgressBarImpl.java">
+        	<Copy from="progressbar">
+			</Copy>
+		</Code>
+	</Widget>
+</Widgets>

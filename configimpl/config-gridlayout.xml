@@ -1,0 +1,67 @@
+<Widgets>
+    <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" template="BaseHasWidgetsTemplate.java" name="androidx.gridlayout.widget.GridLayout" classname="GridLayoutImpl" os="android" prefix="" nativeclassname="androidx.gridlayout.widget.GridLayout" jstemplate="widgettemplate.js" createDefault="asnativewidget|nativecreate|ExcludeDefStyleRes|" group="androidx.gridlayout.widget.GridLayout" packageName="androidx.gridlayout.widget" generateXmlTestCase="true">
+        <CustomAttribute name="layout_column" type="int" code="code:layoutParams.columnSpec = getSpec(w, w.getAttributes(), &quot;column&quot;);" javaType="int" />
+        <CustomAttribute name="layout_columnSpan" type="int" code="code:layoutParams.columnSpec = getSpec(w, w.getAttributes(), &quot;column&quot;);" javaType="int" />
+        <CustomAttribute name="layout_columnWeight" type="int" code="code:layoutParams.columnSpec = getSpec(w, w.getAttributes(), &quot;column&quot;);" javaType="int" />
+        <CustomAttribute name="layout_row" type="int" code="code:layoutParams.rowSpec = getSpec(w, w.getAttributes(), &quot;row&quot;);" javaType="int" />
+        <CustomAttribute name="layout_rowSpan" type="int" code="code:layoutParams.rowSpec = getSpec(w, w.getAttributes(), &quot;row&quot;);" javaType="int" />
+        <CustomAttribute name="layout_rowWeight" type="int" code="code:layoutParams.rowSpec = getSpec(w, w.getAttributes(), &quot;row&quot;);" javaType="int" />
+        <CustomAttribute name="layout_gravity" type="gravity" code="code:layoutParams.columnSpec = getSpec(w, w.getAttributes(), &quot;column&quot;);layoutParams.rowSpec = getSpec(w, w.getAttributes(), &quot;row&quot;);"  javaType="int" generatorUrl="https://developer.android.com/reference/android/widget/GridLayout" namespace="android" />
+
+        <Generator type="docurl" url="https://developer.android.com/reference/android/widget/GridLayout" propertyfile="gridlayout.properties">
+            <Url url="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams">
+            </Url>
+        </Generator>
+        
+        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/res/layout/gridlayoutswt_test.xml" target="xmltest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+         
+        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/tsc/src/GridLayoutSwtActivity.ts" target="tstest">
+            <Copy from="customtestcases" to="customtestcases">
+            </Copy>
+        </Code>
+        
+        <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" os="swt" prefix="r." createDefault="nativecreate|asnativewidget|" generateXmlTestCase="true"  baseDirectory="../../core-javafx-widget/SWTAndroidXGridlayoutPlugin">
+            <Code url="../../core-android-widget/AndroidXGridLayoutPlugin/src/com/ashera/gridlayout/GridLayoutImpl.java">
+                <Copy from="codecopy" to="codecopy">
+                </Copy>
+            </Code>
+       	</Widget>
+       	
+         <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" os="web" prefix="r." createDefault="nativecreate|asnativewidget|" generateXmlTestCase="true"  baseDirectory="../../core-web-widget/WebAndroidXGridlayoutPlugin">
+            <Code url="../../core-android-widget/AndroidXGridLayoutPlugin/src/com/ashera/gridlayout/GridLayoutImpl.java">
+                <Copy from="codecopy" to="codecopy">
+                </Copy>
+            </Code>
+       	</Widget>
+       	
+       	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" os="ios" prefix="r." createDefault="nativecreate|asnativewidget|" generateXmlTestCase="true" baseDirectory="../../core-ios-widgets/IOSAndroidXGridlayoutPlugin">
+            <Code url="../../core-android-widget/AndroidXGridLayoutPlugin/src/com/ashera/gridlayout/GridLayoutImpl.java">
+                <Copy from="codecopy" to="codecopy">
+                </Copy>
+            </Code>
+            
+            <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/res/layout/gridlayoutswt_test.xml" target="xmltest">
+	            <Copy from="customtestcases" to="customtestcases">
+	            </Copy>
+	        </Code>
+         
+	        <Code url="../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/android/app/src/main/tsc/src/GridLayoutSwtActivity.ts" target="tstest">
+	            <Copy from="customtestcases" to="customtestcases">
+	            </Copy>
+	        </Code>
+       	</Widget>
+    </Widget>
+    
+<!--    	<Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" template="BaseWidgetTemplate.java" name="Space" classname="SpaceImpl" os="android" prefix="" nativeclassname="android.widget.Space" jstemplate="widgettemplate.js" createDefault="loadAttributes|" widgetclassname="Space" group="Space" packageName="android.widget" generateXmlTestCase="true">
+        <CustomAttribute name="attributeUnderTest" type="string" code="code: //" javaType="int" />
+        <Generator type="docurl" url="https://developer.android.com/reference/android/widget/Space" propertyfile="gridlayout.properties">
+        </Generator>
+        <Widget defaultGeneratorUrl="https://github.com/AsheraCordova/GridLayout" os="swt" prefix="r." createDefault="nativecreate|asnativewidget|" generateXmlTestCase="true" widgetclassname="Space">
+       	</Widget>
+    </Widget> -->
+
+</Widgets>
+

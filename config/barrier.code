@@ -1,0 +1,16 @@
+class Barrier {
+	public Barrier(android.content.Context context) {
+      super.setVisibility(View.GONE);
+      mBarrier = new androidx.constraintlayout.core.widgets.Barrier();
+      mHelperWidget = mBarrier;
+      validateParams();
+	
+	}
+	
+	public Barrier() {
+      super.setVisibility(View.GONE);
+      mBarrier = new androidx.constraintlayout.core.widgets.Barrier();
+      mHelperWidget = mBarrier;
+	  validateParams();
+	}
+}

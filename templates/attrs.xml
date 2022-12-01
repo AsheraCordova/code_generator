@@ -1,0 +1,31 @@
+<#macro getAndroidType attrs strip_whitespace=true>
+<#compress>
+	<#if attrs.type?starts_with("on")>
+		string
+	<#elseif attrs.type == 'int' || attrs.type == 'float'>
+		number
+	<#elseif attrs.type == 'imageasset' || attrs.type == 'colorstate' || attrs.type == 'color' || attrs.type == 'String' || attrs.type="dimension" || attrs.type="dimensionfloat" || attrs.type="dimensionsp" || attrs.type="colorimage" || attrs.type="dimensionspint" || attrs.type="drawable" || attrs.type == 'resourcestring' || attrs.type == 'template'>
+		string
+	<#elseif attrs.type == 'gravity'>
+		Gravity[]
+	<#elseif attrs.type == 'boolean' || attrs.type == 'string'>
+		${attrs.type}
+	<#elseif (attrs.converterType?? && attrs.converterType == 'bitflag')>
+		${attrs.typeVariable}[]	
+	<#else>	
+		${attrs.typeVariable}
+	</#if>
+</#compress>
+</#macro>
+<resources>
+	
+    <declare-styleable name="${myclass.localNameWithoutPackage}">
+	 	<#list myclass.widgetAttributes as attrs>
+	 		<attr name="${attrs.trimmedAttribute}" format="<@getAndroidType attrs=attrs></@getAndroidType>"/>
+			<#list attrs.aliases as alais>
+			<attr name="${alais}" format="string"/>
+			</#list>		
+		</#list>
+    </declare-styleable>
+
+</resources>

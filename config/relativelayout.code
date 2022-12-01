@@ -1,0 +1,216 @@
+class RelativeLayout {
+	public RelativeLayout() {
+		mDirtyHierarchy = true;
+	}
+	private static class DependencyGraph {
+	    /**
+	     * List of all views in the graph.
+	     */
+	    private ArrayList<Node> mNodes = new ArrayList<Node>();
+	
+	    /**
+	     * List of nodes in the graph. Each node is identified by its
+	     * view id (see View#getId()).
+	     */
+	    private SparseArray<Node> mKeyNodes = new SparseArray<Node>();
+	
+	    /**
+	     * Temporary data structure used to build the list of roots
+	     * for this graph.
+	     */
+	    private ArrayDeque<Node> mRoots = new ArrayDeque<Node>();
+	
+	    /**
+	     * Clears the graph.
+	     */
+	    void clear() {
+	        final ArrayList<Node> nodes = mNodes;
+	        final int count = nodes.size();
+	
+	        for (int i = 0; i < count; i++) {
+	            nodes.get(i).release();
+	        }
+	        nodes.clear();
+	
+	        mKeyNodes.clear();
+	        mRoots.clear();
+	    }
+	
+	    /**
+	     * Adds a view to the graph.
+	     *
+	     * @param view The view to be added as a node to the graph.
+	     */
+	    void add(View view) {
+	        final int id = view.getId();
+	        final Node node = Node.acquire(view);
+	
+	        if (id != View.NO_ID) {
+	            mKeyNodes.put(id, node);
+	        }
+	
+	        mNodes.add(node);
+	    }
+	
+	    /**
+	     * Builds a sorted list of views. The sorting order depends on the dependencies
+	     * between the view. For instance, if view C needs view A to be processed first
+	     * and view A needs view B to be processed first, the dependency graph
+	     * is: B -> A -> C. The sorted array will contain views B, A and C in this order.
+	     *
+	     * @param sorted The sorted list of views. The length of this array must
+	     *        be equal to getChildCount().
+	     * @param rules The list of rules to take into account.
+	     */
+	    void getSortedViews(View[] sorted, int... rules) {
+	        final ArrayDeque<Node> roots = findRoots(rules);
+	        int index = 0;
+	
+	        Node node;
+	        while ((node = roots.pollLast()) != null) {
+	            final View view = node.view;
+	            final int key = view.getId();
+	
+	            sorted[index++] = view;
+	
+	            final ArrayMap<Node, DependencyGraph> dependents = node.dependents;
+	            final int count = dependents.size();
+	            
+	            for (int i = 0; i < count; i++) {
+	                final Node dependent=dependents.keyAt(i);
+	                final SparseArray<Node> dependencies = dependent.dependencies;
+	
+	                dependencies.remove(key);
+	                if (dependencies.size() == 0) {
+	                    roots.add(dependent);
+	                }
+	            }
+	        }
+	
+	        if (index < sorted.length) {
+	            throw new IllegalStateException("Circular dependencies cannot exist"
+	                    + " in RelativeLayout");
+	        }
+	    }
+	
+	    /**
+	     * Finds the roots of the graph. A root is a node with no dependency and
+	     * with [0..n] dependents.
+	     *
+	     * @param rulesFilter The list of rules to consider when building the
+	     *        dependencies
+	     *
+	     * @return A list of node, each being a root of the graph
+	     */
+	    private ArrayDeque<Node> findRoots(int[] rulesFilter) {
+	        final SparseArray<Node> keyNodes = mKeyNodes;
+	        final ArrayList<Node> nodes = mNodes;
+	        final int count = nodes.size();
+	
+	        // Find roots can be invoked several times, so make sure to clear
+	        // all dependents and dependencies before running the algorithm
+	        for (int i = 0; i < count; i++) {
+	            final Node node = nodes.get(i);
+	            node.dependents.clear();
+	            node.dependencies.clear();
+	        }
+	
+	        // Builds up the dependents and dependencies for each node of the graph
+	        for (int i = 0; i < count; i++) {
+	            final Node node = nodes.get(i);
+	
+	            final LayoutParams layoutParams = (LayoutParams) node.view.getLayoutParams();
+	            final int[] rules = layoutParams.mRules;
+	            final int rulesCount = rulesFilter.length;
+	
+	            // Look only the the rules passed in parameter, this way we build only the
+	            // dependencies for a specific set of rules
+	            for (int j = 0; j < rulesCount; j++) {
+	                final int rule = rules[rulesFilter[j]];
+	                if (rule > 0) {
+	                    // The node this node depends on
+	                    final Node dependency = keyNodes.get(rule);
+	                    // Skip unknowns and self dependencies
+	                    if (dependency == null || dependency == node) {
+	                        continue;
+	                    }
+	                    // Add the current node as a dependent
+	                    dependency.dependents.put(node, this);
+	                    // Add a dependency to the current node
+	                    node.dependencies.put(rule, dependency);
+	                }
+	            }
+	        }
+	
+	        final ArrayDeque<Node> roots = mRoots;
+	        roots.clear();
+	
+	        // Finds all the roots in the graph: all nodes with no dependencies
+	        for (int i = 0; i < count; i++) {
+	            final Node node = nodes.get(i);
+	            if (node.dependencies.size() == 0) roots.addLast(node);
+	        }
+	
+	        return roots;
+	    }
+	
+	    /**
+	     * A node in the dependency graph. A node is a view, its list of dependencies
+	     * and its list of dependents.
+	     *
+	     * A node with no dependent is considered a root of the graph.
+	     */
+	    static class Node {
+	        /**
+	         * The view representing this node in the layout.
+	         */
+	        View view;
+	
+	        /**
+	         * The list of dependents for this node; a dependent is a node
+	         * that needs this node to be processed first.
+	         */
+	        final ArrayMap<Node, DependencyGraph> dependents =
+	                new ArrayMap<Node, DependencyGraph>();
+	
+	        /**
+	         * The list of dependencies for this node.
+	         */
+	        final SparseArray<Node> dependencies = new SparseArray<Node>();
+	
+	        /*
+	         * START POOL IMPLEMENTATION
+	         */
+	        // The pool is static, so all nodes instances are shared across
+	        // activities, that's why we give it a rather high limit
+	        private static final int POOL_LIMIT = 100;
+	        private static final SynchronizedPool<Node> sPool =
+	                new SynchronizedPool<Node>(POOL_LIMIT);
+	
+	        static Node acquire(View view) {
+	            Node node = sPool.acquire();
+	            if (node == null) {
+	                node = new Node();
+	            }
+	            node.view = view;
+	            return node;
+	        }
+	
+	        void release() {
+	            view = null;
+	            dependents.clear();
+	            dependencies.clear();
+	
+	            sPool.release(this);
+	        }
+	        /*
+	         * END POOL IMPLEMENTATION
+	         */
+	    }
+	}
+	
+	public void release() {
+	  mGraph.clear();
+  	}
+	
+}

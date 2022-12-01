@@ -1,0 +1,1480 @@
+<!doctype html>
+<html lang="en" class="">
+ <head>
+  <script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+  <meta charset="utf-8">
+  <meta name="xsrf_token" content="nA5VC1p_SFuhVftVsUZ1x-bw6uPvtl6V5NrRscKI8Ak6MTU0NzA5OTE0MzI0NjY1OA">
+  <link rel="canonical" href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams">
+  <link rel="alternate" href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams" hreflang="en">
+  <link rel="alternate" href="https://developer.android.google.cn/reference/android/widget/GridLayout.LayoutParams" hreflang="en-cn">
+  <link rel="alternate" href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams" hreflang="x-default">
+  <link rel="shortcut icon" href="https://developer.android.com/_static/0ee1984e83/images/android/favicon.png">
+  <link rel="apple-touch-icon" href="https://developer.android.com/_static/0ee1984e83/images/android/touchicon-180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://developer.android.com/_static/0ee1984e83/css/devsite-android-light-grey.css">
+  <link rel="stylesheet" href="https://developer.android.com/_static/0ee1984e83/css/android/android-site.css">
+  <link rel="search" type="application/opensearchdescription+xml" title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+  <script src="https://developer.android.com/_static/0ee1984e83/js/jquery-bundle.js"></script>
+  <meta property="og:site_name" content="Android Developers">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams">
+  <meta property="og:locale" content="en">
+  <script>
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  <title>GridLayout.LayoutParams &nbsp;|&nbsp; Android Developers</title>
+  <meta property="og:title" content="GridLayout.LayoutParams &nbsp;|&nbsp; Android Developers">
+  <link rel="stylesheet" href="https://developer.android.com/static/css/reference-docs.css">
+ </head>
+ <body class="
+               devsite-doc-page
+               
+               
+               
+               
+               " id="top_of_page">
+  <div class="devsite-wrapper">
+   <div class="devsite-top-section-wrapper
+            ">
+    <header class="devsite-top-section nocontent">
+     <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+       <div class="devsite-top-logo-row devsite-full-site-width">
+        <button type="button" class="devsite-expand-section-nav devsite-header-icon-button
+                                       button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu"></button>
+        <div class="devsite-product-name-wrapper">
+         <a href="https://developer.android.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androiddevelopers" track-metadata-eventdetail="nav" track-metadata-position="nav"><img src="https://developer.android.com/_static/0ee1984e83/images/android/lockup.svg" class="devsite-site-logo" alt="Android Developers"><span class="devsite-site-name devsite-product-name">Android Developers</span></a>
+        </div>
+        <div class="devsite-header-upper-tabs">
+         <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+          <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/about/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Platform"> Platform </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/studio/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio"> Android Studio </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/distribute/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Google Play"> Google Play </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/jetpack/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Jetpack"> Android Jetpack </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/docs/" class="devsite-doc-set-nav-active devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" aria-label="Docs, selected" data-category="Site-Wide Custom Events" data-label="Tab: Docs"> Docs </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/news/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: News"> News </a></li>
+          </ul>
+         </nav>
+        </div>
+        <form class="devsite-search-form" action="https://developer.android.com/s/results/" method="GET" id="top-search" search-placeholder="Search">
+         <div id="searchbox" class="devsite-searchbox">
+          <input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box">
+          <div class="devsite-search-image material-icons"></div>
+         </div>
+         <input type="hidden" name="p" id="search_project" value="/" data-project-name="Android Developers" data-project-path="/" data-query-match="">
+         <input type="hidden" class="suggest-project" value="Android Developers">
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Open Source Project"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Apigee Docs"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Google Cloud"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Dialogflow"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Firebase"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Link.app"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Nest Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="OpenThread"></div>
+         <div class="suggest-project-metadata" data-home_url="https://www.orbitera.com/" data-path="/" data-name="Orbitera"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="TensorFlow"></div>
+        </form>
+        <button type="button" class="devsite-search-button devsite-header-icon-button button-flat
+                                       material-icons"></button>
+       </div>
+      </div>
+     </div>
+     <div class="devsite-collapsible-section">
+      <div class="devsite-header-background devsite-full-site-width">
+       <div class="devsite-product-id-row devsite-full-site-width">
+        <div class="devsite-product-description-row">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item"> Documentation </li>
+         </ul>
+        </div>
+       </div>
+       <div class="devsite-doc-set-nav-row devsite-full-site-width">
+        <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+         <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/docs/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Overview"> Overview </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/guide/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides"> Guides </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/reference/" class="devsite-doc-set-nav-active devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" aria-label="Reference, selected" data-category="Site-Wide Custom Events" data-label="Tab: Reference"> Reference </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/samples/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples"> Samples </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/design/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Design &amp; Quality"> Design &amp; Quality </a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+    </header>
+    <script>
+    if (window.jQuery) {
+      $(document).ready(function() {
+        if (window.devsite && window.devsite.search) {
+          
+          window.devsite.search.init('en')
+        }
+      });
+    }
+  </script>
+   </div>
+   <div id="gc-wrapper" itemscope itemtype="http://schema.org/APIReference">
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Developers&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}">
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Developers&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}">
+    <input class="google-tag-manager-id" type="hidden" value="GTM-KMSWPCJ">
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "userCountry": "IN", "language": {"requested": "en", "served": "en"}, "projectName": "Android Developers", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script> 
+    <div class="devsite-site-mask"></div> 
+    <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0"> 
+     <div class="devsite-nav-responsive-tabs-panel"> 
+      <nav class="devsite-nav-responsive-tabs devsite-nav"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/about/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform"> Platform </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/studio/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio"> Android Studio </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/distribute/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play"> Google Play </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/jetpack/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Jetpack"> Android Jetpack </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/docs/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs"> Docs </a> 
+         <nav class="devsite-nav-responsive-tabs devsite-nav"> 
+          <ul class="devsite-nav-list"> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/docs/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview"> Overview </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/guide/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides"> Guides </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title
+                     devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" tabindex="0"> Reference </span> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/samples/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples"> Samples </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/design/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Design &amp; Quality"> Design &amp; Quality </a> </li> 
+          </ul> 
+         </nav> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/news/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News"> News </a> </li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="devsite-nav-responsive-sidebar-panel"> 
+      <div class="devsite-nav-responsive-back" tabindex="0"></div> 
+      <nav class="devsite-nav-responsive-sidebar"> 
+      </nav> 
+     </div> 
+    </nav> 
+    <div class="devsite-main-content clearfix"> 
+     <nav class="devsite-section-nav devsite-nav nocontent"> 
+      <ul class="devsite-nav-list devsite-nav-list-mini">
+       <li class="devsite-nav-item"><a href="/reference/" class="devsite-nav-title">Overview</a></li>
+       <li class="devsite-nav-item"><span class="devsite-nav-title devsite-nav-title-no-path">Android Platform</span></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/packages" class="devsite-nav-title">Android Support Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/androidx/packages" class="devsite-nav-title">AndroidX</a></li>
+       <li class="devsite-nav-item"><a href="/reference/androidx/test/packages" class="devsite-nav-title">AndroidX Test</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/arch/packages" class="devsite-nav-title">Architecture Components</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/car/packages" class="devsite-nav-title">Android Automotive Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/databinding/packages" class="devsite-nav-title">Databinding Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/constraint/packages" class="devsite-nav-title">Constraint Layout Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/material/packages" class="devsite-nav-title">Material Components</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/test/packages" class="devsite-nav-title">Test Support Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/wearable/packages" class="devsite-nav-title">Wearable Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/android/billingclient/packages" class="devsite-nav-title">Play Billing Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/play/core/packages" class="devsite-nav-title">Play Core Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/android/installreferrer/packages" class="devsite-nav-title">Play Install Referrer Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/things/packages" class="devsite-nav-title">Android Things</a></li>
+       <li class="devsite-nav-item"><span class="devsite-nav-title devsite-nav-title-no-path">Kotlin API Reference (Preview)</span></li>
+       <li class="devsite-nav-item"><a href="/reference/kotlin/packages" class="devsite-nav-title">Android Platform</a></li>
+       <li class="devsite-nav-item"><a href="/reference/kotlin/androidx/packages" class="devsite-nav-title">AndroidX</a></li>
+      </ul> 
+     </nav> 
+     <nav class="devsite-page-nav devsite-nav"></nav> 
+     <article class="devsite-article"> 
+      <article class="devsite-article-inner"> 
+       <div class="devsite-rating-container
+            ">
+        <div class="devsite-rating-stars">
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-category="Site-Wide Custom Events" data-label="Star Rating 1" track-metadata-score="1" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 1 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-category="Site-Wide Custom Events" data-label="Star Rating 2" track-metadata-score="2" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 2 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-category="Site-Wide Custom Events" data-label="Star Rating 3" track-metadata-score="3" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 3 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-category="Site-Wide Custom Events" data-label="Star Rating 4" track-metadata-score="4" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 4 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-category="Site-Wide Custom Events" data-label="Star Rating 5" track-metadata-score="5" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 5 out of 5"></div>
+        </div>
+        <div class="devsite-rating-description"></div>
+        <div class="devsite-rating-internal">
+         <span class="devsite-rating-stats"></span>
+        </div>
+       </div>
+       <script>
+  $(document).ready(function() {
+    devsite.ratings.init(
+      document.querySelectorAll('#devsite-feedback-project'), false
+      
+    );
+  });
+</script> 
+       <nav class="devsite-breadcrumb-nav devsite-nav"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item"> <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1"> Android Developers </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://developer.android.com/docs/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2"> Docs </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://developer.android.com/reference/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3"> Reference </a> </li> 
+        </ul> 
+       </nav> 
+       <nav class="devsite-page-nav-embedded devsite-nav"></nav> 
+       <div class="devsite-article-body clearfix
+            
+              devsite-no-page-title
+            " itemprop="articleBody"> 
+        <div itemscope itemtype="http://developers.google.com/ReferenceObject"> 
+         <!-- This DIV closes at the end of the BODY --> 
+         <meta itemprop="name" content="android.widget.GridLayout.LayoutParams"> 
+         <meta itemprop="path" content="API level 14"> 
+         <div id="naMessage"></div> 
+         <div id="api-info-block"> 
+          <div class="api-level">
+            added in 
+           <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a> 
+          </div> 
+          <div class="sum-details-links">
+            Summary: 
+           <a href="#lattrs">XML Attrs</a> | 
+           <a href="#inhattrs">Inherited XML Attrs</a> | 
+           <a href="#inhconstants">Inherited Constants</a> | 
+           <a href="#lfields">Fields</a> | 
+           <a href="#inhfields">Inherited Fields</a> | 
+           <a href="#pubctors">Ctors</a> | 
+           <a href="#pubmethods">Methods</a> | 
+           <a href="#promethods">Protected Methods</a> | 
+           <a href="#inhmethods">Inherited Methods</a> 
+          </div>
+          <!-- end sum-details-links --> 
+         </div>
+         <!-- end api-info-block --> 
+         <div id="jd-content" data-version-added="14"> 
+          <!-- ======== START OF CLASS DATA ======== --> 
+          <h1 class="api-title">GridLayout.LayoutParams</h1> 
+          <p> <code class="api-signature"> public static class GridLayout.LayoutParams </code> <br> <code class="api-signature"> </code> <code class="api-signature"> </code> <code class="api-signature"> extends <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a> </code> <code class="api-signature"> </code> </p>
+          <table class="jd-inheritance-table"> 
+           <tbody>
+            <tr> 
+             <td colspan="4" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/java/lang/Object.html">java.lang.Object</a> </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="3" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a> </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="2" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a> </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="1" class="jd-inheritance-class-cell">android.widget.GridLayout.LayoutParams </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <br>
+          <hr> 
+          <p>Layout information associated with each of the children of a GridLayout. </p>
+          <p> GridLayout supports both row and column spanning and arbitrary forms of alignment within each cell group. The fundamental parameters associated with each cell group are gathered into their vertical and horizontal components and stored in the <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code> and <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code> layout parameters. <code><a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">Specs</a></code> are immutable structures and may be shared between the layout parameters of different children. </p>
+          <p> The row and column specs contain the leading and trailing indices along each axis and together specify the four grid indices that delimit the cells of this cell group. </p>
+          <p> The alignment properties of the row and column specs together specify both aspects of alignment within the cell group. It is also possible to specify a child's alignment within its cell group by using the <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#setGravity(int)">setGravity(int)</a></code> method. </p>
+          <p> The weight property is also included in Spec and specifies the proportion of any excess space that is due to the associated view. </p>
+          <h4>WRAP_CONTENT and MATCH_PARENT</h4> Because the default values of the 
+          <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#width">ViewGroup.LayoutParams.width</a></code> and 
+          <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#height">ViewGroup.LayoutParams.height</a></code> properties are both 
+          <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#WRAP_CONTENT">ViewGroup.LayoutParams.WRAP_CONTENT</a></code>, this value never needs to be explicitly declared in the layout parameters of GridLayout's children. In addition, GridLayout does not distinguish the special size value 
+          <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#MATCH_PARENT">ViewGroup.LayoutParams.MATCH_PARENT</a></code> from 
+          <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#WRAP_CONTENT">ViewGroup.LayoutParams.WRAP_CONTENT</a></code>. A component's ability to expand to the size of the parent is instead controlled by the principle of 
+          <em>flexibility</em>, as discussed in 
+          <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html">GridLayout</a></code>. 
+          <h4>Summary</h4> You should not need to use either of the special size values: 
+          <code>WRAP_CONTENT</code> or 
+          <code>MATCH_PARENT</code> when configuring the children of a GridLayout. 
+          <h4>Default values</h4> 
+          <ul> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#width">ViewGroup.LayoutParams.width</a></code> = <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#WRAP_CONTENT">ViewGroup.LayoutParams.WRAP_CONTENT</a></code></li> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#height">ViewGroup.LayoutParams.height</a></code> = <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#WRAP_CONTENT">ViewGroup.LayoutParams.WRAP_CONTENT</a></code></li> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#topMargin">ViewGroup.MarginLayoutParams.topMargin</a></code> = 0 when <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#setUseDefaultMargins(boolean)">useDefaultMargins</a></code> is <code>false</code>; otherwise <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code>, to indicate that a default value should be computed on demand. </li> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#leftMargin">ViewGroup.MarginLayoutParams.leftMargin</a></code> = 0 when <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#setUseDefaultMargins(boolean)">useDefaultMargins</a></code> is <code>false</code>; otherwise <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code>, to indicate that a default value should be computed on demand. </li> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#bottomMargin">ViewGroup.MarginLayoutParams.bottomMargin</a></code> = 0 when <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#setUseDefaultMargins(boolean)">useDefaultMargins</a></code> is <code>false</code>; otherwise <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code>, to indicate that a default value should be computed on demand. </li> 
+           <li><code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#rightMargin">ViewGroup.MarginLayoutParams.rightMargin</a></code> = 0 when <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#setUseDefaultMargins(boolean)">useDefaultMargins</a></code> is <code>false</code>; otherwise <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code>, to indicate that a default value should be computed on demand. </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code><code>.row</code> = <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code> </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code><code>.rowSpan</code> = 1 </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code><code>.alignment</code> = <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#BASELINE">GridLayout.BASELINE</a></code> </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code><code>.weight</code> = 0 </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code><code>.column</code> = <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#UNDEFINED">GridLayout.UNDEFINED</a></code> </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code><code>.columnSpan</code> = 1 </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code><code>.alignment</code> = <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html#START">GridLayout.START</a></code> </li> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code><code>.weight</code> = 0 </li> 
+          </ul> See 
+          <code><a href="https://developer.android.com/reference/android/widget/GridLayout.html">GridLayout</a></code> for a more complete description of the conventions used by GridLayout in the interpretation of the properties of this class.
+          <p></p> 
+          <h2 class="api-section">Summary</h2> 
+          <!-- =========== FIELD SUMMARY =========== --> 
+          <table id="lattrs" class="responsive"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>XML attributes</h3></th>
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_column"><code>android:layout_column</code></a></td> 
+             <td width="100%"> The column boundary delimiting the left of the group of cells occupied by this view.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_columnSpan"><code>android:layout_columnSpan</code></a></td> 
+             <td width="100%"> The column span: the difference between the right and left boundaries delimiting the group of cells occupied by this view.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_columnWeight"><code>android:layout_columnWeight</code></a></td> 
+             <td width="100%"> The relative proportion of horizontal space that should be allocated to this view during excess space distribution.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_gravity"><code>android:layout_gravity</code></a></td> 
+             <td width="100%"> Gravity specifies how a component should be placed in its group of cells.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_row"><code>android:layout_row</code></a></td> 
+             <td width="100%"> The row boundary delimiting the top of the group of cells occupied by this view.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_rowSpan"><code>android:layout_rowSpan</code></a></td> 
+             <td width="100%"> The row span: the difference between the top and bottom boundaries delimiting the group of cells occupied by this view.&nbsp; </td> 
+            </tr> 
+            <tr> 
+             <td><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_rowWeight"><code>android:layout_rowWeight</code></a></td> 
+             <td width="100%"> The relative proportion of vertical space that should be allocated to this view during excess space distribution.&nbsp; </td> 
+            </tr> 
+            <!-- =========== FIELD SUMMARY =========== --> 
+           </tbody>
+          </table>
+          <table id="inhattrs" class="responsive inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3>Inherited XML attributes</h3></th>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a></code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_margin"><code>android:layout_margin</code></a></td> 
+                  <td width="100%"> Specifies extra space on the left, top, right and bottom sides of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginBottom"><code>android:layout_marginBottom</code></a></td> 
+                  <td width="100%"> Specifies extra space on the bottom side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginEnd"><code>android:layout_marginEnd</code></a></td> 
+                  <td width="100%"> Specifies extra space on the end side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginHorizontal"><code>android:layout_marginHorizontal</code></a></td> 
+                  <td width="100%"> Specifies extra space on the left and right sides of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginLeft"><code>android:layout_marginLeft</code></a></td> 
+                  <td width="100%"> Specifies extra space on the left side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginRight"><code>android:layout_marginRight</code></a></td> 
+                  <td width="100%"> Specifies extra space on the right side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginStart"><code>android:layout_marginStart</code></a></td> 
+                  <td width="100%"> Specifies extra space on the start side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginTop"><code>android:layout_marginTop</code></a></td> 
+                  <td width="100%"> Specifies extra space on the top side of this view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#attr_android:layout_marginVertical"><code>android:layout_marginVertical</code></a></td> 
+                  <td width="100%"> Specifies extra space on the top and bottom sides of this view.&nbsp; </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a></code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#attr_android:layout_height"><code>android:layout_height</code></a></td> 
+                  <td width="100%"> Specifies the basic height of the view.&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#attr_android:layout_width"><code>android:layout_width</code></a></td> 
+                  <td width="100%"> Specifies the basic width of the view.&nbsp; </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== ENUM CONSTANT SUMMARY =========== --> 
+          <table id="inhconstants" class="responsive constants inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3>Inherited constants</h3></th>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a></code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="1" data-version-deprecated="8"> 
+                  <td><code>int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#FILL_PARENT">FILL_PARENT</a></code> <p>Special value for the height or width requested by a View. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="8"> 
+                  <td><code>int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#MATCH_PARENT">MATCH_PARENT</a></code> <p>Special value for the height or width requested by a View. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code>int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#WRAP_CONTENT">WRAP_CONTENT</a></code> <p>Special value for the height or width requested by a View. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== FIELD SUMMARY =========== --> 
+          <table id="lfields" class="responsive properties"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>Fields</h3></th>
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> public <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a></code></td> 
+             <td width="100%"> <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#columnSpec">columnSpec</a></code> <p>The spec that defines the horizontal characteristics of the cell group described by these layout parameters. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> public <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a></code></td> 
+             <td width="100%"> <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#rowSpec">rowSpec</a></code> <p>The spec that defines the vertical characteristics of the cell group described by these layout parameters. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== FIELD SUMMARY =========== --> 
+          <table id="inhfields" class="responsive properties inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3>Inherited fields</h3></th>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a></code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#bottomMargin">bottomMargin</a></code> <p>The bottom margin in pixels of the child. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#leftMargin">leftMargin</a></code> <p>The left margin in pixels of the child. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#rightMargin">rightMargin</a></code> <p>The right margin in pixels of the child. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#topMargin">topMargin</a></code> <p>The top margin in pixels of the child. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a></code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#height">height</a></code> <p>Information about how tall the view wants to be. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> public <a href="https://developer.android.com/reference/android/view/animation/LayoutAnimationController.AnimationParameters.html">LayoutAnimationController.AnimationParameters</a></code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#layoutAnimationParameters">layoutAnimationParameters</a></code> <p>Used to animate layouts. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> public int</code></td> 
+                  <td width="100%"> <code><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#width">width</a></code> <p>Information about how wide the view wants to be. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ======== CONSTRUCTOR SUMMARY ======== --> 
+          <table id="pubctors" class="responsive constructors"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>Public constructors</h3></th>
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams(android.widget.GridLayout.Spec,%20android.widget.GridLayout.Spec)">GridLayout.LayoutParams</a>(<a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> rowSpec, <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> columnSpec) </code> <p>Constructs a new LayoutParams instance for this <code>rowSpec</code> and <code>columnSpec</code>. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams()">GridLayout.LayoutParams</a>() </code> <p>Constructs a new LayoutParams with default values as defined in <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></code>. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams(android.view.ViewGroup.LayoutParams)">GridLayout.LayoutParams</a>(<a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params) </code> <p> </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams(android.view.ViewGroup.MarginLayoutParams)">GridLayout.LayoutParams</a>(<a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a> params) </code> <p> </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams(android.widget.GridLayout.LayoutParams)">GridLayout.LayoutParams</a>(<a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a> source) </code> <p>Copy constructor. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#GridLayout.LayoutParams(android.content.Context,%20android.util.AttributeSet)">GridLayout.LayoutParams</a>(<a href="https://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="https://developer.android.com/reference/android/util/AttributeSet.html">AttributeSet</a> attrs) </code> <p> Values not defined in the attribute set take the default values defined in <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></code>. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="pubmethods" class="responsive methods"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>Public methods</h3></th>
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> boolean</code> </td> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#equals(java.lang.Object)">equals</a>(<a href="https://developer.android.com/reference/java/lang/Object.html">Object</a> o) </code> <p>Indicates whether some other object is "equal to" this one. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> int</code> </td> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#hashCode()">hashCode</a>() </code> <p>Returns a hash code value for the object. </p> </td> 
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> void</code> </td> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#setGravity(int)">setGravity</a>(int gravity) </code> <p>Describes how the child views are positioned. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="promethods" class="reponsive methods"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>Protected methods</h3></th>
+            </tr> 
+            <tr data-version-added="14"> 
+             <td><code> void</code> </td> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#setBaseAttributes(android.content.res.TypedArray,%20int,%20int)">setBaseAttributes</a>(<a href="https://developer.android.com/reference/android/content/res/TypedArray.html">TypedArray</a> attributes, int widthAttr, int heightAttr) </code> <p>Extracts the layout parameters from the supplied attributes. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="inhmethods" class="responsive methods inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3>Inherited methods</h3></th>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a> </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="17"> 
+                  <td><code> int</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#getLayoutDirection()">getLayoutDirection</a>() </code> <p>Retuns the layout direction. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> int</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#getMarginEnd()">getMarginEnd</a>() </code> <p>Returns the end margin in pixels. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> int</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#getMarginStart()">getMarginStart</a>() </code> <p>Returns the start margin in pixels. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> boolean</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#isMarginRelative()">isMarginRelative</a>() </code> <p>Check if margins are relative. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#resolveLayoutDirection(int)">resolveLayoutDirection</a>(int layoutDirection) </code> <p>This will be called by <code><a href="https://developer.android.com/reference/android/view/View.html#requestLayout()">View.requestLayout()</a></code>. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#setLayoutDirection(int)">setLayoutDirection</a>(int layoutDirection) </code> <p>Set the layout direction </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#setMarginEnd(int)">setMarginEnd</a>(int end) </code> <p>Sets the relative end margin. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="17"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#setMarginStart(int)">setMarginStart</a>(int start) </code> <p>Sets the relative start margin. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html#setMargins(int,%20int,%20int,%20int)">setMargins</a>(int left, int top, int right, int bottom) </code> <p>Sets the margins, in pixels. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a> </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="17"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#resolveLayoutDirection(int)">resolveLayoutDirection</a>(int layoutDirection) </code> <p>Resolve layout parameters depending on the layout direction. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#setBaseAttributes(android.content.res.TypedArray,%20int,%20int)">setBaseAttributes</a>(<a href="https://developer.android.com/reference/android/content/res/TypedArray.html">TypedArray</a> a, int widthAttr, int heightAttr) </code> <p>Extracts the layout parameters from the supplied attributes. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code> <a href="https://developer.android.com/reference/java/lang/Object.html">java.lang.Object</a> </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr data-version-added="1"> 
+                  <td><code> <a href="https://developer.android.com/reference/java/lang/Object.html">Object</a></code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#clone()">clone</a>() </code> <p>Creates and returns a copy of this object. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> boolean</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="https://developer.android.com/reference/java/lang/Object.html">Object</a> obj) </code> <p>Indicates whether some other object is "equal to" this one. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#finalize()">finalize</a>() </code> <p>Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final <a href="https://developer.android.com/reference/java/lang/Class.html">Class</a>&lt;?&gt;</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#getClass()">getClass</a>() </code> <p>Returns the runtime class of this <code>Object</code>. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> int</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#hashCode()">hashCode</a>() </code> <p>Returns a hash code value for the object. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#notify()">notify</a>() </code> <p>Wakes up a single thread that is waiting on this object's monitor. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#notifyAll()">notifyAll</a>() </code> <p>Wakes up all threads that are waiting on this object's monitor. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> <a href="https://developer.android.com/reference/java/lang/String.html">String</a></code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#toString()">toString</a>() </code> <p>Returns a string representation of the object. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#wait(long,%20int)">wait</a>(long millis, int nanos) </code> <p>Causes the current thread to wait until another thread invokes the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notify()">notify()</a></code> method or the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notifyAll()">notifyAll()</a></code> method for this object, or some other thread interrupts the current thread, or a certain amount of real time has elapsed. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#wait(long)">wait</a>(long millis) </code> <p>Causes the current thread to wait until either another thread invokes the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notify()">notify()</a></code> method or the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notifyAll()">notifyAll()</a></code> method for this object, or a specified amount of time has elapsed. </p> </td> 
+                 </tr> 
+                 <tr data-version-added="1"> 
+                  <td><code> final void</code> </td> 
+                  <td width="100%"> <code> <a href="https://developer.android.com/reference/java/lang/Object.html#wait()">wait</a>() </code> <p>Causes the current thread to wait until another thread invokes the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notify()">notify()</a></code> method or the <code><a href="https://developer.android.com/reference/java/lang/Object.html#notifyAll()">notifyAll()</a></code> method for this object. </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- XML Attributes --> 
+          <!-- ========= FIELD DETAIL ======== --> 
+          <h2 class="api-section">XML attributes</h2> 
+          <h3 class="api-name" id="attr_android:layout_column">android:layout_column</h3> 
+          <p>The column boundary delimiting the left of the group of cells occupied by this view. </p>
+          <p>May be an integer value, such as "<code>100</code>".</p>
+          <p></p> 
+          <h3 class="api-name" id="attr_android:layout_columnSpan">android:layout_columnSpan</h3> 
+          <p>The column span: the difference between the right and left boundaries delimiting the group of cells occupied by this view. The default is one. See <code><a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a></code>. </p>
+          <p>May be an integer value, such as "<code>100</code>".</p>
+          <p></p> 
+          <h3 class="api-name" id="attr_android:layout_columnWeight">android:layout_columnWeight</h3> 
+          <p>The relative proportion of horizontal space that should be allocated to this view during excess space distribution. </p>
+          <p>May be a floating point value, such as "<code>1.2</code>".</p>
+          <p></p> 
+          <h3 class="api-name" id="attr_android:layout_gravity">android:layout_gravity</h3> 
+          <p>Gravity specifies how a component should be placed in its group of cells. The default is LEFT | BASELINE. See <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#setGravity(int)">GridLayout.LayoutParams.setGravity(int)</a></code>. </p>
+          <p>Must be one or more (separated by '|') of the following constant values.</p> 
+          <table> 
+           <colgroup align="left"></colgroup> 
+           <colgroup align="left"></colgroup> 
+           <colgroup align="left"></colgroup> 
+           <tbody>
+            <tr>
+             <th>Constant</th>
+             <th>Value</th>
+             <th>Description</th>
+            </tr> 
+            <tr>
+             <td>bottom</td>
+             <td>50</td>
+             <td>Push object to the bottom of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>center</td>
+             <td>11</td>
+             <td>Place the object in the center of its container in both the vertical and horizontal axis, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>center_horizontal</td>
+             <td>1</td>
+             <td>Place object in the horizontal center of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>center_vertical</td>
+             <td>10</td>
+             <td>Place object in the vertical center of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>clip_horizontal</td>
+             <td>8</td>
+             <td>Additional option that can be set to have the left and/or right edges of the child clipped to its container's bounds. The clip will be based on the horizontal gravity: a left gravity will clip the right edge, a right gravity will clip the left edge, and neither will clip both edges.</td>
+            </tr> 
+            <tr>
+             <td>clip_vertical</td>
+             <td>80</td>
+             <td>Additional option that can be set to have the top and/or bottom edges of the child clipped to its container's bounds. The clip will be based on the vertical gravity: a top gravity will clip the bottom edge, a bottom gravity will clip the top edge, and neither will clip both edges.</td>
+            </tr> 
+            <tr>
+             <td>end</td>
+             <td>800005</td>
+             <td>Push object to the end of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>fill</td>
+             <td>77</td>
+             <td>Grow the horizontal and vertical size of the object if needed so it completely fills its container.</td>
+            </tr> 
+            <tr>
+             <td>fill_horizontal</td>
+             <td>7</td>
+             <td>Grow the horizontal size of the object if needed so it completely fills its container.</td>
+            </tr> 
+            <tr>
+             <td>fill_vertical</td>
+             <td>70</td>
+             <td>Grow the vertical size of the object if needed so it completely fills its container.</td>
+            </tr> 
+            <tr>
+             <td>left</td>
+             <td>3</td>
+             <td>Push object to the left of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>right</td>
+             <td>5</td>
+             <td>Push object to the right of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>start</td>
+             <td>800003</td>
+             <td>Push object to the beginning of its container, not changing its size.</td>
+            </tr> 
+            <tr>
+             <td>top</td>
+             <td>30</td>
+             <td>Push object to the top of its container, not changing its size.</td>
+            </tr> 
+           </tbody>
+          </table>
+          <p></p>
+          <p></p> 
+          <p><b>Related methods:</b></p> 
+          <ul class="nolist"> 
+           <li><code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#setGravity(int)">setGravity(int)</a></code></li> 
+          </ul> 
+          <h3 class="api-name" id="attr_android:layout_row">android:layout_row</h3> 
+          <p>The row boundary delimiting the top of the group of cells occupied by this view. </p>
+          <p>May be an integer value, such as "<code>100</code>".</p>
+          <p></p> 
+          <h3 class="api-name" id="attr_android:layout_rowSpan">android:layout_rowSpan</h3> 
+          <p>The row span: the difference between the top and bottom boundaries delimiting the group of cells occupied by this view. The default is one. See <code><a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a></code>. </p>
+          <p>May be an integer value, such as "<code>100</code>".</p>
+          <p></p> 
+          <h3 class="api-name" id="attr_android:layout_rowWeight">android:layout_rowWeight</h3> 
+          <p>The relative proportion of vertical space that should be allocated to this view during excess space distribution. </p>
+          <p>May be a floating point value, such as "<code>1.2</code>".</p>
+          <p></p> 
+          <!-- Enum Values --> 
+          <!-- Constants --> 
+          <!-- Fields --> 
+          <!-- ========= FIELD DETAIL ======== --> 
+          <h2 class="api-section">Fields</h2> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="columnSpec">columnSpec</h3> 
+           <div class="api-level">
+             added in 
+            <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> columnSpec</pre> 
+           <p>The spec that defines the horizontal characteristics of the cell group described by these layout parameters. If an assignment is made to this field after a measurement or layout operation has already taken place, a call to <code><a href="https://developer.android.com/reference/android/view/View.html#setLayoutParams(android.view.ViewGroup.LayoutParams)">View.setLayoutParams(ViewGroup.LayoutParams)</a></code> must be made to notify GridLayout of the change. GridLayout is normally able to detect when code fails to observe this rule, issue a warning and take steps to compensate for the omission. This facility is implemented on a best effort basis and should not be relied upon in production code - so it is best to include the above calls to remove the warnings as soon as it is practical. </p>
+           <p></p> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="rowSpec">rowSpec</h3> 
+           <div class="api-level">
+             added in 
+            <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> rowSpec</pre> 
+           <p>The spec that defines the vertical characteristics of the cell group described by these layout parameters. If an assignment is made to this field after a measurement or layout operation has already taken place, a call to <code><a href="https://developer.android.com/reference/android/view/View.html#setLayoutParams(android.view.ViewGroup.LayoutParams)">View.setLayoutParams(ViewGroup.LayoutParams)</a></code> must be made to notify GridLayout of the change. GridLayout is normally able to detect when code fails to observe this rule, issue a warning and take steps to compensate for the omission. This facility is implemented on a best effort basis and should not be relied upon in production code - so it is best to include the above calls to remove the warnings as soon as it is practical. </p>
+           <p></p> 
+          </div> 
+          <!-- Public ctors --> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <h2 class="api-section">Public constructors</h2> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams(android.widget.GridLayout.Spec,%20android.widget.GridLayout.Spec)">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams (<a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> rowSpec, 
+                <a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a> columnSpec)</pre> 
+           <p>Constructs a new LayoutParams instance for this <code>rowSpec</code> and <code>columnSpec</code>. All other fields are initialized with default values as defined in <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></code>.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>rowSpec</code></td> 
+              <td width="100%"> <code>GridLayout.Spec</code>: the rowSpec<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>columnSpec</code></td> 
+              <td width="100%"> <code>GridLayout.Spec</code>: the columnSpec <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams()">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams ()</pre> 
+           <p>Constructs a new LayoutParams with default values as defined in <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></code>. </p>
+           <p></p> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams(android.view.ViewGroup.LayoutParams)">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams (<a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params)</pre> 
+           <p> </p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>params</code></td> 
+              <td width="100%"> <code>ViewGroup.LayoutParams</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams(android.view.ViewGroup.MarginLayoutParams)">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams (<a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a> params)</pre> 
+           <p> </p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>params</code></td> 
+              <td width="100%"> <code>ViewGroup.MarginLayoutParams</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams(android.widget.GridLayout.LayoutParams)">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams (<a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a> source)</pre> 
+           <p>Copy constructor. Clones the width, height, margin values, row spec, and column spec of the source.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>source</code></td> 
+              <td width="100%"> <code>GridLayout.LayoutParams</code>: The layout params to copy from. <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="GridLayout.LayoutParams(android.content.Context,%20android.util.AttributeSet)">GridLayout.LayoutParams</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public GridLayout.LayoutParams (<a href="https://developer.android.com/reference/android/content/Context.html">Context</a> context, 
+                <a href="https://developer.android.com/reference/android/util/AttributeSet.html">AttributeSet</a> attrs)</pre> 
+           <p> Values not defined in the attribute set take the default values defined in <code><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></code>. </p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>context</code></td> 
+              <td width="100%"> <code>Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>attrs</code></td> 
+              <td width="100%"> <code>AttributeSet</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <!-- Protected ctors --> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- Public methdos --> 
+          <h2 class="api-section">Public methods</h2> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="equals(java.lang.Object)">equals</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public boolean equals (<a href="https://developer.android.com/reference/java/lang/Object.html">Object</a> o)</pre> 
+           <p>Indicates whether some other object is "equal to" this one. </p>
+           <p> The <code>equals</code> method implements an equivalence relation on non-null object references: </p>
+           <ul> 
+            <li>It is <i>reflexive</i>: for any non-null reference value <code>x</code>, <code>x.equals(x)</code> should return <code>true</code>. </li>
+            <li>It is <i>symmetric</i>: for any non-null reference values <code>x</code> and <code>y</code>, <code>x.equals(y)</code> should return <code>true</code> if and only if <code>y.equals(x)</code> returns <code>true</code>. </li>
+            <li>It is <i>transitive</i>: for any non-null reference values <code>x</code>, <code>y</code>, and <code>z</code>, if <code>x.equals(y)</code> returns <code>true</code> and <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>. </li>
+            <li>It is <i>consistent</i>: for any non-null reference values <code>x</code> and <code>y</code>, multiple invocations of <code>x.equals(y)</code> consistently return <code>true</code> or consistently return <code>false</code>, provided no information used in <code>equals</code> comparisons on the objects is modified. </li>
+            <li>For any non-null reference value <code>x</code>, <code>x.equals(null)</code> should return <code>false</code>. </li>
+           </ul> 
+           <p> The <code>equals</code> method for class <code>Object</code> implements the most discriminating possible equivalence relation on objects; that is, for any non-null reference values <code>x</code> and <code>y</code>, this method returns <code>true</code> if and only if <code>x</code> and <code>y</code> refer to the same object (<code>x == y</code> has the value <code>true</code>). </p>
+           <p> Note that it is generally necessary to override the <code>hashCode</code> method whenever this method is overridden, so as to maintain the general contract for the <code>hashCode</code> method, which states that equal objects must have equal hash codes.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>o</code></td> 
+              <td width="100%"> <code>Object</code>: the reference object with which to compare.<p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Returns</th>
+             </tr> 
+             <tr> 
+              <td><code>boolean</code></td> 
+              <td width="100%"><code>true</code> if this object is the same as the obj argument; <code>false</code> otherwise.<p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="hashCode()">hashCode</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public int hashCode ()</pre> 
+           <p>Returns a hash code value for the object. This method is supported for the benefit of hash tables such as those provided by <code><a href="https://developer.android.com/reference/java/util/HashMap.html">HashMap</a></code>. </p>
+           <p> The general contract of <code>hashCode</code> is: </p>
+           <ul> 
+            <li>Whenever it is invoked on the same object more than once during an execution of a Java application, the <code>hashCode</code> method must consistently return the same integer, provided no information used in <code>equals</code> comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application. </li>
+            <li>If two objects are equal according to the <code>equals(Object)</code> method, then calling the <code>hashCode</code> method on each of the two objects must produce the same integer result. </li>
+            <li>It is <em>not</em> required that if two objects are unequal according to the <code><a href="https://developer.android.com/reference/java/lang/Object.html#equals(java.lang.Object)">equals(java.lang.Object)</a></code> method, then calling the <code>hashCode</code> method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hash tables. </li>
+           </ul> 
+           <p> As much as is reasonably practical, the hashCode method defined by class <code>Object</code> does return distinct integers for distinct objects. (This is typically implemented by converting the internal address of the object into an integer, but this implementation technique is not required by the Java™ programming language.)</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Returns</th>
+             </tr> 
+             <tr> 
+              <td><code>int</code></td> 
+              <td width="100%">a hash code value for this object.<p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="setGravity(int)">setGravity</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public void setGravity (int gravity)</pre> 
+           <p>Describes how the child views are positioned. Default is <code>LEFT | BASELINE</code>. See <code><a href="https://developer.android.com/reference/android/view/Gravity.html">Gravity</a></code>.</p>
+           <p></p> 
+           <p><b>Related XML Attributes:</b></p> 
+           <ul class="nolist"> 
+            <li><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html#attr_android:layout_gravity">android:layout_gravity</a></li> 
+           </ul> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>gravity</code></td> 
+              <td width="100%"> <code>int</code>: the new gravity value<p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <h2 class="api-section">Protected methods</h2> 
+          <div data-version-added="14"> 
+           <h3 class="api-name" id="setBaseAttributes(android.content.res.TypedArray,%20int,%20int)">setBaseAttributes</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 14</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">protected void setBaseAttributes (<a href="https://developer.android.com/reference/android/content/res/TypedArray.html">TypedArray</a> attributes, 
+                int widthAttr, 
+                int heightAttr)</pre> 
+           <p>Extracts the layout parameters from the supplied attributes.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>attributes</code></td> 
+              <td width="100%"> <code>TypedArray</code>: the style attributes to extract the parameters from<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>widthAttr</code></td> 
+              <td width="100%"> <code>int</code>: the identifier of the width attribute<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>heightAttr</code></td> 
+              <td width="100%"> <code>int</code>: the identifier of the height attribute <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= END OF CLASS DATA ========= --> 
+         </div>
+         <!-- end jd-content --> 
+         <div class="data-reference-resources-wrapper"> 
+          <ul data-reference-resources> 
+           <li><h2 class="hide-from-toc">Annotations</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/widget/RemoteViews.RemoteView.html">RemoteViews.RemoteView</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Interfaces</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.MultiChoiceModeListener.html">AbsListView.MultiChoiceModeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.OnScrollListener.html">AbsListView.OnScrollListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.RecyclerListener.html">AbsListView.RecyclerListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.SelectionBoundsAdjuster.html">AbsListView.SelectionBoundsAdjuster</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ActionMenuView.OnMenuItemClickListener.html">ActionMenuView.OnMenuItemClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Adapter.html">Adapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterView.OnItemClickListener.html">AdapterView.OnItemClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterView.OnItemLongClickListener.html">AdapterView.OnItemLongClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterView.OnItemSelectedListener.html">AdapterView.OnItemSelectedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Advanceable.html">Advanceable</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AutoCompleteTextView.OnDismissListener.html">AutoCompleteTextView.OnDismissListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AutoCompleteTextView.Validator.html">AutoCompleteTextView.Validator</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CalendarView.OnDateChangeListener.html">CalendarView.OnDateChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Checkable.html">Checkable</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Chronometer.OnChronometerTickListener.html">Chronometer.OnChronometerTickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CompoundButton.OnCheckedChangeListener.html">CompoundButton.OnCheckedChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/DatePicker.OnDateChangedListener.html">DatePicker.OnDateChangedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListAdapter.html">ExpandableListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.OnChildClickListener.html">ExpandableListView.OnChildClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.OnGroupClickListener.html">ExpandableListView.OnGroupClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.OnGroupCollapseListener.html">ExpandableListView.OnGroupCollapseListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.OnGroupExpandListener.html">ExpandableListView.OnGroupExpandListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Filter.FilterListener.html">Filter.FilterListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Filterable.html">Filterable</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/FilterQueryProvider.html">FilterQueryProvider</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/HeterogeneousExpandableList.html">HeterogeneousExpandableList</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ListAdapter.html">ListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/MediaController.MediaPlayerControl.html">MediaController.MediaPlayerControl</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/MultiAutoCompleteTextView.Tokenizer.html">MultiAutoCompleteTextView.Tokenizer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/NumberPicker.Formatter.html">NumberPicker.Formatter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/NumberPicker.OnScrollListener.html">NumberPicker.OnScrollListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/NumberPicker.OnValueChangeListener.html">NumberPicker.OnValueChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/PopupMenu.OnDismissListener.html">PopupMenu.OnDismissListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/PopupMenu.OnMenuItemClickListener.html">PopupMenu.OnMenuItemClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/PopupWindow.OnDismissListener.html">PopupWindow.OnDismissListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RadioGroup.OnCheckedChangeListener.html">RadioGroup.OnCheckedChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RatingBar.OnRatingBarChangeListener.html">RatingBar.OnRatingBarChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RemoteViewsService.RemoteViewsFactory.html">RemoteViewsService.RemoteViewsFactory</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SearchView.OnCloseListener.html">SearchView.OnCloseListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SearchView.OnQueryTextListener.html">SearchView.OnQueryTextListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SearchView.OnSuggestionListener.html">SearchView.OnSuggestionListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SectionIndexer.html">SectionIndexer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SeekBar.OnSeekBarChangeListener.html">SeekBar.OnSeekBarChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ShareActionProvider.OnShareTargetSelectedListener.html">ShareActionProvider.OnShareTargetSelectedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleAdapter.ViewBinder.html">SimpleAdapter.ViewBinder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleCursorAdapter.CursorToStringConverter.html">SimpleCursorAdapter.CursorToStringConverter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleCursorAdapter.ViewBinder.html">SimpleCursorAdapter.ViewBinder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleCursorTreeAdapter.ViewBinder.html">SimpleCursorTreeAdapter.ViewBinder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerCloseListener.html">SlidingDrawer.OnDrawerCloseListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerOpenListener.html">SlidingDrawer.OnDrawerOpenListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerScrollListener.html">SlidingDrawer.OnDrawerScrollListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SpinnerAdapter.html">SpinnerAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TabHost.OnTabChangeListener.html">TabHost.OnTabChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TabHost.TabContentFactory.html">TabHost.TabContentFactory</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextView.OnEditorActionListener.html">TextView.OnEditorActionListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ThemedSpinnerAdapter.html">ThemedSpinnerAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TimePicker.OnTimeChangedListener.html">TimePicker.OnTimeChangedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Toolbar.OnMenuItemClickListener.html">Toolbar.OnMenuItemClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ViewSwitcher.ViewFactory.html">ViewSwitcher.ViewFactory</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/WrapperListAdapter.html">WrapperListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ZoomButtonsController.OnZoomListener.html">ZoomButtonsController.OnZoomListener</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Classes</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.html">AbsListView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsListView.LayoutParams.html">AbsListView.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsoluteLayout.html">AbsoluteLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsoluteLayout.LayoutParams.html">AbsoluteLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsSeekBar.html">AbsSeekBar</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AbsSpinner.html">AbsSpinner</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ActionMenuView.html">ActionMenuView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ActionMenuView.LayoutParams.html">ActionMenuView.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterView.html">AdapterView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterView.AdapterContextMenuInfo.html">AdapterView.AdapterContextMenuInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterViewAnimator.html">AdapterViewAnimator</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AdapterViewFlipper.html">AdapterViewFlipper</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AlphabetIndexer.html">AlphabetIndexer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AnalogClock.html">AnalogClock</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ArrayAdapter.html">ArrayAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/AutoCompleteTextView.html">AutoCompleteTextView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/BaseAdapter.html">BaseAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/BaseExpandableListAdapter.html">BaseExpandableListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Button.html">Button</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CalendarView.html">CalendarView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CheckBox.html">CheckBox</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CheckedTextView.html">CheckedTextView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Chronometer.html">Chronometer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CompoundButton.html">CompoundButton</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CursorAdapter.html">CursorAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/CursorTreeAdapter.html">CursorTreeAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/DatePicker.html">DatePicker</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/DialerFilter.html">DialerFilter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/DigitalClock.html">DigitalClock</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/EdgeEffect.html">EdgeEffect</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.html">ExpandableListView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ExpandableListView.ExpandableListContextMenuInfo.html">ExpandableListView.ExpandableListContextMenuInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Filter.html">Filter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Filter.FilterResults.html">Filter.FilterResults</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/FrameLayout.html">FrameLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/FrameLayout.LayoutParams.html">FrameLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Gallery.html">Gallery</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Gallery.LayoutParams.html">Gallery.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/GridLayout.html">GridLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/GridLayout.Alignment.html">GridLayout.Alignment</a></li> 
+             <li class="selected"><a href="https://developer.android.com/reference/android/widget/GridLayout.LayoutParams.html">GridLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/GridLayout.Spec.html">GridLayout.Spec</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/GridView.html">GridView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/HeaderViewListAdapter.html">HeaderViewListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/HorizontalScrollView.html">HorizontalScrollView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ImageButton.html">ImageButton</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ImageSwitcher.html">ImageSwitcher</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ImageView.html">ImageView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/LinearLayout.html">LinearLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/LinearLayout.LayoutParams.html">LinearLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ListPopupWindow.html">ListPopupWindow</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ListView.html">ListView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ListView.FixedViewInfo.html">ListView.FixedViewInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Magnifier.html">Magnifier</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/MediaController.html">MediaController</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/MultiAutoCompleteTextView.html">MultiAutoCompleteTextView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/MultiAutoCompleteTextView.CommaTokenizer.html">MultiAutoCompleteTextView.CommaTokenizer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/NumberPicker.html">NumberPicker</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/OverScroller.html">OverScroller</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/PopupMenu.html">PopupMenu</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/PopupWindow.html">PopupWindow</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ProgressBar.html">ProgressBar</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/QuickContactBadge.html">QuickContactBadge</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RadioButton.html">RadioButton</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RadioGroup.html">RadioGroup</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RadioGroup.LayoutParams.html">RadioGroup.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RatingBar.html">RatingBar</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RelativeLayout.html">RelativeLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RelativeLayout.LayoutParams.html">RelativeLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RemoteViews.html">RemoteViews</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/RemoteViewsService.html">RemoteViewsService</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ResourceCursorAdapter.html">ResourceCursorAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ResourceCursorTreeAdapter.html">ResourceCursorTreeAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Scroller.html">Scroller</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ScrollView.html">ScrollView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SearchView.html">SearchView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SeekBar.html">SeekBar</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ShareActionProvider.html">ShareActionProvider</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleAdapter.html">SimpleAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleCursorAdapter.html">SimpleCursorAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleCursorTreeAdapter.html">SimpleCursorTreeAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SimpleExpandableListAdapter.html">SimpleExpandableListAdapter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/SlidingDrawer.html">SlidingDrawer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Space.html">Space</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Spinner.html">Spinner</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/StackView.html">StackView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Switch.html">Switch</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TabHost.html">TabHost</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TabHost.TabSpec.html">TabHost.TabSpec</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TableLayout.html">TableLayout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TableLayout.LayoutParams.html">TableLayout.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TableRow.html">TableRow</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TableRow.LayoutParams.html">TableRow.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TabWidget.html">TabWidget</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextClock.html">TextClock</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextSwitcher.html">TextSwitcher</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextView.SavedState.html">TextView.SavedState</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TimePicker.html">TimePicker</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Toast.html">Toast</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ToggleButton.html">ToggleButton</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Toolbar.html">Toolbar</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/Toolbar.LayoutParams.html">Toolbar.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TwoLineListItem.html">TwoLineListItem</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/VideoView.html">VideoView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ViewAnimator.html">ViewAnimator</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ViewFlipper.html">ViewFlipper</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ViewSwitcher.html">ViewSwitcher</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ZoomButton.html">ZoomButton</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ZoomButtonsController.html">ZoomButtonsController</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/ZoomControls.html">ZoomControls</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Enums</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/widget/ImageView.ScaleType.html">ImageView.ScaleType</a></li> 
+             <li><a href="https://developer.android.com/reference/android/widget/TextView.BufferType.html">TextView.BufferType</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Exceptions</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/widget/RemoteViews.ActionException.html">RemoteViews.ActionException</a></li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </div>
+        <!-- end devsite ReferenceObject --> 
+       </div> 
+       <div class="devsite-content-footer nocontent"> 
+        <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p> 
+        <p class="devsite-content-footer-date" itemprop="datePublished" content="2018-06-06T16:10:18.592210"> Last updated June 6, 2018. </p> 
+       </div> 
+      </article> 
+     </article> 
+    </div> 
+    <footer class="devsite-footer-promos nocontent">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-promos-list">
+       <li class="devsite-footer-promo"><a href="//twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo"><img class="devsite-footer-promo-icon" src="https://developer.android.com/images/footer/logo-twitter.svg"> Twitter </a>
+        <div class="devsite-footer-promo-description">
+         Follow @AndroidDev on Twitter
+        </div></li>
+       <li class="devsite-footer-promo"><a href="//plus.google.com/+AndroidDevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google+ Promo"><img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/branding/product/2x/google_plus_48dp.png"> Google+ </a>
+        <div class="devsite-footer-promo-description">
+         Follow Android Developers on Google+
+        </div></li>
+       <li class="devsite-footer-promo"><a href="//www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo"><img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"> YouTube </a>
+        <div class="devsite-footer-promo-description">
+         Check out Android Developers on YouTube
+        </div></li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-footer-linkboxes nocontent
+               devsite-footer-linkboxes-all-backup
+               devsite-footer-linkboxes-with-sites">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-linkboxes-list">
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">More Android</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/enterprise/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Enterprise Link"> Enterprise </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/security-center/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Security Link"> Security </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://source.android.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Open Source Link"> Source </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">Support</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Report Android Bug Link"> Report platform bug </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://issuetracker.google.com/issues/new?component=192697" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Report Android Doc Bug Link"> Report documentation bug </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://support.google.com/googleplay/android-developer" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Play Support Link"> Google Play support </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf27XIxoFmNpTjTYdk-m1uKWGqEnd7_4C_E1AD5fdCfyTBWNA/viewform?usp=pp_url&amp;entry.1909689089&amp;entry.208743710&amp;entry.408796755&amp;entry.1341430893&amp;entry.594931249&amp;entry.1640656812&amp;entry.1759804042&amp;entry.1441312344=developer.android.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer User Studies Link"> Join user studies </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">Documentation</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/guide/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Guides Link"> Developer guides </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/design/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Design Guides"> Design guides </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/reference/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev API Ref Link"> API reference </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/samples/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Samples Link"> Samples </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/studio/intro/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Studio Link"> Android Studio </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-sites"><a href="https://developers.google.com/" class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link"><img class="devsite-footer-linkbox-logo" src="https://developer.android.com/_static/0ee1984e83/images/redesign-14/lockup-color-knockout.png" alt="Google Developers"></a>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="//developer.android.com/index.html" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//developer.chrome.com/home" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link"> Chrome </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//firebase.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link"> Firebase </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//cloud.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link"> Google Cloud Platform </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//developers.google.com/products/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link"> All Products </a></li>
+        </ul></li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+     <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+      <div class="devsite-utility-footer-nav-left">
+       <form class="devsite-utility-footer-language" action="https://developer.android.com/i18n/setlang/" method="post">
+        <input type="hidden" name="xsrf_token" value="nA5VC1p_SFuhVftVsUZ1x-bw6uPvtl6V5NrRscKI8Ak6MTU0NzA5OTE0MzI0NjY1OA">
+        <input type="hidden" name="next" value="/reference/android/widget/GridLayout.LayoutParams">
+        <select class="devsite-utility-footer-language-select kd-select" name="language" track-type="languageSelector" track-name="click"><option value="id" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="id" track-metadata-original-language="en" track-metadata-selected-language="id"> Bahasa Indonesia </option><option value="de" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="de" track-metadata-original-language="en" track-metadata-selected-language="de"> Deutsch </option><option value="en" selected track-type="languageSelector" track-name="changed" track-metadata-eventdetail="en" track-metadata-original-language="en" track-metadata-selected-language="en"> English </option><option value="es" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="es" track-metadata-original-language="en" track-metadata-selected-language="es"> español </option><option value="es-419" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="es-419" track-metadata-original-language="en" track-metadata-selected-language="es-419"> Español (América Latina) </option><option value="fr" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="fr" track-metadata-original-language="en" track-metadata-selected-language="fr"> français </option><option value="pt-br" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="pt-br" track-metadata-original-language="en" track-metadata-selected-language="pt-br"> Português Brasileiro </option><option value="vi" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="vi" track-metadata-original-language="en" track-metadata-selected-language="vi"> Tiếng Việt </option><option value="tr" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="tr" track-metadata-original-language="en" track-metadata-selected-language="tr"> Türkçe </option><option value="ru" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="ru" track-metadata-original-language="en" track-metadata-selected-language="ru"> Русский </option><option value="th" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="th" track-metadata-original-language="en" track-metadata-selected-language="th"> ภาษาไทย </option><option value="ja" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="ja" track-metadata-original-language="en" track-metadata-selected-language="ja"> 日本語 </option><option value="zh-cn" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="zh-cn" track-metadata-original-language="en" track-metadata-selected-language="zh-cn"> 简体中文 </option><option value="zh-tw" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="zh-tw" track-metadata-original-language="en" track-metadata-selected-language="zh-tw"> 繁體中文 </option><option value="ko" track-type="languageSelector" track-name="changed" track-metadata-eventdetail="ko" track-metadata-original-language="en" track-metadata-selected-language="ko"> 한국어 </option></select>
+       </form>
+       <span class="devsite-utility-footer-links"><a class="devsite-utility-footer-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer privacy link" data-footer-link-id="privacy">Privacy </a><a class="devsite-utility-footer-link gc-analytics-event" href="https://developer.android.com/license" data-category="Site-Wide Custom Events" data-label="Footer license link" data-footer-link-id="license">License </a><a class="devsite-utility-footer-link gc-analytics-event" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer brand_guidelines link" data-footer-link-id="brand_guidelines">Brand Guidelines </a></span>
+      </div>
+      <div class="devsite-utility-footer-nav-right">
+       <div class="devsite-utility-footer-newsletter-signup-text">
+         Get Android and Google Play news by email 
+       </div>
+       <a class="button button-primary devsite-utility-footer-newsletter-signup-button" href="/newsletter/#subscribe" track-type="navigateTo" track-name="newsletter" track-metadata-eventdetail="footer" track-metadata-position="footer"> Subscribe </a>
+      </div>
+     </nav>
+    </footer>
+   </div>
+   <script async defer src="//www.gstatic.com/feedback/api.js"></script>
+   <script src="https://developer.android.com/_static2/0ee1984e83/jsi18n/"></script>
+   <script src="https://developer.android.com/_static/0ee1984e83/js/script_foot_closure.js"></script>
+   <script src="https://developer.android.com/_static/0ee1984e83/js/script_foot.js"></script>
+   <script>var METADATA = {};</script>
+   <script src="https://developer.android.com/irina_metadata_en.js?v=2019011005"></script>
+   <script src="https://developer.android.com/_static/0ee1984e83/js/managed/dynamic-content-widget.js"></script>
+   <script>
+        (function($) {
+          
+          devsite.devsite.Init($, {'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'SITE_NAME': 'irina', 'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_CLOUDTRACK': 0, 'VTAGS_ENABLED': 0, 'HISTORY_ENABLED': 0, 'SIDEBAR_MINI_ENABLED': 1, 'VERSION_HASH': '0ee1984e83', 'SCRIPTSAFE_DOMAIN': 'android-dot-google-developers.appspot.com', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.appspot.com', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0},
+                               '[]','en',
+                               true, '',
+                               {"8e03e230de0bd8a6fe173fdf172e8b3f": true, "8de7a048f21618359bd37f5ce44be073": false, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "d169d485cf24243a263783dbe42029b1": true, "039e5d84b87fd75807ffb37b7f1bbf2c": true, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true, "098dafe57affddc137df300142652cfd": false}, '/',
+                               'https://developer.android.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+      </script>
+   <script>
+      $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+      </script>
+  </div>
+  <span id="devsite-request-elapsed" data-request-elapsed="454.875946045"></span> 
+ </body>
+</html>

@@ -1,0 +1,57 @@
+class CoordinatorLayout {
+
+  LayoutParams getResolvedLayoutParams(  View child){
+    final LayoutParams result=(LayoutParams)child.getLayoutParams();
+    
+    result.mBehaviorResolved=true;
+    
+    return result;
+  }
+  Resources getResources() {
+  	return new Resources();
+  }
+  
+  void addPreDrawListener() {
+  }
+  
+  void removePreDrawListener() {
+  }
+  
+	boolean isInEditMode() {
+		return false;
+	}
+  	class WindowInsetsCompat {
+	
+	public int getSystemWindowInsetLeft() {
+		
+		return 0;
+	}
+
+	public int getSystemWindowInsetBottom() {
+		
+		return 0;
+	}
+
+	public int getSystemWindowInsetTop() {
+		
+		return 0;
+	}
+
+	public int getSystemWindowInsetRight() {
+		
+		return 0;
+	}
+	}
+	
+	class Resources {
+		public String getResourceName(int mAnchorId) {
+			return "";
+		}
+	}
+	static class ViewGroupUtils {
+	
+	public static void getDescendantRect(CoordinatorLayout coordinatorLayout,
+			View descendant, Rect out) {
+	}
+	}
+}

@@ -1,0 +1,105 @@
+options {
+CHOICE_AMBIGUITY_CHECK=3;
+	OTHER_AMBIGUITY_CHECK=2;
+	//DEBUG_PARSER=true
+	//DEBUG_LOOKAHEAD=true
+	//DEBUG_TOKEN_MANAGER=true
+	ERROR_REPORTING=true;
+	JAVA_UNICODE_ESCAPE=true;
+	UNICODE_INPUT=true;
+	IGNORE_CASE=true;
+	SUPPORT_CLASS_VISIBILITY_PUBLIC=false;
+	FORCE_LA_CHECK=true;
+	CACHE_TOKENS=true;
+  SANITY_CHECK = true;
+STATIC=false;
+}
+PARSER_BEGIN(Evaluator)
+package com.ashear.android.layouts;
+public class Evaluator {
+    public static void main(String[] args) throws Exception {
+    	AutoConstraint a = new AutoConstraint();
+        new Evaluator(new java.io.StringReader("|-50-[purpleBox]-50-|")).S(a);
+        System.out.println(a);
+    }
+}
+
+PARSER_END(Evaluator)
+
+SKIP:  { " " | "\t" | "\n" | "\r"                    }
+TOKEN: 
+{
+<#ZERO: "0">
+| <#DIGIT_NONZERO: ["1"-"9"]>
+| <#DIGIT: (<DIGIT_NONZERO> | <ZERO>) >
+| <ANY: "a">
+| <orientation : ("h" | "v" | "H" | "V")>
+| <superview : "|">
+| <relation : "==" | "<=" | ">=">
+| <number: (<DIGIT>)+>
+| <viewName: (["a"-"z"] | ["A"-"Z"] | ["0"-"9"] | "_")+>
+| <dash : "-">
+} 
+
+
+
+
+void S(AutoConstraint v): {String value;}
+{
+	(<orientation>{v.setOrientation(token.image);}":")?		
+	[
+		(<superview>{v.setCurrentViewName("container");}connection(v))?
+		view(v)			
+		(connection(v)
+		(
+		<superview>{v.setCurrentViewName("container");} <EOF>
+		|
+		view(v)))*
+		
+		<EOF>
+		
+		
+	]
+
+}
+
+void connection(AutoConstraint v): {}
+{
+	<dash> (predicateList(v) <dash>)?
+	|
+	{}
+	
+}
+
+void predicate(AutoConstraint v) : {}
+{
+	(<relation>{v.setRelation(token.image);})?(objectOfPredicate(v))("@"<number>{v.setPriority(token.image);})?{v.addDimensionConstraint();}
+	
+}
+
+void objectOfPredicate(AutoConstraint v) : {}
+{
+	<number>{v.setDimension(token.image);}{v.setNumericConstraint(token.image);}|<viewName>{v.setDimensionViewName(token.image);}
+}
+
+void predicateListWithParens(AutoConstraint v) : {}
+{
+	"("predicate(v)(","(predicate(v)))*")"
+
+}
+
+void simplePredicate(AutoConstraint v) : {}
+{
+	<number>
+	{v.setNumericConstraint(token.image);}
+}
+
+void predicateList(AutoConstraint v) : {}
+{
+	simplePredicate(v)|predicateListWithParens(v)
+
+}
+
+void view(AutoConstraint v) : {}{
+	"["<viewName>{v.setCurrentViewName(token.image);}({v.startConstraint(true);}predicateListWithParens(v))?"]"
+}

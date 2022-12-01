@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						     <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li class="active"><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Navigation</h1>
+							<p>
+							Ashera supports navigation between fragments. NavController class is provided in javascript which is proxy of NavController class in android 
+							and NavController functionality is simulated in other platforms. nav_graph.xml is used for declaring fragments and connecting the fragment to the
+							layout.  nav_graph.xml gives a visual flow of your application. Please note that there can be only one nav_graph.xml in Ashera.  
+							
+							</p>
+								
+								<section id="NavigatetoFragment" class="doc-section" >
+									<h2 class="section-title">Navigate to Fragment</h2>
+									<div class="section-block">
+									<p>
+										The first step in navigation is to create an entry in nav_graph.xml. An example of the same is given below: 
+									</p> 
+									
+									<p>
+									<pre><code class="language-markup">&lt;fragment
+	android:id="@+id/login"
+	android:name="com.ashera.core.GenericFragment"
+	android:label="Login"
+	tools:layout="@layout/login"&gt;&lt;/fragment&gt;</code></pre>
+									</p>
+									<p>
+									To create a navigation to <b>login.xml</b>, you need to declare fragment of type <b>com.ashera.core.GenericFragment</b>. The fragment with id <b>@+id/login</b> is mapped to ui with layout <b>@layout/login</b>.
+									</p>
+									<p>
+									When a fragment is created in nav_graph.xml, an encoded entry is generated in <b>NavGraph.ts</b>. The above fragment is encoded into a string with # separator and this string needs to passed to NavController method 
+									when we want to navigate to login.xml
+									
+									<pre><code class="language-markup">export const login:string = 'fragment#login#layout/login.xml';</code></pre>
+									<pre><code class="language-markup">import { login } from './R/NavGraph';
+export default class Index extends Fragment {
+	@InjectController({})
+    navController!: NavController;
+	...
+	async gotoLogin() {
+		this.navController.navigateTo(login).executeCommand();
+	}
+}</code></pre>
+									
+									</p>
+									<p>
+									Example of navigation to login.xml is shown below:
+									</p>
+									<p>
+									<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Flogin_host.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>
+									</p>
+									</div>
+	                          	</section>
+	                          	
+	                          	<section id="NavigatetoDialog" class="doc-section" >
+									<h2 class="section-title">Navigate to Dialog</h2>
+									<div class="section-block">
+									<p>
+										The first step in navigation is to create an entry in nav_graph.xml. An example of the same is given below: 
+									</p> 
+									
+									<p>
+									<pre><code class="language-markup">&lt;dialog
+        android:id="@+id/dialog"
+        android:name="com.ashera.core.MyDialog"
+        style="@style/MyDialogStyleCloseOnTouchOutside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:label="Dialog"
+        tools:layout="@layout/dialog"&gt;&lt;/dialog&gt;</code></pre>
+									</p>
+									<p>
+									To create a navigation to <b>dialog.xml</b>, you need to declare dialog of type <b>com.ashera.core.MyDialog</b>. The dialog with id <b>@+id/dialog</b> is mapped to ui with layout <b>@layout/dialog</b>.
+									</p>
+									<p>
+									When a dialog is created in nav_graph.xml, an encoded entry is generated in <b>NavGraph.ts</b>. The above dialog is encoded into a string with # separator and this string needs to passed to NavController method 
+									when we want to navigate to dialog.xml
+									
+									<pre><code class="language-markup">export const dialog:string = 'dialog#dialog#layout/dialog.xml#match_parent#wrap_content#@style/MyDialogStyle';</code></pre>
+									<pre><code class="language-markup">import { dialog } from './R/NavGraph';
+export default class Index extends Fragment {
+	@InjectController({})
+    navController!: NavController;
+	...
+	async openDialog() {
+        this.navController.navigateTo(dialog).executeCommand();
+    }
+}</code></pre>
+									
+									</p>
+									<p>
+									Example of dialog is shown below:
+									</p>
+									<p>
+									<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fdialog_host.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>
+									</p>
+									</div>
+								</section>
+	                          	
+	                          	<section id="NavController" class="doc-section" >
+									<h2 class="section-title">NavController</h2>
+									<div class="section-block">
+									<p>
+										NavController is proxy to android NavController. In android, it calls methods on android native NavController. Let us look at some of the important methods on NavController.
+									</p> 
+									<table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>navigateTo(actionId:string, ...scopedObjects:ScopedObject[])</td>
+                                                    <td>Navigate to page with actionId (a constant defined in NavGraph.ts) with initial model objects passed into scopedObjects params.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>popBackStack()</td>
+                                                    <td>Remove the top view from stack. Equivalent of hitting back button.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>popBackStackTo(destinationId: string, inclusive: boolean) </td>
+                                                    <td>Pop all screens until the destinationId&lt;Id of fragment defined in xml&gt; based on inclusive flag.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>navigateWithPopBackStackTo(actionId:string, destinationId: string, inclusive: boolean, ...scopedObjects:ScopedObject[])</td>
+                                                    <td>Navigate to page with actionId (a constant defined in NavGraph.ts) and pop all screens until the destinationId&lt;Id of fragment defined in xml&gt; based on inclusive flag.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>navigateAsTop(actionId:string, ...scopedObjects:ScopedObject[])</td>
+                                                    <td>Remove all screens in stack and make this the top most screen.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>closeDialog() </td>
+                                                    <td>Use this method to close dialogs instead of popBackStack().</td>
+                                                </tr>
+                                           	</tbody>
+                                    </table>
+                                    
+                                    <p>
+									Example of navigation is shown below:
+									</p>
+									<p>
+									<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fnavigationtest_host.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>
+									</p>
+									
+									</div>
+	                          	</section>
+                        </div><!--//content-inner-->
+                        
+                        <div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="01gettingstarted-databinding.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Data Binding</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="01gettingstarted-nativeformatting.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Native Formatting</div></a>
+							</div>
+						</div>
+                        
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            
+		                             <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#NavigatetoFragment">Navigate to Fragment</a>
+		                            </li>
+		                            <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#NavigatetoDialog">Navigate to Dialog</a>
+		                             </li>
+		                             <li class="nav-item">
+		                             <a class="nav-link scrollto" href="#NavController">NavController</a>
+		                             </li>
+		                             
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

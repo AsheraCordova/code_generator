@@ -1,0 +1,2296 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head> 
+  <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"> 
+  <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award"> 
+  <meta property="og:site_name" content="Android Developers"> 
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#3ddc84">
+  <meta charset="utf-8"> 
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="manifest" href="/_pwa/android/manifest.json" crossorigin="use-credentials"> 
+  <link rel="preconnect" href="//www.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin> 
+  <link rel="preconnect" href="//apis.google.com" crossorigin> 
+  <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons&amp;display=block">
+  <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/css/app.css"> 
+  <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/favicon.png"> 
+  <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/touchicon-180.png">
+  <link rel="canonical" href="https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams">
+  <link rel="search" type="application/opensearchdescription+xml" title="Android Developers" href="https://developer.android.com/s/opensearch.xml"> 
+  <title>ConstraintLayout.LayoutParams &nbsp;|&nbsp; Android Developers</title> 
+  <meta property="og:title" content="ConstraintLayout.LayoutParams &nbsp;|&nbsp; Android Developers">
+  <meta property="og:url" content="https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams">
+  <meta property="og:image" content="https://developer.android.com/images/social/android-developers.png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image"> 
+ </head> 
+ <body class="" template="page" theme="android-theme" type="reference" layout="docs" pending> 
+  <devsite-progress type="indeterminate" id="app-progress"></devsite-progress> 
+  <section class="devsite-wrapper">
+   <devsite-header> 
+    <div class="devsite-header--inner nocontent"> 
+     <div class="devsite-top-logo-row-wrapper-wrapper"> 
+      <div class="devsite-top-logo-row-wrapper"> 
+       <div class="devsite-top-logo-row"> 
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" visually-hidden aria-label="Open menu"> </button> 
+        <div class="devsite-product-name-wrapper"> 
+         <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androidDevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers"> </a> 
+         <span class="devsite-product-name"> 
+          <ul class="devsite-breadcrumb-list"> 
+           <li class="devsite-breadcrumb-item
+             "> </li> 
+          </ul> </span> 
+        </div> 
+        <div class="devsite-top-logo-row-middle"> 
+         <div class="devsite-header-upper-tabs"> 
+          <devsite-tabs class="upper-tabs"> 
+           <nav class="devsite-tabs-wrapper" aria-label="Upper tabs"> 
+            <tab> 
+             <a href="https://developer.android.com/about" class="gc-analytics-event " track-type="nav" track-name="platform" track-metadata-eventdetail="https://developer.android.com/about" track-metadata-position="nav - platform" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Platform"> Platform </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/studio" class="gc-analytics-event " track-type="nav" track-name="android studio" track-metadata-eventdetail="https://developer.android.com/studio" track-metadata-position="nav - android studio" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio"> Android Studio </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/distribute" class="gc-analytics-event " track-type="nav" track-name="google play" track-metadata-eventdetail="https://developer.android.com/distribute" track-metadata-position="nav - google play" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Google Play"> Google Play </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/jetpack" class="gc-analytics-event " track-type="nav" track-name="jetpack" track-metadata-eventdetail="https://developer.android.com/jetpack" track-metadata-position="nav - jetpack" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Jetpack"> Jetpack </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/kotlin" class="gc-analytics-event " track-type="nav" track-name="kotlin" track-metadata-eventdetail="https://developer.android.com/kotlin" track-metadata-position="nav - kotlin" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Kotlin"> Kotlin </a> 
+            </tab> 
+            <tab active> 
+             <a href="https://developer.android.com/docs" class="gc-analytics-event " track-type="nav" track-name="docs" track-metadata-eventdetail="https://developer.android.com/docs" track-metadata-position="nav - docs" track-metadata-module="primary nav" aria-label="Docs, selected" data-category="Site-Wide Custom Events" data-label="Tab: Docs"> Docs </a> 
+            </tab> 
+            <tab> 
+             <a href="https://developer.android.com/games" class="gc-analytics-event " track-type="nav" track-name="games" track-metadata-eventdetail="https://developer.android.com/games" track-metadata-position="nav - games" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Games"> Games </a> 
+            </tab> 
+           </nav> 
+          </devsite-tabs> 
+         </div> 
+         <devsite-search aria-expanded="false" aria-haspopup="listbox" enable-signin enable-search enable-suggestions enable-query-completion project-name="Android Developers" tenant-name="Android Developers" role="combobox"> 
+          <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET"> 
+           <div class="devsite-search-container"> 
+            <div class="devsite-searchbox"> 
+             <input aria-activedescendant="" aria-autocomplete="list" aria-label="Search box" aria-haspopup="false" aria-multiline="false" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="Search" role="searchbox" type="text" value=""> 
+             <div class="devsite-search-image material-icons" aria-hidden="true"></div> 
+            </div> 
+            <button type="button" search-open class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Open search"></button> 
+           </div> 
+          </form> 
+          <button type="button" search-close class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="Close search"></button> 
+         </devsite-search> 
+        </div> 
+        <devsite-language-selector> 
+         <devsite-select class="devsite-language-selector-menu"> 
+          <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"> English </option> <option value="id" lang="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"> Bahasa Indonesia </option> <option value="es_419" lang="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector"> Español – América Latina </option> <option value="pt_br" lang="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector"> 中文 – 简体 </option> <option value="ja" lang="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"> 日本語 </option> <option value="ko" lang="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"> 한국어 </option> </select> 
+         </devsite-select> 
+        </devsite-language-selector> 
+        <devsite-user enable-profiles id="devsite-user"></devsite-user> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="devsite-collapsible-section
+    "> 
+      <div class="devsite-header-background"> 
+       <div class="devsite-product-id-row"> 
+        <div class="devsite-product-description-row"> 
+         <ul class="devsite-breadcrumb-list"> 
+          <li class="devsite-breadcrumb-item
+             "> <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail=""> Documentation </a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="devsite-doc-set-nav-row"> 
+        <devsite-tabs class="lower-tabs"> 
+         <nav class="devsite-tabs-wrapper" aria-label="Lower tabs"> 
+          <tab> 
+           <a href="https://developer.android.com/docs" class="gc-analytics-event " track-type="nav" track-name="overview" track-metadata-eventdetail="https://developer.android.com/docs" track-metadata-position="nav - overview" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Overview"> Overview </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/guide" class="gc-analytics-event " track-type="nav" track-name="guides" track-metadata-eventdetail="https://developer.android.com/guide" track-metadata-position="nav - guides" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Guides"> Guides </a> 
+          </tab> 
+          <tab active> 
+           <a href="https://developer.android.com/reference" class="gc-analytics-event " track-type="nav" track-name="reference" track-metadata-eventdetail="https://developer.android.com/reference" track-metadata-position="nav - reference" track-metadata-module="primary nav" aria-label="Reference, selected" data-category="Site-Wide Custom Events" data-label="Tab: Reference"> Reference </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/samples" class="gc-analytics-event " track-type="nav" track-name="samples" track-metadata-eventdetail="https://developer.android.com/samples" track-metadata-position="nav - samples" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Samples"> Samples </a> 
+          </tab> 
+          <tab> 
+           <a href="https://developer.android.com/design" class="gc-analytics-event " track-type="nav" track-name="design &amp; quality" track-metadata-eventdetail="https://developer.android.com/design" track-metadata-position="nav - design &amp; quality" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: Design &amp; Quality"> Design &amp; Quality </a> 
+          </tab> 
+         </nav> 
+        </devsite-tabs> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </devsite-header> 
+   <devsite-book-nav scrollbars> 
+    <nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu"> 
+     <div class="devsite-mobile-header"> 
+      <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation"> </button> 
+      <div class="devsite-product-name-wrapper"> 
+       <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androidDevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav"> <img src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers"> </a> 
+       <span class="devsite-product-name"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item
+             "> </li> 
+        </ul> </span> 
+      </div> 
+     </div> 
+     <div class="devsite-book-nav-wrapper"> 
+      <div class="devsite-mobile-nav-top"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item"> <a href="/about" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="platform"> <span class="devsite-nav-text" tooltip> Platform </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/studio" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="androidStudio"> <span class="devsite-nav-text" tooltip> Android Studio </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/distribute" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="googlePlay"> <span class="devsite-nav-text" tooltip> Google Play </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/jetpack" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Jetpack" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="jetpack"> <span class="devsite-nav-text" tooltip> Jetpack </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/kotlin" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Kotlin" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="kotlin"> <span class="devsite-nav-text" tooltip> Kotlin </span> </a> </li> 
+        <li class="devsite-nav-item"> <a href="/docs" class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="docs"> <span class="devsite-nav-text" tooltip> Docs </span> </a> 
+         <ul class="devsite-nav-responsive-tabs"> 
+          <li class="devsite-nav-item"> <a href="/docs" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="overview"> <span class="devsite-nav-text" tooltip> Overview </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/guide" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="guides"> <span class="devsite-nav-text" tooltip> Guides </span> <span class="devsite-nav-icon material-icons" data-icon="forward"> </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/reference" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="reference"> <span class="devsite-nav-text" tooltip menu="_book"> Reference </span> <span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book"> </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/samples" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="samples"> <span class="devsite-nav-text" tooltip> Samples </span> </a> </li> 
+          <li class="devsite-nav-item"> <a href="/design" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Design &amp; Quality" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="design&amp;Quality"> <span class="devsite-nav-text" tooltip> Design &amp; Quality </span> <span class="devsite-nav-icon material-icons" data-icon="forward"> </span> </a> </li> 
+         </ul> </li> 
+        <li class="devsite-nav-item"> <a href="/games" class="devsite-nav-title gc-analytics-event
+              
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Games" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav" track-name="games"> <span class="devsite-nav-text" tooltip> Games </span> </a> </li> 
+       </ul> 
+      </div> 
+      <div class="devsite-mobile-nav-bottom" role="navigation"> 
+       <ul class="devsite-nav-list" menu="_book"> 
+        <li class="devsite-nav-item
+           devsite-nav-heading">
+         <div class="devsite-nav-title devsite-nav-title-no-path">
+          <span class="devsite-nav-text" tooltip>Android API Reference</span>
+         </div></li> 
+        <li class="devsite-nav-item"><a href="/reference" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li> 
+        <li class="devsite-nav-item
+           devsite-nav-heading">
+         <div class="devsite-nav-title devsite-nav-title-no-path">
+          <span class="devsite-nav-text" tooltip>Constraint Layout</span>
+         </div></li> 
+        <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/classes" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Class Index</span></a></li> 
+        <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/packages" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Package Index</span></a></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>androidx.constraintlayout.helper.widget</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Interfaces</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/Carousel.Adapter" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Carousel.Adapter</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/Carousel" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Carousel</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/CircularFlow" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>CircularFlow</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/Flow" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Flow</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/Layer" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Layer</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/helper/widget/MotionEffect" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionEffect</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>androidx.constraintlayout.motion.utils</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/utils/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/utils/ViewSpline" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewSpline</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/utils/ViewSpline.CustomSet" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewSpline.CustomSet</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/utils/ViewSpline.PathRotate" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewSpline.PathRotate</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/utils/ViewState" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewState</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>androidx.constraintlayout.motion.widget</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Interfaces</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/Animatable" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Animatable</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/FloatLayout" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>FloatLayout</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionHelperInterface" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionHelperInterface</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionLayout.MotionTracker" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLayout.MotionTracker</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionLayout.TransitionListener" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLayout.TransitionListener</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionInterpolator" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionInterpolator</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionLayout" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLayout</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionScene" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionScene</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/MotionScene.Transition" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionScene.Transition</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/OnSwipe" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>OnSwipe</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/TransitionAdapter" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>TransitionAdapter</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/TransitionBuilder" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>TransitionBuilder</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/ViewTransition" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewTransition</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/motion/widget/ViewTransitionController" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ViewTransitionController</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>androidx.constraintlayout.utils.widget</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/ImageFilterButton" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ImageFilterButton</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/ImageFilterView" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ImageFilterView</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/MockView" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MockView</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/MotionButton" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionButton</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/MotionLabel" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionLabel</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/utils/widget/MotionTelltales" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>MotionTelltales</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+        <li class="devsite-nav-item
+           devsite-nav-expandable">
+         <devsite-expandable-nav collapsed> 
+          <a class="devsite-nav-toggle" aria-hidden="true"></a>
+          <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+           <span class="devsite-nav-text" tooltip>androidx.constraintlayout.widget</span>
+          </div>
+          <ul class="devsite-nav-section">
+           <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/package-summary" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Interfaces</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/SharedValues.SharedValuesListener" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>SharedValues.SharedValuesListener</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+           <li class="devsite-nav-item
+           devsite-nav-expandable">
+            <devsite-expandable-nav collapsed> 
+             <a class="devsite-nav-toggle" aria-hidden="true"></a>
+             <div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+              <span class="devsite-nav-text" tooltip>Classes</span>
+             </div>
+             <ul class="devsite-nav-section">
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/Barrier" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Barrier</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintLayout</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintLayout.LayoutParams</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ConstraintProperties" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintProperties</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ConstraintsChangedListener" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintsChangedListener</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ConstraintSet" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ConstraintSet</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/Group" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Group</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/Guideline" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Guideline</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/Placeholder" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>Placeholder</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/ReactiveGuide" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>ReactiveGuide</span></a></li>
+              <li class="devsite-nav-item"><a href="/reference/androidx/constraintlayout/widget/SharedValues" class="devsite-nav-title"><span class="devsite-nav-text" tooltip>SharedValues</span></a></li>
+             </ul>
+            </devsite-expandable-nav></li>
+          </ul>
+         </devsite-expandable-nav></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </devsite-book-nav> 
+   <section id="gc-wrapper"> 
+    <main role="main" class="devsite-main-content" has-book-nav has-toc> 
+     <devsite-toc class="devsite-nav" role="navigation" aria-label="Table of contents"></devsite-toc> 
+     <devsite-content> 
+      <article class="devsite-article">
+       <style>
+      /* Styles inlined from /assets/css/reference-docs.css */
+/* class signature at the top of the page  */
+
+.api-signature,
+devsite-code[dark-code] .api-signature {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-weight: normal;
+  margin: 1em 0;
+  padding: 0 0 8px;
+}
+
+devsite-code[dark-code] .api-signature::-webkit-scrollbar-thumb {
+  background: rgba(128, 134, 139, .26);
+}
+
+.api-signature ~ .devsite-code-buttons-container {
+  display: none;
+}
+
+/* the "added in" info on all APIs */
+.api-level {
+  float: right;
+  font-size: smaller;
+  margin-top: -40px;
+}
+
+/* the "added in" block at the top of the page */
+#api-info-block .api-level {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .api-level {
+    float: none;
+    margin-top: 0;
+  }
+  #api-info-block .api-level {
+    margin-bottom: 20px;
+  }
+}
+
+.api-level a,
+.api-level a:active,
+.api-level a:visited {
+  color: #222;
+}
+
+.api-level a:hover {
+  color: #888;
+}
+
+/* This element is obsolete now that devsite provides TOC */
+#api-info-block .sum-details-links {
+  display: none;
+}
+
+
+/* The table that shows this class's inheritance tree */
+
+.jd-inheritance-table tr,
+.jd-inheritance-table tr td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jd-inheritance-table .jd-inheritance-space {
+  width: 2em;
+}
+
+/* The devsite expandable widget */
+
+.expand-control:not(button):not(.button) {
+  color: inherit;
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+}
+
+.expand-control::before {
+  background: url(/images/styles/disclosure_down.png) no-repeat center center;
+  background-size: 34px 34px;
+  color: transparent;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+
+.expand-control.exw-expanded::before {
+  background: url(/images/styles/disclosure_up.png) no-repeat center center;
+}
+
+/* Known subclasses list */
+
+.jd-sumtable-subclasses #subclasses-direct,
+.jd-sumtable-subclasses #subclasses-indirect {
+  /* left margin matches width of the toggle image,
+     so this section aligns with the text above */
+  margin: 0 0 0 24px;
+}
+
+.jd-sumtable-subclasses .expand-control.exw-expanded + .showalways {
+  /* Hide the comma list when expanded to show the table */
+  display: none;
+}
+
+.jd-sumtable-subclasses tr,
+.jd-sumtable-subclasses td {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#subclasses-direct-summary,
+#subclasses-indirect-summary {
+  padding-left: 24px;
+}
+
+.jd-sumtable-expando td {
+  border: solid 1px #ddd;
+  padding: 4px;
+}
+
+.jd-inherited-apis .exw-expanded-content {
+  /* Force override for some lengthy devsite style selectors */
+  padding-left: 24px !important;
+  margin-top: 12px !important;
+}
+
+
+/* Styles for legacy doclava HTML that uses custom expando.
+ * The list of direct/indirect subclasses does not expand at all,
+ * and the list of inherited members/methods is expanded by default. */
+
+.jd-sumtable-subclasses #subclasses-direct-list,
+.jd-sumtable-subclasses #subclasses-indirect-list {
+  /* Force line-wraps for CSVs with no spaces */
+  word-break: break-word;
+}
+
+:not(devsite-expandable) > #subclasses-direct-summary,
+:not(devsite-expandable) > #subclasses-indirect-summary {
+  display: none !important;
+}
+
+.jd-sumtable #subclasses-direct.jd-expando-trigger,
+.jd-sumtable #subclasses-indirect.jd-expando-trigger{
+  margin: 0;
+}
+
+
+/* Force the broken legacy expandos into something that looks WAI */
+
+.jd-expando-trigger {
+  display: inline-block;
+  height: 0;
+  margin: 0;
+  padding-top: 10px;
+  width: 24px;
+}
+
+.jd-expando-trigger img {
+  /* display: none; */
+  height: inherit;
+}
+
+.jd-expando-trigger ~ div > div {
+  display: block !important; /* Force all inline-hidden divs to appear */
+}
+
+table.responsive td td:first-child,
+table.responsive td tr:last-child td,
+table.responsive td tr:first-child td{
+  padding: 7px 8px 8px;
+}
+
+.data-reference-resources-wrapper {
+  display: none;
+}
+
+#lattrs td:first-child,
+.inhtable td:first-child {
+  white-space: nowrap;
+}
+
+#lattrs td+td,
+.inhtable td+td {
+  white-space: normal;
+}
+
+
+/* Styles to highlight the preview APIs */
+
+
+/* Must be updated with each letter-appropriate preview */
+body.apilevel .api-title,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) h3,
+
+[data-version-added="S"] .api-title,
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) h3 {
+  color: #f5ba15;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) .api-level a,
+body.apilevel-P #api-info-block .api-level a,
+
+#jd-content[data-version-added="S"]:not(.devsite-future-version) .api-level a,
+#api-info-block .api-level a[data-version-added="S"] {
+  color: #f5ba15 !important;
+  font-size: 14px;
+  font-weight:900;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr.apilevel-P:not(.devsite-future-version),
+body.apilevel-P #jd-content table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="S"]:not(.devsite-future-version),
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) tr,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr[data-version-added="S"]:not(.devsite-future-version),
+#jd-content[data-version-added="S"] table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr {
+  background: none;
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) td,
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) tr:not(.devsite-future-version) td,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) th {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) tr.apilevel-P:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) .apilevel-P:not(.devsite-future-version) td,
+
+#jd-content:not(.devsite-future-version) tr[data-version-added="S"]:not(.devsite-future-version) td,
+table:not(.jd-inheritance-table):not(.jd-sumtable-subclasses) [data-version-added="S"]:not(.devsite-future-version) td {
+  background: rgba(245, 185, 16, .2);
+}
+
+/* Must be updated with each letter-appropriate preview */
+#jd-content:not(.devsite-future-version) .apilevel-P:not(.devsite-future-version) th,
+body.apilevel-P #jd-content:not(.devsite-future-version) th,
+
+#jd-content:not(.devsite-future-version) [data-version-added="S"]:not(.devsite-future-version) th,
+#jd-content[data-version-added="S"]:not(.devsite-future-version) th {
+  background: #f5ba15;
+}
+
+
+
+/* Misc styles used in the reference */
+
+h1.api-title {
+  margin-bottom: 0;
+}
+
+h2.api-section:not(#summary) {
+  margin-top: 60px;
+  margin-bottom: -20px;
+}
+
+h3.api-name {
+  margin-top: 60px;
+}
+
+.nolist, .nolist ul, .nolist ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td {
+  padding-left: 0;
+}
+
+table.inhtable>tbody>tr>td div:first-of-type {
+  padding-left: 12px;
+}
+
+      </style> 
+       <div class="devsite-article-meta nocontent" role="navigation"> 
+        <ul class="devsite-breadcrumb-list" aria-label="Breadcrumb"> 
+         <li class="devsite-breadcrumb-item
+             "> <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Android Developers"> Android Developers </a> </li> 
+         <li class="devsite-breadcrumb-item
+             "> 
+          <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div> <a href="https://developer.android.com/docs" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" track-type="globalNav" track-name="breadcrumb" track-metadata-position="2" track-metadata-eventdetail=""> Docs </a> </li> 
+         <li class="devsite-breadcrumb-item
+             "> 
+          <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div> <a href="https://developer.android.com/reference" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" track-type="globalNav" track-name="breadcrumb" track-metadata-position="3" track-metadata-eventdetail=""> Reference </a> </li> 
+        </ul> 
+        <devsite-thumb-rating position="header"> 
+         <template class="thumb-down-categories">
+           [{ "type": "thumb-down", "id": "missingTheInformationINeed", "label":"Missing the information I need" },{ "type": "thumb-down", "id": "tooComplicatedTooManySteps", "label":"Too complicated / too many steps" },{ "type": "thumb-down", "id": "outOfDate", "label":"Out of date" },{ "type": "thumb-down", "id": "samplesCodeIssue", "label":"Samples/Code issue" },{ "type": "thumb-down", "id": "otherDown", "label":"Other" }] 
+         </template> 
+         <template class="thumb-up-categories">
+           [{ "type": "thumb-up", "id": "easyToUnderstand", "label":"Easy to understand" },{ "type": "thumb-up", "id": "solvedMyProblem", "label":"Solved my problem" },{ "type": "thumb-up", "id": "otherUp", "label":"Other" }] 
+         </template> 
+        </devsite-thumb-rating> 
+       </div> 
+       <devsite-toc class="devsite-nav" devsite-toc-embedded> 
+       </devsite-toc> 
+       <devsite-recommendations-dropdown class="nocontent"></devsite-recommendations-dropdown> 
+       <div class="devsite-article-body clearfix
+    devsite-no-page-title"> 
+        <div itemscope itemtype="http://developers.google.com/ReferenceObject"> 
+         <!-- This DIV closes at the end of the BODY --> 
+         <meta itemprop="name" content="androidx.constraintlayout.widget.ConstraintLayout.LayoutParams"> 
+         <div id="naMessage"></div> 
+         <div id="api-info-block"> 
+          <div class="api-level"> 
+          </div> 
+          <div class="sum-details-links">
+            Summary: 
+           <a href="#constants">Constants</a> | 
+           <a href="#inhconstants">Inherited Constants</a> | 
+           <a href="#lfields">Fields</a> | 
+           <a href="#inhfields">Inherited Fields</a> | 
+           <a href="#pubctors">Ctors</a> | 
+           <a href="#pubmethods">Methods</a> | 
+           <a href="#inhmethods">Inherited Methods</a> 
+          </div>
+          <!-- end sum-details-links --> 
+         </div>
+         <!-- end api-info-block --> 
+         <div id="jd-content"> 
+          <!-- ======== START OF CLASS DATA ======== --> 
+          <h1 class="api-title" id="constraintlayout.layoutparams" data-text="ConstraintLayout.LayoutParams">ConstraintLayout.LayoutParams</h1> 
+          <p> <code class="api-signature" translate="no" dir="ltr"> public static class ConstraintLayout.LayoutParams </code> <br> <code class="api-signature" translate="no" dir="ltr"> </code> <code class="api-signature" translate="no" dir="ltr"> </code> <code class="api-signature" translate="no" dir="ltr"> extends <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a> </code> <code class="api-signature" translate="no" dir="ltr"> </code> </p>
+          <table class="jd-inheritance-table"> 
+           <tbody>
+            <tr> 
+             <td colspan="4" class="jd-inheritance-class-cell">java.lang.Object </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="3" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a> </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="2" class="jd-inheritance-class-cell"><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a> </td> 
+            </tr> 
+            <tr> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;</td> 
+             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;↳</td> 
+             <td colspan="1" class="jd-inheritance-class-cell">androidx.constraintlayout.widget.ConstraintLayout.LayoutParams </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <br>
+          <hr> 
+          <p>This class contains the different attributes specifying how a view want to be laid out inside a <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout">ConstraintLayout</a></code>. For building up constraints at run time, using <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintSet">ConstraintSet</a></code> is recommended. </p> 
+          <h2 class="api-section" id="summary" data-text="Summary">Summary</h2> 
+          <!-- =========== ENUM CONSTANT SUMMARY =========== --> 
+          <table id="constants" class="responsive constants"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="constants" data-text="Constants">Constants</h3></th>
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#BASELINE">BASELINE</a></code> <p>The baseline of the text in a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#BOTTOM">BOTTOM</a></code> <p>The bottom side of a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_PACKED">CHAIN_PACKED</a></code> <p>Chain packed style </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD">CHAIN_SPREAD</a></code> <p>Chain spread style </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD_INSIDE">CHAIN_SPREAD_INSIDE</a></code> <p>Chain spread inside style </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CIRCLE">CIRCLE</a></code> <p>Circle reference from a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#END">END</a></code> <p>The right side of a view in right to left languages. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#HORIZONTAL">HORIZONTAL</a></code> <p>The horizontal orientation. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#LEFT">LEFT</a></code> <p>The left side of a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT">MATCH_CONSTRAINT</a></code> <p>Dimension will be controlled by constraints. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_PERCENT">MATCH_CONSTRAINT_PERCENT</a></code> <p>Set matchConstraintDefault* percent to be based on a percent of another dimension (by default, the parent) Use to set the matchConstraintDefaultWidth and matchConstraintDefaultHeight </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</a></code> <p>Set matchConstraintDefault* spread as much as possible within its constraints. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_WRAP">MATCH_CONSTRAINT_WRAP</a></code> <p>Set matchConstraintDefault* default to the wrap content size. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#PARENT_ID">PARENT_ID</a></code> <p>References the id of the parent. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#RIGHT">RIGHT</a></code> <p>The right side of a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#START">START</a></code> <p>The left side of a view in left to right languages. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#TOP">TOP</a></code> <p>The top of a view. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#UNSET">UNSET</a></code> <p>Defines an id that is not set. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#VERTICAL">VERTICAL</a></code> <p>The vertical orientation. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#WRAP_BEHAVIOR_HORIZONTAL_ONLY">WRAP_BEHAVIOR_HORIZONTAL_ONLY</a></code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#WRAP_BEHAVIOR_INCLUDED">WRAP_BEHAVIOR_INCLUDED</a></code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#WRAP_BEHAVIOR_SKIPPED">WRAP_BEHAVIOR_SKIPPED</a></code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr">int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#WRAP_BEHAVIOR_VERTICAL_ONLY">WRAP_BEHAVIOR_VERTICAL_ONLY</a></code> <p> </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== ENUM CONSTANT SUMMARY =========== --> 
+          <table id="inhconstants" class="responsive constants inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3 id="inherited-constants" data-text="Inherited constants">Inherited constants</h3></th>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr">android.view.ViewGroup.LayoutParams</code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr">int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">FILL_PARENT</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr">int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">MATCH_PARENT</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr">int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">WRAP_CONTENT</code> <p> </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== FIELD SUMMARY =========== --> 
+          <table id="lfields" class="responsive properties"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="fields" data-text="Fields">Fields</h3></th>
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#baselineMargin">baselineMargin</a></code> <p>The baseline margin. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#baselineToBaseline">baselineToBaseline</a></code> <p>Constrains the baseline of a child to the baseline of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#baselineToBottom">baselineToBottom</a></code> <p>Constrains the baseline of a child to the bottom of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#baselineToTop">baselineToTop</a></code> <p>Constrains the baseline of a child to the top of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#bottomToBottom">bottomToBottom</a></code> <p>Constrains the bottom side of a child to the bottom side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#bottomToTop">bottomToTop</a></code> <p>Constrains the bottom side of a child to the top side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#circleAngle">circleAngle</a></code> <p>The angle used for a circular constraint] </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#circleConstraint">circleConstraint</a></code> <p>Constrains the center of a child to the center of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#circleRadius">circleRadius</a></code> <p>The radius used for a circular constraint </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public boolean</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#constrainedHeight">constrainedHeight</a></code> <p>Specify if the vertical dimension is constrained in case both top &amp; bottom constraints are set and the widget dimension is not a fixed dimension. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public boolean</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#constrainedWidth">constrainedWidth</a></code> <p>Specify if the horizontal dimension is constrained in case both left &amp; right constraints are set and the widget dimension is not a fixed dimension. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public String</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#constraintTag">constraintTag</a></code> <p>Define a category of view to be used by helpers and motionLayout </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public String</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#dimensionRatio">dimensionRatio</a></code> <p>The ratio information. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#editorAbsoluteX">editorAbsoluteX</a></code> <p>The design time location of the left side of the child. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#editorAbsoluteY">editorAbsoluteY</a></code> <p>The design time location of the right side of the child. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#endToEnd">endToEnd</a></code> <p>Constrains the end side of a child to the end side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#endToStart">endToStart</a></code> <p>Constrains the end side of a child to the start side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneBaselineMargin">goneBaselineMargin</a></code> <p>The baseline margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneBottomMargin">goneBottomMargin</a></code> <p>The bottom margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneEndMargin">goneEndMargin</a></code> <p>The end margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneLeftMargin">goneLeftMargin</a></code> <p>The left margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneRightMargin">goneRightMargin</a></code> <p>The right margin to use when the target is gone </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneStartMargin">goneStartMargin</a></code> <p>The start margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#goneTopMargin">goneTopMargin</a></code> <p>The top margin to use when the target is gone. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#guideBegin">guideBegin</a></code> <p>The distance of child (guideline) to the top or left edge of its parent. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#guideEnd">guideEnd</a></code> <p>The distance of child (guideline) to the top or left edge of its parent. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#guidePercent">guidePercent</a></code> <p>The ratio of the distance to the parent's sides </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public boolean</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#helped">helped</a></code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#horizontalBias">horizontalBias</a></code> <p>The ratio between two connections when the left and right (or start and end) sides are constrained. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#horizontalChainStyle">horizontalChainStyle</a></code> <p>If the child is the start of a horizontal chain, this attribute will drive how the elements of the chain will be positioned. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#horizontalWeight">horizontalWeight</a></code> <p>The child's weight that we can use to distribute the available horizontal space in a chain, if the dimension behaviour is set to MATCH_CONSTRAINT </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#leftToLeft">leftToLeft</a></code> <p>Constrains the left side of a child to the left side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#leftToRight">leftToRight</a></code> <p>Constrains the left side of a child to the right side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintDefaultHeight">matchConstraintDefaultHeight</a></code> <p>Define how the widget vertical dimension is handled when set to MATCH_CONSTRAINT </p>
+              <ul> 
+               <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</a></code> -- the default. <p></p> </li>
+              </ul></td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintDefaultWidth">matchConstraintDefaultWidth</a></code> <p>Define how the widget horizontal dimension is handled when set to MATCH_CONSTRAINT </p>
+              <ul> 
+               <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</a></code> -- the default. <p></p> </li>
+              </ul></td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintMaxHeight">matchConstraintMaxHeight</a></code> <p>Specify a maximum height size for the widget. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintMaxWidth">matchConstraintMaxWidth</a></code> <p>Specify a maximum width size for the widget. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintMinHeight">matchConstraintMinHeight</a></code> <p>Specify a minimum height size for the widget. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintMinWidth">matchConstraintMinWidth</a></code> <p>Specify a minimum width size for the widget. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintPercentHeight">matchConstraintPercentHeight</a></code> <p>Specify the percentage when using the match constraint percent mode. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#matchConstraintPercentWidth">matchConstraintPercentWidth</a></code> <p>Specify the percentage when using the match constraint percent mode. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#orientation">orientation</a></code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#rightToLeft">rightToLeft</a></code> <p>Constrains the right side of a child to the left side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#rightToRight">rightToRight</a></code> <p>Constrains the right side of a child to the right side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#startToEnd">startToEnd</a></code> <p>Constrains the start side of a child to the end side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#startToStart">startToStart</a></code> <p>Constrains the start side of a child to the start side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#topToBottom">topToBottom</a></code> <p>Constrains the top side of a child to the bottom side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#topToTop">topToTop</a></code> <p>Constrains the top side of a child to the top side of a target child (contains the target child id). </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#verticalBias">verticalBias</a></code> <p>The ratio between two connections when the top and bottom sides are constrained. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#verticalChainStyle">verticalChainStyle</a></code> <p>If the child is the start of a vertical chain, this attribute will drive how the elements of the chain will be positioned. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public float</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#verticalWeight">verticalWeight</a></code> <p>The child's weight that we can use to distribute the available vertical space in a chain, if the dimension behaviour is set to MATCH_CONSTRAINT </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> public int</code></td> 
+             <td width="100%"> <code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#wrapBehaviorInParent">wrapBehaviorInParent</a></code> <p>Specify how this view is taken in account during the parent's wrap computation Can be either of: WRAP_BEHAVIOR_INCLUDED the widget is taken in account for the wrap (default) WRAP_BEHAVIOR_HORIZONTAL_ONLY the widget will be included in the wrap only horizontally WRAP_BEHAVIOR_VERTICAL_ONLY the widget will be included in the wrap only vertically WRAP_BEHAVIOR_SKIPPED the widget is not part of the wrap computation </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- =========== FIELD SUMMARY =========== --> 
+          <table id="inhfields" class="responsive properties inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3 id="inherited-fields" data-text="Inherited fields">Inherited fields</h3></th>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr">android.view.ViewGroup.MarginLayoutParams</code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">bottomMargin</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">leftMargin</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">rightMargin</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">topMargin</code> <p> </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr">android.view.ViewGroup.LayoutParams</code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">height</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public <a href="https://developer.android.com/reference/android/view/animation/LayoutAnimationController.AnimationParameters.html">LayoutAnimationController.AnimationParameters</a></code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">layoutAnimationParameters</code> <p> </p> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> public int</code></td> 
+                  <td width="100%"> <code translate="no" dir="ltr">width</code> <p> </p> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ======== CONSTRUCTOR SUMMARY ======== --> 
+          <table id="pubctors" class="responsive constructors"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="public-constructors" data-text="Public constructors">Public constructors</h3></th>
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#LayoutParams(androidx.constraintlayout.widget.ConstraintLayout.LayoutParams)">LayoutParams</a>(<a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams">ConstraintLayout.LayoutParams</a> source) </code> <p>Create a LayoutParams base on an existing layout Params </p> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#LayoutParams(android.content.Context,%20android.util.AttributeSet)">LayoutParams</a>(<a href="https://developer.android.com/reference/android/content/Context.html">Context</a> c, <a href="https://developer.android.com/reference/android/util/AttributeSet.html">AttributeSet</a> attrs) </code> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#LayoutParams(int,%20int)">LayoutParams</a>(int width, int height) </code> </td> 
+            </tr> 
+            <tr> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#LayoutParams(android.view.ViewGroup.LayoutParams)">LayoutParams</a>(<a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> source) </code> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="pubmethods" class="responsive methods"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3 id="public-methods" data-text="Public methods">Public methods</h3></th>
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> String</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#getConstraintTag()">getConstraintTag</a>() </code> <p>Tag that can be used to identify a view as being a member of a group. </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#reset()">reset</a>() </code> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#resolveLayoutDirection(int)">resolveLayoutDirection</a>(int layoutDirection) </code> <p> </p> </td> 
+            </tr> 
+            <tr> 
+             <td><code translate="no" dir="ltr"> void</code> </td> 
+             <td width="100%"> <code translate="no" dir="ltr"> <a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#validate()">validate</a>() </code> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="inhmethods" class="responsive methods inhtable"> 
+           <tbody>
+            <tr>
+             <th><h3 id="inherited-methods" data-text="Inherited methods">Inherited methods</h3></th>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr"> <a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">android.view.ViewGroup.MarginLayoutParams</a> </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> int</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> getLayoutDirection() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> int</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> getMarginEnd() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> int</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> getMarginStart() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> boolean</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> isMarginRelative() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> resolveLayoutDirection(int arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> setLayoutDirection(int arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> setMarginEnd(int arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> setMarginStart(int arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> setMargins(int arg0, int arg1, int arg2, int arg3) </code> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr"> <a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">android.view.ViewGroup.LayoutParams</a> </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> resolveLayoutDirection(int arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> setBaseAttributes(<a href="https://developer.android.com/reference/android/content/res/TypedArray.html">TypedArray</a> arg0, int arg1, int arg2) </code> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+            <tr> 
+             <td colspan="2"> 
+              <div class="expandable jd-inherited-apis"> 
+               <span class="expand-control">From class <code translate="no" dir="ltr"> java.lang.Object </code> </span> 
+               <table class="responsive"> 
+                <tbody>
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> Object</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> clone() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> boolean</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> equals(Object arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> finalize() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final Class&lt;?&gt;</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> getClass() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> int</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> hashCode() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> notify() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> notifyAll() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> String</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> toString() </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait(long arg0, int arg1) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait(long arg0) </code> </td> 
+                 </tr> 
+                 <tr> 
+                  <td><code translate="no" dir="ltr"> final void</code> </td> 
+                  <td width="100%"> <code translate="no" dir="ltr"> wait() </code> </td> 
+                 </tr> 
+                </tbody>
+               </table> 
+              </div> </td>
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- XML Attributes --> 
+          <!-- Enum Values --> 
+          <!-- Constants --> 
+          <!-- ========= ENUM CONSTANTS DETAIL ======== --> 
+          <h2 class="api-section" id="constants_1" data-text="Constants">Constants</h2> 
+          <div> 
+           <h3 class="api-name" id="BASELINE" data-text="BASELINE">BASELINE</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int BASELINE</pre> 
+           <p>The baseline of the text in a view. </p>
+           <p></p> 
+           <p>Constant Value: 5 (0x00000005) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="BOTTOM" data-text="BOTTOM">BOTTOM</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int BOTTOM</pre> 
+           <p>The bottom side of a view. </p>
+           <p></p> 
+           <p>Constant Value: 4 (0x00000004) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="CHAIN_PACKED" data-text="CHAIN_PACKED">CHAIN_PACKED</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int CHAIN_PACKED</pre> 
+           <p>Chain packed style </p>
+           <p></p> 
+           <p>Constant Value: 2 (0x00000002) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="CHAIN_SPREAD" data-text="CHAIN_SPREAD">CHAIN_SPREAD</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int CHAIN_SPREAD</pre> 
+           <p>Chain spread style </p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="CHAIN_SPREAD_INSIDE" data-text="CHAIN_SPREAD_INSIDE">CHAIN_SPREAD_INSIDE</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int CHAIN_SPREAD_INSIDE</pre> 
+           <p>Chain spread inside style </p>
+           <p></p> 
+           <p>Constant Value: 1 (0x00000001) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="CIRCLE" data-text="CIRCLE">CIRCLE</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int CIRCLE</pre> 
+           <p>Circle reference from a view. </p>
+           <p></p> 
+           <p>Constant Value: 8 (0x00000008) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="END" data-text="END">END</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int END</pre> 
+           <p>The right side of a view in right to left languages. In right to left languages it corresponds to the left side of the view </p>
+           <p></p> 
+           <p>Constant Value: 7 (0x00000007) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="HORIZONTAL" data-text="HORIZONTAL">HORIZONTAL</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int HORIZONTAL</pre> 
+           <p>The horizontal orientation. </p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="LEFT" data-text="LEFT">LEFT</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int LEFT</pre> 
+           <p>The left side of a view. </p>
+           <p></p> 
+           <p>Constant Value: 1 (0x00000001) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="MATCH_CONSTRAINT" data-text="MATCH_CONSTRAINT">MATCH_CONSTRAINT</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int MATCH_CONSTRAINT</pre> 
+           <p>Dimension will be controlled by constraints. </p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="MATCH_CONSTRAINT_PERCENT" data-text="MATCH_CONSTRAINT_PERCENT">MATCH_CONSTRAINT_PERCENT</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int MATCH_CONSTRAINT_PERCENT</pre> 
+           <p>Set matchConstraintDefault* percent to be based on a percent of another dimension (by default, the parent) Use to set the matchConstraintDefaultWidth and matchConstraintDefaultHeight </p>
+           <p></p> 
+           <p>Constant Value: 2 (0x00000002) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="MATCH_CONSTRAINT_SPREAD" data-text="MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int MATCH_CONSTRAINT_SPREAD</pre> 
+           <p>Set matchConstraintDefault* spread as much as possible within its constraints. Use to set the matchConstraintDefaultWidth and matchConstraintDefaultHeight </p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="MATCH_CONSTRAINT_WRAP" data-text="MATCH_CONSTRAINT_WRAP">MATCH_CONSTRAINT_WRAP</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int MATCH_CONSTRAINT_WRAP</pre> 
+           <p>Set matchConstraintDefault* default to the wrap content size. Use to set the matchConstraintDefaultWidth and matchConstraintDefaultHeight </p>
+           <p></p> 
+           <p>Constant Value: 1 (0x00000001) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="PARENT_ID" data-text="PARENT_ID">PARENT_ID</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int PARENT_ID</pre> 
+           <p>References the id of the parent. </p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="RIGHT" data-text="RIGHT">RIGHT</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int RIGHT</pre> 
+           <p>The right side of a view. </p>
+           <p></p> 
+           <p>Constant Value: 2 (0x00000002) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="START" data-text="START">START</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int START</pre> 
+           <p>The left side of a view in left to right languages. In right to left languages it corresponds to the right side of the view </p>
+           <p></p> 
+           <p>Constant Value: 6 (0x00000006) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="TOP" data-text="TOP">TOP</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int TOP</pre> 
+           <p>The top of a view. </p>
+           <p></p> 
+           <p>Constant Value: 3 (0x00000003) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="UNSET" data-text="UNSET">UNSET</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int UNSET</pre> 
+           <p>Defines an id that is not set. </p>
+           <p></p> 
+           <p>Constant Value: -1 (0xffffffff) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="VERTICAL" data-text="VERTICAL">VERTICAL</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int VERTICAL</pre> 
+           <p>The vertical orientation. </p>
+           <p></p> 
+           <p>Constant Value: 1 (0x00000001) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="WRAP_BEHAVIOR_HORIZONTAL_ONLY" data-text="WRAP_BEHAVIOR_HORIZONTAL_ONLY">WRAP_BEHAVIOR_HORIZONTAL_ONLY</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int WRAP_BEHAVIOR_HORIZONTAL_ONLY</pre> 
+           <p></p>
+           <p></p> 
+           <p>Constant Value: 1 (0x00000001) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="WRAP_BEHAVIOR_INCLUDED" data-text="WRAP_BEHAVIOR_INCLUDED">WRAP_BEHAVIOR_INCLUDED</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int WRAP_BEHAVIOR_INCLUDED</pre> 
+           <p></p>
+           <p></p> 
+           <p>Constant Value: 0 (0x00000000) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="WRAP_BEHAVIOR_SKIPPED" data-text="WRAP_BEHAVIOR_SKIPPED">WRAP_BEHAVIOR_SKIPPED</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int WRAP_BEHAVIOR_SKIPPED</pre> 
+           <p></p>
+           <p></p> 
+           <p>Constant Value: 3 (0x00000003) </p>
+          </div> 
+          <div> 
+           <h3 class="api-name" id="WRAP_BEHAVIOR_VERTICAL_ONLY" data-text="WRAP_BEHAVIOR_VERTICAL_ONLY">WRAP_BEHAVIOR_VERTICAL_ONLY</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public static final int WRAP_BEHAVIOR_VERTICAL_ONLY</pre> 
+           <p></p>
+           <p></p> 
+           <p>Constant Value: 2 (0x00000002) </p>
+          </div> 
+          <!-- Fields --> 
+          <!-- ========= FIELD DETAIL ======== --> 
+          <h2 class="api-section" id="fields_1" data-text="Fields">Fields</h2> 
+          <div> 
+           <h3 class="api-name" id="baselineMargin" data-text="baselineMargin">baselineMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int baselineMargin</pre> 
+           <p>The baseline margin. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="baselineToBaseline" data-text="baselineToBaseline">baselineToBaseline</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int baselineToBaseline</pre> 
+           <p>Constrains the baseline of a child to the baseline of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="baselineToBottom" data-text="baselineToBottom">baselineToBottom</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int baselineToBottom</pre> 
+           <p>Constrains the baseline of a child to the bottom of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="baselineToTop" data-text="baselineToTop">baselineToTop</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int baselineToTop</pre> 
+           <p>Constrains the baseline of a child to the top of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="bottomToBottom" data-text="bottomToBottom">bottomToBottom</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int bottomToBottom</pre> 
+           <p>Constrains the bottom side of a child to the bottom side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="bottomToTop" data-text="bottomToTop">bottomToTop</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int bottomToTop</pre> 
+           <p>Constrains the bottom side of a child to the top side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="circleAngle" data-text="circleAngle">circleAngle</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float circleAngle</pre> 
+           <p>The angle used for a circular constraint] </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="circleConstraint" data-text="circleConstraint">circleConstraint</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int circleConstraint</pre> 
+           <p>Constrains the center of a child to the center of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="circleRadius" data-text="circleRadius">circleRadius</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int circleRadius</pre> 
+           <p>The radius used for a circular constraint </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="constrainedHeight" data-text="constrainedHeight">constrainedHeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public boolean constrainedHeight</pre> 
+           <p>Specify if the vertical dimension is constrained in case both top &amp; bottom constraints are set and the widget dimension is not a fixed dimension. By default, if a widget is set to WRAP_CONTENT, we will treat that dimension as a fixed dimension, meaning the dimension will not change regardless of constraints. Setting this attribute to true allows the dimension to change in order to respect constraints. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="constrainedWidth" data-text="constrainedWidth">constrainedWidth</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public boolean constrainedWidth</pre> 
+           <p>Specify if the horizontal dimension is constrained in case both left &amp; right constraints are set and the widget dimension is not a fixed dimension. By default, if a widget is set to WRAP_CONTENT, we will treat that dimension as a fixed dimension, meaning the dimension will not change regardless of constraints. Setting this attribute to true allows the dimension to change in order to respect constraints. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="constraintTag" data-text="constraintTag">constraintTag</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public String constraintTag</pre> 
+           <p>Define a category of view to be used by helpers and motionLayout </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="dimensionRatio" data-text="dimensionRatio">dimensionRatio</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public String dimensionRatio</pre> 
+           <p>The ratio information. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="editorAbsoluteX" data-text="editorAbsoluteX">editorAbsoluteX</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int editorAbsoluteX</pre> 
+           <p>The design time location of the left side of the child. Used at design time for a horizontally unconstrained child. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="editorAbsoluteY" data-text="editorAbsoluteY">editorAbsoluteY</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int editorAbsoluteY</pre> 
+           <p>The design time location of the right side of the child. Used at design time for a vertically unconstrained child. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="endToEnd" data-text="endToEnd">endToEnd</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int endToEnd</pre> 
+           <p>Constrains the end side of a child to the end side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="endToStart" data-text="endToStart">endToStart</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int endToStart</pre> 
+           <p>Constrains the end side of a child to the start side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneBaselineMargin" data-text="goneBaselineMargin">goneBaselineMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneBaselineMargin</pre> 
+           <p>The baseline margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneBottomMargin" data-text="goneBottomMargin">goneBottomMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneBottomMargin</pre> 
+           <p>The bottom margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneEndMargin" data-text="goneEndMargin">goneEndMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneEndMargin</pre> 
+           <p>The end margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneLeftMargin" data-text="goneLeftMargin">goneLeftMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneLeftMargin</pre> 
+           <p>The left margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneRightMargin" data-text="goneRightMargin">goneRightMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneRightMargin</pre> 
+           <p>The right margin to use when the target is gone </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneStartMargin" data-text="goneStartMargin">goneStartMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneStartMargin</pre> 
+           <p>The start margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="goneTopMargin" data-text="goneTopMargin">goneTopMargin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int goneTopMargin</pre> 
+           <p>The top margin to use when the target is gone. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="guideBegin" data-text="guideBegin">guideBegin</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int guideBegin</pre> 
+           <p>The distance of child (guideline) to the top or left edge of its parent. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="guideEnd" data-text="guideEnd">guideEnd</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int guideEnd</pre> 
+           <p>The distance of child (guideline) to the top or left edge of its parent. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="guidePercent" data-text="guidePercent">guidePercent</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float guidePercent</pre> 
+           <p>The ratio of the distance to the parent's sides </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="helped" data-text="helped">helped</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public boolean helped</pre> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="horizontalBias" data-text="horizontalBias">horizontalBias</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float horizontalBias</pre> 
+           <p>The ratio between two connections when the left and right (or start and end) sides are constrained. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="horizontalChainStyle" data-text="horizontalChainStyle">horizontalChainStyle</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int horizontalChainStyle</pre> 
+           <p>If the child is the start of a horizontal chain, this attribute will drive how the elements of the chain will be positioned. The possible values are: </p>
+           <ul> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD">CHAIN_SPREAD</a></code> -- the elements will be spread out</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD_INSIDE">CHAIN_SPREAD_INSIDE</a></code> -- similar, but the endpoints of the chain will not be spread out</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_PACKED">CHAIN_PACKED</a></code> -- the elements of the chain will be packed together. The horizontal bias attribute of the child will then affect the positioning of the packed elements</li> 
+           </ul> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="horizontalWeight" data-text="horizontalWeight">horizontalWeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float horizontalWeight</pre> 
+           <p>The child's weight that we can use to distribute the available horizontal space in a chain, if the dimension behaviour is set to MATCH_CONSTRAINT </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="leftToLeft" data-text="leftToLeft">leftToLeft</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int leftToLeft</pre> 
+           <p>Constrains the left side of a child to the left side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="leftToRight" data-text="leftToRight">leftToRight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int leftToRight</pre> 
+           <p>Constrains the left side of a child to the right side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintDefaultHeight" data-text="matchConstraintDefaultHeight">matchConstraintDefaultHeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintDefaultHeight</pre> 
+           <p>Define how the widget vertical dimension is handled when set to MATCH_CONSTRAINT </p>
+           <ul> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</a></code> -- the default. The dimension will expand up to the constraints, minus margins</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_WRAP">MATCH_CONSTRAINT_WRAP</a></code> -- DEPRECATED -- use instead WRAP_CONTENT and constrainedWidth=true<br> The dimension will be the same as WRAP_CONTENT, unless the size ends up too large for the constraints; in that case the dimension will expand up to the constraints, minus margins</li> This attribute may not be applied if the widget is part of a chain in that dimension. 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_PERCENT">MATCH_CONSTRAINT_PERCENT</a></code> -- The dimension will be a percent of another widget (by default, the parent)</li> 
+           </ul> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintDefaultWidth" data-text="matchConstraintDefaultWidth">matchConstraintDefaultWidth</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintDefaultWidth</pre> 
+           <p>Define how the widget horizontal dimension is handled when set to MATCH_CONSTRAINT </p>
+           <ul> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_SPREAD">MATCH_CONSTRAINT_SPREAD</a></code> -- the default. The dimension will expand up to the constraints, minus margins</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_WRAP">MATCH_CONSTRAINT_WRAP</a></code> -- DEPRECATED -- use instead WRAP_CONTENT and constrainedWidth=true<br> The dimension will be the same as WRAP_CONTENT, unless the size ends up too large for the constraints; in that case the dimension will expand up to the constraints, minus margins</li> This attribute may not be applied if the widget is part of a chain in that dimension. 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#MATCH_CONSTRAINT_PERCENT">MATCH_CONSTRAINT_PERCENT</a></code> -- The dimension will be a percent of another widget (by default, the parent)</li> 
+           </ul> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintMaxHeight" data-text="matchConstraintMaxHeight">matchConstraintMaxHeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintMaxHeight</pre> 
+           <p>Specify a maximum height size for the widget. It will only apply if the size of the widget is set to MATCH_CONSTRAINT. Don't apply if the widget is part of a vertical chain. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintMaxWidth" data-text="matchConstraintMaxWidth">matchConstraintMaxWidth</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintMaxWidth</pre> 
+           <p>Specify a maximum width size for the widget. It will only apply if the size of the widget is set to MATCH_CONSTRAINT. Don't apply if the widget is part of a horizontal chain. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintMinHeight" data-text="matchConstraintMinHeight">matchConstraintMinHeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintMinHeight</pre> 
+           <p>Specify a minimum height size for the widget. It will only apply if the size of the widget is set to MATCH_CONSTRAINT. Don't apply if the widget is part of a vertical chain. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintMinWidth" data-text="matchConstraintMinWidth">matchConstraintMinWidth</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int matchConstraintMinWidth</pre> 
+           <p>Specify a minimum width size for the widget. It will only apply if the size of the widget is set to MATCH_CONSTRAINT. Don't apply if the widget is part of a horizontal chain. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintPercentHeight" data-text="matchConstraintPercentHeight">matchConstraintPercentHeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float matchConstraintPercentHeight</pre> 
+           <p>Specify the percentage when using the match constraint percent mode. From 0 to 1. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="matchConstraintPercentWidth" data-text="matchConstraintPercentWidth">matchConstraintPercentWidth</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float matchConstraintPercentWidth</pre> 
+           <p>Specify the percentage when using the match constraint percent mode. From 0 to 1. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="orientation" data-text="orientation">orientation</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int orientation</pre> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="rightToLeft" data-text="rightToLeft">rightToLeft</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int rightToLeft</pre> 
+           <p>Constrains the right side of a child to the left side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="rightToRight" data-text="rightToRight">rightToRight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int rightToRight</pre> 
+           <p>Constrains the right side of a child to the right side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="startToEnd" data-text="startToEnd">startToEnd</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int startToEnd</pre> 
+           <p>Constrains the start side of a child to the end side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="startToStart" data-text="startToStart">startToStart</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int startToStart</pre> 
+           <p>Constrains the start side of a child to the start side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="topToBottom" data-text="topToBottom">topToBottom</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int topToBottom</pre> 
+           <p>Constrains the top side of a child to the bottom side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="topToTop" data-text="topToTop">topToTop</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int topToTop</pre> 
+           <p>Constrains the top side of a child to the top side of a target child (contains the target child id). </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="verticalBias" data-text="verticalBias">verticalBias</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float verticalBias</pre> 
+           <p>The ratio between two connections when the top and bottom sides are constrained. </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="verticalChainStyle" data-text="verticalChainStyle">verticalChainStyle</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int verticalChainStyle</pre> 
+           <p>If the child is the start of a vertical chain, this attribute will drive how the elements of the chain will be positioned. The possible values are: </p>
+           <ul> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD">CHAIN_SPREAD</a></code> -- the elements will be spread out</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_SPREAD_INSIDE">CHAIN_SPREAD_INSIDE</a></code> -- similar, but the endpoints of the chain will not be spread out</li> 
+            <li><code translate="no" dir="ltr"><a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams#CHAIN_PACKED">CHAIN_PACKED</a></code> -- the elements of the chain will be packed together. The vertical bias attribute of the child will then affect the positioning of the packed elements</li> 
+           </ul> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="verticalWeight" data-text="verticalWeight">verticalWeight</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public float verticalWeight</pre> 
+           <p>The child's weight that we can use to distribute the available vertical space in a chain, if the dimension behaviour is set to MATCH_CONSTRAINT </p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="wrapBehaviorInParent" data-text="wrapBehaviorInParent">wrapBehaviorInParent</h3> 
+           <div class="api-level"> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public int wrapBehaviorInParent</pre> 
+           <p>Specify how this view is taken in account during the parent's wrap computation Can be either of: WRAP_BEHAVIOR_INCLUDED the widget is taken in account for the wrap (default) WRAP_BEHAVIOR_HORIZONTAL_ONLY the widget will be included in the wrap only horizontally WRAP_BEHAVIOR_VERTICAL_ONLY the widget will be included in the wrap only vertically WRAP_BEHAVIOR_SKIPPED the widget is not part of the wrap computation </p>
+           <p></p> 
+          </div> 
+          <!-- Public ctors --> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <h2 class="api-section" id="public-constructors_1" data-text="Public constructors">Public constructors</h2> 
+          <div> 
+           <h3 class="api-name" id="LayoutParams(androidx.constraintlayout.widget.ConstraintLayout.LayoutParams)" data-text="LayoutParams">LayoutParams</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public LayoutParams (<a href="/reference/androidx/constraintlayout/widget/ConstraintLayout.LayoutParams">ConstraintLayout.LayoutParams</a> source)</pre> 
+           <p>Create a LayoutParams base on an existing layout Params</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">source</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">ConstraintLayout.LayoutParams</code>: the Layout Params to be copied <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="LayoutParams(android.content.Context,%20android.util.AttributeSet)" data-text="LayoutParams">LayoutParams</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public LayoutParams (<a href="https://developer.android.com/reference/android/content/Context.html">Context</a> c, 
+                <a href="https://developer.android.com/reference/android/util/AttributeSet.html">AttributeSet</a> attrs)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">c</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">Context</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">attrs</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">AttributeSet</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="LayoutParams(int,%20int)" data-text="LayoutParams">LayoutParams</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public LayoutParams (int width, 
+                int height)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">width</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">height</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="LayoutParams(android.view.ViewGroup.LayoutParams)" data-text="LayoutParams">LayoutParams</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public LayoutParams (<a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> source)</pre> 
+           <p></p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">source</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">ViewGroup.LayoutParams</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <!-- Protected ctors --> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- Public methdos --> 
+          <h2 class="api-section" id="public-methods_1" data-text="Public methods">Public methods</h2> 
+          <div> 
+           <h3 class="api-name" id="getConstraintTag()" data-text="getConstraintTag">getConstraintTag</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public String getConstraintTag ()</pre> 
+           <p>Tag that can be used to identify a view as being a member of a group. Which can be used for Helpers or in MotionLayout</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Returns</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">String</code></td> 
+              <td width="100%">tag string or null if not defined <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="reset()" data-text="reset">reset</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void reset ()</pre> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="resolveLayoutDirection(int)" data-text="resolveLayoutDirection">resolveLayoutDirection</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void resolveLayoutDirection (int layoutDirection)</pre> 
+           <p> </p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code translate="no" dir="ltr">layoutDirection</code></td> 
+              <td width="100%"> <code translate="no" dir="ltr">int</code> 
+               <!-- no parameter comment --><p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div> 
+           <h3 class="api-name" id="validate()" data-text="validate">validate</h3> 
+           <div class="api-level"> 
+            <div> 
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print" translate="no" dir="ltr">public void validate ()</pre> 
+           <p></p>
+           <p></p> 
+          </div> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- ========= END OF CLASS DATA ========= --> 
+         </div>
+         <!-- end jd-content --> 
+        </div>
+        <!-- end devsite ReferenceObject --> 
+        <devsite-hats-survey class="nocontent" hats-id="onAFgYxTD0kxBYCLVTd0Z41p75CM" listnr-id="5207477"></devsite-hats-survey> 
+       </div> 
+       <devsite-recommendations yield display="in-page" hidden></devsite-recommendations> 
+       <devsite-thumb-rating position="footer"> 
+        <template class="thumb-down-categories">
+          [{ "type": "thumb-down", "id": "missingTheInformationINeed", "label":"Missing the information I need" },{ "type": "thumb-down", "id": "tooComplicatedTooManySteps", "label":"Too complicated / too many steps" },{ "type": "thumb-down", "id": "outOfDate", "label":"Out of date" },{ "type": "thumb-down", "id": "samplesCodeIssue", "label":"Samples/Code issue" },{ "type": "thumb-down", "id": "otherDown", "label":"Other" }] 
+        </template> 
+        <template class="thumb-up-categories">
+          [{ "type": "thumb-up", "id": "easyToUnderstand", "label":"Easy to understand" },{ "type": "thumb-up", "id": "solvedMyProblem", "label":"Solved my problem" },{ "type": "thumb-up", "id": "otherUp", "label":"Other" }] 
+        </template> 
+       </devsite-thumb-rating> 
+       <devsite-recommendations yield></devsite-recommendations> 
+      </article> 
+      <devsite-content-footer class="nocontent"> 
+       <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p> 
+       <p>Last updated 2021-06-08 UTC.</p> 
+      </devsite-content-footer> 
+     </devsite-content> 
+    </main> 
+    <devsite-footer-promos class="devsite-footer"> 
+     <nav class="devsite-footer-promos nocontent" aria-label="Promotions"> 
+      <ul class="devsite-footer-promos-list"> 
+       <li class="devsite-footer-promo"> <a href="//twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo"> <img class="devsite-footer-promo-icon" src="/_static/android/images/logo-twitter.svg" loading="lazy" alt="Twitter"> Twitter </a> 
+        <div class="devsite-footer-promo-description">
+         Follow @AndroidDev on Twitter
+        </div> </li> 
+       <li class="devsite-footer-promo"> <a href="//www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo"> <img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png" loading="lazy" alt="YouTube"> YouTube </a> 
+        <div class="devsite-footer-promo-description">
+         Check out Android Developers on YouTube
+        </div> </li> 
+      </ul> 
+     </nav> 
+    </devsite-footer-promos> 
+    <devsite-footer-linkboxes class="devsite-footer"> 
+     <nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links"> 
+      <ul class="devsite-footer-linkboxes-list"> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">More Android</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Android </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com/enterprise/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Enterprise </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//www.android.com/security-center/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> Security </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//source.android.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Source </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Support</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="//issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Report platform bug </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//issuetracker.google.com/issues/new?component=192697" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Report documentation bug </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="//support.google.com/googleplay/android-developer" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> Google Play support </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="https://google.qualtrics.com/jfe/form/SV_ewWXIoEVLBcyp7f??reserved=1&amp;utm_source=FooterLink&amp;Q_Language=en&amp;utm_medium=own_srch&amp;utm_campaign=developer.android.com&amp;utm_term=0&amp;utm_content=0&amp;productTag=reg&amp;campaignDate=may19&amp;pType=devel&amp;referral_code=gV420370" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Join research studies </a> </li> 
+        </ul> </li> 
+       <li class="devsite-footer-linkbox "> <h3 class="devsite-footer-linkbox-heading no-link">Documentation</h3> 
+        <ul class="devsite-footer-linkbox-list"> 
+         <li class="devsite-footer-linkbox-item"> <a href="/guide" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)"> Developer guides </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/design" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)"> Design guides </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/reference" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)"> API reference </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/samples" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)"> Samples </a> </li> 
+         <li class="devsite-footer-linkbox-item"> <a href="/studio/intro" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)"> Android Studio </a> </li> 
+        </ul> </li> 
+      </ul> 
+     </nav> 
+    </devsite-footer-linkboxes> 
+    <devsite-footer-utility class="devsite-footer"> 
+     <div class="devsite-footer-utility nocontent"> 
+      <nav class="devsite-footer-sites" aria-label="Other Google Developers websites"> 
+       <a href="https://developers.google.com/" class="devsite-footer-sites-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link"> <img class="devsite-footer-sites-logo" src="https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup-developers.svg" loading="lazy" alt="Google Developers"> </a> 
+       <ul class="devsite-footer-sites-list"> 
+        <li class="devsite-footer-sites-item"> <a href="//developer.android.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//developer.chrome.com/home" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link"> Chrome </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//firebase.google.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link"> Firebase </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//cloud.google.com" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud Platform Link"> Google Cloud Platform </a> </li> 
+        <li class="devsite-footer-sites-item"> <a href="//developers.google.com/products/" class="devsite-footer-sites-link
+                  gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer All products Link"> All products </a> </li> 
+       </ul> 
+      </nav> 
+      <nav class="devsite-footer-utility-links" aria-label="Utility links"> 
+       <ul class="devsite-footer-utility-list"> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer Privacy link"> Privacy </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="/license" data-category="Site-Wide Custom Events" data-label="Footer License link"> License </a> </li> 
+        <li class="devsite-footer-utility-item
+                 "> <a class="devsite-footer-utility-link gc-analytics-event" href="/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer Brand guidelines link"> Brand guidelines </a> </li> 
+        <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button"> <span class="devsite-footer-utility-description">Get news and tips by email</span> <a class="devsite-footer-utility-link gc-analytics-event" href="/updates" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link"> Subscribe </a> </li> 
+       </ul> 
+       <devsite-language-selector> 
+        <devsite-select class="devsite-language-selector-menu"> 
+         <select aria-label="Select your language preference." class="devsite-language-selector-select" name="language" track-name="click" track-type="languageSelector"> <option>Language</option> <option value="en" lang="en" track-metadata-original-language="en" track-metadata-selected-language="en" track-name="changed" track-type="languageSelector"> English </option> <option value="id" lang="id" track-metadata-original-language="en" track-metadata-selected-language="id" track-name="changed" track-type="languageSelector"> Bahasa Indonesia </option> <option value="es_419" lang="es_419" track-metadata-original-language="en" track-metadata-selected-language="es_419" track-name="changed" track-type="languageSelector"> Español – América Latina </option> <option value="pt_br" lang="pt_br" track-metadata-original-language="en" track-metadata-selected-language="pt_br" track-name="changed" track-type="languageSelector"> Português – Brasil </option> <option value="zh_cn" lang="zh_cn" track-metadata-original-language="en" track-metadata-selected-language="zh_cn" track-name="changed" track-type="languageSelector"> 中文 – 简体 </option> <option value="ja" lang="ja" track-metadata-original-language="en" track-metadata-selected-language="ja" track-name="changed" track-type="languageSelector"> 日本語 </option> <option value="ko" lang="ko" track-metadata-original-language="en" track-metadata-selected-language="ko" track-name="changed" track-type="languageSelector"> 한국어 </option> </select> 
+        </devsite-select> 
+       </devsite-language-selector> 
+      </nav> 
+     </div> 
+    </devsite-footer-utility> 
+    <devsite-panel></devsite-panel> 
+   </section>
+  </section> 
+  <devsite-sitemask></devsite-sitemask> 
+  <devsite-snackbar></devsite-snackbar> 
+  <devsite-tooltip></devsite-tooltip> 
+  <devsite-heading-link></devsite-heading-link> 
+  <devsite-analytics enable-analytics-iframe> 
+   <script type="application/json" analytics>[{"gaid": "UA-5831155-1", "dimensions": {"dimension1": "Signed out", "dimension4": "Android Developers", "dimension3": false, "dimension6": "en", "dimension11": false, "dimension5": "en"}, "metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}}]</script> 
+   <script type="application/json" gtm>{"parameters": {"freeTrialEligibleUser": "False", "internalUser": "False", "language": {"machineTranslated": "False", "requested": "en", "served": "en"}, "pageType": "reference", "projectName": "Android Developers", "signedIn": "False", "tenant": "android", "recommendations": {"sourcePage": "", "sourceType": 0, "sourceRank": 0, "sourceIdenticalDescriptions": 0, "sourceTitleWords": 0, "sourceDescriptionWords": 0, "experiment": ""}}, "tags": ["GTM-KMSWPCJ"]}</script> 
+  </devsite-analytics> 
+  <devsite-badger></devsite-badger> 
+  <android-fully-clickable target=".fully-clickable" watch="devsite-content"></android-fully-clickable> 
+  <script nonce="6y9SHEYizj0oQOPzNG1xe3TcZWs8Ak">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v0089c83aa8227c3439bf2708c0795dd13db533711d44eb626e640152d9fdf05e/android/images/lockup.svg","https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,40,50,63,70,75,76,80,87,88,91,92,93,97,98,100,101,102,103,104,105,107,108,111,112,113,115,116,117,118,120,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,138,147,148,149,151],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg"]')
+  
+</script> 
+  <devsite-a11y-announce></devsite-a11y-announce>  
+ </body>
+</html>

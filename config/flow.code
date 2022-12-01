@@ -1,0 +1,7 @@
+class Flow {
+	public Flow() {
+		mFlow = new androidx.constraintlayout.core.widgets.Flow();
+		mHelperWidget = mFlow;
+    	validateParams();
+	}
+}

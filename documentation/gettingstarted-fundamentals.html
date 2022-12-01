@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ashera</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-purple">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="" src="assets/images/icon.png" height="100"><br>
+                            <span class="text-highlight">CORDOVA </span><span class="text-bold">NATIVE</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Getting Started</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper1">
+            <div class="container-fluid">
+                <div class="doc-body row flex-xl-nowrap">
+                	<div class="doc-sidebar col-md-2 col-12 order-0 d-none d-md-flex " style="padding : 0px">
+                    	<div class="sidebar left bg-defoult" style="width: 100%">
+						  <ul class="list-sidebar bg-defoult">
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" class=" active" aria-expanded="true"> 
+						    		<span class="nav-label"> The Basics </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu show" id="dashboard">
+						        	<li><a href="gettingstarted.html">Introduction</a></li>
+						        	<li><a href="gettingstarted-core-components.html">Core Components and Native Components</a></li>
+						        	<li class="active"><a href="gettingstarted-fundamentals.html">Ashera Fundamentals</a></li>
+						        	<li><a href="gettingstarted-handlingedittext.html">Handling EditText</a></li>
+						        	<li><a href="gettingstarted-scrollview.html">Using a ScrollView</a></li>
+						        	<li><a href="gettingstarted-listview.html">Using List View</a></li>
+						      	</ul>
+						    </li>
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#essentials" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Essentials </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="essentials">
+						      		<li><a href="01gettingstarted-essentials.html">Creating your first project</a></li>
+						        	<li><a href="01gettingstarted-devenv.html">Setting up the development environment</a></li>
+						        	<li><a href="01gettingstarted-theming.html">Theming</a></li>
+						        	<li><a href="01gettingstarted-uifragment.html">Creating your ui & backing fragment</a></li>
+						        	<li><a href="01gettingstarted-validation.html">Validation</a></li>
+						        	<li><a href="01gettingstarted-databinding.html">Data binding</a></li>
+						        	<li><a href="01gettingstarted-navigation.html">Navigation</a></li>
+						        	<li><a href="01gettingstarted-nativeformatting.html">Native Formatting</a></li>
+						      	</ul>
+						    </li>
+						    
+						    <li> 
+						    	<a href="#" data-bs-toggle="collapse" data-bs-target="#advanced" class=" collapsed" aria-expanded="false"> 
+						    		<span class="nav-label"> The Advanced </span>
+						    		<span class="fa fa-chevron-down pull-right"></span>
+						    	</a>
+						      	<ul class="sub-menu collapse" id="advanced">
+						        	<li><a href="02gettingstarted-newvalidation.html">Add new Validator</a></li>
+						        	<li><a href="02gettingstarted-newattribute.html">Add new Attribute to existing widget</a></li>
+						        	<li><a href="02gettingstarted-newnativeformatter.html">Add new Native Formatter</a></li>
+						        	<li><a href="02gettingstarted-newandroidwidget.html">New Android Container View</a></li>
+						        	<li><a href="02gettingstarted-newwidget.html">New Widget</a></li>
+						      	</ul>
+						    </li>
+						  </ul>
+						
+						</div>
+						
+                    </div><!--//doc-sidebar-->
+                    <div class="doc-content col-md-8 col-12">
+                        <div class="content-inner">
+							<h1 style="font-size: 35px; font-weight:bold">Ashera Fundamentals</h1>
+                                <p>
+									Ashera Native runs on Apache Cordova, a popular open source library for building cross platform user interfaces with html5 and JavaScript. 
+									Ashera Native hides the webview in Apache Cordova and introduces its own native ui based on Android xml. Webview is only used for event handling.
+									Hence it combines the best of native and hybrid development. 
+									The main power of Ashera lies in reusing the cordova plugins which have already been developed rather than developing from scratch.
+								</p>  
+								<p>	This section can get you started or can serve as a refresher course.</p>
+
+									<p>We’re going to cover the core concepts behind Ashera:
+									<ul>
+										<li>UI based on Android XML</li>
+										<li>Backing Fragment in typescript</li>
+										<li>Lifecycle of Fragment</li>
+										<li>Event Handling</li>
+										<li>State</li>
+									</ul>							
+                                </p>
+                        
+                            <section id="Yourfirstcomponent" class="doc-section" >
+
+                                <h2 class="section-title">Your first component</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                    	<p>
+                                    	The rest of this introduction to Ashera uses cats in its examples: friendly, approachable creatures that need names and a cafe to work in. Here is your very first Cat component:
+										</p>
+										<p>
+										<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fcat_hello_textview.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>                                    
+										</p>
+										
+										                                    <p>
+                                    	Here is how you do it: To define your Cat component, first declare file cat_hello.xml with backing CatHello.ts file. Also you need to map your UI to TS component in FragmentMapper.
+                                    
+                                    </p>
+										
+										<ul class="nav nav-tabs">
+										  	<li class="nav-item">
+										    	<a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#tab1default">cat_hello.xml</a>
+										  	</li>
+										  	<li class="nav-item">
+										    	<a class="nav-link" data-bs-toggle="tab" href="#tab2default">nav_graph.xml</a>
+										  	</li>
+										  	<li class="nav-item">
+										    	<a class="nav-link" data-bs-toggle="tab" href="#tab3default">CatHello.ts</a>
+										  	</li>
+										  	<li class="nav-item">
+										    	<a class="nav-link" data-bs-toggle="tab" href="#tab4default">FragmentMapper.ts</a>
+										  	</li>
+										</ul>
+										
+										<div class="panel-body">
+						                    <div class="tab-content">
+						                        <div class="tab-pane fade in active show" id="tab1default">
+						                        <pre class=" language-markup"><code class=" language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"&gt;
+
+    &lt;data&gt;&lt;/data&gt;
+
+    &lt;TextView
+        autoInject="true"
+        fragment="CatHello"
+        android:id="@+id/cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, I am your cat!"&gt;&lt;/TextView&gt;
+&lt;/layout&gt;</code></pre>
+						                        </div>
+<div class="tab-pane fade in" id="tab2default"><pre class=" language-markup"><code class=" language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/index"&gt;
+	
+
+    &lt;fragment
+        android:id="@+id/cat_hello"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Cat Hello"
+        tools:layout="@layout/cat_hello"&gt;&lt;/fragment&gt;
+
+&lt;/navigation&gt;</code></pre>
+</div>					                        
+						                        <div class="tab-pane fade" id="tab3default">
+
+<pre class=" language-markup"><code class=" language-markup">//start - import
+import { Fragment, Inject } from './app/Fragment';
+import { NavController, InjectController } from './navigation/NavController';
+import { ScopedObject } from './app/ScopedObject';
+
+import { TextView } from './android/widget/TextViewImpl';
+
+//end - import
+//start - className
+export default class CatHello extends Fragment
+//end - className
+{
+        //start - body
+        @InjectController({})
+        navController!: NavController;
+        @Inject({ id: "@+id/cat" })
+
+        private cat!:TextView;
+
+
+        async goToPreviousScreen() {
+            await this.navController.reset().popBackStack().executeCommand();
+        }        
+        //end - body
+
+}</code></pre>
+						                        </div>
+												<div class="tab-pane fade" id="tab4default">
+													<pre class=" language-markup"><code class=" language-markup">import ErrorFragment from './ErrorFragment';
+import ErrorDetailFragment from './ErrorDetailFragment';
+//start - import
+
+import CatHello from './CatHello';
+
+import Index from './Index';
+
+//end - import
+
+export const fragmentMapper : any = {
+  'layout/error.xml': ErrorFragment,
+  'layout/error_detail.xml': ErrorDetailFragment,
+  'layout/dialog_sample.xml': Index,
+  'layout/dialog_child.xml': Index,
+  //start - body
+    
+     'layout/cat_hello.xml': CatHello,
+    
+     'layout/index.xml': Index,
+    
+     //end - body
+};													
+													</code></pre>
+						                    </div>
+						                </div>
+                                    
+                                    </div>
+                                    <p>
+                                    If you are an Android developer, you must be familiar with the above snippet. In android you create a xml which represents your ui and create a fragment which inflates your ui on onCreateView method. 
+                                    For navigation, you give an entry in nav_graph.xml and use appropriate methods on NavController to control navigation.   
+                                    <p>
+                                    <p>
+                                    In Ashera native, you create your ui by creating xml "cat_hello.xml" using Android Studio. Ashera provides a generic fragment where in you associate your ui xml to fragment in nav_graph.xml.
+                                    Next, you associate your ts component "CatHello.ts" on the webview to the xml file created in FragmentMapper.ts.
+                                    
+                                    With this set up, Ashera creates a native ui using cat_hello.xml. The CatHello.ts which is backing Fragment for the Generic Fragment on the webview side starts receiving events like button clicks, life cycle events like onResume,
+                                    onCreate etc.
+                                    </p>
+                                    
+                                </div><!--//section-block-->                                
+                            </section><!--//doc-section-->
+                            
+                            
+                            <section id="CustomComponents" class="doc-section">
+                                <h2 class="section-title">Custom Components</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                        <p>
+                                        	You’ve already met Ashera Native’s Core Components. 
+                                        
+                                        
+                                        	Ashera Native lets you nest these components inside each other to create new components using the include tag. 
+
+											For example, You can render this component multiple times and in multiple places without repeating your code by using &lt;include&gt; tag:
+                                        </p>
+                                        <p>
+										<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fcustom_component.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>                                    
+										</p>
+                                    </div><!--//anwser-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+                            <section id="fragment" class="doc-section">
+                                <h2 class="section-title">Android Fragment and Webview Fragment</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                        <p>
+                                        	Android view xml are inflated in a fragment's onCreateView. Fragment has click handler and lifecycle methods to handle interaction with the ui.
+                                        	The general life cycle of fragment can be read here : <a href="https://developer.android.com/guide/fragments/lifecycle">Fragment lifecycle</a>  
+                                        
+                                        </p>
+                                        <p>
+                                        	Ashera Native provides a generic implementation of fragment. It provides a webview fragment which receives lifecycle and ui events.
+                                        	This way the webview fragment provides a cross platform implementation of ui interaction utilizing javascript in webview.   
+                                        </p>
+                                        <p>
+                                        <pre class=" language-markup"><code class=" language-markup">//start - import
+import { Fragment, Inject } from './app/Fragment';
+import { NavController, InjectController } from './navigation/NavController';
+import { ScopedObject } from './app/ScopedObject';
+
+import { TextView } from './android/widget/TextViewImpl';
+
+//end - import
+//start - className
+export default class CatHello extends Fragment
+//end - className
+{
+        //start - body
+        @InjectController({})
+        navController!: NavController;
+        @Inject({ id: "@+id/cat" })
+
+        private cat!:TextView;
+
+
+        async goToPreviousScreen() {
+            await this.navController.reset().popBackStack().executeCommand();
+        }        
+        //end - body
+
+}</code></pre>
+
+The code above declares CatHello fragment. goToPreviousScreen is a ui handler. This can be called on click of button. CatHello extends Fragment i.e Fragment has lifecycle method which can be overridden in CatHello component.
+</p>
+                                    </div><!--//anwser-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+                            
+                             <section id="EventHandling" class="doc-section">
+                                <h2 class="section-title">Event handler & Lifecycle Events</h2>
+                                <div class="section-block">
+									<p>
+									Ashera native provides on(*) attributes on widgets which needs to be be used in xml to tie click listener to method on Webview fragment.
+									</p>
+									
+									<p>
+                    				<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fevent_handler.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>
+                    				</p>
+                                    <p>
+                                    	The fragment backing the xml has a method callInlineFunction which will be called on click of the Button:
+                                    	
+                                    	<pre class=" language-markup"><code class=" language-markup">&lt;Button
+        android:id="@+id/cat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="callInlineFunction"
+        android:text="Poke Me!">&lt;/Button&gt;</code></pre>
+                                         <pre class=" language-markup"><code class=" language-markup">async callInlineFunction() {
+	 window.inlineFunction();
+}</code></pre>
+     </p>
+     
+     <p>
+     
+     The webview Fragment has the following methods:
+     <pre class=" language-markup"><code class=" language-markup">public onCreateView (obj:any) {
+}
+public onAttach(obj:any) {
+}
+
+public onCreate(obj:any) {
+}
+
+public onResume(obj:any) {
+}
+
+public onError(obj:any) {
+}
+
+public onPause(obj:any) {
+}
+
+public onDestroy(obj:any) {
+}
+
+public onDetach(obj:any) {
+}
+
+public onCloseDialog(obj:any) {
+}
+</code></pre>
+The native android fragment will send events to these lifecycle methods in the webview fragment. 
+     
+     </p>
+                                </div><!--//section-block-->
+                                
+                            </section><!--//doc-section-->
+                            
+                            
+                            <section id="State" class="doc-section">
+                                <h2 class="section-title">State</h2>
+                                <div class="section-block">
+                                    <div class="answer">
+                                        <p>
+                                        	State is like a component’s personal data storage. State is useful for handling data that changes over time or that comes from user interaction. State gives your components memory!
+                                        </p>
+                                        
+                                        <p>
+                                        	Given that ashera native has a native side backed by webview component, we have choice to store state in either webview or on the native component.
+                                        	
+                                        	However, it is recommended to store state on the native side and keep the webview stateless and use it as webclient for making http calls.  
+                                        </p>
+                                        <p>
+                                        The following example takes place in a cat cafe where two hungry cats are waiting to be fed. Their hunger, which we expect to change over time (unlike their names), is stored as state. To feed the cats, press their buttons—which will update their state.
+                                        </p>
+                                        <p>
+											<iframe loading="lazy" src="https://asheracordova.github.io/interactivesamples/index.html?url=https%3A%2F%2Fraw.githubusercontent.com%2FAsheraCordova%2FInteractivePlayGround%2Fmain%2Fandroid_backup%2Fres%2Flayout%2Fhungry_cat.xml" height="500px" width="100%" frameborder="0" data-snack-iframe="true" style="display: block;"></iframe>                                    
+										</p>
+										<p>
+										First you create a component. Variables used in the component like isHungry and name are scoped to the component. 
+										</p>
+<pre class=" language-markup"><code class=" language-markup">&lt;LinearLayout
+	android:id="@+id/parent"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	&lt;TextView
+		modelPojoToUi="text = . from name->component"
+		textFormat="I am %s."
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" /&gt;
+
+	&lt;TextView
+		android:id="@+id/status"
+		modelPojoToUi="text = ternary(.) from isHungry->component"
+		modelPojoToUiParams="false:hungry;true:Full"
+		textFormat="I am %s"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" /&gt;
+
+	&lt;Button
+		android:id="@+id/feedMeBtn"
+		android:onClick="callInlineFunction"
+		modelPojoToUi="text = ternary(.) from isHungry->component"
+		modelPojoToUiParams="false:Pour me some milk, please!;true:Thank You!!!"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="40dp"/&gt;
+&lt;/LinearLayout&gt;</code></pre>            
+									<p>
+									Next you reference the component using include tag. Initial parameters values and type of parameter are passed to the component.
+									</p>
+
+<pre class=" language-markup"><code class=" language-markup">&lt;include
+	name="Munkustrap"
+	componentId="test"
+	isHungry="false"
+	isHungry_type="bool"
+	layout="@layout/hungry_cat_component" /&gt;</code></pre>
+									<p>
+									On click of button in the component, update the component data using the code below.
+									Component scope data is stored in view scope with key &lt;Component Id&gt;#&lt;variable name&gt;.
+									Component Id is passed as one of the event parameters.
+									</p>
+									
+<pre class=" language-markup"><code class=" language-markup">window.inlineFunction = function(fragment, command, obj) {
+	command.updateModelData(obj.componentId + "#" + "isHungry->component as bool", true).refreshUiFromModel(
+		obj.componentId + "#status," + obj.componentId + "#feedMeBtn");
+     fragment.executeCommand(command);
+}
+</code></pre>
+                                    </div><!--//anwser-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            
+							<hr>
+	                    	<p>Now that you’ve covered Ashera Native’s Core Components, let’s dive deeper on some of these core components by looking at handling &lt;EditText&gt;.
+	                    	<p>
+                        </div><!--//content-inner-->
+                        
+                        <div class="row" style="margin-bottom: 10px">
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--previous" href="gettingstarted-core-components.html"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Core Components and Native Components</div></a>
+							</div>
+	                        <div class="col-md-6 col-12">
+								<a class="pagination-nav__link pagination-nav__link--next" href="gettingstarted-handlingedittext.html"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Handling EditText</div></a>
+							</div>
+						</div>
+                        
+                    </div><!--//doc-content-->
+                    
+                    <div class="doc-sidebar col-md-2 col-12 d-none d-md-flex">
+                    	<div class="sidebar left " style="position: relative">
+                    		<div id="doc-nav" class="doc-nav" style="position : inherit">
+	                            <ul id="doc-menu" class="nav doc-menu flex-column sticky">
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#Yourfirstcomponent">Your first component</a>
+		                            </li>
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#CustomComponents">Custom Components</a>
+		                            </li>
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#fragment">Android Fragment and Webview Fragment</a>
+		                            </li>
+		                            
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#EventHandling">Event handler & Lifecycle Events</a>
+		                            </li>
+		                            
+		                            <li class="nav-item">
+	                                    <a class="nav-link scrollto" href="#State">State</a>
+		                            </li>
+		                            
+	                            </ul><!--//doc-menu-->
+	                            
+                        	</div>
+                    	</div>
+                    </div>
+                    
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>      
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>      
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>                                                          
+    <script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+</body>
+</html> 
+

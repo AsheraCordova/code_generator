@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en" class="">
+ <head>
+  <script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+  <meta charset="utf-8">
+  <meta name="xsrf_token" content="rCLjF-zmyCvJs323bdeuR3CI0VdiVfhGxonaRWZqO-o6MTUzODEwMTg2ODc4Mzc4MA">
+  <link rel="canonical" href="https://developer.android.com/reference/android/view/View.OnScrollChangeListener">
+  <link rel="alternate" href="https://developer.android.com/reference/android/view/View.OnScrollChangeListener" hreflang="en">
+  <link rel="alternate" href="https://developer.android.google.cn/reference/android/view/View.OnScrollChangeListener" hreflang="en-cn">
+  <link rel="alternate" href="https://developer.android.com/reference/android/view/View.OnScrollChangeListener" hreflang="x-default">
+  <link rel="shortcut icon" href="https://developer.android.com/_static/d296d6b9b4/images/android/favicon.png">
+  <link rel="apple-touch-icon" href="https://developer.android.com/_static/d296d6b9b4/images/android/touchicon-180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://developer.android.com/_static/d296d6b9b4/css/devsite-android-light-grey.css">
+  <link rel="stylesheet" href="https://developer.android.com/_static/d296d6b9b4/css/android/android-site.css">
+  <link rel="search" type="application/opensearchdescription+xml" title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
+  <script src="https://developer.android.com/_static/d296d6b9b4/js/jquery-bundle.js"></script>
+  <meta property="og:site_name" content="Android Developers">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://developer.android.com/reference/android/view/View.OnScrollChangeListener">
+  <meta property="og:locale" content="en">
+  <script>
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  <title>View.OnScrollChangeListener &nbsp;|&nbsp; Android Developers</title>
+  <meta property="og:title" content="View.OnScrollChangeListener &nbsp;|&nbsp; Android Developers">
+  <link rel="stylesheet" href="https://developer.android.com/static/css/reference-docs.css">
+ </head>
+ <body class="
+               devsite-doc-page
+               
+               
+               
+               
+               " id="top_of_page">
+  <div class="devsite-wrapper">
+   <div class="devsite-top-section-wrapper
+            ">
+    <header class="devsite-top-section nocontent">
+     <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+       <div class="devsite-top-logo-row devsite-full-site-width">
+        <button type="button" class="devsite-expand-section-nav devsite-header-icon-button
+                                       button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu"></button>
+        <div class="devsite-product-name-wrapper">
+         <a href="https://developer.android.com/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androiddevelopers" track-metadata-eventdetail="nav" track-metadata-position="nav"><img src="https://developer.android.com/_static/d296d6b9b4/images/android/lockup.svg" class="devsite-site-logo" alt="Android Developers"><span class="devsite-site-name devsite-product-name">Android Developers</span></a>
+        </div>
+        <div class="devsite-header-upper-tabs">
+         <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+          <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/about/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Platform"> Platform </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/studio/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Studio"> Android Studio </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/distribute/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Google Play"> Google Play </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/jetpack/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Android Jetpack"> Android Jetpack </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/docs/" class="devsite-doc-set-nav-active devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" aria-label="Docs, selected" data-category="Site-Wide Custom Events" data-label="Tab: Docs"> Docs </a></li>
+           <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/news/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: News"> News </a></li>
+          </ul>
+         </nav>
+        </div>
+        <form class="devsite-search-form" action="https://developer.android.com/s/results/" method="GET" id="top-search" search-placeholder="Search">
+         <div id="searchbox" class="devsite-searchbox">
+          <input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box">
+          <div class="devsite-search-image material-icons"></div>
+         </div>
+         <input type="hidden" name="p" id="search_project" value="/" data-project-name="Android Developers" data-project-path="/" data-query-match="">
+         <input type="hidden" class="suggest-project" value="Android Developers">
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Open Source Project"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Apigee Docs"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Google Cloud"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Dialogflow"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Firebase"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Link.app"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Nest Developers"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="OpenThread"></div>
+         <div class="suggest-project-metadata" data-home_url="https://www.orbitera.com/" data-path="/" data-name="Orbitera"></div>
+         <div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="TensorFlow"></div>
+        </form>
+        <button type="button" class="devsite-search-button devsite-header-icon-button button-flat
+                                       material-icons"></button>
+       </div>
+      </div>
+     </div>
+     <div class="devsite-collapsible-section">
+      <div class="devsite-header-background devsite-full-site-width">
+       <div class="devsite-product-id-row devsite-full-site-width">
+        <div class="devsite-product-description-row">
+         <ul class="devsite-breadcrumb-list">
+          <li class="devsite-breadcrumb-item"> Documentation </li>
+         </ul>
+        </div>
+       </div>
+       <div class="devsite-doc-set-nav-row devsite-full-site-width">
+        <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+         <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll">
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/docs/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Overview"> Overview </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/guide/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Guides"> Guides </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/reference/" class="devsite-doc-set-nav-active devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" aria-label="Reference, selected" data-category="Site-Wide Custom Events" data-label="Tab: Reference"> Reference </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/samples/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Samples"> Samples </a></li>
+          <li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+                 "><a href="https://developer.android.com/design/" class=" devsite-nav-tab
+                  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: Design &amp; Quality"> Design &amp; Quality </a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+    </header>
+    <script>
+    if (window.jQuery) {
+      $(document).ready(function() {
+        if (window.devsite && window.devsite.search) {
+          
+          window.devsite.search.init('en')
+        }
+      });
+    }
+  </script>
+   </div>
+   <div id="gc-wrapper" itemscope itemtype="http://schema.org/APIReference">
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Developers&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}">
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Developers&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}">
+    <input class="google-tag-manager-id" type="hidden" value="GTM-KMSWPCJ">
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "userCountry": "IN", "language": {"requested": "en", "served": "en"}, "projectName": "Android Developers", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script> 
+    <div class="devsite-site-mask"></div> 
+    <nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0"> 
+     <div class="devsite-nav-responsive-tabs-panel"> 
+      <nav class="devsite-nav-responsive-tabs devsite-nav"> 
+       <ul class="devsite-nav-list"> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/about/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Platform"> Platform </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/studio/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Studio"> Android Studio </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/distribute/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Play"> Google Play </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/jetpack/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Android Jetpack"> Android Jetpack </a> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/docs/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Docs"> Docs </a> 
+         <nav class="devsite-nav-responsive-tabs devsite-nav"> 
+          <ul class="devsite-nav-list"> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/docs/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Overview"> Overview </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/guide/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Guides"> Guides </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title
+                     devsite-nav-active gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Responsive Tab: Reference" tabindex="0"> Reference </span> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/samples/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Samples"> Samples </a> </li> 
+           <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/design/?nav=true" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Design &amp; Quality"> Design &amp; Quality </a> </li> 
+          </ul> 
+         </nav> </li> 
+        <li class="devsite-nav-item devsite-nav-item-heading"> <a href="https://developer.android.com/news/" class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                  " data-category="Site-Wide Custom Events" data-label="Responsive Tab: News"> News </a> </li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="devsite-nav-responsive-sidebar-panel"> 
+      <div class="devsite-nav-responsive-back" tabindex="0"></div> 
+      <nav class="devsite-nav-responsive-sidebar"> 
+      </nav> 
+     </div> 
+    </nav> 
+    <div class="devsite-main-content clearfix"> 
+     <div class="devsite-banner devsite-banner-announcement
+                    
+                      devsite-background devsite-background-grey
+                    "> 
+      <div class="devsite-banner-inner">
+        Save the date! 
+       <a href="/dev-summit">Android Dev Summit</a> is coming to Mountain View, CA on November 7-8, 2018. 
+      </div> 
+     </div> 
+     <nav class="devsite-section-nav devsite-nav nocontent"> 
+      <ul class="devsite-nav-list devsite-nav-list-mini">
+       <li class="devsite-nav-item"><a href="/reference/" class="devsite-nav-title">Overview</a></li>
+       <li class="devsite-nav-item"><span class="devsite-nav-title devsite-nav-title-no-path">Android Platform</span></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/packages" class="devsite-nav-title">Android Support Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/androidx/packages" class="devsite-nav-title">AndroidX</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/arch/packages" class="devsite-nav-title">Architecture Components</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/car/packages" class="devsite-nav-title">Android Automotive Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/databinding/packages" class="devsite-nav-title">Databinding Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/constraint/packages" class="devsite-nav-title">Constraint Layout Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/material/packages" class="devsite-nav-title">Material Components</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/test/packages" class="devsite-nav-title">Test Support Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/android/support/wearable/packages" class="devsite-nav-title">Wearable Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/android/billingclient/packages" class="devsite-nav-title">Play Billing Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/play/core/packages" class="devsite-nav-title">Play Core Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/android/installreferrer/packages" class="devsite-nav-title">Play Install Referrer Library</a></li>
+       <li class="devsite-nav-item"><a href="/reference/com/google/android/things/packages" class="devsite-nav-title">Android Things</a></li>
+       <li class="devsite-nav-item"><span class="devsite-nav-title devsite-nav-title-no-path">Kotlin API Reference (Preview)</span></li>
+       <li class="devsite-nav-item"><a href="/reference/kotlin/packages" class="devsite-nav-title">Android Platform</a></li>
+       <li class="devsite-nav-item"><a href="/reference/kotlin/androidx/packages" class="devsite-nav-title">AndroidX</a></li>
+      </ul> 
+     </nav> 
+     <nav class="devsite-page-nav devsite-nav"></nav> 
+     <article class="devsite-article"> 
+      <article class="devsite-article-inner"> 
+       <div class="devsite-rating-container
+            ">
+        <div class="devsite-rating-stars">
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="1" data-category="Site-Wide Custom Events" data-label="Star Rating 1" track-metadata-score="1" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 1 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="2" data-category="Site-Wide Custom Events" data-label="Star Rating 2" track-metadata-score="2" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 2 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="3" data-category="Site-Wide Custom Events" data-label="Star Rating 3" track-metadata-score="3" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 3 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="4" data-category="Site-Wide Custom Events" data-label="Star Rating 4" track-metadata-score="4" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 4 out of 5"></div>
+         <div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons" data-rating-val="5" data-category="Site-Wide Custom Events" data-label="Star Rating 5" track-metadata-score="5" track-type="feedback" track-name="rating" track-metadata-position="header" role="button" aria-label="Site content star ratings, rating 5 out of 5"></div>
+        </div>
+        <div class="devsite-rating-description"></div>
+        <div class="devsite-rating-internal">
+         <span class="devsite-rating-stats"></span>
+        </div>
+       </div>
+       <script>
+  $(document).ready(function() {
+    devsite.ratings.init(
+      document.querySelectorAll('#devsite-feedback-project'), false
+      
+    );
+  });
+</script> 
+       <nav class="devsite-breadcrumb-nav devsite-nav"> 
+        <ul class="devsite-breadcrumb-list"> 
+         <li class="devsite-breadcrumb-item"> <a href="https://developer.android.com/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1"> Android Developers </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://developer.android.com/docs/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2"> Docs </a> </li> 
+         <li class="devsite-breadcrumb-item"> 
+          <div class="devsite-breadcrumb-guillemet material-icons"></div> <a href="https://developer.android.com/reference/" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3"> Reference </a> </li> 
+        </ul> 
+       </nav> 
+       <nav class="devsite-page-nav-embedded devsite-nav"></nav> 
+       <div class="devsite-article-body clearfix
+            
+              devsite-no-page-title
+            " itemprop="articleBody"> 
+        <div itemscope itemtype="http://developers.google.com/ReferenceObject"> 
+         <!-- This DIV closes at the end of the BODY --> 
+         <meta itemprop="name" content="android.view.View.OnScrollChangeListener"> 
+         <meta itemprop="path" content="API level 23"> 
+         <div id="naMessage"></div> 
+         <div id="api-info-block"> 
+          <div class="api-level">
+            added in 
+           <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 23</a> 
+          </div> 
+          <div class="sum-details-links"> 
+          </div>
+          <!-- end sum-details-links --> 
+         </div>
+         <!-- end api-info-block --> 
+         <div id="jd-content" data-version-added="23"> 
+          <!-- ======== START OF CLASS DATA ======== --> 
+          <h1 class="api-title">View.OnScrollChangeListener</h1> 
+          <p> <code class="api-signature"> public static interface View.OnScrollChangeListener </code> <br> <code class="api-signature"> </code> </p>
+          <table class="jd-inheritance-table"> 
+           <tbody>
+            <tr> 
+             <td colspan="1" class="jd-inheritance-class-cell">android.view.View.OnScrollChangeListener </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <br>
+          <hr> 
+          <p>Interface definition for a callback to be invoked when the scroll X or Y positions of a view change. </p>
+          <p> <b>Note:</b> Some views handle scrolling independently from View and may have their own separate listeners for scroll-type events. For example, <code><a href="https://developer.android.com/reference/android/widget/ListView.html">ListView</a></code> allows clients to register an <code><a href="https://developer.android.com/reference/android/widget/AbsListView.html#setOnScrollListener(android.widget.AbsListView.OnScrollListener)">AbsListView.OnScrollListener</a></code> to listen for changes in list scroll position.</p> 
+          <div> 
+           <p><b>See also:</b></p> 
+           <ul class="nolist">
+            <li><code><a href="https://developer.android.com/reference/android/view/View.html#setOnScrollChangeListener(android.view.View.OnScrollChangeListener)">View.setOnScrollChangeListener(View.OnScrollChangeListener)</a></code></li> 
+           </ul> 
+          </div> 
+          <h2 class="api-section">Summary</h2> 
+          <!-- ========== METHOD SUMMARY =========== --> 
+          <table id="pubmethods" class="responsive methods"> 
+           <tbody>
+            <tr>
+             <th colspan="2"><h3>Public methods</h3></th>
+            </tr> 
+            <tr data-version-added="23"> 
+             <td><code> abstract void</code> </td> 
+             <td width="100%"> <code> <a href="https://developer.android.com/reference/android/view/View.OnScrollChangeListener.html#onScrollChange(android.view.View,%20int,%20int,%20int,%20int)">onScrollChange</a>(<a href="https://developer.android.com/reference/android/view/View.html">View</a> v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) </code> <p>Called when the scroll position of a view changes. </p> </td> 
+            </tr> 
+           </tbody>
+          </table> 
+          <!-- XML Attributes --> 
+          <!-- Enum Values --> 
+          <!-- Constants --> 
+          <!-- Fields --> 
+          <!-- Public ctors --> 
+          <!-- ========= CONSTRUCTOR DETAIL ======== --> 
+          <!-- Protected ctors --> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- Public methdos --> 
+          <h2 class="api-section">Public methods</h2> 
+          <div data-version-added="23"> 
+           <h3 class="api-name" id="onScrollChange(android.view.View,%20int,%20int,%20int,%20int)">onScrollChange</h3> 
+           <div class="api-level"> 
+            <div>
+              added in 
+             <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 23</a>
+            </div> 
+           </div> 
+           <pre class="api-signature no-pretty-print">public abstract void onScrollChange (<a href="https://developer.android.com/reference/android/view/View.html">View</a> v, 
+                int scrollX, 
+                int scrollY, 
+                int oldScrollX, 
+                int oldScrollY)</pre> 
+           <p>Called when the scroll position of a view changes.</p>
+           <p></p> 
+           <table class="responsive"> 
+            <tbody>
+             <tr>
+              <th colspan="2">Parameters</th>
+             </tr> 
+             <tr> 
+              <td><code>v</code></td> 
+              <td width="100%"> <code>View</code>: The view whose scroll position has changed.<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>scrollX</code></td> 
+              <td width="100%"> <code>int</code>: Current horizontal scroll origin.<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>scrollY</code></td> 
+              <td width="100%"> <code>int</code>: Current vertical scroll origin.<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>oldScrollX</code></td> 
+              <td width="100%"> <code>int</code>: Previous horizontal scroll origin.<p></p></td> 
+             </tr> 
+             <tr> 
+              <td><code>oldScrollY</code></td> 
+              <td width="100%"> <code>int</code>: Previous vertical scroll origin. <p></p></td> 
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <!-- ========= METHOD DETAIL ======== --> 
+          <!-- ========= END OF CLASS DATA ========= --> 
+         </div>
+         <!-- end jd-content --> 
+         <div class="data-reference-resources-wrapper"> 
+          <ul data-reference-resources> 
+           <li><h2 class="hide-from-toc">Annotations</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.CapturedViewProperty.html">ViewDebug.CapturedViewProperty</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.ExportedProperty.html">ViewDebug.ExportedProperty</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.FlagToString.html">ViewDebug.FlagToString</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.IntToString.html">ViewDebug.IntToString</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Interfaces</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/view/ActionMode.Callback.html">ActionMode.Callback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ActionProvider.VisibilityListener.html">ActionProvider.VisibilityListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Choreographer.FrameCallback.html">Choreographer.FrameCallback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/CollapsibleActionView.html">CollapsibleActionView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ContextMenu.html">ContextMenu</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ContextMenu.ContextMenuInfo.html">ContextMenu.ContextMenuInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/GestureDetector.OnContextClickListener.html">GestureDetector.OnContextClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/GestureDetector.OnDoubleTapListener.html">GestureDetector.OnDoubleTapListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/GestureDetector.OnGestureListener.html">GestureDetector.OnGestureListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/InputQueue.Callback.html">InputQueue.Callback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyEvent.Callback.html">KeyEvent.Callback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/LayoutInflater.Factory.html">LayoutInflater.Factory</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/LayoutInflater.Factory2.html">LayoutInflater.Factory2</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/LayoutInflater.Filter.html">LayoutInflater.Filter</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Menu.html">Menu</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MenuItem.html">MenuItem</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MenuItem.OnActionExpandListener.html">MenuItem.OnActionExpandListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MenuItem.OnMenuItemClickListener.html">MenuItem.OnMenuItemClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/PixelCopy.OnPixelCopyFinishedListener.html">PixelCopy.OnPixelCopyFinishedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ScaleGestureDetector.OnScaleGestureListener.html">ScaleGestureDetector.OnScaleGestureListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SubMenu.html">SubMenu</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SurfaceHolder.html">SurfaceHolder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SurfaceHolder.Callback2.html">SurfaceHolder.Callback2</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/TextureView.SurfaceTextureListener.html">TextureView.SurfaceTextureListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnApplyWindowInsetsListener.html">View.OnApplyWindowInsetsListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnAttachStateChangeListener.html">View.OnAttachStateChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnCapturedPointerListener.html">View.OnCapturedPointerListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnClickListener.html">View.OnClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnContextClickListener.html">View.OnContextClickListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnCreateContextMenuListener.html">View.OnCreateContextMenuListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnDragListener.html">View.OnDragListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnFocusChangeListener.html">View.OnFocusChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnGenericMotionListener.html">View.OnGenericMotionListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnHoverListener.html">View.OnHoverListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnKeyListener.html">View.OnKeyListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnLayoutChangeListener.html">View.OnLayoutChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnLongClickListener.html">View.OnLongClickListener</a></li> 
+             <li class="selected"><a href="https://developer.android.com/reference/android/view/View.OnScrollChangeListener.html">View.OnScrollChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnSystemUiVisibilityChangeListener.html">View.OnSystemUiVisibilityChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnTouchListener.html">View.OnTouchListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.OnUnhandledKeyEventListener.html">View.OnUnhandledKeyEventListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewGroup.OnHierarchyChangeListener.html">ViewGroup.OnHierarchyChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewManager.html">ViewManager</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewParent.html">ViewParent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewStub.OnInflateListener.html">ViewStub.OnInflateListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnDrawListener.html">ViewTreeObserver.OnDrawListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalFocusChangeListener.html">ViewTreeObserver.OnGlobalFocusChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html">ViewTreeObserver.OnGlobalLayoutListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnPreDrawListener.html">ViewTreeObserver.OnPreDrawListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnScrollChangedListener.html">ViewTreeObserver.OnScrollChangedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnTouchModeChangeListener.html">ViewTreeObserver.OnTouchModeChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnWindowAttachListener.html">ViewTreeObserver.OnWindowAttachListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.OnWindowFocusChangeListener.html">ViewTreeObserver.OnWindowFocusChangeListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Window.Callback.html">Window.Callback</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Window.OnFrameMetricsAvailableListener.html">Window.OnFrameMetricsAvailableListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Window.OnRestrictedCaptionAreaChangedListener.html">Window.OnRestrictedCaptionAreaChangedListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowManager.html">WindowManager</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Classes</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/view/AbsSavedState.html">AbsSavedState</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ActionMode.html">ActionMode</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ActionMode.Callback2.html">ActionMode.Callback2</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ActionProvider.html">ActionProvider</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Choreographer.html">Choreographer</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ContextThemeWrapper.html">ContextThemeWrapper</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Display.html">Display</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Display.HdrCapabilities.html">Display.HdrCapabilities</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Display.Mode.html">Display.Mode</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/DisplayCutout.html">DisplayCutout</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/DragAndDropPermissions.html">DragAndDropPermissions</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/DragEvent.html">DragEvent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/FocusFinder.html">FocusFinder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/FrameMetrics.html">FrameMetrics</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/FrameStats.html">FrameStats</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/GestureDetector.html">GestureDetector</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/GestureDetector.SimpleOnGestureListener.html">GestureDetector.SimpleOnGestureListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Gravity.html">Gravity</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/HapticFeedbackConstants.html">HapticFeedbackConstants</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/InputDevice.html">InputDevice</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/InputDevice.MotionRange.html">InputDevice.MotionRange</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/InputEvent.html">InputEvent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/InputQueue.html">InputQueue</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyboardShortcutGroup.html">KeyboardShortcutGroup</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyboardShortcutInfo.html">KeyboardShortcutInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyCharacterMap.html">KeyCharacterMap</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyCharacterMap.KeyData.html">KeyCharacterMap.KeyData</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyEvent.DispatcherState.html">KeyEvent.DispatcherState</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/LayoutInflater.html">LayoutInflater</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MenuInflater.html">MenuInflater</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MotionEvent.PointerCoords.html">MotionEvent.PointerCoords</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/MotionEvent.PointerProperties.html">MotionEvent.PointerProperties</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/OrientationEventListener.html">OrientationEventListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/OrientationListener.html">OrientationListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/PixelCopy.html">PixelCopy</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/PointerIcon.html">PointerIcon</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ScaleGestureDetector.SimpleOnScaleGestureListener.html">ScaleGestureDetector.SimpleOnScaleGestureListener</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SearchEvent.html">SearchEvent</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SoundEffectConstants.html">SoundEffectConstants</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Surface.html">Surface</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SurfaceView.html">SurfaceView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/TextureView.html">TextureView</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/TouchDelegate.html">TouchDelegate</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/VelocityTracker.html">VelocityTracker</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.html">View</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.AccessibilityDelegate.html">View.AccessibilityDelegate</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.BaseSavedState.html">View.BaseSavedState</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.DragShadowBuilder.html">View.DragShadowBuilder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/View.MeasureSpec.html">View.MeasureSpec</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewAnimationUtils.html">ViewAnimationUtils</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewConfiguration.html">ViewConfiguration</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.html">ViewDebug</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewGroupOverlay.html">ViewGroupOverlay</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewOutlineProvider.html">ViewOutlineProvider</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewOverlay.html">ViewOverlay</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewPropertyAnimator.html">ViewPropertyAnimator</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewStructure.html">ViewStructure</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewStructure.HtmlInfo.html">ViewStructure.HtmlInfo</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewStructure.HtmlInfo.Builder.html">ViewStructure.HtmlInfo.Builder</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewStub.html">ViewStub</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewTreeObserver.html">ViewTreeObserver</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Window.html">Window</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowAnimationFrameStats.html">WindowAnimationFrameStats</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowContentFrameStats.html">WindowContentFrameStats</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowId.html">WindowId</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowId.FocusObserver.html">WindowId.FocusObserver</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowInsets.html">WindowInsets</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Enums</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.HierarchyTraceType.html">ViewDebug.HierarchyTraceType</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/ViewDebug.RecyclerTraceType.html">ViewDebug.RecyclerTraceType</a></li> 
+            </ul> </li> 
+           <li><h2 class="hide-from-toc">Exceptions</h2> 
+            <ul> 
+             <li><a href="https://developer.android.com/reference/android/view/InflateException.html">InflateException</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/KeyCharacterMap.UnavailableException.html">KeyCharacterMap.UnavailableException</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/Surface.OutOfResourcesException.html">Surface.OutOfResourcesException</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/SurfaceHolder.BadSurfaceTypeException.html">SurfaceHolder.BadSurfaceTypeException</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowManager.BadTokenException.html">WindowManager.BadTokenException</a></li> 
+             <li><a href="https://developer.android.com/reference/android/view/WindowManager.InvalidDisplayException.html">WindowManager.InvalidDisplayException</a></li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </div>
+        <!-- end devsite ReferenceObject --> 
+       </div> 
+       <div class="devsite-content-footer nocontent"> 
+        <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p> 
+        <p class="devsite-content-footer-date" itemprop="datePublished" content="2018-06-06T16:09:33.829410"> Last updated June 6, 2018. </p> 
+       </div> 
+      </article> 
+     </article> 
+    </div> 
+    <footer class="devsite-footer-promos nocontent">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-promos-list">
+       <li class="devsite-footer-promo"><a href="//twitter.com/AndroidDev" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Twitter Promo"><img class="devsite-footer-promo-icon" src="https://developer.android.com/static/images/footer/logo-twitter.svg"> Twitter </a>
+        <div class="devsite-footer-promo-description">
+         Follow @AndroidDev on Twitter
+        </div></li>
+       <li class="devsite-footer-promo"><a href="//plus.google.com/+AndroidDevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google+ Promo"><img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/branding/product/2x/google_plus_48dp.png"> Google+ </a>
+        <div class="devsite-footer-promo-description">
+         Follow Android Developers on Google+
+        </div></li>
+       <li class="devsite-footer-promo"><a href="//www.youtube.com/user/androiddevelopers" class="devsite-footer-promo-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Promo"><img class="devsite-footer-promo-icon" src="//www.gstatic.com/images/icons/material/product/2x/youtube_48dp.png"> YouTube </a>
+        <div class="devsite-footer-promo-description">
+         Check out Android Developers on YouTube
+        </div></li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-footer-linkboxes nocontent
+               devsite-footer-linkboxes-all-backup
+               devsite-footer-linkboxes-with-sites">
+     <nav class="devsite-full-site-width">
+      <ul class="devsite-footer-linkboxes-list">
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">More Android</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/enterprise/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Enterprise Link"> Enterprise </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://www.android.com/security-center/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Security Link"> Security </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://source.android.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Open Source Link"> Source </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">Support</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://issuetracker.google.com/issues/new?component=190923&amp;template=841312" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Report Android Bug Link"> Report platform bug </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://issuetracker.google.com/issues/new?component=192697" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Report Android Doc Bug Link"> Report documentation bug </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://support.google.com/googleplay/android-developer" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Google Play Support Link"> Google Play support </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf27XIxoFmNpTjTYdk-m1uKWGqEnd7_4C_E1AD5fdCfyTBWNA/viewform?usp=pp_url&amp;entry.1909689089&amp;entry.208743710&amp;entry.408796755&amp;entry.1341430893&amp;entry.594931249&amp;entry.1640656812&amp;entry.1759804042&amp;entry.1441312344=developer.android.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer User Studies Link"> Join user studies </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">Documentation</h3>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/guide/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Guides Link"> Developer guides </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/design/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Design Guides"> Design guides </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/reference/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev API Ref Link"> API reference </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/samples/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Dev Samples Link"> Samples </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="https://developer.android.com/studio/intro/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Studio Link"> Android Studio </a></li>
+        </ul></li>
+       <li class="devsite-footer-linkbox devsite-footer-linkbox-sites"><a href="https://developers.google.com/" class="gc-analytics-event devsite-footer-linkbox-logo-link" data-category="Site-Wide Custom Events" data-label="Footer Google Developers Link"><img class="devsite-footer-linkbox-logo" src="https://developer.android.com/_static/d296d6b9b4/images/redesign-14/lockup-color-knockout.png" alt="Google Developers"></a>
+        <ul class="devsite-footer-linkbox-list">
+         <li class="devsite-footer-linkbox-item"><a href="//developer.android.com/index.html" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link"> Android </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//developer.chrome.com/home" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Chrome Link"> Chrome </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//firebase.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Firebase Link"> Firebase </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//cloud.google.com" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link"> Google Cloud Platform </a></li>
+         <li class="devsite-footer-linkbox-item"><a href="//developers.google.com/products/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Products Link"> All Products </a></li>
+        </ul></li>
+      </ul>
+     </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+     <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+      <div class="devsite-utility-footer-nav-left">
+       <form class="devsite-utility-footer-language" action="https://developer.android.com/i18n/setlang/" method="post">
+        <input type="hidden" name="xsrf_token" value="rCLjF-zmyCvJs323bdeuR3CI0VdiVfhGxonaRWZqO-o6MTUzODEwMTg2ODc4Mzc4MA">
+        <input type="hidden" name="next" value="/reference/android/view/View.OnScrollChangeListener">
+        <select class="devsite-utility-footer-language-select kd-select" name="language" track-type="languageSelector" track-name="click"><option value="id" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="id"> Bahasa Indonesia </option><option value="de" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="de"> Deutsch </option><option value="en" selected track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="en"> English </option><option value="es" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="es"> español </option><option value="es-419" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="es-419"> Español (América Latina) </option><option value="fr" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="fr"> français </option><option value="pt-br" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="pt-br"> Português Brasileiro </option><option value="vi" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="vi"> Tiếng Việt </option><option value="tr" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="tr"> Türkçe </option><option value="ru" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="ru"> Русский </option><option value="th" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="th"> ภาษาไทย </option><option value="ja" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="ja"> 日本語 </option><option value="zh-cn" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="zh-cn"> 简体中文 </option><option value="zh-tw" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="zh-tw"> 繁體中文 </option><option value="ko" track-type="languageSelector" track-name="changed" track-metadata-original-language="en" track-metadata-selected-language="ko"> 한국어 </option></select>
+       </form>
+       <span class="devsite-utility-footer-links"><a class="devsite-utility-footer-link gc-analytics-event" href="//policies.google.com/privacy" data-category="Site-Wide Custom Events" data-label="Footer privacy link" data-footer-link-id="privacy">Privacy </a><a class="devsite-utility-footer-link gc-analytics-event" href="https://developer.android.com/license" data-category="Site-Wide Custom Events" data-label="Footer license link" data-footer-link-id="license">License </a><a class="devsite-utility-footer-link gc-analytics-event" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines" data-category="Site-Wide Custom Events" data-label="Footer brand_guidelines link" data-footer-link-id="brand_guidelines">Brand Guidelines </a></span>
+      </div>
+      <div class="devsite-utility-footer-nav-right">
+       <div class="devsite-utility-footer-newsletter-signup-text">
+         Get Android and Google Play news by email 
+       </div>
+       <a class="button button-primary devsite-utility-footer-newsletter-signup-button" href="/newsletter/#subscribe"> Subscribe </a>
+      </div>
+     </nav>
+    </footer>
+   </div>
+   <script async defer src="//www.gstatic.com/feedback/api.js"></script>
+   <script src="https://developer.android.com/_static2/d296d6b9b4/jsi18n/"></script>
+   <script src="https://developer.android.com/_static/d296d6b9b4/js/script_foot_closure.js"></script>
+   <script src="https://developer.android.com/_static/d296d6b9b4/js/script_foot.js"></script>
+   <script>var METADATA = {};</script>
+   <script src="https://developer.android.com/irina_metadata_en.js?v=2018092802"></script>
+   <script src="https://developer.android.com/_static/d296d6b9b4/js/managed/dynamic-content-widget.js"></script>
+   <script>
+        (function($) {
+          
+          devsite.devsite.Init($, {'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'SITE_NAME': 'irina', 'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_CLOUDTRACK': 0, 'VTAGS_ENABLED': 0, 'HISTORY_ENABLED': 0, 'SIDEBAR_MINI_ENABLED': 1, 'VERSION_HASH': 'd296d6b9b4', 'SCRIPTSAFE_DOMAIN': 'android-dot-google-developers.appspot.com', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.appspot.com', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.tensorflow.org', '.devsitetest.how'], 'BLOCK_RSS_FEEDS': 0},
+                               '[]','en',
+                               true, '',
+                               {"f62218c009ec029abef196bba5aa34cf": true, "8de7a048f21618359bd37f5ce44be073": false, "098dafe57affddc137df300142652cfd": false, "8e03e230de0bd8a6fe173fdf172e8b3f": true, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "d169d485cf24243a263783dbe42029b1": true, "039e5d84b87fd75807ffb37b7f1bbf2c": true, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/',
+                               'https://developer.android.com/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+      </script>
+   <script>
+      $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+      </script>
+  </div>
+  <span id="devsite-request-elapsed" data-request-elapsed="417.226076126"></span> 
+ </body>
+</html>
