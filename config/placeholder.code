@@ -1,6 +1,0 @@
-class Placeholder {
-  public Placeholder() {
-	  super.setVisibility(mEmptyVisibility);
-	  mContentId = -1;
-  }
-}

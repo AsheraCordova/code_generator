@@ -1,6 +1,0 @@
-a) android:visibility
-
-Controls the initial visibility of the view.
-
-Must be one of the following constant values.
-use 8 and 4 instead of 2 and 1.
