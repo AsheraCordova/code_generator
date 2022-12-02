@@ -1,6 +1,7 @@
 package com.ashera.codegen;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
@@ -259,6 +260,23 @@ public class JumboPluginGenerator {
 
 		}
 
+		File f = new File("D:\\Java\\github_ashera");
+		addGitignoreEntry(f);
 	}
 
+	private static void addGitignoreEntry(File f) throws IOException {
+		File[] child = f.listFiles();
+		
+		for (File file : child) {
+			File gitIgnore = new File(file, ".gitignore");
+			
+			if (gitIgnore.exists()) {
+				String str = org.apache.commons.io.FileUtils.readFileToString(gitIgnore);
+				if (str.indexOf(".settings/") == -1) {
+					System.out.println(file + "str");
+					org.apache.commons.io.FileUtils.writeStringToFile(gitIgnore, str + ".settings/\n");
+				}
+			}
+		}
+	}
 }
