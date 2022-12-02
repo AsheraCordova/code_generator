@@ -1,0 +1,66 @@
+<project default="deployProjects">
+	<target name="deployProjects">
+		<antcall target="runmaven">
+			<param name="dir" value="../WebParent" />
+		</antcall>
+
+		<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/layout/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/core/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/converter/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/json/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../ConstraintLayout/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../GridLayout/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../CapInsets/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../CapInsets/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../CSSBorder/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../DateTime/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../Drawer/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../RecycleView/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../Toolbar/browser" />
+		</antcall>
+	</target>
+
+	<target name="runmaven">
+		<exec dir="${dir}" executable="cmd">
+			<arg
+				line="/c 'D:/Java/apache-maven-3.8.3/bin/mvn.cmd clean deploy'" />
+		</exec>
+	</target>
+</project>
