@@ -1,5 +1,14 @@
 <project default="deployProjects">
 	<target name="deployProjects">
+	    <antcall target="runmaven">
+			<param name="dir" value="../teavm/classlib" />
+		</antcall>
+		<antcall target="runmaven">
+			<param name="dir" value="../teavm/json" />
+		</antcall>
+	    <antcall target="runmaven">
+			<param name="dir" value="../WebParent" />
+		</antcall>
 		<antcall target="runmaven">
 			<param name="dir" value="../WebParent" />
 		</antcall>
