@@ -140,9 +140,6 @@ public class PluginPathGen extends CodeGenBase {
 				
 				String targetDirtectory = mypath.getParent().toString().substring(mypath.toString().lastIndexOf(directoryToIndex));
 				String sourceFile = mypath.toString().substring(mypath.toString().lastIndexOf(directoryToIndex));
-				if (sourceFile.startsWith("ios")) {
-					System.out.println(sourceFile + "----");
-				}
 				String sourceFieStr = "     <source-file src=\"%s\" target-dir=\"%s\"/>";
 				if (sourceFile.endsWith(".m")) {
 					if( mypath.toFile().getAbsolutePath().indexOf(File.separator + "library" + File.separator) != -1) {
@@ -172,6 +169,10 @@ public class PluginPathGen extends CodeGenBase {
 			
 			File pluginXml = new File(directoryToIndex + "/plugin.xml");
 			while(!pluginXml.exists()) {
+				if (pluginXml.getParentFile() == null || pluginXml.getParentFile().getParentFile() == null) {
+					System.out.println("ignored " + pluginXml);
+					break;
+				}
 				pluginXml = new File(pluginXml.getParentFile().getParentFile().getAbsolutePath() + "/plugin.xml");
 
 			}

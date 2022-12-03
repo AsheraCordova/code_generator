@@ -41,8 +41,7 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 			"../../core-javafx-widget/SWTAndroidXRecyclerView/src/main/java:ADX",
 			"../../core-javafx-widget/SWTAndroidToolBar/src/main/java:ADX",
 			"../../core-ios-widgets/IOSToolbarPlugin/src/main/java:AS",
-			"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:AS",
-			"D:/Java/github_ashera/AbsoluteLayout/ios/src/main/java:AS" }));
+			"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:AS"}));
 
 	public static String[] iosNS;
 	public static String[] paths;

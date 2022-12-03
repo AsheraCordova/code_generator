@@ -73,7 +73,6 @@ public class CodeGenBase {
 			HashMap<String, String> codeCopyMap, String startPrefix, String endPrefix, boolean useSuffix, String... keyWords)
 			throws IOException {
 		File file = new File(pathname);
-		System.out.println("---------- " + file.getAbsolutePath());
 		if (!file.exists() || force) {
 			file.getParentFile().mkdirs();
 		    writeToFile(file, code);
