@@ -18,10 +18,8 @@ import java.util.stream.Stream;
 
 public class J2ObjcPrefixCodeGen extends CodeGenBase {
 	public static final List<String> pathsAndPredfixes = new java.util.ArrayList<>(Arrays.asList(new String[] {
-			"../../core-widget_library/css_parser/src:CSS",
-			"../../core-widget_library/html_parser/src:TS",
-			"../../core-widget_library/widget_library/src:AS",
-			"../../core-widget_library/Plugin_Converter/src:AS",
+			"../../core-widget_library/css_parser/src:CSS", "../../core-widget_library/html_parser/src:TS",
+			"../../core-widget_library/widget_library/src:AS", "../../core-widget_library/Plugin_Converter/src:AS",
 			"../../core-widget_library/Plugin_HtmlParser/src:AS",
 			"../../core-javafx-widget/SWTAndroid/src/main/java:AD",
 			"../../core-javafx-widget/SWTAndroid/src/main/stub:AD",
@@ -44,10 +42,8 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 			"../../core-javafx-widget/SWTAndroidToolBar/src/main/java:ADX",
 			"../../core-ios-widgets/IOSToolbarPlugin/src/main/java:AS",
 			"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:AS",
-			"D:/Java/github_ashera/AbsoluteLayout/ios/src/main/java:AS"
-	}));
-	
-   
+			"D:/Java/github_ashera/AbsoluteLayout/ios/src/main/java:AS" }));
+
 	public static String[] iosNS;
 	public static String[] paths;
 	static {
@@ -68,16 +64,15 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 		}
 		List<String> pathsList = new java.util.ArrayList<String>();
 		List<String> iosNSList = new java.util.ArrayList<String>();
-		
+
 		for (String pathsAndPredfix : pathsAndPredfixes) {
 			String[] pathWithDirAndPrefixSplit = pathsAndPredfix.split("\\:");
 			pathsList.add(pathWithDirAndPrefixSplit[0]);
 			iosNSList.add(pathWithDirAndPrefixSplit[1]);
 		}
 		paths = pathsList.toArray(new String[0]);
-		iosNS = iosNSList.toArray(new String[0]); 
+		iosNS = iosNSList.toArray(new String[0]);
 	}
-	
 
 	public static void main(String[] args) throws IOException {
 		System.out.println(paths.length);
@@ -89,21 +84,22 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 				throw new RuntimeException(e);
 			}
 		}).collect(Collectors.toList());
-		AtomicInteger indexer = new AtomicInteger(); 
+		AtomicInteger indexer = new AtomicInteger();
 		List<String> allPrefixes = classPaths.stream().map((path) -> {
 			int index = indexer.getAndIncrement();
 			List<String> prefixes = getFileStream(path).filter((mypath) -> {
 				return mypath.toFile().listFiles() != null && Arrays.stream(mypath.toFile().listFiles())
 						.filter((myfile) -> !myfile.isDirectory() && !myfile.getName().equals(".DS_Store")).count() > 0;
 			}).map(mypath -> {
-				String inferPrefix =  iosNS[index];
+				String inferPrefix = iosNS[index];
 				System.out.println(mypath.toFile().getAbsolutePath());
-				String packageName = mypath.toFile().getAbsolutePath().replace(path, "").substring(1).replaceAll("/", ".").replaceAll("\\\\", ".");
-				
+				String packageName = mypath.toFile().getAbsolutePath().replace(path, "").substring(1)
+						.replaceAll("/", ".").replaceAll("\\\\", ".");
+
 				if (packageName.startsWith("com.ashera")) {
 					inferPrefix = "AS";
 				}
-				
+
 				if (packageName.startsWith("com.ashera") && packageName.endsWith("css")) {
 					inferPrefix = "CSS";
 				}
@@ -113,20 +109,21 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 				return packageName + "=" + inferPrefix;
 			}).collect(Collectors.toList());
 			return prefixes;
-		}).flatMap(Collection::stream).collect(Collectors.toList());    
-		classPaths.stream().map(classPath -> classPath.substring(0, classPath.indexOf(File.separator + "src"))).forEach(classPath -> {
-			String classPathFile = classPath + "/"+ "." + new File(classPath).getName() + "-classpath";
-			String prefixFile = classPath + "/"+ "." + new File(classPath).getName() + "-prefixes";
-			System.out.println(prefixFile);
-			
-			try {
-				Files.write(Paths.get(classPathFile), (Iterable<String>)classPaths.stream().map((value) -> (value + "=").replaceAll("\\\\", "/").replaceAll("\\:", "\\\\:"))::iterator);
-				Files.write(Paths.get(prefixFile), (Iterable<String>)allPrefixes.stream()::iterator);
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		});
-		
+		}).flatMap(Collection::stream).collect(Collectors.toList());
+		classPaths.stream().map(classPath -> classPath.substring(0, classPath.indexOf(File.separator + "src")))
+				.forEach(classPath -> {
+					String classPathFile = classPath + "/" + "." + new File(classPath).getName() + "-classpath";
+					String prefixFile = classPath + "/" + "." + new File(classPath).getName() + "-prefixes";
+					System.out.println(prefixFile);
+
+					try {
+						Files.write(Paths.get(classPathFile), (Iterable<String>) classPaths.stream().map(
+								(value) -> (value + "=").replaceAll("\\\\", "/").replaceAll("\\:", "\\\\:"))::iterator);
+						Files.write(Paths.get(prefixFile), (Iterable<String>) allPrefixes.stream()::iterator);
+					} catch (IOException e) {
+						throw new RuntimeException(e);
+					}
+				});
 
 	}
 
@@ -136,5 +133,88 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public static void generateClassPathFile(String baseDir, String... additionalPaths) throws Exception {
+		StringBuffer buf = new StringBuffer();
+
+		for (File file : new File(baseDir).listFiles()) {
+			String name = file.getName();
+			if (name.startsWith("AndroidJ") || name.startsWith("AndroidXJ") || name.equals("widget_library")
+					|| name.equals("Plugin_HtmlParser") || name.equals("Plugin_Converter") || name.equals("css_parser")
+					|| name.equals("html_parser")) {
+				File srcFolder = new File(file, "src");
+				File srcMainFolder = new File(srcFolder, "main");
+				File srcJavaFolder = new File(srcMainFolder, "java");
+				File srcStubFolder = new File(srcMainFolder, "stub");
+				if (srcJavaFolder.exists()) {
+					buf.append(t(srcJavaFolder.getAbsolutePath()) + "=\n");
+				} else if (srcFolder.exists()) {
+					buf.append(t(srcFolder.getAbsolutePath()) + "=\n");
+				}
+
+				if (srcStubFolder.exists()) {
+					buf.append(t(srcStubFolder.getAbsolutePath()) + "=\n");
+				}
+			}
+
+			searchIos(file, buf, true);
+		}
+
+		if (additionalPaths != null) {
+			for (String additionalPath : additionalPaths) {
+				buf.append(t(additionalPath) + "=\n");
+			}
+		}
+
+		writeToClassPathFile(new File(baseDir), buf);
+	}
+
+	private static void writeToClassPathFile(File baseDir, StringBuffer buf) throws Exception {
+		for (File file : baseDir.listFiles()) {
+			if (file.isDirectory()) {
+				writeToClassPathFile(file, buf);
+			} else {
+				String name = file.getName();
+				if (name.startsWith(".") && name.startsWith(".") && name.endsWith("-classpath")) {
+					org.apache.commons.io.FileUtils.writeStringToFile(file, buf.toString());
+				}
+			}
+		}
+	}
+
+	private static void searchIos(File file, StringBuffer buf, boolean recurse) {
+		File iosFolder = new File(file, "ios");
+
+		if (iosFolder.exists()) {
+			File srcFolder = new File(iosFolder, "src");
+			File srcMainFolder = new File(srcFolder, "main");
+			File srcJavaFolder = new File(srcMainFolder, "java");
+			File srcStubFolder = new File(srcMainFolder, "stub");
+
+			if (srcJavaFolder.exists()) {
+				buf.append(t(srcJavaFolder.getAbsolutePath()) + "=\n");
+			} else if (srcFolder.exists()) {
+				String finalPath = t(srcFolder.getAbsolutePath());
+
+				if (!srcFolder.listFiles()[0].isFile()) {
+					buf.append(finalPath + "=\n");
+				}
+			}
+
+			if (srcStubFolder.exists()) {
+				buf.append(t(srcStubFolder.getAbsolutePath()) + "=\n");
+			}
+		}
+
+		if (recurse && file.isDirectory()) {
+			for (File child : file.listFiles()) {
+				searchIos(child, buf, false);
+			}
+		}
+	}
+
+	private static String t(String absolutePath) {
+		return absolutePath.replaceAll("\\\\", "/").replaceAll("\\:", "\\\\:");
 	}
 }

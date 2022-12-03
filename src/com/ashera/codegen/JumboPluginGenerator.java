@@ -262,6 +262,7 @@ public class JumboPluginGenerator {
 
 		File f = new File("D:\\Java\\github_ashera");
 		addGitignoreEntry(f);
+		J2ObjcPrefixCodeGen.generateClassPathFile("D:\\Java\\github_ashera", "D:\\Java\\github_ashera\\Custom\\src\\main\\java");
 	}
 
 	private static void addGitignoreEntry(File f) throws IOException {
