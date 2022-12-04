@@ -111,8 +111,37 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 		}).flatMap(Collection::stream).collect(Collectors.toList());
 		classPaths.stream().map(classPath -> classPath.substring(0, classPath.indexOf(File.separator + "src")))
 				.forEach(classPath -> {
-					String classPathFile = classPath + "/" + "." + new File(classPath).getName() + "-classpath";
-					String prefixFile = classPath + "/" + "." + new File(classPath).getName() + "-prefixes";
+					String name = new File(classPath).getName();
+					
+					switch (name) {
+					case "SWTAndroid":
+						name = "AndroidJ";
+						break;
+					case "SWTAndroidX-core":
+						name = "AndroidXJ";
+						break;
+					case "SWTAndroidToolBar":
+						name = "AndroidXJToolBar";
+						break;
+					case "SWTAndroidXRecyclerView":
+						name = "AndroidXJRecyclerView";
+						break;
+					case "SWTAndroidX-Gridlayout":
+						name = "AndroidXJGridlayout";
+						break;
+					case "SWTAndroidXDrawerLayout":
+						name = "AndroidXJDrawerLayout";
+						break;
+					case "SWTAndroidXConstraintLayout":
+						name = "AndroidXJConstraintLayout";
+						break;
+
+					default:
+						break;
+					}
+					
+					String classPathFile = classPath + "/" + "." + name + "-classpath";
+					String prefixFile = classPath + "/" + "." + name + "-prefixes";
 					System.out.println(prefixFile);
 
 					try {
