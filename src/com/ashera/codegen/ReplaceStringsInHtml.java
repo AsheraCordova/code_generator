@@ -7,7 +7,12 @@ public class ReplaceStringsInHtml {
 		File f = new File("D:\\Java\\git\\core-widget_library\\code_generator\\documentation");
 		String footer = org.apache.commons.io.FileUtils.readFileToString(new File(f, "footer.xhtml"));
 		String menu = org.apache.commons.io.FileUtils.readFileToString(new File(f, "menu.xhtml"));
-		for (File htmlFile : f.listFiles()) {
+		java.util.ArrayList<File> listFiles = new java.util.ArrayList<>(java.util.Arrays.asList(f.listFiles()));
+		listFiles.add(new File("D:\\Java\\github_ashera\\Documentation\\ecommerceapp\\index.html"));
+		listFiles.add(new File("D:\\Java\\github_ashera\\Documentation\\playground\\index.html"));
+		listFiles.add(new File("D:\\Java\\github_ashera\\Documentation\\hello\\index.html"));
+		listFiles.add(new File("D:\\Java\\github_ashera\\Documentation\\tradeapp\\index.html"));
+		for (File htmlFile : listFiles) {
 			if (htmlFile.getName().endsWith(".html")) {
 				String html = org.apache.commons.io.FileUtils.readFileToString(htmlFile);
 				int start = html.indexOf("<footer");
