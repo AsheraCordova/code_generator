@@ -380,7 +380,7 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			string = string.replaceAll("@android\\.", "@r.android.");
 			string = string.replaceAll(" com\\.android\\.", " r.com.android.");
 			string = string.replaceAll(" libcore\\.", " r.libcore.");
-			string = string.replaceAll(" com\\.google\\.", " r.com.google.");
+//			string = string.replaceAll(" com\\.google\\.", " r.com.google.");
 			for (int i = 0; i < 100; i++) {
 	            if (config.containsKey("replacestrings." + i)) {
 	                String[] replaceStrs = config.getProperty("replacestrings." + i).split("~");
@@ -409,7 +409,7 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 
 		private static CompilationUnit getCU(File file) throws IOException {
 			String str = readFileToString(file);
-			ASTParser parser = ASTParser.newParser(AST.JLS3);
+			ASTParser parser = ASTParser.newParser(AST.JLS8);
 			parser.setSource(str.toCharArray());
 			parser.setCompilerOptions(getCompilerOptions());
 			parser.setKind(ASTParser.K_COMPILATION_UNIT);
@@ -472,9 +472,9 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			defaultOptions.put(JavaCore.COMPILER_PB_SYNTHETIC_ACCESS_EMULATION, JavaCore.WARNING);
 			defaultOptions.put(JavaCore.COMPILER_CODEGEN_UNUSED_LOCAL, JavaCore.PRESERVE);
 			defaultOptions.put(JavaCore.COMPILER_PB_UNNECESSARY_ELSE, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_7);
-			defaultOptions.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_7);
-			defaultOptions.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_7);
+			defaultOptions.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+			defaultOptions.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+			defaultOptions.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
 			return defaultOptions;
 		}
 	

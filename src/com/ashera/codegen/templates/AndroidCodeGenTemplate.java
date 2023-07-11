@@ -550,16 +550,31 @@ public class AndroidCodeGenTemplate extends CodeGenTemplate {
 
 	@Override
 	public String getJavaFileLocation(Widget configuration) {
-		return this.codeBaseDir + "/src/com/ashera/" + packageName + "/" + configuration.getWidgetName() + ".java";
+		String baseDir = this.codeBaseDir;
+		if (configuration.getBaseDir() != null) {
+		    baseDir = configuration.getBaseDir();
+		}
+
+		return baseDir + "/src/com/ashera/" + packageName + "/" + configuration.getWidgetName() + ".java";
 	}
 
 	@Override
 	public String getTsFileLocation(Widget configuration) {
-		return this.codeBaseDir + "/tsc/src/" + environment + "/widget/" + configuration.getWidgetName() + ".ts";
+		String baseDir = this.codeBaseDir;
+		if (configuration.getBaseDir() != null) {
+		    baseDir = configuration.getBaseDir();
+		}
+
+		return baseDir + "/tsc/src/" + environment + "/widget/" + configuration.getWidgetName() + ".ts";
 	}
 
 	@Override
 	public String getAttrFileLocation(Widget configuration) {
-		return this.codeBaseDir +  "/res/values/" + configuration.getLocalNameWithoutPackage().toLowerCase()  + "_attrs.xml";
+		String baseDir = this.codeBaseDir;
+		if (configuration.getBaseDir() != null) {
+		    baseDir = configuration.getBaseDir();
+		}
+
+		return baseDir +  "/res/values/" + configuration.getLocalNameWithoutPackage().toLowerCase()  + "_attrs.xml";
 	}
 }

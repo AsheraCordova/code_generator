@@ -32,7 +32,18 @@ public class AndroidDoc extends com.ashera.codegen.CodeGenBase{
 	private SourceConfig sourceConfig;
 	protected Document getDocument(String url, Url[] parentUrls)
 			throws IOException {
+		return getDocument(url, parentUrls, null);
+	}
+	
+	protected Document getDocument(String url, Url[] parentUrls, ReplaceString[] replaceStrings)
+			throws IOException {
 		String content = getContentOfUrls(url, parentUrls);
+		if (replaceStrings != null) {
+			for (com.ashera.codegen.pojo.ReplaceString replaceString : replaceStrings) {
+				content = content.replaceAll(replaceString.getName(),
+						replaceString.getReplace());
+			}
+		}
 		return Jsoup.parse(content);
 	}
 
@@ -165,7 +176,7 @@ public class AndroidDoc extends com.ashera.codegen.CodeGenBase{
 		this.widgetConfig = widgetConfig;
 		this.sourceConfig = sourceConfig;
 		String url = sourceConfig.getUrl();
-		Document doc = getDocument(sourceConfig.getUrl(), sourceConfig.getParentUrls());
+		Document doc = getDocument(sourceConfig.getUrl(), sourceConfig.getParentUrls(), sourceConfig.getReplaceStrings());
 
 		Elements elements = doc.select("h3");
 		

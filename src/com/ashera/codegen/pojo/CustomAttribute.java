@@ -19,7 +19,8 @@ public class CustomAttribute implements Cloneable{
     private String javaType;
 	private boolean useMethodName;
     private String params;
-    public CustomAttribute nodeElement;
+    private Integer stylePriority;
+	public CustomAttribute nodeElement;
     private String order = "0";
     private String decorator;
     private String converterInfo1;
@@ -55,7 +56,16 @@ public class CustomAttribute implements Cloneable{
 	private Boolean constructor;
 	private boolean inherited = true;
 	private String javascriptWrapperClass;
+	private String copyDefHint;
 
+	public String getCopyDefHint() {
+		return copyDefHint;
+	}
+	
+	@XmlAttribute
+	public void setCopyDefHint(String copyDefHint) {
+		this.copyDefHint = copyDefHint;
+	}
 	public String getJavascriptWrapperClass() {
 		return javascriptWrapperClass;
 	}
@@ -763,4 +773,14 @@ public class CustomAttribute implements Cloneable{
 	public Object clone() throws java.lang.CloneNotSupportedException {
 		return super.clone();
 	}
+
+	@XmlAttribute()
+    public Integer getStylePriority() {
+		return stylePriority;
+	}
+
+	public void setStylePriority(Integer stylePriority) {
+		this.stylePriority = stylePriority;
+	}
+
 }

@@ -22,7 +22,7 @@ public class CodeGenHelper {
 
 	public static boolean isAndroidAttribute(String text) {
 		return text.startsWith("android:") || text.startsWith("android.support.v7.appcompat:")
-				|| text.startsWith("android.support.design:");
+				|| text.startsWith("android.support.design:") || text.startsWith("app:");
 	}
 
 
@@ -79,8 +79,11 @@ public class CodeGenHelper {
 		String[] methodParams = methodParamStr.split(",");
 		int i = 0;
 		for (String methodParam : methodParams) {
-			methodParams[i] = methodParam.trim().split("\\s")[1]; 
-			i++;
+			String[] str = methodParam.trim().split("\\s");
+			if (str.length > 1) {
+				methodParams[i] = str[1]; 
+				i++;
+			}
 		}
 		return methodParams;
 	}

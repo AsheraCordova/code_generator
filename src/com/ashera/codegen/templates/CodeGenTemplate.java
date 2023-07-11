@@ -353,10 +353,6 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		    }
 		}
 
-		if (widget.getCustomAttribute() != null) {
-			handleCustomAttribute(null, widget, widget.getCustomAttribute(), classConfigurations, widgetProperties);
-		}
-		
         if (widget.getCopyAttribute() != null) {
             for (com.ashera.codegen.pojo.CopyAttribute copyAttribute : widget.getCopyAttribute()) {
             	if (!copyAttribute.isOnlyForTestCase()) {
@@ -389,13 +385,25 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                         	if (copyAttribute.getGetterCode() != null && !copyAttribute.getGetterCode().isEmpty() && cloneAttribute.getGetterCode() != null && !cloneAttribute.getGetterCode().isEmpty()) {
                         		cloneAttribute.setGetterCode(copyAttribute.getGetterCode());
                         	}
+                        	
+                            String copyDef = cloneAttribute.getCopyDef();
+                            String name = cloneAttribute.getName();
+
+                            if (copyDef != null) {
+                            	copyDef(widget, cloneAttribute, copyDef, name);
+                            }
+
                         }
                     }
             	}
                 
             }
         }
-		    
+
+		if (widget.getCustomAttribute() != null) {
+			handleCustomAttribute(null, widget, widget.getCustomAttribute(), classConfigurations, widgetProperties);
+		}
+
     	StringWriter stringWriter = new StringWriter();
 		try {
             //Load template from source folder
@@ -452,6 +460,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			template.process(models, stringWriter);
 			stringWriter.flush();
 			string = stringWriter.toString();
+			string = replaceString("ts", string, widget);
 			writeOrUpdateFile(string, pathname, new HashMap<>());
 			
 			if (widget.getAttrstemplate() != null) {
@@ -541,6 +550,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                     template.process(models, stringWriter);
                     stringWriter.flush();
                     string = stringWriter.toString();
+                    string = replaceString("ts", string, widget);	
                     writeOrUpdateFile(string, pathname, new HashMap<>());
                     
                     widget.getWidgetAttributes().clear();
@@ -860,6 +870,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
             models.put("myclass", widget);
             models.put("process", environment);
             models.put("allAttributes", allAttributes);
+            models.put("viewstub", widget.getTemplate().equals("BaseWidgetStubTemplate.java"));
 
             String testFileName = widget.getLocalNameWithoutPackage().toLowerCase() + environment + "_test.xml";
 
@@ -898,7 +909,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
             template.process(models, stringWriter);
             stringWriter.flush();
             String string = stringWriter.toString();
-
+            string = replaceString("tstest", string, widget);
         	writeOrUpdateFile(string, pathname, new HashMap<>());
 
             activities.add(activityName);
@@ -1114,6 +1125,9 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 
 	private void copyDef(Widget widget, CustomAttribute customAttribute, String copyDef, String name) throws IOException {
 		if (copyDef != null) {
+			if (customAttribute.getCopyDefHint() != null) {
+				name = customAttribute.getCopyDefHint();
+			}
 		    String jsonArray = readFileToString(new File(copyDef));
 		    Type listType = new TypeToken<ArrayList<CustomAttribute>>(){}.getType();
 		    List<CustomAttribute> nodeElements = new Gson().fromJson(jsonArray, listType);
@@ -1124,7 +1138,12 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		        			widget.addMethodDefition(nodeElement.methodDef);
 		        		}
 		        	} else {
-		        		customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), nodeElement.isSeperatedByBar() ? "bitflag" : "enumtoint", nodeElement.isSupportIntegerAlso());
+		        		if ("android.graphics.PorterDuff.Mode".equals(customAttribute.getJavaType())) {
+		        			customAttribute.setSupportIntegerAlso(nodeElement.isSupportIntegerAlso());
+							customAttribute.setConverterInfo(nodeElement.getKeys(), nodeElement.getValues(), nodeElement.getConverterType(), nodeElement.getApis());
+		        		} else {
+		        			customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), nodeElement.isSeperatedByBar() ? "bitflag" : "enumtoint", nodeElement.isSupportIntegerAlso());
+		        		}
 		        	}
 		            break;
 		        }

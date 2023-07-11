@@ -63,6 +63,8 @@ public class PluginPathGen extends CodeGenBase {
 				"../../core-ios-widgets/IOSToolbarPlugin/library/AndroidToolbarPlugin/src:AndroidToolbarPlugin:library/:AndroidToolbarPlugin/",
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/ios/src/:ios::CustomPlugin/",
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:src\\main\\java:::",
+				"../../core-ios-widgets/IOSSnackbarPlugin/library/AndroidJSnackbar/src:AndroidJSnackbar:library/:Snackbar/",
+				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/",
 		}));
 		
 		generatePluginXml(pathWithDirAndPrefixes);    

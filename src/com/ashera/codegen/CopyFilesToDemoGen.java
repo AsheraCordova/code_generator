@@ -51,6 +51,18 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		iosMap.put("core-ios-widgets/IOSShutterBugPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.shutterbug.ios/IOSShutterBugPlugin/ios");
 		iosMap.put("core-ios-widgets/IOSSDWebImagePlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.sdwebimage.ios/IOSSDWebImagePlugin/ios");
 		iosMap.put("core-ios-widgets/IOSCustomWidgetExtension/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.customwidgetextension.ios/CustomWidgetExtension/ios");
+		
+		iosMap.put("core-ios-widgets/IOSCoordinatorLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.coordinatorlayout.ios/CoordinatorLayout/ios");
+		iosMap.put("core-ios-widgets/IOSCoordinatorLayoutPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.coordinatorlayout.ios/CoordinatorLayout/AndroidXCoordinatorLayout");
+		
+		iosMap.put("core-ios-widgets/IOSSnackbarPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.snackbar.ios/Snackbar/ios");
+		iosMap.put("core-ios-widgets/IOSSnackbarPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.snackbar.ios/Snackbar");
+
+		iosMap.put("core-ios-widgets/IOSViewPagerPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.viewpager.ios/ViewPager/ios");
+		
+		iosMap.put("core-ios-widgets/IOSTextInputLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.textinputlayout.ios/TextInputLayout/ios");
+		
+
 	}
 
 	

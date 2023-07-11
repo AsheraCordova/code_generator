@@ -64,6 +64,23 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../Toolbar/browser" />
 		</antcall>
+		
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../Snackbar/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../ViewPager/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../TextInputLayout/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../CoordinatorLayout/browser" />
+		</antcall>
 	</target>
 
 	<target name="runmaven">

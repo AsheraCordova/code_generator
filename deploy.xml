@@ -59,6 +59,15 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../CordovaAndroidJLib" />
 		</antcall>
+		
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidXJCoordinatorLayout" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidJSnackbar" />
+		</antcall>
 	</target>
 
 	<target name="runmaven">

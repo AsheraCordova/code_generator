@@ -8,6 +8,7 @@ public class SourceConfig {
 	private String type;
 	private String id;
 	private Url[] parentUrls;
+	private ReplaceString[] replaceStrings;
 
 	public String getUrl() {
 		return url;
@@ -43,4 +44,13 @@ public class SourceConfig {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	public ReplaceString[] getReplaceStrings() {
+		return replaceStrings;
+	}
+	@XmlElement(name="ReplaceString")
+	public void setReplaceStrings(ReplaceString[] replaceStrings) {
+		this.replaceStrings = replaceStrings;
+	}
+
 }

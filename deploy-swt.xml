@@ -62,6 +62,22 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../Toolbar/swt" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../Snackbar/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../ViewPager/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../TextInputLayout/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../CoordinatorLayout/swt" />
+		</antcall>
 	</target>
 
 	<target name="runmaven">

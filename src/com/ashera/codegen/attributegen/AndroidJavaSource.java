@@ -137,7 +137,11 @@ public class AndroidJavaSource extends com.ashera.codegen.CodeGenBase {
 		if (methodName.length() > 3) {
 			String attributeName = methodName;
 			if (methodName.startsWith("set") || methodName.startsWith("get")) {
-				attributeName = methodName.substring(3);
+				int index = 3;
+				if (methodName.startsWith("setIs")) {
+					index = 5;
+				}
+				attributeName = methodName.substring(index);
 			}
 			if (methodName.startsWith("is")) {
 				attributeName = methodName.substring(2);
@@ -163,7 +167,7 @@ public class AndroidJavaSource extends com.ashera.codegen.CodeGenBase {
 				} else {
 					customAttribute.setCode(methodName);
 				}
-			} else if (methodName.startsWith("get")) {
+			} else if (methodName.startsWith("get") || methodName.startsWith("is")) {
 				if (returnType.equals("")) {
 					customAttribute.setGetterCode(methodName);
 				}
