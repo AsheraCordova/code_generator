@@ -86,6 +86,16 @@ public class Widget
     private String explicitVarName;
     private boolean makeTestCaseVisible;
 	private String defaultGeneratorUrl;
+	private XmlConfig[] xmlConfigs;
+	
+	public XmlConfig[] getXmlConfigs() {
+		return xmlConfigs;
+	}
+
+	@XmlElement(name = "XmlConfig")
+	public void setXmlConfigs(XmlConfig[] xmlConfigs) {
+		this.xmlConfigs = xmlConfigs;
+	}
 
 	public String getDefaultGeneratorUrl() {
 		return defaultGeneratorUrl;

@@ -61,6 +61,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		iosMap.put("core-ios-widgets/IOSViewPagerPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.viewpager.ios/ViewPager/ios");
 		
 		iosMap.put("core-ios-widgets/IOSTextInputLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.textinputlayout.ios/TextInputLayout/ios");
+		iosMap.put("core-widget_library/CustomPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.custom/CustomPlugin/ios");
 		
 
 	}
@@ -68,7 +69,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 	
 
 	public static void main(String[] args) throws IOException {
-		List<File> classPaths = getAbsPath(new String[] { "../../core-android-widget"} );
+		List<File> classPaths = getAbsPath(new String[] { "../../core-android-widget", "../../core-widget_library"} );
 		String finalResult = classPaths.stream().filter((f) -> f.isDirectory() && new File(f.getAbsolutePath(), "plugin.xml").exists()).sorted((a, b) -> a.getName().compareTo(b.getName())).map((f) -> {
 			String [] subdirectorPaths = {"src", "res", "tsc", "gentool"};
 			String [] copyPaths = {"java", "res", "tsc", "gentool"};
@@ -89,7 +90,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		writeOrUpdateXmlFile(String.format("<!-- start %s -->\n%s\n     <!-- %s end -->", "javafx", finalResult, "javafx"), "build.xml", false, new java.util.HashMap<>(), "javafx");
 
 		
-		classPaths = getAbsPath(new String[] { "../../core-ios-widgets"} );
+		classPaths = getAbsPath(new String[] { "../../core-ios-widgets", "../../core-widget_library"} );
 		
 		finalResult = classPaths.stream().filter((f) -> f.isDirectory()).sorted((a, b) -> a.getName().compareTo(b.getName())).map((f) -> {
 			String [] subdirectorPaths = {"ios", "ios_ext", "library"};
@@ -153,6 +154,10 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 							}
 						}
 						sampleFileName = copyPathStr + "/" + sampleFileName;
+						if (sampleFileName.indexOf("java/main/java/") != -1) {
+							sampleFileName = sampleFileName.replace("java/main/java/", "java/");
+							finalPath += "/main/java";
+						}
 						finalTeplate +=  String.format(template, sampleFileName, sampleFileName, copyPathStr, overrite, finalPath, sampleFileName);
 					} else {
 						System.out.println("ignored" + f.getName() + "/" + subdirectorPath);

@@ -16,11 +16,17 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.CompilationUnit;
 
 public class CodeGenBase {
 	//read file content into a string
@@ -379,4 +385,41 @@ public class CodeGenBase {
 
 
 
+	public static CompilationUnit getCU(File file) throws IOException {
+		String str = readFileToString(file);
+		ASTParser parser = ASTParser.newParser(AST.JLS8);
+		parser.setSource(str.toCharArray());
+		parser.setCompilerOptions(getCompilerOptions());
+		parser.setKind(ASTParser.K_COMPILATION_UNIT);
+
+		final CompilationUnit cu = (CompilationUnit) parser.createAST(null);
+		return cu;
+	}
+	
+	private static Map getCompilerOptions() {
+		Map defaultOptions = new HashMap();
+		defaultOptions.put(JavaCore.COMPILER_LOCAL_VARIABLE_ATTR,
+				JavaCore.GENERATE);
+		defaultOptions.put(JavaCore.COMPILER_PB_UNUSED_PRIVATE_MEMBER,
+				JavaCore.IGNORE);
+		defaultOptions.put(JavaCore.COMPILER_PB_LOCAL_VARIABLE_HIDING,
+				JavaCore.WARNING);
+		defaultOptions.put(JavaCore.COMPILER_PB_FIELD_HIDING, JavaCore.WARNING);
+		defaultOptions.put(
+				JavaCore.COMPILER_PB_POSSIBLE_ACCIDENTAL_BOOLEAN_ASSIGNMENT,
+				JavaCore.WARNING);
+		defaultOptions.put(JavaCore.COMPILER_PB_SYNTHETIC_ACCESS_EMULATION,
+				JavaCore.WARNING);
+		defaultOptions.put(JavaCore.COMPILER_PB_SYNTHETIC_ACCESS_EMULATION,
+				JavaCore.WARNING);
+		defaultOptions.put(JavaCore.COMPILER_CODEGEN_UNUSED_LOCAL,
+				JavaCore.PRESERVE);
+		defaultOptions.put(JavaCore.COMPILER_PB_UNNECESSARY_ELSE,
+				JavaCore.WARNING);
+		defaultOptions.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_7);
+		defaultOptions.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
+				JavaCore.VERSION_1_7);
+		defaultOptions.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_7);
+		return defaultOptions;
+	}
 }

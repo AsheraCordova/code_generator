@@ -405,18 +405,6 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			b.write(string);
 			b.close();
 		}
-		
-
-		private static CompilationUnit getCU(File file) throws IOException {
-			String str = readFileToString(file);
-			ASTParser parser = ASTParser.newParser(AST.JLS8);
-			parser.setSource(str.toCharArray());
-			parser.setCompilerOptions(getCompilerOptions());
-			parser.setKind(ASTParser.K_COMPILATION_UNIT);
-
-			final CompilationUnit cu = (CompilationUnit) parser.createAST(null);
-			return cu;
-		}
 	 
 		//read file content into a string
 		public static String readFileToString(File filePath) throws IOException {
@@ -460,22 +448,6 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			properties.load(new FileInputStream(getCPDir() + "config/copyfiles.properties"));
 			copyFiles(properties, true);
 		}
-		
-		private static Map getCompilerOptions() {
-			Map defaultOptions = new HashMap();
-			defaultOptions.put(JavaCore.COMPILER_LOCAL_VARIABLE_ATTR, JavaCore.GENERATE);
-			defaultOptions.put(JavaCore.COMPILER_PB_UNUSED_PRIVATE_MEMBER, JavaCore.IGNORE);
-			defaultOptions.put(JavaCore.COMPILER_PB_LOCAL_VARIABLE_HIDING, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_PB_FIELD_HIDING, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_PB_POSSIBLE_ACCIDENTAL_BOOLEAN_ASSIGNMENT, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_PB_SYNTHETIC_ACCESS_EMULATION, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_PB_SYNTHETIC_ACCESS_EMULATION, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_CODEGEN_UNUSED_LOCAL, JavaCore.PRESERVE);
-			defaultOptions.put(JavaCore.COMPILER_PB_UNNECESSARY_ELSE, JavaCore.WARNING);
-			defaultOptions.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
-			defaultOptions.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
-			defaultOptions.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
-			return defaultOptions;
-		}
+
 	
 }

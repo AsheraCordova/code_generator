@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class J2ObjcPrefixCodeGen extends CodeGenBase {
 	public static final List<String> pathsAndPredfixes = new java.util.ArrayList<>(Arrays.asList(new String[] {
 			"../../core-widget_library/css_parser/src:CSS", "../../core-widget_library/html_parser/src:TS",
-			"../../core-widget_library/widget_library/src:AS", "../../core-widget_library/Plugin_Converter/src:AS",
+			"../../core-widget_library/widget_library/src:AS", "../../core-widget_library/Plugin_Converter/src:AS", "../../core-widget_library/CustomPlugin/src/main/java:AS",
 			"../../core-widget_library/Plugin_HtmlParser/src:AS",
 			"../../core-javafx-widget/SWTAndroid/src/main/java:AD",
 			"../../core-javafx-widget/SWTAndroid/src/main/stub:AD",

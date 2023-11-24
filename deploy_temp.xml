@@ -1,11 +1,10 @@
 <project default="deployProjects">
 	<target name="deployProjects">
 		<antcall target="runmaven">
-			<param name="dir" value="../CapInsets/swt" />
+			<param name="dir" value="../AsheraCore/layout/swt" />
 		</antcall>
-		
-		<antcall target="runmaven">
-			<param name="dir" value="../CapInsets/browser" />
+				<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/layout/browser" />
 		</antcall>
 	</target>
 
