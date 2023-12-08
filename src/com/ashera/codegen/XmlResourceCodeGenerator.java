@@ -108,6 +108,12 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 
 						String methodName = getSetter(name);
 						code.append(methodName + "(" + methodParamsNoTypeStr + "value);\n");
+						if (xmlConfig.getGenerateCustomSetter() != null) {
+							String[] customCodeAttr = xmlConfig.getGenerateCustomSetter().split(",");
+							if (Arrays.asList(customCodeAttr).contains(getName(attr))) {
+								code.append(methodName + "Additional(" + methodParamsNoTypeStr + "value);\n");
+							}
+						}
 						code.append("break;");
 						//code.append("params."+ name  + " = (int) w.quickConvert(value, \"int\");");\
 						if (customAttribute != null) {

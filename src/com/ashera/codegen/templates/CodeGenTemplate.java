@@ -1123,6 +1123,9 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			String widgetName = widget.getName().substring(widget.getName().lastIndexOf(".") + 1);
 
 			if (styleable.getName().equals(generator.getStyleableName())) {
+				if (widget.getName().indexOf("Carousel") != -1) {
+					System.out.println("aaa");
+				}
 				for (com.ashera.codegen.pojo.attrs.Resources.Attr attr: styleable.getAttr()) {
 					CustomAttribute attribute = new CustomAttribute();
 					attribute.setGeneratorUrl(generatorUrl[0].getUrl());
@@ -1182,7 +1185,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 						if (!forceGenerateAttributeGetIgnore) {
 							attribute.setGetterCode("code: " + getterMethod + "(" + layoutParams.trim().replaceAll(",", "")+ ")");
 						}
-						setCustomAttrType(resources, attr.getName(), attribute, widgetName, widgetProperties);
+						setCustomAttrType(resources, attr, attribute, widgetName, widgetProperties);
 						customAttributes.add(attribute);
 					} else {
 					
@@ -1193,7 +1196,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 							
 							handleGetterMethod(documentStr, attribute, getterMethod);
 							
-							setCustomAttrType(resources, attr.getName(), attribute, widgetName, widgetProperties);
+							setCustomAttrType(resources, attr, attribute, widgetName, widgetProperties);
 							
 							if (params.length == 1 && knowTypes.contains(params[0].split("\\s")[0])) {
 								customAttributes.add(attribute);
@@ -1217,7 +1220,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 							if (mappedAttr != null) {
 								attribute.setCode(mappedAttr + " = ");
 								attribute.setGetterCode("code:$var." + mappedAttr);
-								setCustomAttrType(resources, attr.getName(), attribute, widgetName, widgetProperties);
+								setCustomAttrType(resources, attr, attribute, widgetName, widgetProperties);
 								b1 = true;
 								customAttributes.add(attribute);
 							} else {
@@ -1283,7 +1286,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		if (b1) {
 			attribute.setCode(layoutAttr + " = ");
 			attribute.setGetterCode("code:$var." + layoutAttr);
-			setCustomAttrType(resources, attr.getName(), attribute, widgetName, widgetProperties);
+			setCustomAttrType(resources, attr, attribute, widgetName, widgetProperties);
 			customAttributes.add(attribute);
 		}
 		
@@ -1301,7 +1304,9 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		}
 	}
 
-	private void setCustomAttrType(com.ashera.codegen.pojo.attrs.Resources resources, String name, com.ashera.codegen.pojo.CustomAttribute attribute, String widgetName, Properties widgetProperties) {
+	private void setCustomAttrType(com.ashera.codegen.pojo.attrs.Resources resources, com.ashera.codegen.pojo.attrs.Resources.Attr myattr, com.ashera.codegen.pojo.CustomAttribute attribute, String widgetName, Properties widgetProperties) {
+		String name = myattr.getName();
+
 		if (name.toLowerCase().indexOf("width") != -1 || name.toLowerCase().indexOf("height") != -1) {
 			attribute.setType("dimension");
 			attribute.setJavaType("int");
@@ -1316,78 +1321,84 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		
 		for (com.ashera.codegen.pojo.attrs.Resources.Attr attr: resources.getAttr()) {
 			if (attr.getName().equals(name)) {
-				if (attr.getContent() != null && attr.getContent().size() > 0) {
-					String converterInfo1 = "";
-					String converterInfo2 = "";
-					boolean seperatedByBar = false;
-					String seperator = "";
-					for (java.io.Serializable element : attr.getContent()) {
-
-						if (element instanceof javax.xml.bind.JAXBElement) {
-							javax.xml.bind.JAXBElement jaxBElement = (javax.xml.bind.JAXBElement) element;
-
-							Object enumOrFlag = jaxBElement.getValue();
-							seperatedByBar = jaxBElement.getName().equals("flag");
-							if (enumOrFlag instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) {
-								converterInfo1 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) enumOrFlag).getName();
-								converterInfo2 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) enumOrFlag).getValueAttribute();
-								seperator = ",";
-							}
-
-							if (enumOrFlag instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) {
-								converterInfo1 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) enumOrFlag).getName();
-								converterInfo2 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) enumOrFlag).getValueAttribute();
-								seperator = ",";
-							}
-						}
-					}
-
-					if (converterInfo1.indexOf(",") != -1) {
-						attribute.setConverterInfo1(converterInfo1);
-						attribute.setConverterInfo2(converterInfo2);
-						attribute.setSeperatedByBar(seperatedByBar);
-						attribute.setType(name);
-						attribute.setJavaType("int");
-					} else {
-						if (converterInfo1.equals("parent")) {
-						    // TODO : make this generic
-							attribute.setCode("code:$var." + attribute.getCode() + "((int) objValue);" +
-									"\n\t\t\t\t\t\t\tif (strValue.equals(\"parent\")) {\n" +
-									"\t\t\t\t\t\t\t\tlayoutParams." + attribute.getCode() + " androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID;\n" +
-									"\t\t\t\t\t\t\t}");
-						}
-					}
-				}
-				if ("boolean".equals(attr.getFormat())) {
-					attribute.setType("boolean");
-					attribute.setJavaType("boolean");
-				}
-
-				if ("float".equals(attr.getFormat())) {
-					attribute.setType("float");
-					attribute.setJavaType("float");
-				}
-
-				if ("string".equals(attr.getFormat())) {
-					attribute.setType("string");
-					attribute.setJavaType("String");
-				}
-
-				if ("integer".equals(attr.getFormat())) {
-                    attribute.setType("int");
-                    attribute.setJavaType("int");
-                }
-
-				if ("reference|enum".equals(attr.getFormat()) || "reference".equals(attr.getFormat())) {
-					attribute.setType("id");
-					attribute.setJavaType("int");
-				}
-				if ("dimension|enum".equals(attr.getFormat()) || "dimension".equals(attr.getFormat())) {
-					attribute.setType("dimension");
-					attribute.setJavaType("int");
-				}
-
+				setTypeInternal(name, attribute, attr);
 			}
+		}
+		
+		setTypeInternal(name, attribute, myattr);
+	}
+
+	private void setTypeInternal(String name, com.ashera.codegen.pojo.CustomAttribute attribute,
+			com.ashera.codegen.pojo.attrs.Resources.Attr attr) {
+		if (attr.getContent() != null && attr.getContent().size() > 0) {
+			String converterInfo1 = "";
+			String converterInfo2 = "";
+			boolean seperatedByBar = false;
+			String seperator = "";
+			for (java.io.Serializable element : attr.getContent()) {
+
+				if (element instanceof javax.xml.bind.JAXBElement) {
+					javax.xml.bind.JAXBElement jaxBElement = (javax.xml.bind.JAXBElement) element;
+
+					Object enumOrFlag = jaxBElement.getValue();
+					seperatedByBar = jaxBElement.getName().equals("flag");
+					if (enumOrFlag instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) {
+						converterInfo1 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) enumOrFlag).getName();
+						converterInfo2 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) enumOrFlag).getValueAttribute();
+						seperator = ",";
+					}
+
+					if (enumOrFlag instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) {
+						converterInfo1 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) enumOrFlag).getName();
+						converterInfo2 += seperator + ((com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) enumOrFlag).getValueAttribute();
+						seperator = ",";
+					}
+				}
+			}
+
+			if (converterInfo1.indexOf(",") != -1) {
+				attribute.setConverterInfo1(converterInfo1);
+				attribute.setConverterInfo2(converterInfo2);
+				attribute.setSeperatedByBar(seperatedByBar);
+				attribute.setType(name);
+				attribute.setJavaType("int");
+			} else {
+				if (converterInfo1.equals("parent")) {
+				    // TODO : make this generic
+					attribute.setCode("code:$var." + attribute.getCode() + "((int) objValue);" +
+							"\n\t\t\t\t\t\t\tif (strValue.equals(\"parent\")) {\n" +
+							"\t\t\t\t\t\t\t\tlayoutParams." + attribute.getCode() + " androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID;\n" +
+							"\t\t\t\t\t\t\t}");
+				}
+			}
+		}
+		if ("boolean".equals(attr.getFormat())) {
+			attribute.setType("boolean");
+			attribute.setJavaType("boolean");
+		}
+
+		if ("float".equals(attr.getFormat())) {
+			attribute.setType("float");
+			attribute.setJavaType("float");
+		}
+
+		if ("string".equals(attr.getFormat())) {
+			attribute.setType("string");
+			attribute.setJavaType("String");
+		}
+
+		if ("integer".equals(attr.getFormat())) {
+		    attribute.setType("int");
+		    attribute.setJavaType("int");
+		}
+
+		if ("reference|enum".equals(attr.getFormat()) || "reference".equals(attr.getFormat())) {
+			attribute.setType("id");
+			attribute.setJavaType("int");
+		}
+		if ("dimension|enum".equals(attr.getFormat()) || "dimension".equals(attr.getFormat())) {
+			attribute.setType("dimension");
+			attribute.setJavaType("int");
 		}
 	}
 

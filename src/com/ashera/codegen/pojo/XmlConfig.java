@@ -11,6 +11,16 @@ public class XmlConfig {
 	private String tag;
 	private XmlConfigParam[] xmlConfigParams;
 	private ReplaceString[] replaceString;
+	private String generateCustomSetter;
+
+	public String getGenerateCustomSetter() {
+		return generateCustomSetter;
+	}
+
+	@XmlAttribute(name="generateCustomSetter")
+	public void setGenerateCustomSetter(String generateCustomSetter) {
+		this.generateCustomSetter = generateCustomSetter;
+	}
 
 	public ReplaceString[] getReplaceString() {
 		return replaceString;
