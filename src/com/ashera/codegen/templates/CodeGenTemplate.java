@@ -1054,6 +1054,8 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			copyDef(widget, customAttribute, copyDef, name);
             
 			widget.removeDuplicate(customAttribute.getName());
+			
+			updateFromProtoCustomAttribute(widget, customAttribute, customAttribute.getName());
 		 }
 		
 		// removed ignore parentAttributes
