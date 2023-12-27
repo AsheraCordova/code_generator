@@ -9,9 +9,19 @@ public class XmlConfig {
 	private String cachekey;
 	private String ignoreRegEx;
 	private String tag;
-	private XmlConfigParam[] xmlConfigParams;
+	private XmlConfigParam[] xmlConfigParams = new XmlConfigParam[0];
 	private ReplaceString[] replaceString;
 	private String generateCustomSetter;
+	private String def;
+	
+	public String getDef() {
+		return def;
+	}
+
+	@XmlAttribute(name="def")
+	public void setDef(String def) {
+		this.def = def;
+	}
 
 	public String getGenerateCustomSetter() {
 		return generateCustomSetter;

@@ -1125,7 +1125,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			String widgetName = widget.getName().substring(widget.getName().lastIndexOf(".") + 1);
 
 			if (styleable.getName().equals(generator.getStyleableName())) {
-				if (widget.getName().indexOf("Carousel") != -1) {
+				if (widget.getName().indexOf("View") != -1) {
 					System.out.println("aaa");
 				}
 				for (com.ashera.codegen.pojo.attrs.Resources.Attr attr: styleable.getAttr()) {

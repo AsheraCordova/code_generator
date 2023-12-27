@@ -7,8 +7,9 @@ public class ResourcesSupplierGen extends CodeGenBase {
 		StringBuffer buf = new StringBuffer();
 		buf.append("start - body\n");
 
-		String[] paths = {"../../core-web-widget/WebStarter/src/main/resources/www/layout", "../../core-web-widget/WebStarter/src/main/resources/font", "../../core-web-widget/WebStarter/src/main/resources/res/xml/"};
-		String[] prefix = {"www/layout/", "font/", "res/xml/"};
+		String[] paths = {"../../core-web-widget/WebStarter/src/main/resources/www/layout", "../../core-web-widget/WebStarter/src/main/resources/font", "../../core-web-widget/WebStarter/src/main/resources/res/xml/",
+				"../../core-web-widget/WebStarter/src/main/resources/res/anim/", "../../core-web-widget/WebStarter/src/main/resources/res/animator/"};
+		String[] prefix = {"www/layout/", "font/", "res/xml/", "res/anim/", "res/animator/"};
 		int i = 0;
 		for (String path : paths) {
 			File f = new java.io.File(path);

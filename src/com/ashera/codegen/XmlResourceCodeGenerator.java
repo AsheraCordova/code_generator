@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -36,8 +37,8 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 		List<String> knowTypes = new ArrayList<>(Arrays.asList(widgetProperties.getProperty("knowTypes").split(",")));
 		javax.xml.bind.JAXBContext jaxbContext = javax.xml.bind.JAXBContext.newInstance(Resources.class);
 		javax.xml.bind.Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		Resources resources = (Resources) unmarshaller
-				.unmarshal(new java.io.FileInputStream(file));
+		Resources resources = (Resources) unmarshaller.unmarshal(new java.io.FileInputStream(file));
+		
 		for (Resources.DeclareStyleable styleable : resources.getDeclareStyleable()) {
 			if (styleable.getName().equals(xmlConfig.getTag())) {
 				FieldInfoHolder holder = getFieldInfo(xmlConfig);
@@ -47,7 +48,16 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 					methodParamsStr += holder.paramClassMap.get(methodParams) + " " + methodParams + ", ";
 					methodParamsNoTypeStr += methodParams + ", ";
 				}
-				
+
+				HashMap<String, String> defhints = new HashMap<>();
+				String def= xmlConfig.getDef();
+				if (def != null) {
+					String[] defs = def.split(";");
+					for (String myDef : defs) {
+						String[] myDefs = myDef.split("\\:");
+						defhints.put(myDefs[0], myDefs[1]);
+					}
+				}
 				String ignoreRegEx = xmlConfig.getIgnoreRegEx();
 				StringBuffer code = new StringBuffer();
 				String tagName = styleable.getName();
@@ -57,13 +67,13 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 				code.append("\nprivate void parse" + tagName + "(" + methodParamsStr + " org.xml.sax.Attributes atts" + ") {\n");
 				code.append("for (int i = 0; i < atts.getLength(); i++) {\r\n"
 						+ "					String name = atts.getLocalName(i);\r\n"
-						+ "					String value = getValue(name, atts);\r\n"
+						+ "					String value = ViewImpl.getValue(name, atts);\r\n"
 						+ "					switch (atts.getLocalName(i)) {");
 				for (Resources.Attr attr : styleable.getAttr()) {
 					//if (attr.getFormat() == null) {
 						String name = getName(attr);
 						System.out.println("name " + name);
-						if (name.matches(ignoreRegEx)) {
+						if (ignoreRegEx != null && name.matches(ignoreRegEx)) {
 							System.out.println("Ignored " + name);
 							continue;
 						}
@@ -71,30 +81,41 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 						CustomAttribute customAttribute = getCustomAttribute(name, customAttributeMap.keySet());
 						
 						boolean isEnum = false;
+						boolean isEnumInt = false;
 						if (customAttribute == null) {
-							for (Resources.Attr enumAttr : resources.getAttr()) {
-								if (enumAttr.getFormat() != null && ("enum".equals(enumAttr.getFormat()) || enumAttr.getFormat().indexOf("|enum") != -1) && enumAttr.getName().equals(attr.getName())) {
-									if (!methodNamesMap.containsKey(xmlConfig.getUpdateLocation())) {
-										methodNamesMap.put(xmlConfig.getUpdateLocation(), new ArrayList<>());
+							isEnum = handleEnum(xmlConfig, methodNamesMap, methods, attr, isEnum);
+							if (isEnum) {
+								isEnumInt = isEnumAllowsInt(attr);
+							}
+							if (!isEnum) {
+								for (Resources.Attr enumAttr : resources.getAttr()) {
+									if (enumAttr.getName().equals(name)) {
+										isEnum = handleEnum(xmlConfig, methodNamesMap, methods, enumAttr, isEnum);
+										if (isEnum) {
+											isEnumInt = isEnumAllowsInt(enumAttr);
+											break;
+										}
 									}
-									String enumcode = getEnumCode(enumAttr, methodNamesMap.get(xmlConfig.getUpdateLocation()));
-									isEnum = true;
-									methods.append(enumcode);
 								}
-								
-								
 							}
 							
-							if (attr.getFormat() != null && ("enum".equals(attr.getFormat()) || attr.getFormat().indexOf("|enum") != -1) && attr.getName().equals(attr.getName())) {
-								if (attr.getFormat() != null && ("enum".equals(attr.getFormat()) || attr.getFormat().indexOf("|enum") != -1) && attr.getName().equals(attr.getName())) {
-									if (!methodNamesMap.containsKey(xmlConfig.getUpdateLocation())) {
-										methodNamesMap.put(xmlConfig.getUpdateLocation(), new ArrayList<>());
+							if (!isEnum && defhints.containsKey(name)) {
+								for (Resources.DeclareStyleable lstyleable : resources.getDeclareStyleable()) {
+									if (defhints.get(name).equals(lstyleable.getName())) {
+										for (Resources.Attr enumAttr : lstyleable.getAttr()) {
+											if (enumAttr.getName().equals(name)) {
+												isEnum = handleEnum(xmlConfig, methodNamesMap, methods, enumAttr, isEnum);
+												if (isEnum) {
+													isEnumInt = isEnumAllowsInt(enumAttr);
+													break;
+												}
+											}
+										}
 									}
-									String enumcode = getEnumCode(attr, methodNamesMap.get(xmlConfig.getUpdateLocation()));
-									isEnum = true;
-									methods.append(enumcode);
 								}
 							}
+							
+							
 						}
 						
 						if (isFlag(attr)) {
@@ -105,7 +126,7 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 						if (name.startsWith("layout_")) {
 							name = name.substring("layout_".length());
 						}
-
+						
 						String methodName = getSetter(name);
 						code.append(methodName + "(" + methodParamsNoTypeStr + "value);\n");
 						if (xmlConfig.getGenerateCustomSetter() != null) {
@@ -148,7 +169,33 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 							methods.append(methodCode);
 							
 							//"name: " + name + " " + infoMap.get(name)
-						} else {
+						} else if ( holder.methodParamMap.containsKey(getSetter(name))) {
+							String fieldName = name;
+							String varType = holder.methodParamMap.get(getSetter(name));
+							String paramName = holder.fieldParamMap.get(getSetter(name));
+							
+							if (varType.equals("long")) {
+								varType = "int";
+							}
+
+							String converterType = getConverterType(attr, environment, widgetProperties, resources, name,
+									fieldName, varType);
+							if (converterType != null) {
+								String methodCode = "\nprivate void " + methodName + "("
+										+ methodParamsStr //"androidx.constraintlayout.widget.Constraints.LayoutParams params, "
+										+ "String strValue) {"
+										+ "\n"
+										+ paramName
+										+ "." + getSetter(name) + "("
+										+ (isEnum ? getGetter(fieldName) + "(strValue" + (isEnumInt ? ", w" : "")
+												+ "));\n" : "(" + varType + ") w.quickConvert(strValue, \"" + converterType + "\"));\n")
+										+ "}\n";
+								methods.append(methodCode);
+							}
+							
+							//"name: " + name + " " + infoMap.get(name)
+						
+						}else {
 							System.out.println("ignored " + name);
 						}
 					//}
@@ -170,6 +217,19 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 			}
 			
 		}
+	}
+
+	private static boolean handleEnum(XmlConfig xmlConfig, Map<String, List<String>> methodNamesMap,
+			StringBuffer methods, Resources.Attr attr, boolean isEnum) {
+		if ((isEnum(attr) || (attr.getFormat() != null && ("enum".equals(attr.getFormat()) || attr.getFormat().indexOf("|enum") != -1)))) {
+			if (!methodNamesMap.containsKey(xmlConfig.getUpdateLocation())) {
+				methodNamesMap.put(xmlConfig.getUpdateLocation(), new ArrayList<>());
+			}
+			String enumcode = getEnumCode(attr, methodNamesMap.get(xmlConfig.getUpdateLocation()));
+			isEnum = true;
+			methods.append(enumcode);
+		}
+		return isEnum;
 	}
 
 	private static String getFlagCode(Attr attr, List<String> list) {
@@ -217,11 +277,11 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 //							}
 		
 		if (name.equals("visibility")) {
-			converterType = "View.visibility";
+			return "View.visibility";
 		}
 		
 		if (name.equals("orientation")) {
-			converterType = "LinearLayout.orientation";
+			return "LinearLayout.orientation";
 		}
 		
 		com.ashera.codegen.pojo.attrs.Resources.Attr attrRes = resources.getAttr().stream().filter((x) -> x.getName().equals(fieldName)).findFirst().orElse(null);
@@ -241,18 +301,26 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 		if (attr != null && attr.getFormat() != null && attr.getFormat().equals("reference")) {
 			converterType = "id";
 		}
+
 		if (attr != null && attr.getFormat() != null && attr.getFormat().equals("dimension")) {
 			converterType = "dimension";
 		}
 
 		if(isFlag(attr)) {
-			converterType = attr.getName() + ".flag";
+			return attr.getName() + ".flag";
 		}
 		
 		if (widgetProperties.containsKey(environment + ".datatype." + varType + "." + fieldName)) {
 			converterType = widgetProperties.getProperty(environment + ".datatype." + varType + "." + fieldName).split(":")[0];
 		}
-		return converterType;
+		
+		if (widgetProperties.containsKey(environment + ".datatype." + varType)) {
+			converterType = widgetProperties.getProperty(environment + ".datatype." + varType).split(":")[0];
+		}
+		
+		String knowTypes = widgetProperties.getProperty("knowTypes");
+		
+		return Arrays.asList(knowTypes.split(",")).contains(converterType) ? converterType : null;
 	}
 
 	private static String getCode(CustomAttribute customAttribute) {
@@ -273,7 +341,10 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 
 	private static String getEnumCode(Resources.Attr enumAttr, List<String> methodNames) {
 		List<java.io.Serializable> contents = enumAttr.getContent();
-		String methodName = "private int " + getGetter(enumAttr.getName()) + "(String value) ";
+		// enum + int
+		boolean isInt =  isEnumAllowsInt(enumAttr);
+		
+		String methodName = "private int " + getGetter(enumAttr.getName()) + "(String value" + (isInt ? ", IWidget w" : "" ) + ") ";
 		if (methodNames.contains(methodName)) {
 			return "";
 		}
@@ -297,9 +368,14 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 		enumcode += "default:\r\n"
 				+ "		break;\r\n"
 				+ "}\r\n"
-				+ "	return 0;\r\n"
+				+ "	return " + (isInt ? "(int) w.quickConvert(value, \"int\")" : "0") 
+				+ ";\r\n"
 				+ "}\n";
 		return enumcode;
+	}
+
+	private static boolean isEnumAllowsInt(Resources.Attr enumAttr) {
+		return "integer".equals(enumAttr.getFormat());
 	}
 
 	private static String getType(String motionLayoutStr, String name) {
@@ -316,6 +392,7 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 	static class FieldInfoHolder  {
 		HashMap<String, String> fieldMap = new HashMap<>();
 		HashMap<String, String> fieldParamMap = new HashMap<>();
+		HashMap<String, String> methodParamMap = new HashMap<>();
 		HashMap<String, String> paramClassMap = new HashMap<>();
 	}
 
@@ -347,6 +424,20 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 					}
 					return super.visit(node);
 				}
+				
+				@Override
+				public boolean visit(org.eclipse.jdt.core.dom.MethodDeclaration node) {
+					String name = node.getName().toString();
+					
+					if (name.startsWith("set") && node.parameters().size() == 1) {
+						String type = ((org.eclipse.jdt.core.dom.SingleVariableDeclaration) node.parameters().get(0)).getType().toString();
+						holder.methodParamMap.put(name, type);
+						holder.fieldParamMap.put(name, paramName);
+					}
+					
+					return super.visit(node);
+				}
+				
 				@Override
 				public boolean visit(TypeDeclaration typeDeclarationStatement) {
 					
@@ -395,6 +486,10 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 	private static String getClassVarName(String name) {
 		return "m" + name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
+	
+	private static String getSetterName(String name) {
+		return "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+	}
 
 	private static String getVarName(String tagName) {
 		return tagName.substring(0, 1).toLowerCase() + tagName.substring(1);
@@ -422,6 +517,22 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 					javax.xml.bind.JAXBElement element = (javax.xml.bind.JAXBElement) attr.getContent().get(i);
 
 					if (element.getValue() instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Flag) {
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+	
+	private static boolean isEnum(com.ashera.codegen.pojo.attrs.Resources.Attr attr) {
+		if (attr.getContent() != null && attr.getContent().size() > 0) {
+			for (int i = 0; i < attr.getContent().size(); i++) {
+				if (attr.getContent().get(i) instanceof javax.xml.bind.JAXBElement) {
+					javax.xml.bind.JAXBElement element = (javax.xml.bind.JAXBElement) attr.getContent().get(i);
+
+					if (element.getValue() instanceof com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) {
 						return true;
 					}
 				}

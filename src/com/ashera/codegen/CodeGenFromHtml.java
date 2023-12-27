@@ -326,24 +326,19 @@ public class CodeGenFromHtml extends CodeGenBase {
 					System.out.println("ignored " + widget.getName() + " " + localWidgets);
 				}
 				widgetMap.put(widget.getName() + widget.getOs(), widget);
-				
-				/*if (widget.getOs().equals("android") && widget.getName().equals("androidx.constraintlayout.motion.widget.MotionLayout")) {
-					List<CustomAttribute> customAttributes = new ArrayList<>();
-					customAttributes.addAll(widgetMap.get("androidx.constraintlayout.widget.Barrierandroid").getAllAttributes());
-					customAttributes.addAll(widgetMap.get("ViewGroupandroid").getAllAttributes());
-					customAttributes.addAll(widget.getAllAttributes());
-					MotionSceneCodeGenerator.generate(customAttributes);
-				}*/
-				if (widget.getOs().equals("android") && widget.getXmlConfigs() != null && widget.getXmlConfigs().length > 0) {
+
+				if (/*widget.getOs().equals("android") && */widget.getXmlConfigs() != null && widget.getXmlConfigs().length > 0) {
 					HashMap<String, List<String>> methodNamesMap = new HashMap<>();					
 					for (com.ashera.codegen.pojo.XmlConfig xmlConfig : widget.getXmlConfigs()) {
 						Map<CustomAttribute, String> customAttributeMap = new HashMap<>();
-						for (com.ashera.codegen.pojo.XmlConfigParam xmlConfigParam : xmlConfig.getXmlConfigParams()) {
-							if (xmlConfigParam.getType().equals("customattribute")) {
-								List<CustomAttribute> customAttributes = widgetMap.get(xmlConfigParam.getClassName() + "android").getAllAttributes();
-								
-								for (CustomAttribute customAttribute : customAttributes) {
-									customAttributeMap.put(customAttribute, xmlConfigParam.getParamName());
+						if ( xmlConfig.getXmlConfigParams() != null) {
+							for (com.ashera.codegen.pojo.XmlConfigParam xmlConfigParam : xmlConfig.getXmlConfigParams()) {
+								if (xmlConfigParam.getType().equals("customattribute")) {
+									List<CustomAttribute> customAttributes = widgetMap.get(xmlConfigParam.getClassName() + widget.getOs()).getAllAttributes();
+									
+									for (CustomAttribute customAttribute : customAttributes) {
+										customAttributeMap.put(customAttribute, xmlConfigParam.getParamName());
+									}
 								}
 							}
 						}
