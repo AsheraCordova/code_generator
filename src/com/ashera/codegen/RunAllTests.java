@@ -5,6 +5,7 @@ public class RunAllTests {
 		CodeGenFromHtml.main(args);
 //		CordovaLibCopyFiles.main(args);
 		J2ObjcPrefixCodeGen.main(args);
+		J2ObjcPathGenerator.main(args);
 		LayoutDependencyGenerator.main(args);
 		PluginPathGen.main(args);
 		ResourcesSupplierGen.main(args);
