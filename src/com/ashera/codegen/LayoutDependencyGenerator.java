@@ -38,7 +38,11 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 					File sourceFile = readHttpUrlAsString(copyFileFromUrl, prefix + fileToCopy);
 					
 					
-					String fileToCopyDest = copyFileFromUrl.substring(copyFileFromUrl.lastIndexOf("java/") + 5, lastIndexOf);
+					int javaIndex = copyFileFromUrl.lastIndexOf("java/");
+					if (javaIndex == -1) {
+						javaIndex = copyFileFromUrl.lastIndexOf("main/");
+					}
+					String fileToCopyDest = copyFileFromUrl.substring(javaIndex + 5, lastIndexOf);
 					File destLocation = new File(config.getProperty("copyfilesfromurlDestLocation") + "/" +fileToCopyDest);
 					Object renamedFile = config.get("copyfilesfromurl.file.rename." + destLocation.getName().toLowerCase());
 					if (renamedFile != null) {

@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -64,9 +65,19 @@ public class PluginPathGen extends CodeGenBase {
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/ios/src/:ios::CustomPlugin/",
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:src\\main\\java:::",
 				"../../core-ios-widgets/IOSSnackbarPlugin/library/AndroidJSnackbar/src:AndroidJSnackbar:library/:Snackbar/",
-				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/",
+				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/"
 		}));
 		
+		String[] dirs = {"../../core-javafx-widget", "../../core-web-widget"};
+		
+		for (String dir : dirs) {
+			for (File file : new File(dir).listFiles()) {
+				if (file.isDirectory() && (new File(file, "core.gradle").exists() || new File(file, "layout.gradle").exists()) &&  new File(file, "tsc").exists()) {
+					String str = dir + "/" + file.getName()  + "/tsc/src:tsc::";
+					pathWithDirAndPrefixes.add(str);
+				}
+			}
+		}
 		generatePluginXml(pathWithDirAndPrefixes);    
 
 
