@@ -80,6 +80,14 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../AppBarLayout/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../NestedScrollView/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../SWTAopMacLib" />
 		</antcall>
 	</target>

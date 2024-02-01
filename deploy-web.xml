@@ -81,6 +81,14 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../CoordinatorLayout/browser" />
 		</antcall>
+		
+				<antcall target="runmaven">
+			<param name="dir" value="../AppBarLayout/browser" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../NestedScrollView/browser" />
+		</antcall>
 	</target>
 
 	<target name="runmaven">
