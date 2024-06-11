@@ -5,6 +5,9 @@
 		</antcall>
 
 		<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/core/ios" />
+		</antcall>
+		<antcall target="runmaven">
 			<param name="dir" value="../AsheraCore/layout/ios" />
 		</antcall>
 

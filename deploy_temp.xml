@@ -1,8 +1,11 @@
 <project default="deployProjects">
 	<target name="deployProjects">
-		<antcall target="runmaven">
-			<param name="dir" value="../AsheraCore/core/browser" />
+		
+			<antcall target="runmaven">
+			<param name="dir" value="../AsheraCore/core/android" />
 		</antcall>
+		
+		
 	</target>
 
 	<target name="runmaven">
