@@ -65,6 +65,10 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		
 		iosMap.put("core-ios-widgets/IOSAppBarLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.appbarlayout.ios/AppBarLayout/ios");
 		iosMap.put("core-ios-widgets/IOSNestedScrollViewPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.nestedscrollview.ios/NestedScrollView/ios");
+		
+		iosMap.put("core-ios-widgets/IOSNavigationViewPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.navigationview.ios/NavigationView/ios");
+		iosMap.put("core-ios-widgets/IOSNavigationViewPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.navigationview.ios/NavigationView");
+		
 	}
 
 	

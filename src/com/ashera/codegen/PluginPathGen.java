@@ -43,6 +43,7 @@ public class PluginPathGen extends CodeGenBase {
 				"../../core-ios-widgets/IOSCorePlugin/library/widget_library/src:widget_library:library/:CorePlugin/",
 				"../../core-ios-widgets/IOSCorePlugin/library/AndroidCore/src:AndroidCore:library/:CorePlugin/",
 				"../../core-ios-widgets/IOSCorePlugin/library/AndroidXCore/src:AndroidXCore:library/:CorePlugin/",
+				"../../core-ios-widgets/IOSCorePlugin/library/AndroidJMaterial/src:AndroidJMaterial:library/:CorePlugin/",
 				"../../core-ios-widgets/IOSJSONAdapter/ios/src:ios::JSONCore/",
 				"../../core-ios-widgets/IOSConverter/ios/src:ios::ConverterPlugin/",
 				"../../core-ios-widgets/IOSConverter/library/Plugin_Converter/src:Plugin_Converter:library/:ConverterPlugin/",
@@ -65,7 +66,8 @@ public class PluginPathGen extends CodeGenBase {
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/ios/src/:ios::CustomPlugin/",
 				"../../ashera-demo-projects/ashera-phonegap-demo-project/demoapp1/custom_plugins/CustomPlugin/src/main/java:src\\main\\java:::",
 				"../../core-ios-widgets/IOSSnackbarPlugin/library/AndroidJSnackbar/src:AndroidJSnackbar:library/:Snackbar/",
-				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/"
+				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/",
+				"../../core-ios-widgets/IOSNavigationViewPlugin/library/NavigationView/src:NavigationView:library/:NavigationView/"
 		}));
 		
 		String[] dirs = {"../../core-javafx-widget", "../../core-web-widget"};

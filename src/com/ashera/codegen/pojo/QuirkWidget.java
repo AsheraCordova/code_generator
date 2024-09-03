@@ -43,6 +43,9 @@ public class QuirkWidget {
 		}).average();
 		NumberFormat instance = java.text.DecimalFormat.getInstance();
 		instance.setMaximumFractionDigits(2);
+		if (!score.isPresent()) {
+			return "0%";
+		}
 		return instance.format(score.getAsDouble() * 100) + "%";
 	}
 	
