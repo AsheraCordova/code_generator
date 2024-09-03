@@ -37,6 +37,10 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../AndroidJMaterial" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../AndroidXJConstraintLayout" />
 		</antcall>
 		
@@ -67,6 +71,10 @@
 		
 		<antcall target="runmaven">
 			<param name="dir" value="../AndroidJSnackbar" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidJNavigationView" />
 		</antcall>
 	</target>
 

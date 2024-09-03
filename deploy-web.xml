@@ -89,6 +89,9 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../NestedScrollView/browser" />
 		</antcall>
+		<antcall target="runmaven">
+			<param name="dir" value="../NavigationView/browser" />
+		</antcall>
 	</target>
 
 	<target name="runmaven">

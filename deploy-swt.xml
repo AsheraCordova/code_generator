@@ -89,6 +89,10 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../NavigationView/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../SWTAopMacLib" />
 		</antcall>
 	</target>
