@@ -13,10 +13,28 @@
 
 	</target>
 
-	<target name="runmaven">
-		<exec dir="${dir}" executable="cmd">
+<target name="runmaven" depends="mvn_windows, mvn_unix">
+	</target>
+	
+	<condition property="isWindows">
+	    <os family="windows" />
+	</condition>
+	
+	<condition property="isUnix">
+	    <os family="unix" />
+	</condition>
+	
+	<target name="mvn_windows" if="isWindows">
+	    <exec dir="${dir}" executable="cmd">
 			<arg
 				line="/c 'D:/Java/apache-maven-3.8.3/bin/mvn.cmd clean deploy'" />
+		</exec>
+	</target>
+	
+	<target name="mvn_unix" if="isUnix">
+	    <exec dir="${dir}" executable="sh">
+			<arg
+				line="-c 'mvn clean install'" />
 		</exec>
 	</target>
 </project>
