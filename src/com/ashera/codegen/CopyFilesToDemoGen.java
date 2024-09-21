@@ -138,7 +138,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 					            "		<then>\n" +
 					            "    		<echo>Copied %s</echo>\n" +
 								"			<copy todir=\"${demoDir}/%s\" overwrite=\"${%s}\">  \n" + 
-								"  				<fileset dir=\"../../%s\" includes=\"**\"/>  \n" + 
+								"  				<fileset dir=\"../../%s\" includes=\"**\"%s/>  \n" + 
 								"			</copy>\n" +
 								"		</then>\n" +
 								"		<else>\n" +
@@ -163,7 +163,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 							sampleFileName = sampleFileName.replace("java/main/java/", "java/");
 							finalPath += "/main/java";
 						}
-						finalTeplate +=  String.format(template, sampleFileName, sampleFileName, copyPathStr, overrite, finalPath, sampleFileName);
+						finalTeplate +=  String.format(template, sampleFileName, sampleFileName, copyPathStr, overrite, finalPath, !copyPathStr.equals("gentool") ? "" : " excludes=\"autoGenerateFiles.js\" ", sampleFileName);
 					} else {
 						System.out.println("ignored" + f.getName() + "/" + subdirectorPath);
 					}

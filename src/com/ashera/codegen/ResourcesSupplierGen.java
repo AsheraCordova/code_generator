@@ -22,8 +22,7 @@ public class ResourcesSupplierGen extends CodeGenBase {
 			i++;
 		}
 		buf.append("//end - body");
-		
-		writeOrUpdateFile(buf.toString(), "../../core-web-widget/WebStarter/src/main/java/com/ashera/ResourcesSupplier.java", "body");
+		writeOrUpdateFile(buf.toString(), "../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/java/com/ashera/ResourcesSupplier.java", "body");
 
 		
 	}
