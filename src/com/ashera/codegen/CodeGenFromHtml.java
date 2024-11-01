@@ -322,30 +322,34 @@ public class CodeGenFromHtml extends CodeGenBase {
 						new com.ashera.codegen.templates.WebCodeGenTemplate(quirkReportDto, packageName, widget.getOs(),
 								widget.getPrefix(), testDir).startCodeGeneration(widget);
 					}
-				} else {
-					System.out.println("ignored " + widget.getName() + " " + localWidgets);
-				}
-				widgetMap.put(widget.getName() + widget.getOs(), widget);
-
-				if (/*widget.getOs().equals("android") && */widget.getXmlConfigs() != null && widget.getXmlConfigs().length > 0) {
-					HashMap<String, List<String>> methodNamesMap = new HashMap<>();					
-					for (com.ashera.codegen.pojo.XmlConfig xmlConfig : widget.getXmlConfigs()) {
-						Map<CustomAttribute, String> customAttributeMap = new HashMap<>();
-						if ( xmlConfig.getXmlConfigParams() != null) {
-							for (com.ashera.codegen.pojo.XmlConfigParam xmlConfigParam : xmlConfig.getXmlConfigParams()) {
-								if (xmlConfigParam.getType().equals("customattribute")) {
-									List<CustomAttribute> customAttributes = widgetMap.get(xmlConfigParam.getClassName() + widget.getOs()).getAllAttributes();
-									
-									for (CustomAttribute customAttribute : customAttributes) {
-										customAttributeMap.put(customAttribute, xmlConfigParam.getParamName());
+					
+					widgetMap.put(widget.getName() + widget.getOs(), widget);
+				
+					if (/*widget.getOs().equals("android") && */widget.getXmlConfigs() != null && widget.getXmlConfigs().length > 0) {
+						HashMap<String, List<String>> methodNamesMap = new HashMap<>();					
+						for (com.ashera.codegen.pojo.XmlConfig xmlConfig : widget.getXmlConfigs()) {
+							Map<CustomAttribute, String> customAttributeMap = new HashMap<>();
+							if ( xmlConfig.getXmlConfigParams() != null) {
+								for (com.ashera.codegen.pojo.XmlConfigParam xmlConfigParam : xmlConfig.getXmlConfigParams()) {
+									if (xmlConfigParam.getType().equals("customattribute")) {
+										List<CustomAttribute> customAttributes = widgetMap.get(xmlConfigParam.getClassName() + widget.getOs()).getAllAttributes();
+										
+										for (CustomAttribute customAttribute : customAttributes) {
+											customAttributeMap.put(customAttribute, xmlConfigParam.getParamName());
+										}
 									}
 								}
 							}
+							
+							XmlResourceCodeGenerator.generate(widget, customAttributeMap, xmlConfig, methodNamesMap);
 						}
-						
-						XmlResourceCodeGenerator.generate(widget, customAttributeMap, xmlConfig, methodNamesMap);
 					}
+				} else {
+					System.out.println("ignored " + widget.getName() + " " + localWidgets);
 				}
+				
+				widgetMap.put(widget.getName() + widget.getOs(), widget);
+
 			}
 		}
 

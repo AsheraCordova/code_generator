@@ -184,10 +184,13 @@ public class AndroidDoc extends com.ashera.codegen.CodeGenBase{
 		for (int i = 0; i < elements.size(); i++) {
 			Element element = elements.get(i);
 			String text = element.text();
-			if (isAndroidAttribute(text)) {
+			if (isAndroidAttribute(text) || (widgetConfig.getPrefixHint() != null && text.startsWith(widgetConfig.getPrefixHint()))) {
 				CustomAttribute nodeElement = new CustomAttribute();
 				String namespace = getNameSpace(text);
 				String attributeWithoutNameSpace = getAttributeWithoutNameSpace(text);
+				if (widgetConfig.getPrefixHint() != null) {
+					attributeWithoutNameSpace = attributeWithoutNameSpace.replace(widgetConfig.getPrefixHint(), "");
+				}
 				nodeElement.setName(attributeWithoutNameSpace);
 				CodeGenHelper.setTypeOnCustomAttribute("android", nodeElement, attributeWithoutNameSpace);
 				

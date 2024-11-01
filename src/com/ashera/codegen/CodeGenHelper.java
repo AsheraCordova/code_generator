@@ -16,6 +16,9 @@ public class CodeGenHelper {
 	}
 	
 	public static String getNameSpace(String text) {
+		if (text.indexOf(":") == -1) {
+			return "app";
+		}
 		return text.substring(0, text.indexOf(":")).trim();
 	}
 	

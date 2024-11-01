@@ -374,7 +374,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                         	if (copyAttribute.getUpdateUiFlag() != null && !copyAttribute.getUpdateUiFlag().equals("UPDATE_UI_NONE")) {
                         		cloneAttribute.setUpdateUiFlag(copyAttribute.getUpdateUiFlag() );
                         	}
-                        	if (copyAttribute.getBufferStrategy() != null && !copyAttribute.getBufferStrategy().isEmpty()) {
+                        	if (copyAttribute.getBufferStrategy() != null && !copyAttribute.getBufferStrategy().isEmpty() && !copyAttribute.getBufferStrategy().equals("BUFFER_STRATEGY_NONE")) {
                         		cloneAttribute.setBufferStrategy(copyAttribute.getBufferStrategy() );
                         	}
                         	
@@ -382,8 +382,16 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                         		cloneAttribute.setCode(copyAttribute.getCode() );
                         	}
                         	
+                        	if (copyAttribute.getType() != null && !copyAttribute.getType().isEmpty() && cloneAttribute != null && cloneAttribute.getType() != null && !cloneAttribute.getType().isEmpty()) {
+                        		cloneAttribute.setType(copyAttribute.getType() );
+                        	}
+                        	
                         	if (copyAttribute.getGetterCode() != null && !copyAttribute.getGetterCode().isEmpty() && cloneAttribute.getGetterCode() != null && !cloneAttribute.getGetterCode().isEmpty()) {
                         		cloneAttribute.setGetterCode(copyAttribute.getGetterCode());
+                        	}
+                        	
+                        	if (copyAttribute.getArrayType() != null && cloneAttribute.getArrayType() != null) {
+                        		cloneAttribute.setArrayType(copyAttribute.getArrayType() );
                         	}
                         	
                             String copyDef = cloneAttribute.getCopyDef();

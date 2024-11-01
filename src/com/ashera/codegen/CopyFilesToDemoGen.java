@@ -59,6 +59,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		iosMap.put("core-ios-widgets/IOSSnackbarPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.snackbar.ios/Snackbar");
 
 		iosMap.put("core-ios-widgets/IOSViewPagerPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.viewpager.ios/ViewPager/ios");
+		iosMap.put("core-ios-widgets/IOSViewPagerPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.viewpager.ios/ViewPager");
 		
 		iosMap.put("core-ios-widgets/IOSTextInputLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.textinputlayout.ios/TextInputLayout/ios");
 		iosMap.put("core-widget_library/CustomPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.custom/CustomPlugin/ios");
@@ -68,6 +69,11 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		
 		iosMap.put("core-ios-widgets/IOSNavigationViewPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.navigationview.ios/NavigationView/ios");
 		iosMap.put("core-ios-widgets/IOSNavigationViewPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.navigationview.ios/NavigationView");
+
+		iosMap.put("core-ios-widgets/IOSTabLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.tablayout.ios/TabLayout/ios");
+		iosMap.put("core-ios-widgets/IOSTabLayoutPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.tablayout.ios/TabLayout");
+
+		
 		
 	}
 

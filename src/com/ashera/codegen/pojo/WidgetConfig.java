@@ -5,6 +5,16 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class WidgetConfig {
 	private String name;
+	private String prefixHint;
+
+	public String getPrefixHint() {
+		return prefixHint;
+	}
+
+	@XmlAttribute(name="prefixHint")
+	public void setPrefixHint(String prefixHint) {
+		this.prefixHint = prefixHint;
+	}
 
 	private SourceConfig[] sources;
 	

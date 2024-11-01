@@ -6,10 +6,9 @@ public class ResourcesSupplierGen extends CodeGenBase {
 	public static void main(String[] args) throws Exception{
 		StringBuffer buf = new StringBuffer();
 		buf.append("start - body\n");
-
-		String[] paths = {"../../core-web-widget/WebStarter/src/main/resources/www/layout", "../../core-web-widget/WebStarter/src/main/resources/font", "../../core-web-widget/WebStarter/src/main/resources/res/xml/",
-				"../../core-web-widget/WebStarter/src/main/resources/res/anim/", "../../core-web-widget/WebStarter/src/main/resources/res/animator/",
-				"../../core-web-widget/WebStarter/src/main/resources/navigation/"};
+		String[] paths = {"../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/www/layout", "../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/font", "../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/res/xml/",
+				"../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/res/anim/", "../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/res/animator/",
+				"../../ashera-demo-projects/ashera-phonegap-demo-project/ashera-demo/platforms/browser/app/src/main/resources/navigation/"};
 		String[] prefix = {"www/layout/", "font/", "res/xml/", "res/anim/", "res/animator/", "navigation/"};
 		int i = 0;
 		for (String path : paths) {
