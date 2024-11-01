@@ -92,6 +92,10 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../NavigationView/browser" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../TabLayout/browser" />
+		</antcall>
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">

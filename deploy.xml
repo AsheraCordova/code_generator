@@ -76,6 +76,14 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../AndroidJNavigationView" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidXJViewPager" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidJTablayout" />
+		</antcall>
 	</target>
 
 	<target name="runmaven" depends="mvn_windows, mvn_unix">
