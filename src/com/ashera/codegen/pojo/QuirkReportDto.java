@@ -26,6 +26,18 @@ public class QuirkReportDto {
         return widgets.values();
     }
     
+    public long getPendingAttributeCount(String packageName, String groupName) {
+    	
+    	long count = 0;
+		List<QuirkWidget> list = widgets.get(packageName).get(groupName);//values().stream().flatMap(Collection::stream).collect(Collectors.toList());
+		
+		
+		for (QuirkWidget quirkWidget : list) {
+			count += quirkWidget.getPendingAttributeCount();
+		}
+    	return count;
+    }
+    
     public Set<QuirkWidget> getWidgetsInPackage(String packageName) {
         List<QuirkWidget> quirkWidgets = widgets.get(packageName).values().stream().flatMap(Collection::stream).collect(Collectors.toList());
         TreeSet<QuirkWidget> treeSet = new java.util.TreeSet<>(Comparator.comparing(QuirkWidget::getGroup));

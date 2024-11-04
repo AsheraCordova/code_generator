@@ -938,6 +938,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                 for (String alais : alaises) {
                     quirkAttribute = (QuirkAttribute) quirkAttribute.clone();
                     quirkAttribute.setAttributeName(alais);
+                    quirkAttribute.setAliased(true);
                     quirkWidget.getAttributes().add(quirkAttribute);
                 }
             }

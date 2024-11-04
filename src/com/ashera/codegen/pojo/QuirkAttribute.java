@@ -9,8 +9,15 @@ public class QuirkAttribute implements Cloneable{
     private String xmlTest;
     private String namespace;
 	private Boolean constructor;
+	private boolean aliased;
     
-    public Boolean getConstructor() {
+    public boolean isAliased() {
+		return aliased;
+	}
+	public void setAliased(boolean aliased) {
+		this.aliased = aliased;
+	}
+	public Boolean getConstructor() {
 		return constructor;
 	}
 	public void setConstructor(Boolean constructor) {

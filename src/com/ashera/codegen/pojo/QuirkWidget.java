@@ -1,8 +1,10 @@
 package com.ashera.codegen.pojo;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class QuirkWidget {
     private String packageName;
@@ -12,7 +14,7 @@ public class QuirkWidget {
     private List<String> ignoredAttributes;
     private List<QuirkAttribute> attributes = new java.util.ArrayList<>();
     private List<QuirkAttribute> parentAttributes;
-
+    
 	public List<QuirkAttribute> getParentAttributes() {
 		return parentAttributes;
 	}
@@ -108,6 +110,13 @@ public class QuirkWidget {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public long getPendingAttributeCount() {
+		return attributes.stream().filter(attr -> !attr.getAttributeName().equals("attributeUnderTest") && !attr.isAliased() && (attr.getXmlTest() == null || attr.getXmlTest().equals("Unknown") || attr.getXmlTest().equals("")) && (!attr.getAttributeName().startsWith("web")
+				&& !attr.getAttributeName().startsWith("swt") && !attr.getAttributeName().startsWith("ios")))
+				.count();
+
 	}
 
 }
