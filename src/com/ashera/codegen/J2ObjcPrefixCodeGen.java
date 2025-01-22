@@ -50,6 +50,7 @@ public class J2ObjcPrefixCodeGen extends CodeGenBase {
 			"../../core-javafx-widget/AndroidJMaterial/src/main/java:ADX",
 			"../../core-javafx-widget/AndroidXJViewPager/src/main/java:ADX",
 			"../../core-javafx-widget/AndroidJTablayout/src/main/java:ADM",
+			"../../core-javafx-widget/AndroidXJCardView/src/main/java:ADX",
 			"../../core-widget_library/CustomPlugin/src/main/java:AS"}));
 
 	public static String[] iosNS;

@@ -57,6 +57,16 @@ public class CustomAttribute implements Cloneable{
 	private boolean inherited = true;
 	private String javascriptWrapperClass;
 	private String copyDefHint;
+	private boolean makeTestCaseVisible;
+
+	public boolean isMakeTestCaseVisible() {
+		return makeTestCaseVisible;
+	}
+
+	@XmlAttribute
+	public void setMakeTestCaseVisible(boolean makeTestCaseVisible) {
+		this.makeTestCaseVisible = makeTestCaseVisible;
+	}
 
 	public String getCopyDefHint() {
 		return copyDefHint;

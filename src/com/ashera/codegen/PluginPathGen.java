@@ -69,7 +69,8 @@ public class PluginPathGen extends CodeGenBase {
 				"../../core-ios-widgets/IOSCoordinatorLayoutPlugin/library/AndroidXCoordinatorLayout/src:AndroidXCoordinatorLayout:library/:CoordinatorLayout/",
 				"../../core-ios-widgets/IOSNavigationViewPlugin/library/NavigationView/src:NavigationView:library/:NavigationView/",
 				"../../core-ios-widgets/IOSTabLayoutPlugin/library/AndroidJTablayout/src:AndroidJTablayout:library/:TabLayout/",
-				"../../core-ios-widgets/IOSViewPagerPlugin/library/AndroidXJViewPager/src:AndroidXJViewPager:library/:ViewPager/"
+				"../../core-ios-widgets/IOSViewPagerPlugin/library/AndroidXJViewPager/src:AndroidXJViewPager:library/:ViewPager/",
+				"../../core-ios-widgets/IOSCardViewPlugin/library/AndroidXJCardView/src:AndroidXJCardView:library/:CardView/"
 		}));
 		
 		String[] dirs = {"../../core-javafx-widget", "../../core-web-widget"};

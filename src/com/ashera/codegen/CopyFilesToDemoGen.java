@@ -73,8 +73,8 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		iosMap.put("core-ios-widgets/IOSTabLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.tablayout.ios/TabLayout/ios");
 		iosMap.put("core-ios-widgets/IOSTabLayoutPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.tablayout.ios/TabLayout");
 
-		
-		
+		iosMap.put("core-ios-widgets/IOSCardViewPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.cardview.ios/CardView/ios");
+		iosMap.put("core-ios-widgets/IOSCardViewPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.cardview.ios/CardView");
 	}
 
 	
