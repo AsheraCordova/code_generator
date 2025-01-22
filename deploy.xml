@@ -84,6 +84,10 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../AndroidJTablayout" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../AndroidXJCardView" />
+		</antcall>
 	</target>
 
 	<target name="runmaven" depends="mvn_windows, mvn_unix">

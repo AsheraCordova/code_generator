@@ -97,6 +97,10 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../CardView/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../SWTAopMacLib" />
 		</antcall>
 	</target>

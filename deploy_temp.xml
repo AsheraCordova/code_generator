@@ -1,16 +1,8 @@
 <project default="deployProjects">
 	<target name="deployProjects">
 
-	    <antcall target="runmaven">
-			<param name="dir" value="../AndroidJ" />
-		</antcall>
-		
-	    <antcall target="runmaven">
+	   		<antcall target="runmaven">
 			<param name="dir" value="../AsheraCore/layout/swt" />
-		</antcall>
-		
-	    <antcall target="runmaven">
-			<param name="dir" value="../AsheraCore/layout/browser" />
 		</antcall>
 	</target>
 
