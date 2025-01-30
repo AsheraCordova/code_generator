@@ -11,6 +11,8 @@ public class RunAllTests {
 		CodeGenPluginInvoker.main(args);
 		CopyFilesToDemoGen.main(args);
 		CordovaLibCopyFiles.main(args);
+		HtmlToMarkDownGenerator.main(args);
+		ReplaceStringsInHtml.main(args);
 		
 	}
 }

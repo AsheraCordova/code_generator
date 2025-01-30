@@ -152,6 +152,14 @@ public class CodeGenBase {
 		return readHttpUrlAsString(urlStr, cacheFileName, baseDir, true);
 	}
 
+	public static void deleteCacheFile(String cacheFileName) {
+		String fileAbsPath = getCPDir() + "cache/" + cacheFileName;
+		File file = new File(fileAbsPath);
+		if (file.exists()) {
+			boolean status = file.delete();
+			System.out.println(status + " " + file);
+		}
+	}
 
 	public static File readHttpUrlAsString(String urlStr, String cacheFileName, String baseDir, boolean decode) {
 		try {

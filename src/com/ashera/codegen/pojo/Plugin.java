@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class Plugin {
 	private String name;
+	private String gitName;
 	private ReplaceString[] replaceString;
 	
 	public ReplaceString[] getReplaceString() {
@@ -32,5 +33,20 @@ public class Plugin {
 	@XmlElement(name = "Copy")
 	public void setCopy(Copy[] copy) {
 		this.copy = copy;
+	}
+	
+	public boolean hasGitName() {
+		return gitName != null;
+	}
+	
+	public String getGitName() {
+		if (gitName == null) {
+			return name;
+		}
+		return gitName;
+	}
+	@XmlAttribute
+	public void setGitName(String gitName) {
+		this.gitName = gitName;
 	}
 }

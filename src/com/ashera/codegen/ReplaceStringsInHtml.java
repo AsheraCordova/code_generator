@@ -36,6 +36,9 @@ public class ReplaceStringsInHtml {
 					} else if (htmlFile.getName().startsWith("02")) {
 						html = html.replace("advanced collapsed\" aria-expanded=\"false\"", "advanced active\" aria-expanded=\"true\"");
 						html = html.replace("advanced sub-menu collapse", "show sub-menu");
+					} else if (htmlFile.getName().startsWith("03")) {
+						html = html.replace("plugins collapsed\" aria-expanded=\"false\"", "plugins active\" aria-expanded=\"true\"");
+						html = html.replace("plugins sub-menu collapse", "show sub-menu");
 					} else {
 						html = html.replace("dashboard collapsed\" aria-expanded=\"false\"", "dashboard active\" aria-expanded=\"true\"");
 						html = html.replace("dashboard sub-menu collapse", "show sub-menu");
