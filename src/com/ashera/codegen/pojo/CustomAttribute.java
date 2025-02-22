@@ -58,6 +58,7 @@ public class CustomAttribute implements Cloneable{
 	private String javascriptWrapperClass;
 	private String copyDefHint;
 	private boolean makeTestCaseVisible;
+	private String myconverterType;
 
 	public boolean isMakeTestCaseVisible() {
 		return makeTestCaseVisible;
@@ -792,5 +793,15 @@ public class CustomAttribute implements Cloneable{
 	public void setStylePriority(Integer stylePriority) {
 		this.stylePriority = stylePriority;
 	}
+	
+	public String getMyconverterType() {
+		return myconverterType;
+	}
+
+	@XmlAttribute(name="converterType")
+	public void setMyconverterType(String myconverterType) {
+		this.myconverterType = myconverterType;
+	}
+
 
 }

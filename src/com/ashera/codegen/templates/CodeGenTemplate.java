@@ -1026,7 +1026,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 					customAttribute.setVarType(customAttribute.getJavaType());
 					handleStringToEnumConversion(widgetProperties, customAttribute, customAttribute);
 				} else {
-					customAttribute.setConverterInfo(customAttribute.getConverterInfo1(), customAttribute.getConverterInfo2(), customAttribute.isSeperatedByBar() ? "bitflag" : "enumtoint", false);
+					customAttribute.setConverterInfo(customAttribute.getConverterInfo1(), customAttribute.getConverterInfo2(), getConverterType(customAttribute), false);
 				}
 			}
 
@@ -1042,7 +1042,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 					if (widgetProperties.containsKey("enum." + nodeElement.getVarType())) {
 						handleStringToEnumConversion(widgetProperties, nodeElement, customAttribute);
 					} else if (nodeElement.getConverterInfo1() != null && !nodeElement.getConverterInfo1().equals("") && nodeElement.getConverterInfo2() != null) {
-						customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), nodeElement.isSeperatedByBar() ? "bitflag" : "enumtoint", 
+						customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), getConverterType(nodeElement), 
 								nodeElement.isSupportIntegerAlso());
 					}
 					
@@ -1069,6 +1069,13 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		
 		// removed ignore parentAttributes
 		filterWidgetAttributes(widget);
+	}
+
+	private String getConverterType(com.ashera.codegen.pojo.CustomAttribute customAttribute) {
+		if (customAttribute.getMyconverterType() != null) {
+			return customAttribute.getMyconverterType();
+		}
+		return customAttribute.isSeperatedByBar() ? "bitflag" : "enumtoint";
 	}
 
 	private void addMethodDefFromListenerMethods(com.ashera.codegen.pojo.Widget widget,
@@ -1114,7 +1121,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 		        			customAttribute.setSupportIntegerAlso(nodeElement.isSupportIntegerAlso());
 							customAttribute.setConverterInfo(nodeElement.getKeys(), nodeElement.getValues(), nodeElement.getConverterType(), nodeElement.getApis());
 		        		} else {
-		        			customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), nodeElement.isSeperatedByBar() ? "bitflag" : "enumtoint", nodeElement.isSupportIntegerAlso());
+		        			customAttribute.setConverterInfo(nodeElement.getConverterInfo1(), nodeElement.getConverterInfo2(), getConverterType(nodeElement), nodeElement.isSupportIntegerAlso());
 		        		}
 		        	}
 		            break;
