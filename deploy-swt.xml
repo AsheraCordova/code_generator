@@ -101,6 +101,10 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../Chip/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../SWTAopMacLib" />
 		</antcall>
 	</target>

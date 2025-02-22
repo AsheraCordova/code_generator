@@ -1,8 +1,12 @@
 <project default="deployProjects">
 	<target name="deployProjects">
 
-	   		<antcall target="runmaven">
-			<param name="dir" value="../AsheraCore/layout/swt" />
+<antcall target="runmaven">
+			<param name="dir" value="../Chip/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../Chip/browser" />
 		</antcall>
 	</target>
 
