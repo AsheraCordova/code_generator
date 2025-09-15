@@ -13,7 +13,17 @@ public class XmlConfig {
 	private ReplaceString[] replaceString;
 	private String generateCustomSetter;
 	private String def;
+	private String setValueHint;
 	
+	public String getSetValueHint() {
+		return setValueHint;
+	}
+
+	@XmlAttribute(name="setValueHint")
+	public void setSetValueHint(String setValueHint) {
+		this.setValueHint = setValueHint;
+	}
+
 	public String getDef() {
 		return def;
 	}

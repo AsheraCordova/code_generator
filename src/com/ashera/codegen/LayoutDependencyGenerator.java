@@ -383,6 +383,7 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			string = string.replaceAll("\\(android\\.", "(r.android.");
 			string = string.replaceAll("@android\\.", "@r.android.");
 			string = string.replaceAll(" com\\.android\\.", " r.com.android.");
+			string = string.replaceAll("@Deprecated", "//@Deprecated");
 			string = string.replaceAll(" libcore\\.", " r.libcore.");
 //			string = string.replaceAll(" com\\.google\\.", " r.com.google.");
 			for (int i = 0; i < 100; i++) {

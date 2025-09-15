@@ -270,6 +270,7 @@ public class CodeGenBase {
 			fileContent = fileContent.replaceAll("@android\\.", "@r.android.");
 			fileContent = fileContent.replaceAll(" com\\.android\\.", " r.com.android.");
 			fileContent = fileContent.replaceAll(" libcore\\.", " r.libcore.");
+			fileContent = fileContent.replaceAll("@Deprecated", "//@Deprecated");
 //			fileContent = fileContent.replaceAll(" com\\.google\\.", " r.com.google.");
 		}
 

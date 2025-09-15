@@ -38,7 +38,10 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 		javax.xml.bind.JAXBContext jaxbContext = javax.xml.bind.JAXBContext.newInstance(Resources.class);
 		javax.xml.bind.Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 		Resources resources = (Resources) unmarshaller.unmarshal(new java.io.FileInputStream(file));
-		
+		List<String> setValueHints = new ArrayList<>();
+		if (xmlConfig.getSetValueHint() != null) {
+			setValueHints = Arrays.asList(xmlConfig.getSetValueHint().split(","));
+		}
 		for (Resources.DeclareStyleable styleable : resources.getDeclareStyleable()) {
 			if (styleable.getName().equals(xmlConfig.getTag())) {
 				FieldInfoHolder holder = getFieldInfo(xmlConfig);
@@ -127,8 +130,9 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 							name = name.substring("layout_".length());
 						}
 						
+						
 						String methodName = getSetter(name);
-						code.append(methodName + "(" + methodParamsNoTypeStr + "value);\n");
+						code.append(methodName + "(" + methodParamsNoTypeStr + (setValueHints.contains(name) ? "name, " : "")+ "value);\n");
 						if (xmlConfig.getGenerateCustomSetter() != null) {
 							String[] customCodeAttr = xmlConfig.getGenerateCustomSetter().split(",");
 							if (Arrays.asList(customCodeAttr).contains(getName(attr))) {
@@ -147,29 +151,7 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 									//+ " = (" + customAttribute.getJavaType() + ") widget.quickConvert(strValue, \"" + customAttribute.getType() + "\");\n"
 									+ "\n}\n";
 							methods.append(methodCode);
-						} else if (holder.fieldMap.containsKey(name) || holder.fieldMap.containsKey(getClassVarName(name))) {
-							String fieldName = name;
-							if (holder.fieldMap.containsKey(getClassVarName(name))) {
-								name = getClassVarName(name);
-							}
-							String varType = holder.fieldMap.get(name);
-							String paramName = holder.fieldParamMap.get(name);
-
-							String converterType = getConverterType(attr, environment, widgetProperties, resources, name,
-									fieldName, varType);
-
-							String methodCode = "\nprivate void " + methodName + "("
-									+ methodParamsStr //"androidx.constraintlayout.widget.Constraints.LayoutParams params, "
-									+ "String strValue) {"
-									+ "\n"
-									+ paramName
-									+ "." + name + " = "
-									+ (isEnum ? getGetter(fieldName) + "(strValue);\n" : "(" + varType + ") w.quickConvert(strValue, \"" + converterType + "\");\n")
-									+ "}\n";
-							methods.append(methodCode);
-							
-							//"name: " + name + " " + infoMap.get(name)
-						} else if ( holder.methodParamMap.containsKey(getSetter(name))) {
+						}  else if ( holder.methodParamMap.containsKey(getSetter(name))) {
 							String fieldName = name;
 							String varType = holder.methodParamMap.get(getSetter(name));
 							String paramName = holder.fieldParamMap.get(getSetter(name));
@@ -195,7 +177,36 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 							
 							//"name: " + name + " " + infoMap.get(name)
 						
-						}else {
+						} else if (holder.fieldMap.containsKey(name) || holder.fieldMap.containsKey(getClassVarName(name))) {
+							String fieldName = name;
+							
+							if (holder.fieldMap.containsKey(getClassVarName(name))) {
+								name = getClassVarName(name);
+							}
+							String varType = holder.fieldMap.get(name);
+							String paramName = holder.fieldParamMap.get(name);
+
+							String converterType = getConverterType(attr, environment, widgetProperties, resources, name,
+									fieldName, varType);
+
+							//keyPosition.setValue(androidx.constraintlayout.motion.widget.KeyPosition.PERCENT_X, (float) w.quickConvert(strValue, "float"));
+
+
+							String methodCode = "\nprivate void " + methodName + "("
+									+ methodParamsStr + (setValueHints.contains(fieldName) ? "String name, " : "") //"androidx.constraintlayout.widget.Constraints.LayoutParams params, "
+									+ "String strValue) {"
+									+ "\n"
+									+
+									(setValueHints.contains(fieldName) ? 
+									(paramName + ".setValue(name, " + (isEnum ? getGetter(fieldName) + "(strValue));\n" : "(" + varType + ") w.quickConvert(strValue, \"" + converterType + "\"));"))
+											:
+									(paramName + "." + name + " = " + (isEnum ? getGetter(fieldName) + "(strValue);\n" : "(" + varType + ") w.quickConvert(strValue, \"" + converterType + "\");")))										
+									+ "\n"
+									+ "}\n";
+							methods.append(methodCode);
+							
+							//"name: " + name + " " + infoMap.get(name)
+						} else {
 							System.out.println("ignored " + name);
 						}
 					//}
@@ -472,6 +483,9 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 	}
 
 	private static String getSetter(String name) {
+		if (name.equals("transitionFlags")) {
+			return "setTransitionFlag";
+		}
 		return "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 	
