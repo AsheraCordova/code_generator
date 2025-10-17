@@ -19,7 +19,9 @@ public class CordovaLibCopyFiles extends CodeGenBase{
 		config.put("replacestrings.3","configXml\\: path.join\\(appRes, 'xml', 'config.xml'\\),~configXml: path.join(this.root, 'config.xml'),");
 		config.put("replacestrings.4","Creating Cordova project for the Android platform~Creating Cordova project for the Browser platform");
 		config.put("replacestrings.5","fs\\.copySync\\(path.join\\(srcDir, 'build.gradle'\\)~fs.copySync(path.join(srcDir, 'app', 'gradle.properties'), path.join(projectPath, 'app', 'gradle.properties'));//fs1.copySync(path.join(srcDir, 'build.gradle')");
-
+		config.put("replacestrings.6","'merges', 'android'~'merges', 'browser'");
+		config.put("replacestrings.7","merges/android~merges/browser");
+		
 		config.put("replacestrings.create.js.6", "fs\\.copySync\\(path\\.join\\(project_template_dir, 'res'\\), path\\.join\\(app_path, 'res'\\)\\);~fs.copySync(path.join(project_template_dir, 'resources'), path.join(app_path, 'resources'));fs.copySync(path.join(ROOT, '../', '../', 'config.xml'), path.join(project_path, 'config.xml'));");;
 		
 		copyFiles(config, "copyfilesfromurlDestLocationWeb");

@@ -19,15 +19,17 @@ public class ReplaceStringsInHtml {
 				int end = html.indexOf("</footer>");
 				
 				if (start != -1 && end != -1) {
-					html = html.substring(0, start) + footer + html.substring(end + "</footer>".length());
+					html = html.substring(0, start).trim() + "\n" + footer + html.substring(end + "</footer>".length());
 				}
 				
-				
 				int startmenu = html.indexOf("<div class=\"sidebar left bg-defoult\" style=\"width: 100%\">");
+				if (startmenu == -1) {
+					startmenu = html.indexOf("<ul class=\"list-sidebar bg-defoult\">");
+				}
 				int endMenu = html.indexOf("</div><!--//doc-sidebar-->");
 				
 				if (startmenu != -1 && endMenu != -1) {
-					html = html.substring(0, startmenu) + menu + html.substring(endMenu + "</div><!--//doc-sidebar-->".length());
+					html = html.substring(0, startmenu).trim() + "\n" + menu + html.substring(endMenu + "</div><!--//doc-sidebar-->".length());
 					html = html.replace("<li><a href=\"" + htmlFile.getName(), "<li class=\"active\"><a href=\"" + htmlFile.getName()); 
 					
 					if (htmlFile.getName().startsWith("01")) {
@@ -45,8 +47,11 @@ public class ReplaceStringsInHtml {
 					}
 					
 				}
-				org.apache.commons.io.FileUtils.writeStringToFile(htmlFile, html);
-
+				
+				html = html.replaceAll("(?m)^[ \t]*\r?\n", "");
+				if (!htmlFile.getName().endsWith(".xhtml")) {
+					org.apache.commons.io.FileUtils.writeStringToFile(htmlFile, html);
+				}
 			}
 		}
 	}
