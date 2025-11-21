@@ -58,6 +58,10 @@ public class LicenseUpdator extends CodeGenBase{
 									return;
 								}
 								
+								if (pathStr.contains("\\teavm\\")) {
+									System.out.println("6. ignored -> " + path.toFile());
+									return;
+								}
 								
 								String originalFile = readFileToString( path.toFile());
 								boolean force = originalFile.indexOf("end - license") == -1 || originalFile.indexOf("Copyright (c)") == -1;

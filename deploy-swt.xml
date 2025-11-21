@@ -17,6 +17,10 @@
 		</antcall>
 		
 		<antcall target="runmaven">
+			<param name="dir" value="../SWTSwitch/swt" />
+		</antcall>
+		
+		<antcall target="runmaven">
 			<param name="dir" value="../AsheraCore/converter/swt" />
 		</antcall>
 		
