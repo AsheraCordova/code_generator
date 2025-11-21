@@ -1,3 +1,18 @@
+//start - license
+/*
+ * Copyright (c) 2025 Ashera Cordova
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */
+//end - license
 package com.ashera.codegen.templates;
 
 import static com.ashera.codegen.CodeGenHelper.getAttributeWithoutNameSpace;
@@ -393,6 +408,10 @@ public abstract class CodeGenTemplate extends CodeGenBase{
                         	if (copyAttribute.getArrayType() != null && cloneAttribute.getArrayType() != null) {
                         		cloneAttribute.setArrayType(copyAttribute.getArrayType() );
                         	}
+                        	
+//                        	if (copyAttribute.getOrder() != null && cloneAttribute.getOrder() != null) {
+//                        		cloneAttribute.setOrder(copyAttribute.getOrder() );
+//                        	}
                         	
                             String copyDef = cloneAttribute.getCopyDef();
                             String name = cloneAttribute.getName();
@@ -1463,7 +1482,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 										codeCopied = codeCopied.replaceAll(name, replace);
 									}
 								}
-								codeCopyMap.append("\n").append(codeCopied).append("\n");
+								codeCopyMap.append("\r\n").append(codeCopied).append("\r\n");
 							}
 						}
 					}
@@ -1597,12 +1616,12 @@ public abstract class CodeGenTemplate extends CodeGenBase{
     
     public String generateEventClass(CustomAttribute nodeElement, String methodSignatureListener,
 			String className, String interfaceName, Widget widget) {
-		String methodDef = "@SuppressLint(\"NewApi\")\n" + "private static class " + className
-				+ " implements " + interfaceName + ", com.ashera.widget.IListener{\n"
-				+ "private IWidget w; private View view; private String strValue; private String action;\n"
-				+ "public String getAction() {return action;}\n"
-				+ "public "+ className + "(IWidget w, String strValue)  {\n" + "this.w = w; this.strValue = strValue;\n" + "}\n"
-				+ "public "+ className + "(IWidget w, String strValue, String action)  {\n" + "this.w = w; this.strValue = strValue;this.action=action;\n" + "}\n";
+		String methodDef = "@SuppressLint(\"NewApi\")\r\n" + "private static class " + className
+				+ " implements " + interfaceName + ", com.ashera.widget.IListener{\r\n"
+				+ "private IWidget w; private View view; private String strValue; private String action;\r\n"
+				+ "public String getAction() {return action;}\r\n"
+				+ "public "+ className + "(IWidget w, String strValue)  {\r\n" + "this.w = w; this.strValue = strValue;\r\n" + "}\r\n"
+				+ "public "+ className + "(IWidget w, String strValue, String action)  {\r\n" + "this.w = w; this.strValue = strValue;this.action=action;\r\n" + "}\r\n";
 		if (methodSignatureListener != null) {
 			methodDef += generateEventMethodDef(methodSignatureListener, nodeElement, widget);
 		} else if (nodeElement.getListenerMethods() != null && !nodeElement.getListenerMethods().isEmpty()) {
@@ -1610,7 +1629,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 				methodDef += generateEventMethodDef("public " + listenerMethod, listenerMethod.split("\\s|\\(")[1], widget);
 			}
 		}
-		methodDef += "\n}\n";
+		methodDef += "\r\n}\r\n";
 		return methodDef;
 	}
 
@@ -1661,7 +1680,7 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			StringWriter stringWriter1 = new StringWriter();
 			template.process(models, stringWriter1);
 			stringWriter1.flush();
-			events += stringWriter1.toString() + "\n";
+			events += stringWriter1.toString() + "\r\n";
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

@@ -1,3 +1,18 @@
+//start - license
+/*
+ * Copyright (c) 2025 Ashera Cordova
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */
+//end - license
 package com.ashera.codegen;
 
 import org.eclipse.jdt.core.JavaCore;
@@ -79,10 +94,36 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 		}
 
 
+		public static String extractLicense(CompilationUnit cu, File file) {
+	        try {
+				List<?> comments = cu.getCommentList();
+				if (comments == null || comments.isEmpty()) return null;
+
+				int packageStart = cu.getPackage() != null ? cu.getPackage().getStartPosition() : Integer.MAX_VALUE;
+				StringBuilder license = new StringBuilder();
+				String sourceCode = readFileToString(file);
+				for (Object obj : comments) {
+				    Comment c = (Comment) obj;
+				    int start = c.getStartPosition();
+				    if (start < packageStart) {
+				        String text = sourceCode.substring(start, start + c.getLength());
+				        if (text.contains("Copyright") || text.startsWith("//start - license") || text.startsWith("//end - license")) {
+				        	license.append(text).append(System.lineSeparator());
+				        }
+				    }
+				}
+
+				return license.length() > 0 ? license.toString().trim() + "\n" : "";
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+	    }
+
 		private void parseAndCreateFile(final String key, File file, final Properties config, String copyUrl)
 				throws IOException {
 			final CompilationUnit cu = getCU(file);
 
+			String license = extractLicense(cu, file);
 			cu.accept(new ASTVisitor() {
 				
 				@Override
@@ -375,7 +416,7 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 			
 			f.getParentFile().mkdirs();
 			BufferedWriter b = new BufferedWriter(new FileWriter(f));
-			String string = cu.toString();
+			String string = license + cu.toString();
 			
 			string = string.replaceAll(" android\\.icu", " com.ibm.icu");
 			string = string.replaceAll(" android\\.", " r.android.");
@@ -431,7 +472,7 @@ public class LayoutDependencyGenerator extends  CodeGenBase{
 		}
 
 	 
-		public static void main(String[] args) throws IOException {
+		public static void main(String[] args) throws Exception {
 			Properties properties = new Properties();
 			properties.load(new FileInputStream(getCPDir() + "config/files.properties"));
 			LayoutDependencyGenerator gen = new LayoutDependencyGenerator();

@@ -2,11 +2,7 @@
 	<target name="deployProjects">
 
 <antcall target="runmaven">
-			<param name="dir" value="../Chip/swt" />
-		</antcall>
-		
-		<antcall target="runmaven">
-			<param name="dir" value="../Chip/browser" />
+			<param name="dir" value="../teavm/classlib" />
 		</antcall>
 	</target>
 

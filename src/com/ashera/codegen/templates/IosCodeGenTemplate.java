@@ -1,3 +1,18 @@
+//start - license
+/*
+ * Copyright (c) 2025 Ashera Cordova
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */
+//end - license
 package com.ashera.codegen.templates;
 
 import java.util.ArrayList;
@@ -39,11 +54,11 @@ public class IosCodeGenTemplate extends CodeGenTemplate {
 			if (widget.getClassName().equals("UIView")) {
 				if (readonly == null || !readonly.equals("true")) {
 					widget.addMethodDefition("public static native void " + element.getCode() + "(Object nativeWidget, "
-							+ "Object value) /*-[\n" + "((UIView*" + ") nativeWidget)." + attributeName + " = "
+							+ "Object value)/*-[\n" + "((UIView*" + ") nativeWidget)." + attributeName + " = "
 							+ generateCode(element) + ";\n" + "]-*/;");
 				}
 				
-				widget.addMethodDefition("public static native Object " + element.getGetterCode() + "(Object uiView) /*-[\n" + "return " + generateCode(element, "((UIView*" + ") uiView)." + attributeName)
+				widget.addMethodDefition("public static native Object " + element.getGetterCode() + "(Object uiView)/*-[\n" + "return " + generateCode(element, "((UIView*" + ") uiView)." + attributeName)
 						+ ";\n  ]-*/;");
 			} else {
 				if (readonly == null || !readonly.equals("true")) {
@@ -52,14 +67,14 @@ public class IosCodeGenTemplate extends CodeGenTemplate {
 						nativeWidget = "((" + generator.getNativeclassname() + "*" + ") " + generator.getNativeclassVar() + ").";
 					}
 					widget.addMethodDefition("public native void " + element.getCode() + "(Object nativeWidget, "
-							+ "Object value) /*-[\n" + nativeWidget + attributeName + " = "
+							+ "Object value)/*-[\n" + nativeWidget + attributeName + " = "
 							+ generateCode(element) + ";\n" + "]-*/;");
 				}
 				String getterVar = "((" + iosObject + "*" + ") uiView_).";
 				if (generator != null && generator.getNativeclassname() != null && generator.getNativeclassVar() != null) {
 					getterVar = "((" + generator.getNativeclassname() + "*" + ") " + generator.getNativeclassVar() + ").";
 				}
-				widget.addMethodDefition("public native Object " + element.getGetterCode() + "() /*-[\n" + "return " + generateCode(element, getterVar + attributeName)
+				widget.addMethodDefition("public native Object " + element.getGetterCode() + "()/*-[\n" + "return " + generateCode(element, getterVar + attributeName)
 						+ ";\n  ]-*/;");
 			}
 		}
