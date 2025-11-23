@@ -17,6 +17,11 @@ package com.ashera.codegen;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
@@ -133,7 +138,8 @@ public class JumboPluginGenerator {
 		javax.xml.bind.JAXBContext jaxbContext = javax.xml.bind.JAXBContext
 				.newInstance(com.ashera.codegen.pojo.Plugins.class);
 		javax.xml.bind.Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-
+		
+		List<String> allPluginsList = new java.util.ArrayList<>();
 		com.ashera.codegen.pojo.Plugins plugins = (com.ashera.codegen.pojo.Plugins) unmarshaller
 				.unmarshal(new java.io.FileInputStream("jumbo/plugin.xml"));
 		for (Plugin plugin : plugins.getPlugin()) {
@@ -254,11 +260,30 @@ public class JumboPluginGenerator {
 									"\n  " + platformXml + "\n");
 						}
 					}
+					
 					i++;
 
 				}
+				
+				String pluginXmlStr = str.toString();
+				Pattern pattern = Pattern.compile("\\sid\\s*=\\s*\"([^\"]+)\"");
+				Matcher matcher = pattern.matcher(pluginXmlStr);
 
-				FileUtils.writeStringToFile(new File(pluginDir, "plugin.xml"), str.toString());
+				if (pluginXmlStr.equals("")) {
+					continue;
+				}
+				if (matcher.find()) {
+				    String id = matcher.group(1);
+				    System.out.println(id);
+				    if (id.equals("http://schemas.android.com/apk/res/android")) {
+				    	System.out.println(pluginXmlStr);
+				    }
+				    allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", plugin.getName(), id));
+				} else {
+					throw new RuntimeException(pluginDir.toString());
+				}
+				
+				FileUtils.writeStringToFile(new File(pluginDir, "plugin.xml"), pluginXmlStr);
 			}
 
 			if (plugin.getReplaceString() != null) {
@@ -272,12 +297,56 @@ public class JumboPluginGenerator {
 							str);
 				}
 			}
-
 		}
 
 		File f = new File("D:\\Java\\github_ashera");
 		addGitignoreEntry(f);
 		J2ObjcPrefixCodeGen.generateClassPathFile("D:\\Java\\github_ashera", "D:\\Java\\github_ashera\\Custom\\src\\main\\java");
+		
+		File allPlugins = new File(baseLocation + "AsheraCordovaPlugin/plugin.xml");
+		String pluginXmlFile = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n"
+				+ "<plugin xmlns=\"http://www.phonegap.com/ns/plugins/1.0\"\r\n"
+				+ "        id=\"com.ashera.cordova\"\r\n"
+				+ "        version=\"1.0\">\r\n"
+				+ "\r\n"
+				+ "  <name>AsheraCordovaPlugin</name>\r\n"
+				+ "\r\n"
+				+ "  <engines>\r\n"
+				+ "    <engine name=\"cordova\" version=\">=3.4.0\"/>\r\n"
+				+ "  </engines>\r\n"
+				+ "  \r\n"
+				+ "  <platform name=\"android\">\r\n"
+				+ "    %s"
+				+ "\r\n"
+				+ "  </platform>\r\n"
+				+ "  <platform name=\"browser\">\r\n"
+				+ "    %s"				
+				+ "\r\n"
+				+ "  </platform>\r\n"
+				+ "  <platform name=\"ios\">\r\n"
+				+ "    %s"    
+				+ "\r\n"
+				+ "  </platform>\r\n"
+				+ "  <platform name=\"swt\">\r\n"
+				+ "    %s"
+				+ "\r\n"
+				+ "  </platform>\r\n"
+				+ "</plugin>";
+		
+		Arrays.stream(new File(baseLocation).listFiles())
+				.filter(file -> file.isDirectory() && file.getName().startsWith("cordova-plugin-"))
+				.forEach((file) -> {
+					allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", file.getName(), file.getName()));
+				});
+		allPluginsList.add("<dependency id=\"cordova-plugin-sqlite-2\" version=\"^1.0.7\" />\r\n    ");
+		Collections.sort(allPluginsList, (a, b) -> {
+			String top = "AsheraCore";
+			if (a.contains(top) && !b.contains(top)) return -1;
+		    if (!a.contains(top) && b.contains(top)) return 1;
+			return a.compareTo(b);
+		});
+		String allPluginsStr = String.join("", allPluginsList);
+		FileUtils.writeStringToFile(allPlugins, String.format(pluginXmlFile, allPluginsStr, allPluginsStr, allPluginsStr, allPluginsStr));
 	}
 
 	private static void addGitignoreEntry(File f) throws IOException {
