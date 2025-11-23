@@ -278,7 +278,9 @@ public class JumboPluginGenerator {
 				    if (id.equals("http://schemas.android.com/apk/res/android")) {
 				    	System.out.println(pluginXmlStr);
 				    }
-				    allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", plugin.getName(), id));
+				    if (!plugin.getName().equals("SWTSwitch")) {
+				    	allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", plugin.getName(), id));
+				    }
 				} else {
 					throw new RuntimeException(pluginDir.toString());
 				}
