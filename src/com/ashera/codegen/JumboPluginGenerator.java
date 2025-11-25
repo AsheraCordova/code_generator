@@ -279,7 +279,7 @@ public class JumboPluginGenerator {
 				    	System.out.println(pluginXmlStr);
 				    }
 				    if (!plugin.getName().equals("SWTSwitch")) {
-				    	allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", plugin.getName(), id));
+				    	allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", plugin.getGitName(), id));
 				    }
 				} else {
 					throw new RuntimeException(pluginDir.toString());
@@ -340,9 +340,9 @@ public class JumboPluginGenerator {
 				.forEach((file) -> {
 					allPluginsList.add(String.format("<dependency url=\"https://github.com/AsheraCordova/%s.git\" id=\"%s\" />\r\n    ", file.getName(), file.getName()));
 				});
-		allPluginsList.add("<dependency id=\"cordova-plugin-sqlite-2\" version=\"^1.0.7\" />\r\n    ");
+		allPluginsList.add("<dependency id=\"cordova-plugin-sqlite-2\" version=\"^1.0.6\" />\r\n    ");
 		Collections.sort(allPluginsList, (a, b) -> {
-			String top = "AsheraCore";
+			String top = "Core.git";
 			if (a.contains(top) && !b.contains(top)) return -1;
 		    if (!a.contains(top) && b.contains(top)) return 1;
 			return a.compareTo(b);
