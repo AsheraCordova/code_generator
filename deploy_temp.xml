@@ -1,8 +1,11 @@
 <project default="deployProjects">
 	<target name="deployProjects">
-
-<antcall target="runmaven">
-			<param name="dir" value="../teavm/classlib" />
+		<antcall target="runmaven">
+			<param name="dir" value="../ActionSheet/swt" />
+		</antcall>
+		
+				<antcall target="runmaven">
+			<param name="dir" value="../ActionSheet/browser" />
 		</antcall>
 	</target>
 
