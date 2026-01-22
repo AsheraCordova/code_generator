@@ -92,6 +92,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 		iosMap.put("core-ios-widgets/IOSCardViewPlugin/library", "../../../../ios/${iosProjectName}/Plugins/com.ashera.cardview.ios/CardView");
 		iosMap.put("core-ios-widgets/IOSChipPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.chip.ios/Chip/ios");
 		iosMap.put("core-ios-widgets/IOSActionSheetPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.actionsheet.ios/ActionSheet/ios");
+		iosMap.put("core-ios-widgets/IOSSwipeRefreshLayoutPlugin/ios", "../../../../ios/${iosProjectName}/Plugins/com.ashera.swiperefreshlayout.ios/SwipeRefreshLayout/ios");
 		
 		
 	}
@@ -101,7 +102,7 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 	public static void main(String[] args) throws IOException {
 		List<File> classPaths = getAbsPath(new String[] { "../../core-android-widget", "../../core-widget_library"} );
 		String finalResult = classPaths.stream().filter((f) -> f.isDirectory() && new File(f.getAbsolutePath(), "plugin.xml").exists()).sorted((a, b) -> a.getName().compareTo(b.getName())).map((f) -> {
-			String [] subdirectorPaths = {"src", "res", "tsc", "gentool"};
+			String [] subdirectorPaths = {"src", "res/", "tsc", "gentool"};
 			String [] copyPaths = {"java", "res", "tsc", "gentool"};
 			String finalTeplate = generateAntString(f, subdirectorPaths, copyPaths, false);
 			return finalTeplate;
@@ -151,8 +152,8 @@ public class CopyFilesToDemoGen extends CodeGenBase{
 					// find first file in the directory to check before copy
 					Object[] path = Files.walk(Paths.get(pathname)).filter(Files::isRegularFile).filter((p) -> (p + "").indexOf(".DS_Store") == -1 && (p + "").indexOf("applidium") == -1).toArray();
 					if (path.length > 0) {
-						String firstFile = path[0] + "";
-						sampleFileName = firstFile.substring(firstFile.lastIndexOf(subdirectorPath)).replaceAll("\\\\", "/").substring(subdirectorPath.length() + 1);
+						String firstFile = (path[0] + "").replaceAll("\\\\", "/");
+						sampleFileName = firstFile.substring(firstFile.lastIndexOf(subdirectorPath)).substring(subdirectorPath.length() + (subdirectorPath.endsWith("/") ? 0 : 1));
 						String overrite = "overwrite";
 						if (copyPaths[i].equals("res")) {
 							overrite = "overwriteres";
