@@ -108,6 +108,10 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../ActionSheet/browser" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../SwipeRefresh/browser" />
+		</antcall>
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">

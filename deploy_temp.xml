@@ -1,12 +1,12 @@
 <project default="deployProjects">
 	<target name="deployProjects">
 		<antcall target="runmaven">
-			<param name="dir" value="../ActionSheet/swt" />
+			<param name="dir" value="../SwipeRefresh/swt" />
 		</antcall>
-		
-				<antcall target="runmaven">
-			<param name="dir" value="../ActionSheet/browser" />
+		<antcall target="runmaven">
+			<param name="dir" value="../SwipeRefresh/browser" />
 		</antcall>
+				
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">

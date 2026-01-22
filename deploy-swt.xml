@@ -115,6 +115,10 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../ActionSheet/swt" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../SwipeRefresh/swt" />
+		</antcall>
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">
