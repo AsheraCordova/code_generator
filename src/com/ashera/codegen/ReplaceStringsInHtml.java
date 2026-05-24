@@ -29,7 +29,7 @@ public class ReplaceStringsInHtml {
 		listFiles.add(new File("D:\\Java\\github_ashera\\Documentation\\tradeapp\\index.html"));
 		for (File htmlFile : listFiles) {
 			if (htmlFile.getName().endsWith(".html")) {
-				String html = org.apache.commons.io.FileUtils.readFileToString(htmlFile);
+				String html = org.apache.commons.io.FileUtils.readFileToString(htmlFile, "UTF-8");
 				int start = html.indexOf("<footer");
 				int end = html.indexOf("</footer>");
 				
@@ -65,7 +65,7 @@ public class ReplaceStringsInHtml {
 				
 				html = html.replaceAll("(?m)^[ \t]*\r?\n", "");
 				if (!htmlFile.getName().endsWith(".xhtml")) {
-					org.apache.commons.io.FileUtils.writeStringToFile(htmlFile, html);
+					org.apache.commons.io.FileUtils.writeStringToFile(htmlFile, html, "UTF-8");
 				}
 			}
 		}
