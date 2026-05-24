@@ -19,6 +19,7 @@ public class LicenseUpdator extends CodeGenBase{
 		String[] files = new String[] { "../../core-android-widget", "../../core-widget_library",
 				"../../core-javafx-widget", "../../core-ios-widgets", "../../core-web-widget" };
 		String licenseTxt = readFileToString(new File("templates/licenseheader.txt"));
+		String licenseTxtEpl_1 = readFileToString(new File("templates/licenseheader_EPL-2.0.txt"));
 		String licenseTxtEpl = readFileToString(new File("templates/licenseheader_EPL-2.0.txt"));
 		for (String file : files) {
 			Path rootPath = Paths.get(file);
@@ -69,6 +70,10 @@ public class LicenseUpdator extends CodeGenBase{
 								if (isEpl2_0License(absolutePath)) {
 									license = licenseTxtEpl; 
 								}
+								if (isEpl1_0License(absolutePath)) {
+									license = licenseTxtEpl_1; 
+								}
+								
 								
 								if (originalFile.indexOf("end - license") == -1) {
 									originalFile = license + originalFile;
@@ -119,6 +124,9 @@ public class LicenseUpdator extends CodeGenBase{
 								if (isEpl2_0License(absolutePath)) {
 									license = "\"EPL-2.0\"";
 								}
+								if (isEpl1_0License(absolutePath)) {
+									license = "\"EPL-1.0\"";
+								}
 								if (content.contains("\"license\"")) {
 									// Replace existing license line (robust for minor format differences)
 									content = content.replaceAll("\"license\"\\s*:\\s*\"[^\"]*\"",
@@ -150,4 +158,9 @@ public class LicenseUpdator extends CodeGenBase{
 	private static boolean isEpl2_0License(String absolutePath) {
 		return absolutePath.contains("SWTDialogPlugin") || absolutePath.contains("SWTSwitchPlugin");
 	}
+	
+	private static boolean isEpl1_0License(String absolutePath) {
+		return absolutePath.contains("SWTSpatialKitPlugin");
+	}
+
 }

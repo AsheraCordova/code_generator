@@ -1,12 +1,12 @@
 <project default="deployProjects">
 	<target name="deployProjects">
 		<antcall target="runmaven">
-			<param name="dir" value="../SwipeRefresh/swt" />
+			<param name="dir" value="../AsheraCore/layout/swt" />
 		</antcall>
+		
 		<antcall target="runmaven">
-			<param name="dir" value="../SwipeRefresh/browser" />
+			<param name="dir" value="../AsheraCore/layout/browser" />
 		</antcall>
-				
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">

@@ -19,7 +19,17 @@ import javax.xml.bind.annotation.XmlAttribute;
 
 public class MethodParam extends CustomAttribute{
 	private String nullable;
+	private String optional;
 
+
+	public String getOptional() {
+		return optional;
+	}
+	
+	@XmlAttribute(name="optional")
+	public void setOptional(String optional) {
+		this.optional = optional;
+	}
 	public String getNullable() {
 		return nullable;
 	}
