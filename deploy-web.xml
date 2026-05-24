@@ -112,6 +112,11 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../SwipeRefresh/browser" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../SpatialKit/browser" />
+		</antcall>
+		
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">
