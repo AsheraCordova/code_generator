@@ -371,7 +371,6 @@ public abstract class CodeGenTemplate extends CodeGenBase{
         if (widget.getCopyAttribute() != null) {
             for (com.ashera.codegen.pojo.CopyAttribute copyAttribute : widget.getCopyAttribute()) {
             	if (!copyAttribute.isOnlyForTestCase()) {
-            		System.out.println(copyAttribute.getWidget());
                     Widget classConfiguration = processedClassConfigurations.get((copyAttribute.getOs() == null ? widget.getOs() : copyAttribute.getOs()) + "." + copyAttribute.getWidget());
                     List<CustomAttribute> classConfigurations = classConfiguration.getAllAttributes();
                     
@@ -1160,9 +1159,6 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			String widgetName = widget.getName().substring(widget.getName().lastIndexOf(".") + 1);
 
 			if (styleable.getName().equals(generator.getStyleableName())) {
-				if (widget.getName().indexOf("View") != -1) {
-					System.out.println("aaa");
-				}
 				for (com.ashera.codegen.pojo.attrs.Resources.Attr attr: styleable.getAttr()) {
 					CustomAttribute attribute = new CustomAttribute();
 					attribute.setGeneratorUrl(generatorUrl[0].getUrl());
