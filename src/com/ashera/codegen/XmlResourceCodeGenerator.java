@@ -90,9 +90,13 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 				for (Resources.Attr attr : styleable.getAttr()) {
 					//if (attr.getFormat() == null) {
 						String name = getName(attr);
-						System.out.println("name " + name);
+						if (DEBUG) {
+							System.out.println("name " + name);
+						}
 						if (ignoreRegEx != null && name.matches(ignoreRegEx)) {
-							System.out.println("Ignored " + name);
+							if (DEBUG) {
+								System.out.println("Ignored " + name);
+							}
 							continue;
 						}
 						code.append("\ncase \"" + name + "\":\n");
@@ -222,7 +226,9 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 							
 							//"name: " + name + " " + infoMap.get(name)
 						} else {
-							System.out.println("ignored " + name);
+							if (DEBUG) {
+								System.out.println("ignored " + name);
+							}
 						}
 					//}
 				}
@@ -382,7 +388,9 @@ public class XmlResourceCodeGenerator extends CodeGenBase{
 			if (contents.get(i) instanceof javax.xml.bind.JAXBElement) {
 				javax.xml.bind.JAXBElement element = (javax.xml.bind.JAXBElement) contents.get(i);
 				Enum enum1 = (com.ashera.codegen.pojo.attrs.Resources.Attr.Enum) element.getValue();
-				System.out.println(enum1.getValueAttribute() + " " + enum1.getName());
+				if (DEBUG) {
+					System.out.println(enum1.getValueAttribute() + " " + enum1.getName());
+				}
 				
 						enumcode +=  "case \"" + enum1.getName() + "\":\r\n"
 						+ "		return " + enum1.getValueAttribute()

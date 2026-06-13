@@ -56,7 +56,6 @@ public class CodeGenIosCode {
     			models.put("className", key);
     			for (int i = 0; i < values.length; i++) {
     				String[] map = values[i].split("\\:");
-    				System.out.println(map[0]);
     				models.put(map[0], map[1]);
 				}
                 template.process(models, stringWriter);

@@ -24,7 +24,7 @@ import com.ashera.codegen.pojo.CustomAttribute;
 import com.ashera.codegen.pojo.SourceConfig;
 import com.ashera.codegen.pojo.WidgetConfig;
 
-public class CodeGenHelper {
+public class CodeGenHelper extends CodeGenBase{
 
 	public static String getAttributeWithoutNameSpace(String text) {
 		return text.substring(text.indexOf(":") + 1).trim();
@@ -139,7 +139,9 @@ public class CodeGenHelper {
 		if (ignorelist != null) {
 			ignore = Arrays.asList(ignorelist.split(",")).contains(customAttribute.getName());
 			if (ignore) {
-				System.out.println(customAttribute.getName());
+				if (DEBUG) {
+					System.out.println(customAttribute.getName());
+				}
 			}
 		}
 		return ignore;

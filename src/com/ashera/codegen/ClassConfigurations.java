@@ -45,7 +45,7 @@ public class ClassConfigurations {
 		}
 		
 		if (!configurations.containsKey(classConfiguration.getClassName())) {
-			System.out.println(classConfiguration.getClassName() + " " + classConfiguration.getLocalName());
+			//System.out.println(classConfiguration.getClassName() + " " + classConfiguration.getLocalName());
 			configurations.put(classConfiguration.getClassName(), classConfiguration);
 		}
 		ClassConfiguration configuration = getParentConfig(classConfiguration);

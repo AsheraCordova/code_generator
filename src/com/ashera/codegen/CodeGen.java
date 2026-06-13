@@ -84,7 +84,9 @@ public class CodeGen extends CodeGenBase{
 	    			((List<ClassConfiguration>)configuration.getWidgetAttributes()).addAll(osConfigs);
 	    			
                 	StringWriter stringWriter = new StringWriter();
-                	System.out.println("configuration : " + configuration.getClassName());
+                	if (DEBUG) {
+                		System.out.println("configuration : " + configuration.getClassName());
+                	}
 					String path = paths[i];
 	    			models.put("process", oss[i]);
 	    			models.put("androidprefix", androidprefixs[i]);

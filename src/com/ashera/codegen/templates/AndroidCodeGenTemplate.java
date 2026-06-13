@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import org.jsoup.nodes.Document;
@@ -46,8 +47,9 @@ import com.ashera.codegen.pojo.Widget;
 public class AndroidCodeGenTemplate extends CodeGenTemplate {
 	private static CustomTransformer customTransformer = new CustomTransformer();
 	private final String codeBaseDir;
-	public AndroidCodeGenTemplate(QuirkReportDto quirkReportDto, String packageName, String environment, String prefix, String codeBaseDir, String testDir) {
-		super(quirkReportDto, testDir, packageName, environment, prefix);
+	public AndroidCodeGenTemplate(QuirkReportDto quirkReportDto, String packageName, String environment, String prefix, String codeBaseDir, String testDir,
+			Map<String, List<Widget>> processedWidgets, ArrayList<String> activities, ArrayList<String> layoutFiles) {
+		super(quirkReportDto, testDir, packageName, environment, prefix, processedWidgets, activities, layoutFiles);
 		this.codeBaseDir = codeBaseDir;
 	}
 
@@ -351,7 +353,9 @@ public class AndroidCodeGenTemplate extends CodeGenTemplate {
 							nodeElement.setGetterCode(getMethodHint);
 						}
 						if (nodeElement.getGetterCode() == null) {
-							System.out.println("Getter method not found (0) : " + text + " " + apiLevelForGet);
+							if (DEBUG) {
+								System.out.println("Getter method not found (0) : " + text + " " + apiLevelForGet);
+							}
 						}
 
 						CustomAttribute customAttribute = widget.getCustomAttribute(attributeWithoutNameSpace);
@@ -364,7 +368,9 @@ public class AndroidCodeGenTemplate extends CodeGenTemplate {
 						CustomAttribute customAttribute = widget.getCustomAttribute(attributeWithoutNameSpace);
 						if (customAttribute == null) {
 		                    ignoredAttributes.add(text);
-							System.out.println("Ignored (0) : " + text);
+		                    if (DEBUG) {
+		                    	System.out.println("Ignored (0) : " + text);
+		                    }
 						} else {
 							CustomAttribute nodeElement = new CustomAttribute();
 							nodeElement.setNamespace(namespace);
@@ -385,7 +391,9 @@ public class AndroidCodeGenTemplate extends CodeGenTemplate {
 					if (customAttribute == null) {
 						if (!customTransformer.handle(nodeElements, attributeWithoutNameSpace, widget, generatorUrl, namespace)) {
 						    ignoredAttributes.add(text);
-							System.out.println("Ignored (-1) : " + text + " " + apiLevel);
+						    if (DEBUG) {
+						    	System.out.println("Ignored (-1) : " + text + " " + apiLevel);
+						    }
 						}
 					}
 				}
@@ -479,7 +487,9 @@ public class AndroidCodeGenTemplate extends CodeGenTemplate {
 						}
 
 					} else {
-						System.out.println("Ignored Set Method (0) : " + text);
+						if (DEBUG) {
+							System.out.println("Ignored Set Method (0) : " + text);
+						}
 						ignoredAttributes.add(text);
 					}
 				}

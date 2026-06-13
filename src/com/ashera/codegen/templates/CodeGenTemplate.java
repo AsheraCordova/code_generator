@@ -22,7 +22,6 @@ import static com.ashera.codegen.CodeGenHelper.getMethodVars;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,9 +38,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -72,11 +68,11 @@ import freemarker.template.TemplateException;
 
 public abstract class CodeGenTemplate extends CodeGenBase{
 	String environment;
-	private ArrayList<String> processedAttributes = new ArrayList<>();
 	private ClassConfigurations classConfigurations = new ClassConfigurations();
-	private static Map<String, List<Widget>> processedWidgets = new HashMap<>();
-    private static ArrayList<String> activities = new ArrayList<>();
-    private static ArrayList<String> layoutFiles = new ArrayList<>();
+	private Map<String, List<Widget>> processedWidgets;
+	private ArrayList<String> processedAttributes = new ArrayList<>();
+    private ArrayList<String> activities;
+    private ArrayList<String> layoutFiles;
     private String prefix;
     protected List<String> ignoredAttributes = new ArrayList<>();
     
@@ -86,19 +82,22 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 	private String testDir;
     
     private static Map<String, Widget> processedClassConfigurations = new HashMap<>();
-//    private TestCase testcase;
 
     public void resetActivities() {
-        CodeGenTemplate.activities = new ArrayList<>();
-        CodeGenTemplate.layoutFiles = new ArrayList<>();
+        activities = new ArrayList<>();
+        layoutFiles = new ArrayList<>();
     }
 
-    public CodeGenTemplate(QuirkReportDto quirkReportDto, String testDir, String packageName, String enviroment, String prefix) {
+    public CodeGenTemplate(QuirkReportDto quirkReportDto, String testDir, String packageName, String enviroment, String prefix, 
+    		Map<String, List<Widget>> processedWidgets, ArrayList<String> activities, ArrayList<String> layoutFiles) {
 		this.environment = enviroment;
 		this.prefix = prefix;
 		this.quirkReportDto = quirkReportDto;
 		this.packageName = packageName;
 		this.testDir = testDir;
+		this.processedWidgets = processedWidgets;
+		this.activities = activities;
+		this.layoutFiles = layoutFiles;
 
 	}
 	
@@ -329,11 +328,15 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 								customAttribute.setType(keyPrefixForConverter + seperator +attrbuteNameWithoutNameSpace);
 								widget.addClassAttribute(customAttribute);							
 							} else {
-								System.out.println("ignored (1): " + attributeName + " " + varType);
+								if (DEBUG) {
+									System.out.println("ignored (1): " + attributeName + " " + varType);
+								}
 								ignoredAttributes.add(attributeName);
 							}
 						} else {
-							System.out.println("ignored (2): " + attributeName + " " + varType);
+							if (DEBUG) {
+								System.out.println("ignored (2): " + attributeName + " " + varType);
+							}
 							ignoredAttributes.add(attributeName);
 						}
 
@@ -353,7 +356,9 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 						setSetterMethod(widget, customAttribute, widgetProperties, url);
 					} else {
 						ignoredAttributes.add(attributeName);
-						System.out.println("supressed: " + attributeName + " " + varType);
+						if (DEBUG) {
+							System.out.println("supressed: " + attributeName + " " + varType);
+						}
 					}
 					
 					updateFromProtoCustomAttribute(widget, customAttribute, attrbuteNameWithoutNameSpace);
@@ -518,15 +523,15 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 					
 					CodeGenTemplate codeGenTemplate = null;
 					if (widgetTemp.getOs().equals("swt")) {
-						codeGenTemplate = new SwtCodeGenerator(this.quirkReportDto, packageName, "swt", "", testDir);
+						codeGenTemplate = new SwtCodeGenerator(this.quirkReportDto, packageName, "swt", "", testDir, processedWidgets, activities, layoutFiles);
 					}
 					
 					if (widgetTemp.getOs().equals("ios")) {
-						codeGenTemplate = new IosCodeGenTemplate(this.quirkReportDto, packageName, "ios", "", testDir);
+						codeGenTemplate = new IosCodeGenTemplate(this.quirkReportDto, packageName, "ios", "", testDir, processedWidgets, activities, layoutFiles);
 					}
 					
 					if (widgetTemp.getOs().equals("web")) {
-						codeGenTemplate = new WebCodeGenTemplate(this.quirkReportDto, packageName, "web", "", testDir);
+						codeGenTemplate = new WebCodeGenTemplate(this.quirkReportDto, packageName, "web", "", testDir, processedWidgets, activities, layoutFiles);
 					}
 					if (widgetTemp.getNativeclassname() != null) {
 						widget.setNativeclassname(widgetTemp.getNativeclassname());
@@ -904,33 +909,6 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 
 
         }
-    }
-
-    public static void generateTestLayoutFiles(String testDir) throws IOException, FileNotFoundException, TemplateException {
-        String pathname = testDir
-        		+ "platforms/android/app/src/main/tsc/src/FragmentMapper.ts";
-        Template template = new Template("name", new FileReader(new File("templates/FragmentMapper.ts")),
-                new Configuration());
-        StringWriter stringWriter = new StringWriter();
-        Map<String, Object> models = new HashMap<>();
-        models.put("activities", activities);
-        models.put("layoutFiles", layoutFiles);
-
-        template.process(models, stringWriter);
-        stringWriter.flush();
-        String string = stringWriter.toString();
-        writeOrUpdateFile(string, pathname, new HashMap<>());
-        
-        
-        pathname = testDir
-        		+ "platforms/android/app/src/main/tsc/src/HomeActivity.ts";
-        template = new Template("name", new FileReader(new File("templates/HomeActivity.ts")),
-                new Configuration());
-        stringWriter = new StringWriter();
-        template.process(models, stringWriter);
-        stringWriter.flush();
-        string = stringWriter.toString();
-        writeOrUpdateFile(string, pathname, new HashMap<>());
     }
 
     private void generateReport(Widget widget, String environment) {
@@ -1582,33 +1560,6 @@ public abstract class CodeGenTemplate extends CodeGenBase{
 			}
 		}
 	}
-
-    public static void generateLayoutsPlugin(String[] env,  String[] paths) throws IOException{
-        System.out.println(processedWidgets);
-        for (int i = 0; i < env.length; i++) {
-            StringBuffer stringBuffer = new StringBuffer("//start - widgets\n");
-            List<Widget> widgets = processedWidgets.get(env[i]);
-            if (widgets != null) {
-                for (Widget widget : widgets) {
-                	String pathName = widget.getClassname();
-                    if (!(pathName.equals("ViewImpl") || pathName.equals("ViewGroupImpl") || pathName.equals("ViewGroupModelImpl"))) {
-                    	if (widget.isViewplugin()) {
-                    		stringBuffer.append("        com.ashera.widget.WidgetFactory.registerAttributableFor(\"" + widget.getViewPluginFor()  + "\", " +
-                    				 "new " + widget.getAdditionalAttributes().get("widgetFullPackage") + "());\n");
-                    	} else {
-                    		stringBuffer.append("        WidgetFactory.register(new " + widget.getAdditionalAttributes().get("widgetFullPackage") + "());\n");	
-                    	}
-                    }                            
-                }
-                
-                stringBuffer.append("        //end - widgets\n");
-                
-                writeOrUpdateFile(stringBuffer.toString(), paths[i], false, "widgets");
-            }
-        }
-        
-        processedWidgets.clear();
-    }
     
     public String generateEventClass(CustomAttribute nodeElement, String methodSignatureListener,
 			String className, String interfaceName, Widget widget) {

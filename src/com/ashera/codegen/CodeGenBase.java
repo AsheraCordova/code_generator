@@ -44,10 +44,13 @@ import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
 public class CodeGenBase {
+	public static boolean DEBUG = false;
 	//read file content into a string
 	public static String readFileToString(File filePath) throws IOException {
 		StringBuilder fileData = new StringBuilder(1000);
-		System.out.println(filePath.getAbsolutePath());
+		if (DEBUG) {
+			System.out.println(filePath.getAbsolutePath());
+		}
 		BufferedReader reader = new BufferedReader(new FileReader(filePath));
  
 		char[] buf = new char[10];
@@ -172,7 +175,9 @@ public class CodeGenBase {
 		File file = new File(fileAbsPath);
 		if (file.exists()) {
 			boolean status = file.delete();
-			System.out.println(status + " " + file);
+			if (DEBUG) {
+				System.out.println(status + " " + file);
+			}
 		}
 	}
 
@@ -184,7 +189,9 @@ public class CodeGenBase {
 				file.getParentFile().mkdirs();
 			}
 			if (!file.exists()) {
-				System.out.println(urlStr);
+				if (DEBUG) {
+					System.out.println(urlStr);
+				}
 				java.net.URL url = new java.net.URL(urlStr);
 				java.net.URLConnection con = url.openConnection();
 				java.io.InputStream in = con.getInputStream();
@@ -246,8 +253,9 @@ public class CodeGenBase {
 		for (int i = 0; i < 100; i++) {
 			if (config.containsKey("copy.files." + i)) {
 				String keyStr = config.getProperty("copy.files." + i);
-				
-				System.out.println(keyStr);
+				if (DEBUG) {
+					System.out.println(keyStr);
+				}
 
 				File sourceFileLoc = new File(keyStr.substring(0, keyStr.lastIndexOf(":")));
 				File copyLoc = new File(keyStr.substring(keyStr.lastIndexOf(":") + 1));

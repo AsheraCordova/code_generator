@@ -17,6 +17,7 @@ package com.ashera.codegen.templates;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import org.jsoup.nodes.Document;
@@ -29,8 +30,9 @@ import com.ashera.codegen.pojo.QuirkReportDto;
 import com.ashera.codegen.pojo.Widget;
 
 public class IosCodeGenTemplate extends CodeGenTemplate {
-	public IosCodeGenTemplate(QuirkReportDto quirkReportDto, String packageName, String environment, String prefix, String testDir) {
-		super(quirkReportDto, testDir, packageName, environment, prefix);
+	public IosCodeGenTemplate(QuirkReportDto quirkReportDto, String packageName, String environment, String prefix, String testDir,
+			Map<String, List<Widget>> processedWidgets, ArrayList<String> activities, ArrayList<String> layoutFiles) {
+		super(quirkReportDto, testDir, packageName, environment, prefix, processedWidgets, activities, layoutFiles);
 	}
 
 	@Override
@@ -180,7 +182,9 @@ public class IosCodeGenTemplate extends CodeGenTemplate {
 		if (configuration.getBaseDir() != null) {
 		    baseDir = configuration.getBaseDir();
 		}
-		System.out.println("baseDir" + baseDir);
+		if (DEBUG) {
+			System.out.println("baseDir" + baseDir);
+		}
         return baseDir + "/src/main/java/com/ashera/" + packageName + "/" + configuration.getWidgetName() + ".java";
 	}
 
