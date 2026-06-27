@@ -123,6 +123,10 @@
 		<antcall target="runmaven">
 			<param name="dir" value="../SWTSpatialKit/swt" />
 		</antcall>
+		
+		<antcall target="runmaven">
+			<param name="dir" value="../ImageHotspot/swt" />
+		</antcall>
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">

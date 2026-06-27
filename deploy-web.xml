@@ -117,6 +117,10 @@
 			<param name="dir" value="../SpatialKit/browser" />
 		</antcall>
 		
+		<antcall target="runmaven">
+			<param name="dir" value="../ImageHotspot/browser" />
+		</antcall>
+		
 	</target>
 
 <target name="runmaven" depends="mvn_windows, mvn_unix">
